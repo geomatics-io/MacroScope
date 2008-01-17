@@ -832,6 +832,10 @@ subject ASC, predicate DESC, [object] ASC",
             CheckParseError("SELECT 'admin'--'");
             CheckParseError("SELECT 'kùò'");
             CheckParseError("SELECT * FROM s CROSS JOIN t ON a=b");
+
+            CheckParseError(@"SELECT * FROM s
+CROSS JOIN (SELECT c FROM t)");
+
             CheckParseError("INSERT INTO t(a)");
         }
 

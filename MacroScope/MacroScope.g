@@ -384,15 +384,14 @@ subTableSource returns [ Table value ] :
 				$value = new Table(
 					new BracketedExpression($t.value));
 			}
-		| (queryExpression) =>
-			// "derived table", mandatory alias
-			q = queryExpression RPAREN a = alias1 {
-				BracketedExpression expr =
-					new BracketedExpression($q.value);
-				expr.Spaced = true;
-				$value = new Table(expr);
-				$value.Alias = $a.value;
-			}
+		// "derived table", mandatory alias
+		| q = queryExpression RPAREN a = alias1 {
+			BracketedExpression expr =
+				new BracketedExpression($q.value);
+			expr.Spaced = true;
+			$value = new Table(expr);
+			$value.Alias = $a.value;
+		}
         )
 	// supporting rowset functions is probably overkill, but
 	// user-defined table-valued functions may not be beyond
