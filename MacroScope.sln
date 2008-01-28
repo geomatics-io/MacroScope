@@ -7,45 +7,30 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMacroScope", "TestMacro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glaze", "Glaze\Glaze.csproj", "{B29D7D5B-EE8A-49FE-BDA3-8B5A4656BDD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGlaze", "TestGlaze\TestGlaze.csproj", "{F2912A88-117D-4090-9242-685C49DE83DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		HieararGridTest|Any CPU = HieararGridTest|Any CPU
-		MQSQLTest|Any CPU = MQSQLTest|Any CPU
-		ParserTester|Any CPU = ParserTester|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{8F9A61F8-9732-42B4-BDE0-DA7808BE9264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8F9A61F8-9732-42B4-BDE0-DA7808BE9264}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F9A61F8-9732-42B4-BDE0-DA7808BE9264}.HieararGridTest|Any CPU.ActiveCfg = Release|Any CPU
-		{8F9A61F8-9732-42B4-BDE0-DA7808BE9264}.HieararGridTest|Any CPU.Build.0 = Release|Any CPU
-		{8F9A61F8-9732-42B4-BDE0-DA7808BE9264}.MQSQLTest|Any CPU.ActiveCfg = Release|Any CPU
-		{8F9A61F8-9732-42B4-BDE0-DA7808BE9264}.MQSQLTest|Any CPU.Build.0 = Release|Any CPU
-		{8F9A61F8-9732-42B4-BDE0-DA7808BE9264}.ParserTester|Any CPU.ActiveCfg = Release|Any CPU
-		{8F9A61F8-9732-42B4-BDE0-DA7808BE9264}.ParserTester|Any CPU.Build.0 = Release|Any CPU
 		{8F9A61F8-9732-42B4-BDE0-DA7808BE9264}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F9A61F8-9732-42B4-BDE0-DA7808BE9264}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6E8626E2-2329-46AB-AD4A-C081FAA392DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6E8626E2-2329-46AB-AD4A-C081FAA392DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E8626E2-2329-46AB-AD4A-C081FAA392DE}.HieararGridTest|Any CPU.ActiveCfg = Release|Any CPU
-		{6E8626E2-2329-46AB-AD4A-C081FAA392DE}.HieararGridTest|Any CPU.Build.0 = Release|Any CPU
-		{6E8626E2-2329-46AB-AD4A-C081FAA392DE}.MQSQLTest|Any CPU.ActiveCfg = Release|Any CPU
-		{6E8626E2-2329-46AB-AD4A-C081FAA392DE}.MQSQLTest|Any CPU.Build.0 = Release|Any CPU
-		{6E8626E2-2329-46AB-AD4A-C081FAA392DE}.ParserTester|Any CPU.ActiveCfg = Release|Any CPU
-		{6E8626E2-2329-46AB-AD4A-C081FAA392DE}.ParserTester|Any CPU.Build.0 = Release|Any CPU
 		{6E8626E2-2329-46AB-AD4A-C081FAA392DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E8626E2-2329-46AB-AD4A-C081FAA392DE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B29D7D5B-EE8A-49FE-BDA3-8B5A4656BDD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B29D7D5B-EE8A-49FE-BDA3-8B5A4656BDD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B29D7D5B-EE8A-49FE-BDA3-8B5A4656BDD7}.HieararGridTest|Any CPU.ActiveCfg = Release|Any CPU
-		{B29D7D5B-EE8A-49FE-BDA3-8B5A4656BDD7}.HieararGridTest|Any CPU.Build.0 = Release|Any CPU
-		{B29D7D5B-EE8A-49FE-BDA3-8B5A4656BDD7}.MQSQLTest|Any CPU.ActiveCfg = Release|Any CPU
-		{B29D7D5B-EE8A-49FE-BDA3-8B5A4656BDD7}.MQSQLTest|Any CPU.Build.0 = Release|Any CPU
-		{B29D7D5B-EE8A-49FE-BDA3-8B5A4656BDD7}.ParserTester|Any CPU.ActiveCfg = Release|Any CPU
-		{B29D7D5B-EE8A-49FE-BDA3-8B5A4656BDD7}.ParserTester|Any CPU.Build.0 = Release|Any CPU
 		{B29D7D5B-EE8A-49FE-BDA3-8B5A4656BDD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B29D7D5B-EE8A-49FE-BDA3-8B5A4656BDD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2912A88-117D-4090-9242-685C49DE83DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2912A88-117D-4090-9242-685C49DE83DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2912A88-117D-4090-9242-685C49DE83DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2912A88-117D-4090-9242-685C49DE83DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

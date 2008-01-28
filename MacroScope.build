@@ -87,6 +87,21 @@
 	<nant buildfile="TestMacroScope\TestMacroScope.build"/>
     </target>
 
+    <target name="TestGlaze" depends="Glaze">
+	<copy file="depend\log4net.dll"
+		todir="TestGlaze\bin\Debug"/>
+	<copy file="depend\Antlr3.Runtime.dll"
+		todir="TestGlaze\bin\Debug"/>
+	<copy file="MacroScope\bin\Debug\MacroScope.dll"
+		todir="TestGlaze\bin\Debug"/>
+	<copy file="Glaze\bin\Debug\Glaze.dll"
+		todir="TestGlaze\bin\Debug"/>
+
+	<style style="build\csproj2build.xsl"
+		in="TestGlaze\TestGlaze.csproj" out="TestGlaze\TestGlaze.build"/>
+	<nant buildfile="TestGlaze\TestGlaze.build"/>
+    </target>
+
     <target name="mstest" depends="TestMacroScope">
 	<!-- you can skip this if you have NUnit installed (and your
 		version is compatible with your NAnt) -->
@@ -101,6 +116,20 @@
 	<nant buildfile="TestMacroScope\bin\Debug\test.build"/>
     </target>
 
-    <target name="test" depends="mstest"/>
+    <target name="gtest" depends="TestGlaze">
+	<!-- you can skip this if you have NUnit installed (and your
+		version is compatible with your NAnt) -->
+	<copy file="depend\nunit.framework.dll"
+		todir="TestGlaze\bin\Debug"/>
+
+	<style style="build\gentest.xsl" in="build\gentest.xsl"	out="TestGlaze\bin\Debug\test.build">
+	    <parameters>
+		<parameter name="TestModule" value="TestGlaze.exe" />
+	    </parameters>
+	</style>
+	<nant buildfile="TestGlaze\bin\Debug\test.build"/>
+    </target>
+
+    <target name="test" depends="mstest,gtest"/>
 
 </project>
