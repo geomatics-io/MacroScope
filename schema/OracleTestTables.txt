@@ -1,0 +1,18 @@
+CREATE TABLE table1(
+       key1 NUMBER(10) NOT NULL PRIMARY KEY,
+       string1 NVARCHAR2(50) NULL,
+       date1 TIMESTAMP NULL)
+
+CREATE SEQUENCE table1_ident_seq
+
+CREATE OR REPLACE TRIGGER table1_ident_trigger
+BEFORE INSERT ON table1
+FOR EACH ROW
+WHEN (new.key1 IS NULL)
+BEGIN
+  SELECT table1_ident_seq.NEXTVAL INTO :new.key1 FROM dual;
+END;
+
+CREATE TABLE table2(
+	key2 NUMBER(10) NOT NULL PRIMARY KEY,
+	number2 NUMBER(10) NULL)

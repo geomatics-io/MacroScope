@@ -1,0 +1,16 @@
+IF OBJECT_ID('table1') IS NOT NULL
+	DROP TABLE table1
+
+CREATE TABLE table1(
+	key1 int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	string1 nvarchar(50) NULL,
+	date1 datetime NULL)
+
+IF OBJECT_ID('table2') IS NOT NULL
+	DROP TABLE table2
+
+CREATE TABLE table2(
+	key2 int NOT NULL PRIMARY KEY,
+	number2 int NULL)
+
+
