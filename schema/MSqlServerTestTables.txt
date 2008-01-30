@@ -4,7 +4,8 @@ IF OBJECT_ID('table1') IS NOT NULL
 CREATE TABLE table1(
 	key1 int IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	string1 nvarchar(50) NULL,
-	date1 datetime NULL)
+	date1 datetime NULL,
+	number1 int NULL)
 
 IF OBJECT_ID('table2') IS NOT NULL
 	DROP TABLE table2

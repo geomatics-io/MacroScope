@@ -1,7 +1,8 @@
 CREATE TABLE table1(
        key1 NUMBER(10) NOT NULL PRIMARY KEY,
        string1 NVARCHAR2(50) NULL,
-       date1 TIMESTAMP NULL)
+       date1 TIMESTAMP NULL,
+       number1 NUMBER(10) NULL)
 
 CREATE SEQUENCE table1_ident_seq
 

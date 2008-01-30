@@ -2,6 +2,7 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.Common;
+using System.Text;
 using NUnit.Framework;
 using MacroScope;
 using Glaze;
@@ -51,6 +52,12 @@ namespace TestGlaze
         public void TestExecuteReader()
         {
             RunAll(CheckExecuteReader);
+        }
+
+        [Test]
+        public void TestExecuteScalar()
+        {
+            RunAll(CheckExecuteScalar);
         }
 
         void CheckExecuteReader(GlazeFactory glazeFactory, DbConnection connection)
@@ -555,8 +562,20 @@ VALUES('GlazeTest', 2006-12-31T23:59:58)";
 
         void CleanTestRows(DbConnection connection)
         {
+            CleanTestRows(connection, "string1='GlazeTest'");
+        }
+
+        void CleanTestRows(DbConnection connection, string cond)
+        {
+            StringBuilder cmd = new StringBuilder();
+            cmd.Append("delete from table1");
+            if (cond != null)
+            {
+                cmd.AppendFormat(" where {0}", cond);
+            }
+
             DbCommand command = connection.CreateCommand();
-            command.CommandText = "delete from table1 where string1='GlazeTest'";
+            command.CommandText = cmd.ToString();
             command.ExecuteNonQuery();
         }
 
@@ -565,6 +584,201 @@ VALUES('GlazeTest', 2006-12-31T23:59:58)";
             DbCommand command = connection.CreateCommand();
             command.CommandText = "select count(*) from table1";
             return Convert.ToInt32(command.ExecuteScalar());
+        }
+
+        void CheckExecuteScalar(GlazeFactory glazeFactory, DbConnection connection)
+        {
+            CheckIntExpression(connection, "1+2", 3);
+            CheckIntExpression(connection, "5 % 3", 2);
+            CheckIntExpression(connection, "mod(-15, 4)", -3);
+
+            CheckDoubleExpression(connection, ".2", 0.2);
+            CheckDoubleExpression(connection, "0.2", 0.2);
+            CheckDoubleExpression(connection, "-1.2", -1.2);
+            CheckDoubleExpression(connection, "1.2E2", 120);
+            CheckDoubleExpression(connection, "0E-10", 0);
+
+            CheckFailingExpression(connection, "select 0/0");
+            CheckFailingExpression(connection,
+                "select 2003-07-31T00:00:00 - interval '1' month");
+
+            CheckDateTime(glazeFactory, connection);
+            CheckDateTimeInterval(connection);
+
+            CheckCurrentTime(connection, "select getdate()");
+            CheckCurrentTime(connection, "select now()");
+            CheckCurrentTime(connection, "select sysdate from dual");
+
+            CheckStringExpression(connection, "''''", "'");
+            CheckStringExpression(connection, "'\"'", "\"");
+            CheckStringExpression(connection, "'&'", "&");
+            CheckStringExpression(connection, "N'k˘Ú'", "k˘Ú");
+            CheckStringExpression(connection, "'A2|45'", "A2|45");
+            CheckStringExpression(connection, "'a' || 'b'", "ab");
+            CheckStringExpression(connection, "'a' 'b'\n'c'", "abc");
+            CheckStringExpression(connection, "N'ûluùouËk˝' || N' ' || N'k˘Ú'",
+                "ûluùouËk˝ k˘Ú");
+            CheckStringExpression(connection, "N'ûluùouËk˝' \r\n ' kun'",
+                "ûluùouËk˝ kun");
+            CheckStringExpression(connection, "'zlutoucky ' \r\n N'k˘Ú'",
+                "zlutoucky k˘Ú");
+
+            CheckStringExpression(connection, "substring('abcdefgh' from 1 for 2)", "ab");
+            CheckStringExpression(connection, "substring(N'k˘Ú' from 2 for 2)", "˘Ú");
+            CheckStringExpression(connection, "substring(null from 2)", null);
+            CheckStringExpression(connection, "substring('abc' from 4)", "");
+            CheckStringExpression(connection, "substring('abc' from 1 for 5)", "abc");
+
+            CheckStringFunctions(connection);
+	}
+
+        void CheckStringExpression(DbConnection connection, string quoted, string result)
+        {
+            if (connection == null)
+            {
+                throw new ArgumentNullException("connection");
+            }
+
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = string.Format("SELECT {0}", quoted);
+            object c = command.ExecuteScalar();
+            Assert.IsNotNull(c);
+
+            if (result != null)
+            {
+                Assert.AreEqual(result, c.ToString());
+            }
+            else
+            {
+                Assert.AreSame(DBNull.Value, c);
+            }
+        }
+
+        void CheckIntExpression(DbConnection connection,
+            string expression, int result)
+        {
+            if (connection == null)
+            {
+                throw new ArgumentNullException("connection");
+            }
+
+            if (expression == null)
+            {
+                throw new ArgumentNullException("expression");
+            }
+
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = string.Format("select {0}", expression);
+            object c = command.ExecuteScalar();
+            Assert.IsNotNull(c);
+            int d = Convert.ToInt32(c);
+            Assert.AreEqual(result, d);
+        }
+
+        void CheckDoubleExpression(DbConnection connection,
+            string expression, double result)
+        {
+            if (connection == null)
+            {
+                throw new ArgumentNullException("connection");
+            }
+
+            if (expression == null)
+            {
+                throw new ArgumentNullException("expression");
+            }
+
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = string.Format("select {0}", expression);
+            object c = command.ExecuteScalar();
+            Assert.IsNotNull(c);
+            double d = Convert.ToDouble(c);
+            double eps = Math.Abs(result - d);
+            Assert.IsTrue(eps < 0.001);
+        }
+
+        void CheckFailingExpression(DbConnection connection, string commandText)
+        {
+            if (connection == null)
+            {
+                throw new ArgumentNullException("connection");
+            }
+
+            if (commandText == null)
+            {
+                throw new ArgumentNullException("commandText");
+            }
+
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = commandText;
+
+            bool done = false;
+            try
+            {
+                command.ExecuteScalar();
+                done = true;
+            }
+            catch (Exception)
+            {
+            }
+
+            Assert.IsFalse(done);
+        }
+
+        void CheckStringFunctions(DbConnection connection)
+        {
+            if (connection == null)
+            {
+                throw new ArgumentNullException("connection");
+            }
+
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = "SELECT left('abcde', 3)";
+            string s = command.ExecuteScalar() as string;
+            Assert.AreEqual("abc", s);
+
+            command = connection.CreateCommand();
+            command.CommandText = "SELECT right('abcde', 3)";
+            s = command.ExecuteScalar() as string;
+            Assert.AreEqual("cde", s);
+
+            CheckSimpleSubstring(connection);
+            CheckSubstringPosition(connection);
+        }
+
+        void CheckSimpleSubstring(DbConnection connection)
+        {
+            CleanTestRows(connection, "date1 is null");
+
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = "insert into table1(string1) values(null)";
+            command.ExecuteNonQuery();
+
+            command = connection.CreateCommand();
+            command.CommandText = "insert into table1(string1) values('abcd')";
+            command.ExecuteNonQuery();
+
+            CheckRuntimeSubstring(connection,
+                @"select substring(string1 from 1) from table1
+where (string1='abcd') or (string1 is null)");
+        }
+
+        void CheckSubstringPosition(DbConnection connection)
+        {
+            CleanTestRows(connection, "date1 is null");
+
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = @"insert into table1(number1, string1)
+values(null, 'xyz')";
+            command.ExecuteNonQuery();
+
+            command = connection.CreateCommand();
+            command.CommandText = @"insert into table1(number1, string1)
+values(2, 'xabcd')";
+            command.ExecuteNonQuery();
+
+            CheckRuntimeSubstring(connection,
+                "select substring(string1 from number1) from table1 where date1 is null");
         }
 
         void CreateCountedRows(DbConnection connection)
@@ -606,6 +820,181 @@ VALUES('Counted', 2008-01-29T09:35:24)";
             {
                 reader.Close();
             }
+        }
+
+        void CheckRuntimeSubstring(DbConnection connection, string commandText)
+        {
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = commandText;
+            DbDataReader reader = command.ExecuteReader();
+            try
+            {
+                bool nullSeen = false;
+                bool nonNullSeen = false;
+                while (reader.Read())
+                {
+                    if (reader.IsDBNull(0))
+                    {
+                        Assert.IsFalse(nullSeen);
+                        nullSeen = true;
+                    }
+                    else
+                    {
+                        Assert.IsFalse(nonNullSeen);
+                        nonNullSeen = true;
+
+                        string v = reader.GetString(0);
+                        Assert.AreEqual("abcd", v);
+                    }
+                }
+
+                Assert.IsTrue(nullSeen);
+                Assert.IsTrue(nonNullSeen);
+            }
+            finally
+            {
+                reader.Close();
+            }
+        }
+
+        void CheckDateTime(GlazeFactory glazeFactory, DbConnection connection)
+        {
+            if (glazeFactory == null)
+            {
+                throw new ArgumentNullException("glazeFactory");
+            }
+
+            if (connection == null)
+            {
+                throw new ArgumentNullException("connection");
+            }
+
+            DbCommand command = glazeFactory.CreateCommand();
+            command.Connection = connection;
+            command.CommandText = "SELECT 2007-07-18T16:30:00";
+            object c = command.ExecuteScalar();
+            Assert.IsNotNull(c);
+
+            DateTime dt = (DateTime)c;
+            Assert.AreEqual(2007, dt.Year);
+            Assert.AreEqual(7, dt.Month);
+            Assert.AreEqual(18, dt.Day);
+            Assert.AreEqual(16, dt.Hour);
+            Assert.AreEqual(30, dt.Minute);
+            Assert.AreEqual(0, dt.Second);
+
+            command.CommandText = "SELECT EXTRACT(year FROM 2007-07-18T16:30:00)";
+            c = command.ExecuteScalar();
+            Assert.AreEqual(2007, c);
+
+            command.CommandText = "SELECT EXTRACT(month FROM 2007-07-18T16:30:00)";
+            c = command.ExecuteScalar();
+            Assert.AreEqual(7, c);
+
+            command.CommandText = "SELECT EXTRACT(day FROM 2007-07-18T16:30:00)";
+            c = command.ExecuteScalar();
+            Assert.AreEqual(18, c);
+
+            command.CommandText = "SELECT EXTRACT(hour FROM 2007-07-18T16:30:00)";
+            c = command.ExecuteScalar();
+            Assert.AreEqual(16, c);
+
+            command.CommandText = "SELECT EXTRACT(minute FROM 2007-07-18T16:30:00)";
+            c = command.ExecuteScalar();
+            Assert.AreEqual(30, c);
+
+            command.CommandText = "SELECT EXTRACT(second FROM 2007-07-18T16:30:04)";
+            c = command.ExecuteScalar();
+            Assert.AreEqual(4, c);
+        }
+
+        void CheckDateTimeInterval(DbConnection connection)
+        {
+            CheckDateTimeInterval(connection,
+                "SELECT 2007-07-18T16:30:00 - INTERVAL '2' YEAR",
+                new DateTime(2005, 7, 18, 16, 30, 0));
+
+            CheckDateTimeInterval(connection,
+                "SELECT 2003-07-31 00:00:00 - INTERVAL '100' DAY",
+                new DateTime(2003, 4, 22, 0, 0, 0));
+
+            DateTime baseDate = new DateTime(2007, 7, 18, 16, 30, 0);
+            CheckDateTimeInterval(connection,
+                "SELECT 2007-07-18T16:30:00 + INTERVAL '7' DAY",
+                baseDate + new TimeSpan(7, 0, 0, 0));
+            CheckDateTimeInterval(connection,
+                "select 2007-07-18T16:30:00 - interval '1' second",
+                baseDate - new TimeSpan(0, 0, 1));
+            CheckDateTimeInterval(connection,
+                "select 2007-07-18T16:30:00 - interval '120' second",
+                baseDate - new TimeSpan(0, 2, 0));
+            CheckDateTimeInterval(connection,
+                "select interval '45' minute + 2007-07-18T16:30:00",
+                baseDate + new TimeSpan(0, 45, 0));
+
+            CheckDateTimeInterval(connection,
+                @"select interval '15' minute +
+interval '30' minute + 2007-07-18T16:30:00",
+                baseDate + new TimeSpan(0, 45, 0));
+            CheckDateTimeInterval(connection,
+                @"select interval '15' minute + 2007-07-18T16:30:00 +
+interval '30' minute",
+                baseDate + new TimeSpan(0, 45, 0));
+            CheckDateTimeInterval(connection,
+                @"select 2007-07-18T16:30:00 + interval '15' minute +
+interval '30' minute",
+                baseDate + new TimeSpan(0, 45, 0));
+        }
+
+        void CheckDateTimeInterval(DbConnection connection, string commandText,
+            DateTime expected)
+        {
+            if (connection == null)
+            {
+                throw new ArgumentNullException("connection");
+            }
+
+            if (commandText == null)
+            {
+                throw new ArgumentNullException("commandText");
+            }
+
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = commandText;
+            object c = command.ExecuteScalar();
+            Assert.IsNotNull(c);
+
+            DateTime dt = (DateTime)c;
+            Assert.AreEqual(expected.Year, dt.Year);
+            Assert.AreEqual(expected.Month, dt.Month);
+            Assert.AreEqual(expected.Day, dt.Day);
+            Assert.AreEqual(expected.Hour, dt.Hour);
+            Assert.AreEqual(expected.Minute, dt.Minute);
+            Assert.AreEqual(expected.Second, dt.Second);
+        }
+
+        void CheckCurrentTime(DbConnection connection, string commandText)
+        {
+            if (connection == null)
+            {
+                throw new ArgumentNullException("connection");
+            }
+
+            if (commandText == null)
+            {
+                throw new ArgumentNullException("commandText");
+            }
+
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = commandText;
+
+            DateTime now = DateTime.Now;
+            object c = command.ExecuteScalar();
+            Assert.IsNotNull(c);
+
+            DateTime dt = (DateTime)c;
+            Assert.IsTrue(now <= dt.AddSeconds(1));
+            Assert.IsTrue(dt <= now.AddSeconds(command.CommandTimeout + 1));
         }
 
         static void RunAll(ConnectedTest test)
