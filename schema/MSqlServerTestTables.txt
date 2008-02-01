@@ -5,7 +5,8 @@ CREATE TABLE table1(
 	key1 int IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	string1 nvarchar(50) NULL,
 	date1 datetime NULL,
-	number1 int NULL)
+	number1 int default(4),
+	number1a int default(2))
 
 IF OBJECT_ID('table2') IS NOT NULL
 	DROP TABLE table2
@@ -14,4 +15,10 @@ CREATE TABLE table2(
 	key2 int NOT NULL PRIMARY KEY,
 	number2 int NULL)
 
+IF OBJECT_ID('table3') IS NOT NULL
+	DROP TABLE table3
 
+CREATE TABLE table3(
+	key3 int NOT NULL PRIMARY KEY,
+	string3 nvarchar(50) NULL,
+	number3 int NULL)

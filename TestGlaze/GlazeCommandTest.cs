@@ -60,6 +60,18 @@ namespace TestGlaze
             RunAll(CheckExecuteScalar);
         }
 
+        [Test]
+        public void TestExecuteNonQuery()
+        {
+            RunAll(CheckExecuteNonQuery);
+        }
+
+        [Test]
+        public void TestStatement()
+        {
+            RunAll(CheckStatement);
+        }
+
         void CheckExecuteReader(GlazeFactory glazeFactory, DbConnection connection)
         {
             CheckQuoting(connection);
@@ -201,6 +213,40 @@ inner join table2 on table1.key1 = table2.key2 AND
     key1 > 10";
             int rv = DoExecuteReader(command);
             Assert.IsTrue(rv == 1);
+        }
+
+        void CheckCrossJoin(DbConnection connection)
+        {
+            if (connection == null)
+            {
+                throw new ArgumentNullException("connection");
+            }
+
+            CleanTestRows(connection, null);
+
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = @"insert into table1(number1, number1a)
+values(1, 2)";
+            command.ExecuteNonQuery();
+
+            command.CommandText = @"insert into table1(number1, number1a)
+values(3, 4)";
+            command.ExecuteNonQuery();
+
+            command.CommandText = @"select count(*) from table1 a
+cross join table1 b";
+            object n = command.ExecuteScalar();
+            Assert.AreEqual(4, n);
+
+            command.CommandText = @"select count(*) from table1 a,
+table1 b cross join table1 c";
+            n = command.ExecuteScalar();
+            Assert.AreEqual(8, n);
+
+            command.CommandText = @"select count(*) from table1 a,
+table1 b cross join table1 c, table1 d";
+            n = command.ExecuteScalar();
+            Assert.AreEqual(16, n);
         }
 
         int CheckUnnamedParameters(DbConnection connection)
@@ -579,11 +625,206 @@ VALUES('GlazeTest', 2006-12-31T23:59:58)";
             command.ExecuteNonQuery();
         }
 
+        int DoExecuteReader(DbCommand command)
+        {
+            if (command == null)
+            {
+                throw new ArgumentNullException("command");
+            }
+
+            DbDataReader reader = command.ExecuteReader();
+            Assert.IsNotNull(reader);
+            try
+            {
+                int found = 0;
+                while (reader.Read())
+                {
+                    ++found;
+                }
+
+                return found;
+            }
+            finally
+            {
+                reader.Close();
+            }
+        }
+
         int GetTotalRowCount(DbConnection connection)
         {
             DbCommand command = connection.CreateCommand();
             command.CommandText = "select count(*) from table1";
             return Convert.ToInt32(command.ExecuteScalar());
+        }
+
+        void CheckExecuteNonQuery(GlazeFactory glazeFactory, DbConnection connection)
+        {
+            if (glazeFactory == null)
+            {
+                throw new ArgumentNullException("glazeFactory");
+            }
+
+            if (connection == null)
+            {
+                throw new ArgumentNullException("connection");
+            }
+
+            CheckDelete(connection);
+            CheckInsertDate(connection);
+            CheckInsertDefault(connection);
+	}
+
+        void CheckDelete(DbConnection connection)
+        {
+            GlazeCommand command = (GlazeCommand)(connection.CreateCommand());
+            command.CommandText = "delete from table1 where 0=1";
+            int c = command.ExecuteNonQuery();
+            Assert.AreEqual(0, c);
+
+            c = command.ExecuteNonQuery();
+            Assert.AreEqual(0, c);
+        }
+
+        void CheckInsertDate(DbConnection connection)
+        {
+            DbCommand dbCommand = connection.CreateCommand();
+            dbCommand.CommandText = "delete table1 where string1=@name";
+
+            DbParameter dbParameter = dbCommand.CreateParameter();
+            dbParameter.ParameterName = "@name";
+            dbParameter.Value = "GlazeTest";
+            dbCommand.Parameters.Add(dbParameter);
+
+            int c = dbCommand.ExecuteNonQuery();
+            Assert.IsTrue(c >= 0);
+
+            dbCommand = connection.CreateCommand();
+            dbCommand.CommandText = @"INSERT INTO table1(string1, date1)
+VALUES(@name, 2006-12-31T23:59:58)";
+
+            dbParameter = dbCommand.CreateParameter();
+            dbParameter.ParameterName = "@name";
+            dbParameter.Value = "GlazeTest";
+            dbCommand.Parameters.Add(dbParameter);
+
+            c = dbCommand.ExecuteNonQuery();
+            Assert.AreEqual(1, c);
+
+            DateTime dt = GetWrittenDateTime(connection);
+            Assert.AreEqual(2006, dt.Year);
+            Assert.AreEqual(12, dt.Month);
+            Assert.AreEqual(31, dt.Day);
+            Assert.AreEqual(23, dt.Hour);
+            Assert.AreEqual(59, dt.Minute);
+            Assert.AreEqual(58, dt.Second);
+
+            dbCommand = connection.CreateCommand();
+            dbCommand.CommandText = @"UPDATE table1 SET date1=@date1
+WHERE string1=@string1";
+
+            dbParameter = dbCommand.CreateParameter();
+            dbParameter.ParameterName = "@string1";
+            dbParameter.Value = "GlazeTest";
+            dbCommand.Parameters.Add(dbParameter);
+
+            DateTime altDate = DateTime.Now;
+            dbParameter = dbCommand.CreateParameter();
+            dbParameter.ParameterName = "@date1";
+            dbParameter.Value = altDate;
+            dbCommand.Parameters.Add(dbParameter);
+
+            c = dbCommand.ExecuteNonQuery();
+            Assert.AreEqual(1, c);
+
+            dt = GetWrittenDateTime(connection);
+            Assert.AreEqual(altDate.Year, dt.Year);
+            Assert.AreEqual(altDate.Month, dt.Month);
+            Assert.AreEqual(altDate.Day, dt.Day);
+            Assert.AreEqual(altDate.Hour, dt.Hour);
+            Assert.AreEqual(altDate.Minute, dt.Minute);
+            Assert.AreEqual(altDate.Second, dt.Second);
+
+            dbCommand = connection.CreateCommand();
+            dbCommand.CommandText = @"DELETE FROM table1 WHERE string1='GlazeTest'";
+
+            c = dbCommand.ExecuteNonQuery();
+            Assert.AreEqual(1, c);
+        }
+
+        void CheckInsertDefault(DbConnection connection)
+        {
+            CleanTestRows(connection, null);
+
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = @"insert into table1(number1, number1a)
+values(default, 9)";
+            int c = command.ExecuteNonQuery();
+            Assert.AreEqual(1, c);
+
+            command.CommandText = @"select count(*) from table1
+where number1=4";
+            object n = command.ExecuteScalar();
+            Assert.AreEqual(1, n);
+
+            command.CommandText = @"insert into table1(number1, number1a)
+values(10, default)";
+            c = command.ExecuteNonQuery();
+            Assert.AreEqual(1, c);
+
+            command.CommandText = @"select count(*) from table1
+where number1a=2";
+            n = command.ExecuteScalar();
+            Assert.AreEqual(1, n);
+        }
+
+        static DateTime GetWrittenDateTime(DbConnection connection)
+        {
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = "SELECT date1 from table1 WHERE string1='GlazeTest'";
+            object d = command.ExecuteScalar();
+            return (DateTime)d;
+        }
+
+        void CheckStatement(GlazeFactory glazeFactory, DbConnection connection)
+        {
+            QueryExpression queryExpression = new QueryExpression();
+            queryExpression.SelectItems = new AliasedItem(
+                new Expression(new IntegerValue(1),
+                    ExpressionOperator.Minus,
+                    new IntegerValue(2)));
+
+            GlazeCommand command = (GlazeCommand)(connection.CreateCommand());
+            command.Statement = new SelectStatement(queryExpression);
+
+            object c = command.ExecuteScalar();
+            Assert.IsNotNull(c);
+            int d = Convert.ToInt32(c);
+            Assert.AreEqual(-1, d);
+
+            InsertStatement insertStatement = new InsertStatement();
+            insertStatement.Table = new DbObject(new Identifier("no_table"));
+            insertStatement.ColumnNames = new AliasedItem(
+                new Identifier("test_column"));
+
+            Expression expr = new Expression();
+            expr.Left = new IntegerValue(42);
+            insertStatement.ColumnValues = new ExpressionItem(expr);
+            command.Statement = insertStatement;
+
+            bool changed = false;
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                changed = true;
+            }
+
+            Assert.IsTrue(changed);
+
+            string text = command.CommandText;
+            Assert.IsTrue(text.StartsWith("INSERT"));
         }
 
         void CheckExecuteScalar(GlazeFactory glazeFactory, DbConnection connection)
@@ -630,6 +871,8 @@ VALUES('GlazeTest', 2006-12-31T23:59:58)";
             CheckStringExpression(connection, "substring('abc' from 1 for 5)", "abc");
 
             CheckStringFunctions(connection);
+
+            CheckCrossJoin(connection);
 	}
 
         void CheckStringExpression(DbConnection connection, string quoted, string result)
@@ -744,6 +987,8 @@ VALUES('GlazeTest', 2006-12-31T23:59:58)";
 
             CheckSimpleSubstring(connection);
             CheckSubstringPosition(connection);
+            CheckSubstringLength(connection);
+            CheckComplicatedSubstring(connection);
         }
 
         void CheckSimpleSubstring(DbConnection connection)
@@ -781,40 +1026,83 @@ values(2, 'xabcd')";
                 "select substring(string1 from number1) from table1 where date1 is null");
         }
 
-        void CreateCountedRows(DbConnection connection)
+        void CheckSubstringLength(DbConnection connection)
         {
-            if (GetTotalRowCount(connection) > MIN_VALUE)
-            {
-                return;
-            }
+            CleanTestRows(connection, "date1 is null");
 
-            for (int i = 0; i < 2 * MIN_VALUE; ++i)
-            {
-                DbCommand command = connection.CreateCommand();
-                command.CommandText = @"INSERT INTO table1(string1, date1)
-VALUES('Counted', 2008-01-29T09:35:24)";
-                command.ExecuteNonQuery();
-            }
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = @"insert into table1(number1, string1)
+values(null, 'xyz')";
+            command.ExecuteNonQuery();
+
+            command = connection.CreateCommand();
+            command.CommandText = @"insert into table1(number1, string1)
+values(4, 'xabcd')";
+            command.ExecuteNonQuery();
+
+            CheckRuntimeSubstring(connection,
+                "select substring(string1 from 2 for number1) from table1 where date1 is null");
         }
 
-        int DoExecuteReader(DbCommand command)
+        void CheckComplicatedSubstring(DbConnection connection)
         {
-            if (command == null)
-            {
-                throw new ArgumentNullException("command");
-            }
+            CleanTestRows(connection, "date1 is null");
 
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = @"insert into table1(number1,
+number1a, string1) values(1, 4, 'abcd')";
+            command.ExecuteNonQuery();
+
+            command.CommandText = @"insert into table1(number1,
+number1a, string1) values(null, 4, 'abcd')";
+            command.ExecuteNonQuery();
+
+            command.CommandText = @"insert into table1(number1,
+number1a, string1) values(1, null, 'abcd')";
+            command.ExecuteNonQuery();
+
+            command.CommandText = @"insert into table1(number1,
+number1a, string1) values(1, 4, null)";
+            command.ExecuteNonQuery();
+
+            command.CommandText = @"insert into table1(number1,
+number1a, string1) values(null, 4, null)";
+            command.ExecuteNonQuery();
+
+            command.CommandText = @"insert into table1(number1,
+number1a, string1) values(1, null, null)";
+            command.ExecuteNonQuery();
+
+            command.CommandText = @"insert into table1(number1,
+number1a, string1) values(null, null, null)";
+            command.ExecuteNonQuery();
+
+            command.CommandText = @"select substring(
+string1 from number1 for number1a)
+from table1
+where date1 is null";
             DbDataReader reader = command.ExecuteReader();
-            Assert.IsNotNull(reader);
             try
             {
-                int found = 0;
+                int nullSeen = 0;
+                int nonNullSeen = 0;
                 while (reader.Read())
                 {
-                    ++found;
+                    if (reader.IsDBNull(0))
+                    {
+                        ++nullSeen;
+                    }
+                    else
+                    {
+                        ++nonNullSeen;
+
+                        string v = reader.GetString(0);
+                        Assert.AreEqual("abcd", v);
+                    }
                 }
 
-                return found;
+                Assert.AreEqual(6, nullSeen);
+                Assert.AreEqual(1, nonNullSeen);
             }
             finally
             {
@@ -854,6 +1142,22 @@ VALUES('Counted', 2008-01-29T09:35:24)";
             finally
             {
                 reader.Close();
+            }
+        }
+
+        void CreateCountedRows(DbConnection connection)
+        {
+            if (GetTotalRowCount(connection) > MIN_VALUE)
+            {
+                return;
+            }
+
+            for (int i = 0; i < 2 * MIN_VALUE; ++i)
+            {
+                DbCommand command = connection.CreateCommand();
+                command.CommandText = @"INSERT INTO table1(string1, date1)
+VALUES('Counted', 2008-01-29T09:35:24)";
+                command.ExecuteNonQuery();
             }
         }
 

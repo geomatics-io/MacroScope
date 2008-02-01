@@ -2,7 +2,8 @@ CREATE TABLE table1(
        key1 NUMBER(10) NOT NULL PRIMARY KEY,
        string1 NVARCHAR2(50) NULL,
        date1 TIMESTAMP NULL,
-       number1 NUMBER(10) NULL)
+       number1 NUMBER(10) DEFAULT(4),
+       number1a NUMBER(10) DEFAULT(2))
 
 CREATE SEQUENCE table1_ident_seq
 
@@ -17,3 +18,8 @@ END;
 CREATE TABLE table2(
 	key2 NUMBER(10) NOT NULL PRIMARY KEY,
 	number2 NUMBER(10) NULL)
+
+CREATE TABLE table3(
+	key3 NUMBER(10) NOT NULL PRIMARY KEY,
+	string3 NVARCHAR2(50) NULL,
+	number3 NUMBER(10) NULL)
