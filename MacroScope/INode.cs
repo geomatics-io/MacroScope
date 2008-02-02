@@ -18,6 +18,12 @@ namespace MacroScope
         /// </returns>
         INode Clone();
 
+        /// <summary>
+        /// The accept method of a visitor pattern.
+        /// </summary>
+        /// <param name="visitor">
+        /// The accepted visitor. Must not be null.
+        /// </param>
         void Traverse(IVisitor visitor);
 
         #endregion
