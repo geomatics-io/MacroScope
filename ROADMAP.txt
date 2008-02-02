@@ -4,8 +4,6 @@ desirability for the overall project.
 
 Features I might implement myself:
 
- - More tests. Especially Glaze should be unit-tested.
-
  - Parsed SQL tree should include pointers to parents. In retrospect,
  leaving them out was a mistake, making tree transformations both
  harder to implement and less efficient.
@@ -23,9 +21,9 @@ Features which would be nice to have:
 
 Features we need to think about:
 
- - How should I higher-level object model look like? The grammar-based
- one is flexible, but creating SQL in it is rather verbose - an
- alternative would be nice.
+ - How should the higher-level object model look like? The
+ grammar-based one is flexible, but creating SQL in it is rather
+ verbose - an alternative would be nice.
 
  - How to support SQL beyond CRUD: DDL, stored procedures etc.
 
