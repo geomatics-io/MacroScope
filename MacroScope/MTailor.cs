@@ -8,7 +8,7 @@ namespace MacroScope
     /// Common transformations for <see cref="MSqlServerTailor"/>
     /// and <see cref="MAccessTailor"/>.
     /// </summary>
-    public abstract class MTailor : PassiveVisitor
+    public abstract class MTailor : TracingVisitor
     {
         #region Fields
 
@@ -77,6 +77,8 @@ namespace MacroScope
                 throw new ArgumentNullException("node");
             }
 
+            base.PerformAfter(node);
+
             // this isn't called in all the places where it should be,
             // but apart from being inefficient, extra nodes in
             // the stack probably shouldn't cause any trouble...
@@ -89,6 +91,8 @@ namespace MacroScope
             {
                 throw new ArgumentNullException("node");
             }
+
+            base.Perform(node);
 
             if (IsRownum(node))
             {
@@ -109,6 +113,8 @@ namespace MacroScope
             {
                 throw new ArgumentNullException("node");
             }
+
+            base.PerformBefore(node);
 
             ReplaceSubstring(node);
             ReplaceExtract(node);
@@ -157,6 +163,8 @@ namespace MacroScope
                 throw new ArgumentNullException("node");
             }
 
+            base.PerformBefore(node);
+
             throw new InvalidOperationException("EXTRACT not in expression.");
         }
 
@@ -166,6 +174,8 @@ namespace MacroScope
             {
                 throw new ArgumentNullException("node");
             }
+
+            base.PerformBefore(node);
 
             IExpression where = node.Where;
             if (where != null)
@@ -225,6 +235,8 @@ namespace MacroScope
                 throw new ArgumentNullException("node");
             }
 
+            base.PerformBeforeBinaryOp(node);
+
             m_expressionStack.Add(node);
             ReplaceIntervals(m_expressionStack.Count - 1);
         }
@@ -235,6 +247,8 @@ namespace MacroScope
             {
                 throw new ArgumentNullException("node");
             }
+
+            base.PerformOnWhere(node);
 
             m_currentWhere = node.Where;
 
@@ -251,6 +265,8 @@ namespace MacroScope
                 throw new ArgumentNullException("node");
             }
 
+            base.PerformOnGroupBy(node);
+
             m_currentWhere = null;  // if there are constructions like
                                     // ORDER BY rownum, we're going to fail on them
         }
@@ -261,6 +277,8 @@ namespace MacroScope
             {
                 throw new ArgumentNullException("node");
             }
+
+            base.Perform(node);
 
             node.Prefix = '@';
         }

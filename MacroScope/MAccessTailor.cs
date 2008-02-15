@@ -171,6 +171,8 @@ namespace MacroScope
                 throw new ArgumentNullException("node");
             }
 
+            base.PerformBefore(node);
+
             string name = node.Name.ToLowerInvariant();
             if (name.Equals(TailorUtil.GETDATE))
             {

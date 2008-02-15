@@ -91,6 +91,7 @@
     <Compile Include="SwitchFunction.cs" />
     <Compile Include="TableWildcard.cs" />
     <Compile Include="TailorUtil.cs" />
+    <Compile Include="TracingVisitor.cs" />
     <Compile Include="TypeCast.cs" />
     <Compile Include="UpdateStatement.cs" />
     <Compile Include="Variable.cs" />
