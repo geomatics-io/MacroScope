@@ -175,6 +175,18 @@ WHEN 1 THEN 'one'
 ELSE 'other'
 END CASE
 FROM address", expected.ToString());
+
+            expected = new StringBuilder();
+            expected.Append("SELECT CASE\r\n");
+            expected.Append("WHEN street IS NOT NULL THEN ");
+            expected.Append("(((city + ', ') + street) + ' ') + num\r\n");
+            expected.Append("ELSE city + num\r\n");
+            expected.Append("END\r\nFROM address");
+            CheckSelect(@"SELECT CASE
+WHEN street is not null THEN city || ', ' || street || ' ' || num
+ELSE city || num
+END CASE
+FROM address", expected.ToString());
         }
 
         [Test]

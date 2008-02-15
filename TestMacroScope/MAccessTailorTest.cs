@@ -221,6 +221,17 @@ WHEN 1 THEN 'one'
 ELSE 'other'
 END CASE
 FROM address", "SELECT Switch(address_id = 1, 'one', 1 = 1, 'other')\r\nFROM address");
+
+            StringBuilder expected = new StringBuilder();
+            expected.Append("SELECT Switch(street IS NOT NULL, ");
+            expected.Append("(((city + ', ') + street) + ' ') + num, ");
+            expected.Append("1 = 1, city + num)\r\n");
+            expected.Append("FROM address");
+            CheckSelect(@"SELECT CASE
+WHEN street is not null THEN city || ', ' || street || ' ' || num
+ELSE city || num
+END CASE
+FROM address", expected.ToString());
         }
 
         [Test]

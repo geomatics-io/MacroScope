@@ -77,7 +77,8 @@ namespace TestGlaze
             CheckQuoting(connection);
             CheckCase(connection);
 
-            string[] conditions = { "null is null", "not 2 < 1",
+            string[] conditions = { "null is null", "'a' is not null", 
+                "not null is not null", "not 2 < 1",
                 "'abcd' like '%c%'",  "'abcd' not like '%e%'", "'a' like '_'",
                 "not ('a' like '__')", "'_' like '_'", 
             };
@@ -365,12 +366,24 @@ WHERE @min<=key1 and key1<@max";
                 throw new ArgumentNullException("connection");
             }
 
-            DbCommand command = connection.CreateCommand();
-            command.CommandText = @"SELECT CASE key1
+            CheckCase(connection, @"SELECT CASE key1
 WHEN 1 THEN 'one'
 WHEN 2 THEN 'two'
 ELSE 'other' END
-FROM table1";
+FROM table1");
+
+            CheckCase(connection, @"SELECT CASE
+WHEN string3 is not null THEN string1 || ' ' || string3
+ELSE string1
+END CASE
+FROM table1
+LEFT JOIN table3 ON table1.key1 = table3.key3");
+        }
+
+        void CheckCase(DbConnection connection, string commandText)
+        {
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = commandText;
             DbDataReader reader = command.ExecuteReader();
             Assert.IsNotNull(reader);
 

@@ -99,12 +99,6 @@ namespace MacroScope
                 throw new InvalidOperationException(
                     "MS engines do not have ROWNUM.");
             }
-
-            if (TailorUtil.IsSysdate(node))
-            {
-                throw new InvalidOperationException(
-                    "MS engines do not have SYSDATE.");
-            }
         }
 
         public override void PerformBefore(Expression node)

@@ -110,9 +110,70 @@ namespace MacroScope
                 throw new ArgumentNullException("node");
             }
 
-            base.PerformBefore(node);
+            Expression parent = Parent as Expression;
+            if (parent != null)
+            {
+                if (parent.Left == node)
+                {
+                    parent.Left = MakeSwitch(node);
+                }
+                else if (parent.Right == node)
+                {
+                    parent.Right = MakeSwitch(node);
+                }
+                else
+                {
+                    throw new InvalidOperationException(
+                        "No CASE child in expression parent.");
+                }
+            }
+            else
+            {
+                throw new InvalidOperationException("CASE not in expression.");
+            }
 
-            throw new InvalidOperationException("CASE not in expression.");
+            base.PerformBefore(node);
+        }
+
+        public override void PerformBefore(DbObject node)
+        {
+            if (node == null)
+            {
+                throw new ArgumentNullException("node");
+            }
+
+            if (!node.HasNext)
+            {
+                if (TailorUtil.IsSysdate(node.Identifier))
+                {
+                    Expression parent = Parent as Expression;
+                    if (parent != null)
+                    {
+                        if (parent.Left == node)
+                        {
+                            parent.Left = new FunctionCall(
+                                TailorUtil.GetCapitalized(TailorUtil.NOW));
+                        }
+                        else if (parent.Right == node)
+                        {
+                            parent.Right = new FunctionCall(
+                                TailorUtil.GetCapitalized(TailorUtil.NOW));
+                        }
+                        else
+                        {
+                            throw new InvalidOperationException(
+                                "No object child in expression parent.");
+                        }
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException(
+                            "Date function not in expression.");
+                    }
+                }
+            }
+
+            base.PerformBefore(node);
         }
 
         public override void Perform(DefaultValue node)
@@ -125,7 +186,7 @@ namespace MacroScope
             base.Perform(node);
 
             throw new InvalidOperationException(
-                "MS Access canot update to default value.");
+                "MS Access cannot update to default value.");
         }
 
         public override void PerformBefore(Expression node)
@@ -135,10 +196,6 @@ namespace MacroScope
                 throw new ArgumentNullException("node");
             }
 
-            ReplaceOperator(node);
-            ReplaceDate(node);
-            ReplaceSysdate(node);
-            ReplaceCase(node);
             ReplaceAlias(node);
 
             base.PerformBefore(node);
@@ -155,12 +212,28 @@ namespace MacroScope
 
             if (node == ExpressionOperator.Mod)
             {
-                throw new InvalidOperationException("Modulo operator not in expression.");
+                Expression parent = Parent as Expression;
+                if (parent != null)
+                {
+                    parent.Operator = ExpressionOperator.MAccessMod;
+                }
+                else
+                {
+                    throw new InvalidOperationException("Modulo operator not in expression.");
+                }
             }
             else if (node == ExpressionOperator.StrConcat)
             {
-                throw new InvalidOperationException(
-                    "String concatenation operator not in expression.");
+                Expression parent = Parent as Expression;
+                if (parent != null)
+                {
+                    parent.Operator = ExpressionOperator.Plus; // '&' also works
+                }
+                else
+                {
+                    throw new InvalidOperationException(
+                        "String concatenation operator not in expression.");
+                }
             }
         }
 
@@ -347,9 +420,31 @@ namespace MacroScope
             base.Perform(node);
 
             string key = Variable.Canonicalize(node.PrefixedName);
+            Debug.Assert(key != null);
             if (m_dates.ContainsKey(key))
             {
-                throw new InvalidOperationException("Variable not in expression.");
+                LiteralDateTime literalDateTime = new LiteralDateTime(m_dates[key]);
+                Expression parent = Parent as Expression;
+                if (parent != null)
+                {
+                    if (parent.Left == node)
+                    {
+                        parent.Left = literalDateTime;
+                    }
+                    else if (parent.Right == node)
+                    {
+                        parent.Right = literalDateTime;
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException(
+                            "No variable child in expression parent.");
+                    }
+                }
+                else
+                {
+                    throw new InvalidOperationException("Variable not in expression.");
+                }
             }
         }
 
@@ -501,63 +596,6 @@ namespace MacroScope
             return top;
         }
 
-        void ReplaceOperator(Expression node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            if (node.Operator == ExpressionOperator.Mod)
-            {
-                node.Operator = ExpressionOperator.MAccessMod;
-            }
-            else if (node.Operator == ExpressionOperator.StrConcat)
-            {
-                node.Operator = ExpressionOperator.Plus; // '&' also works
-            }
-        }
-
-        void ReplaceDate(Expression node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            LiteralDateTime left = CondGetDate(node.Left);
-            if (left != null)
-            {
-                node.Left = left;
-            }
-
-            LiteralDateTime right = CondGetDate(node.Right);
-            if (right != null)
-            {
-                node.Right = right;
-            }
-        }
-
-        static void ReplaceSysdate(Expression node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            if (TailorUtil.IsSysdateTerm(node.Left))
-            {
-                node.Left = new FunctionCall(
-                    TailorUtil.GetCapitalized(TailorUtil.NOW));
-            }
-
-            if (TailorUtil.IsSysdateTerm(node.Right))
-            {
-                node.Right = new FunctionCall(
-                    TailorUtil.GetCapitalized(TailorUtil.NOW));
-            }
-        }
-
         void ReplaceAlias(Expression node)
         {
             if (node == null)
@@ -578,32 +616,11 @@ namespace MacroScope
             }
         }
 
-        void ReplaceCase(Expression node)
+        SwitchFunction MakeSwitch(CaseExpression caseExpr)
         {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            SwitchFunction left = CondGetSwitch(node.Left);
-            if (left != null)
-            {
-                node.Left = left;
-            }
-
-            SwitchFunction right = CondGetSwitch(node.Right);
-            if (right != null)
-            {
-                node.Right = right;
-            }
-        }
-
-        SwitchFunction CondGetSwitch(INode arg)
-        {
-            CaseExpression caseExpr = arg as CaseExpression;
             if (caseExpr == null)
             {
-                return null;
+                throw new ArgumentNullException("caseExpr");
             }
 
             IExpression left = caseExpr.Case;
@@ -615,7 +632,7 @@ namespace MacroScope
                 throw new InvalidOperationException("CASE has no alternatives.");
             }
 
-            caseExpr.Alternatives = null;
+            // branch expressions will be tailored through caseExpr.Alternatives
 
             if (left != null)
             {
@@ -639,7 +656,7 @@ namespace MacroScope
             IExpression elseExpr = caseExpr.Else;
             if (elseExpr != null)
             {
-                caseExpr.Else = null;
+                // elseExpr will be tailored through caseExpr.Else
 
                 CaseAlternative last = new CaseAlternative(
                     new Expression(
@@ -675,24 +692,6 @@ namespace MacroScope
 
             AliasedItem orig = m_selectItemAliases[key];
             return orig.Item.Clone();
-        }
-
-        LiteralDateTime CondGetDate(INode arg)
-        {
-            Variable var = arg as Variable;
-            if (var == null)
-            {
-                return null;
-            }
-
-            string key = Variable.Canonicalize(var.PrefixedName);
-            Debug.Assert(key != null);
-            if (!m_dates.ContainsKey(key))
-            {
-                return null;
-            }
-
-            return new LiteralDateTime(m_dates[key]);
         }
 
         static void ChopCrossJoins(AliasedItem node)
