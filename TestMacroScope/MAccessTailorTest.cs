@@ -143,6 +143,9 @@ FROM address CROSS JOIN building CROSS JOIN settlement CROSS JOIN village",
         {
             CheckSelect("select a.* from a where RowNum<6",
                 "SELECT TOP 5 a.*\r\nFROM a");
+            CheckSelect("select a.* from a where 6 > RowNum",
+                "SELECT TOP 5 a.*\r\nFROM a");
+
             CheckSelect("select * from a where (id>=100) and (id<200) and (10>=RowNum)",
                 "SELECT TOP 10 *\r\nFROM a\r\nWHERE (id >= 100) AND (id < 200)");
         }

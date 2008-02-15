@@ -12,10 +12,6 @@ namespace MacroScope
     {
         #region Fields
 
-        private readonly Dictionary<IExpression, QueryExpression> m_backref;
-
-        private IExpression m_currentWhere;
-
         private Namer m_namer;
 
         private readonly ExpressionOperator m_modOp;
@@ -33,8 +29,6 @@ namespace MacroScope
                 throw new ArgumentNullException("modOp");
             }
 
-            m_backref = new Dictionary<IExpression, QueryExpression>();
-            m_currentWhere = null;
             m_modOp = modOp;
             m_expressionStack = new List<Expression>();
         }
@@ -96,8 +90,64 @@ namespace MacroScope
 
             if (IsRownum(node))
             {
-                throw new InvalidOperationException(
-                    "MS engines do not have ROWNUM.");
+                int limit = 0;
+
+                QueryExpression query = GetAncestor<QueryExpression>(null, null);
+                if (query != null)
+                {
+                    Expression relational = GetExpressionAncestor(null, query);
+                    if (relational != null)
+                    {
+                        limit = GetRownumExpressionLimit(relational);
+                        if (limit > 0)
+                        {
+                            bool matched = false;
+
+                            Expression logical = GetExpressionAncestor(relational, query);
+                            if (logical == null)
+                            {
+                                if (query.Where == relational)
+                                {
+                                    query.Where = null;
+                                    matched = true;
+                                }
+                            }
+                            else
+                            {
+                                if (logical.Operator == ExpressionOperator.And)
+                                {
+                                    if (relational == logical.Left)
+                                    {
+                                        logical.Operator = null;
+                                        logical.Left = null;
+                                        matched = true;
+                                    }
+                                    else if (relational == logical.Right)
+                                    {
+                                        logical.Operator = null;
+                                        logical.Right = null;
+                                        matched = true;
+                                    }
+                                }
+                            }
+
+                            if (matched)
+                            {
+                                SetTop(query, limit);
+                            }
+                            else
+                            {
+                                limit = -1;
+                            }
+                        }
+                    }
+                }
+
+                if (limit <= 0)
+                {
+                    throw new InvalidOperationException(
+                        "MS engines do not have ROWNUM.");
+                }
             }
         }
 
@@ -112,28 +162,6 @@ namespace MacroScope
 
             ReplaceSubstring(node);
             ReplaceExtract(node);
-
-            if ((m_currentWhere != null) &&
-                (node.Operator == ExpressionOperator.And))
-            {
-                int limit = GetRownumExpressionLimit(node.Left);
-                if (limit > 0)
-                {
-                    node.Operator = null;
-                    node.Left = null;
-                    LimitTop(limit);
-                }
-                else
-                {
-                    limit = GetRownumExpressionLimit(node.Right);
-                    if (limit > 0)
-                    {
-                        node.Operator = null;
-                        node.Right = null;
-                        LimitTop(limit);
-                    }
-                }
-            }
 
             Expression leftMod = GetModCall(node.Left);
             if (leftMod != null)
@@ -171,26 +199,7 @@ namespace MacroScope
 
             base.PerformBefore(node);
 
-            IExpression where = node.Where;
-            if (where != null)
-            {
-                if (m_backref.ContainsKey(where))
-                {
-                    throw new InvalidOperationException("Tailor can't be re-used.");
-                }
-
-                int limit = GetRownumExpressionLimit(where);
-                if (limit > 0)
-                {
-                    SetTop(node, limit);
-                    node.Where = null;
-                }
-                else
-                {
-                    m_backref.Add(where, node);
-                }
-            }
-            else
+            if (node.Where == null)
             {
                 AliasedItem from = node.From;
                 if ((from != null) && (from.Alias == null) && !from.HasNext)
@@ -217,9 +226,6 @@ namespace MacroScope
                     }
                 }
             }
-
-            m_currentWhere = null;  // even if node does have WHERE,
-                                    // the traversal isn't in it yet
         }
 
         public override void PerformBeforeBinaryOp(Expression node)
@@ -244,25 +250,10 @@ namespace MacroScope
 
             base.PerformOnWhere(node);
 
-            m_currentWhere = node.Where;
-
             // this isn't called in all the places where it should be,
             // but apart from being inefficient, extra nodes in
             // the stack probably shouldn't cause any trouble...
             m_expressionStack.Clear();
-        }
-
-        public override void PerformOnGroupBy(QueryExpression node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            base.PerformOnGroupBy(node);
-
-            m_currentWhere = null;  // if there are constructions like
-                                    // ORDER BY rownum, we're going to fail on them
         }
 
         public override void Perform(Variable node)
@@ -289,28 +280,18 @@ namespace MacroScope
         protected abstract FunctionCall ReplaceExtractFunction(
             ExtractFunction extractFunction);
 
-        void LimitTop(int limit)
+        static void SetTop(QueryExpression query, int limit)
         {
+            if (query == null)
+            {
+                throw new ArgumentNullException("query");
+            }
+
             if (limit <= 0)
             {
                 throw new ArgumentOutOfRangeException("limit");
             }
 
-            Debug.Assert(m_currentWhere != null);
-
-            if (!m_backref.ContainsKey(m_currentWhere))
-            {
-                throw new InvalidOperationException("WHERE without SELECT.");
-            }
-
-            QueryExpression query = m_backref[m_currentWhere];
-            Debug.Assert(query != null);
-
-            SetTop(query, limit);
-        }
-
-        static void SetTop(QueryExpression query, int limit)
-        {
             if (query.Top == null)
             {
                 query.Top = limit;
@@ -539,6 +520,17 @@ namespace MacroScope
             return newValue;
         }
 
+        Expression GetExpressionAncestor(Expression child, INode parent)
+        {
+            Expression expr = GetAncestor<Expression>(child, parent);
+            while ((expr != null) && (expr.Operator == null))
+            {
+                expr = GetAncestor<Expression>(expr, parent);
+            }
+
+            return expr;
+        }
+
         Expression GetModCall(INode arg)
         {
             FunctionCall functionCall = arg as FunctionCall;
@@ -586,20 +578,14 @@ namespace MacroScope
             return arg as Interval;
         }
 
-        static int GetRownumExpressionLimit(INode arg)
+        int GetRownumExpressionLimit(Expression expr)
         {
-            if (arg == null)
-            {
-                throw new InvalidOperationException("AND operator missing argument.");
-            }
-
-            Expression expr = arg as Expression;
             if (expr == null)
             {
-                return -1;
+                throw new ArgumentNullException("expr");
             }
 
-            decimal limit = -2;
+            decimal limit = -1;
             if (expr.Operator == ExpressionOperator.LessOrEqual)
             {
                 if (IsRownumTerm(expr.Left))

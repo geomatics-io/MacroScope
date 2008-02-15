@@ -12,7 +12,7 @@ namespace MacroScope
     {
         #region Fields
 
-        private readonly Stack<INode> m_ancestors;
+        private readonly List<INode> m_ancestors;
 
         #endregion
 
@@ -20,7 +20,7 @@ namespace MacroScope
 
         public TracingVisitor()
         {
-            m_ancestors = new Stack<INode>();
+            m_ancestors = new List<INode>();
         }
 
         #endregion
@@ -37,7 +37,7 @@ namespace MacroScope
                 INode parent = null;
                 if (m_ancestors.Count > 0)
                 {
-                    parent = m_ancestors.Peek();
+                    parent = m_ancestors[m_ancestors.Count - 1];
                     Debug.Assert(parent != null);
                 }
 
@@ -52,7 +52,7 @@ namespace MacroScope
                 throw new ArgumentNullException("parent");
             }
 
-            m_ancestors.Push(parent);
+            m_ancestors.Add(parent);
         }
 
         public INode PopParent()
@@ -62,9 +62,42 @@ namespace MacroScope
                 throw new InvalidOperationException("No parent to pop.");
             }
 
-            INode parent = m_ancestors.Pop();
+            int last = m_ancestors.Count - 1;
+            INode parent = m_ancestors[last];
             Debug.Assert(parent != null);
+            m_ancestors.RemoveAt(last);
             return parent;
+        }
+
+        public Node GetAncestor<Node>(INode child, INode parent) where Node : class
+        {
+            bool foundStart = child == null;
+            for (int i = m_ancestors.Count - 1; i >= 0; --i)
+            {
+                Debug.Assert(m_ancestors[i] != null);
+                if (m_ancestors[i] == parent)
+                {
+                    return null;
+                }
+
+                if (foundStart)
+                {
+                    Node n = m_ancestors[i] as Node;
+                    if (n != null)
+                    {
+                        return n;
+                    }
+                }
+                else
+                {
+                    if (m_ancestors[i] == child)
+                    {
+                        foundStart = true;
+                    }
+                }
+            }
+
+            return null;
         }
 
         #endregion

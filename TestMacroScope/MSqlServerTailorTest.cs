@@ -88,6 +88,8 @@ VALUES(@libname, 2006-12-31T23:59:58)", expected.ToString());
         {
             CheckSelect("select a.* from a where RowNum<6",
                 "SELECT TOP 5 a.*\r\nFROM a");
+            CheckSelect("select a.* from a where 6 > RowNum",
+                "SELECT TOP 5 a.*\r\nFROM a");
 
             StringBuilder expected = new StringBuilder();
             expected.Append("SELECT TOP 10 *\r\n");
@@ -101,6 +103,12 @@ where (id >= 100) and (id < 200) and (RowNum<=10) order by id",
             expected.Append("SELECT TOP 10 id\r\n");
             expected.Append("FROM a\r\nWHERE id <> ALL ( SELECT id\r\nFROM b )");
             CheckSelect(@"select id from a where (id <> all(select id from b))
+and (ROWNUM <= 10)", expected.ToString());
+
+            expected = new StringBuilder();
+            expected.Append("SELECT TOP 10 id\r\n");
+            expected.Append("FROM a\r\nWHERE id <> ALL ( SELECT TOP 100 id\r\nFROM b )");
+            CheckSelect(@"select id from a where (id <> all(select id from b where ROWNUM <= 100))
 and (ROWNUM <= 10)", expected.ToString());
         }
 
