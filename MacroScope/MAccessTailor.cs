@@ -171,6 +171,28 @@ namespace MacroScope
                             "Date function not in expression.");
                     }
                 }
+
+                if (!m_inSelectItems && (m_selectItemAliases != null))
+                {
+                    string key = Identifier.Canonicalize(node.Identifier.ID);
+                    if (m_selectItemAliases.ContainsKey(key))
+                    {
+                        AliasedItem orig = m_selectItemAliases[key];
+
+                        Expression parent = Parent as Expression;
+                        if (parent != null)
+                        {
+                            if (parent.Left == node)
+                            {
+                                parent.Left = orig.Item.Clone();
+                            }
+                            else if (parent.Right == node)
+                            {
+                                parent.Right = orig.Item.Clone();
+                            }
+                        }
+                    }
+                }
             }
 
             base.PerformBefore(node);
@@ -187,18 +209,6 @@ namespace MacroScope
 
             throw new InvalidOperationException(
                 "MS Access cannot update to default value.");
-        }
-
-        public override void PerformBefore(Expression node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            ReplaceAlias(node);
-
-            base.PerformBefore(node);
         }
 
         public override void Perform(ExpressionOperator node)
@@ -261,16 +271,6 @@ namespace MacroScope
             }
 
             base.Perform(node);
-
-            if (!m_inSelectItems &&
-                (m_selectItemAliases != null))
-            {
-                string key = Identifier.Canonicalize(node.ID);
-                if (m_selectItemAliases.ContainsKey(key))
-                {
-                    throw new InvalidOperationException("Identifier not in DbObject.");
-                }
-            }
 
             node.NormalizeQuotes('`');
         }
@@ -596,26 +596,6 @@ namespace MacroScope
             return top;
         }
 
-        void ReplaceAlias(Expression node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            INode left = CondGetAliasDef(node.Left);
-            if (left != null)
-            {
-                node.Left = left;
-            }
-
-            INode right = CondGetAliasDef(node.Right);
-            if (right != null)
-            {
-                node.Right = right;
-            }
-        }
-
         SwitchFunction MakeSwitch(CaseExpression caseExpr)
         {
             if (caseExpr == null)
@@ -668,30 +648,6 @@ namespace MacroScope
             }
 
             return switchFunc;
-        }
-
-        INode CondGetAliasDef(INode arg)
-        {
-            if (m_inSelectItems ||
-                (m_selectItemAliases == null))
-            {
-                return null;
-            }
-
-            DbObject dbObject = arg as DbObject;
-            if ((dbObject == null) || dbObject.HasNext) // segmented aliases not supported
-            {
-                return null;
-            }
-
-            string key = Identifier.Canonicalize(dbObject.Identifier.ID);
-            if (!m_selectItemAliases.ContainsKey(key))
-            {
-                return null;
-            }
-
-            AliasedItem orig = m_selectItemAliases[key];
-            return orig.Item.Clone();
         }
 
         static void ChopCrossJoins(AliasedItem node)

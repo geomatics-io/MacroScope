@@ -100,23 +100,6 @@ namespace MacroScope
 
         #region Utility functions
 
-        public static bool IsSysdateTerm(INode arg)
-        {
-            if (arg == null)
-            {
-                return false;
-            }
-
-            arg = GetTerm(arg);
-            DbObject dbObject = arg as DbObject;
-            if ((dbObject == null) || dbObject.HasNext)
-            {
-                return false;
-            }
-
-            return IsSysdate(dbObject.Identifier);
-        }
-
         public static FunctionCall GetSubstringTerm(INode arg)
         {
             FunctionCall functionCall = CondGetFunctionCall(arg);

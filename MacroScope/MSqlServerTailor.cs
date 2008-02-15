@@ -18,16 +18,38 @@ namespace MacroScope
 
         #region IVisitor Members
 
-        public override void PerformBefore(Expression node)
+        public override void PerformBefore(DbObject node)
         {
             if (node == null)
             {
                 throw new ArgumentNullException("node");
             }
 
-            ReplaceOperator(node);
-            ReplaceDate(node);
-            ReplaceSysdate(node);
+            if (!node.HasNext && TailorUtil.IsSysdate(node.Identifier))
+            {
+                Expression parent = Parent as Expression;
+                if (parent != null)
+                {
+                    if (parent.Left == node)
+                    {
+                        parent.Left = new FunctionCall(TailorUtil.GETDATE.ToUpperInvariant());
+                    }
+                    else if (parent.Right == node)
+                    {
+                        parent.Right = new FunctionCall(TailorUtil.GETDATE.ToUpperInvariant());
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException(
+                            "No object child in expression parent.");
+                    }
+                }
+                else
+                {
+                    throw new InvalidOperationException(
+                        "Date function not in expression.");
+                }
+            }
 
             base.PerformBefore(node);
         }
@@ -43,12 +65,28 @@ namespace MacroScope
 
             if (node == ExpressionOperator.MAccessMod)
             {
-                throw new InvalidOperationException("Modulo operator not in expression.");
+                Expression parent = Parent as Expression;
+                if (parent != null)
+                {
+                    parent.Operator = ExpressionOperator.Mod;
+                }
+                else
+                {
+                    throw new InvalidOperationException("Modulo operator not in expression.");
+                }
             }
             else if (node == ExpressionOperator.StrConcat)
             {
-                throw new InvalidOperationException(
-                    "String concatenation operator not in expression.");
+                Expression parent = Parent as Expression;
+                if (parent != null)
+                {
+                    parent.Operator = ExpressionOperator.Plus;
+                }
+                else
+                {
+                    throw new InvalidOperationException(
+                        "String concatenation operator not in expression.");
+                }
             }
         }
 
@@ -89,9 +127,29 @@ namespace MacroScope
 
             base.Perform(node);
 
-            // SQL Server 2005 does, but we want to be more general than that
-            throw new InvalidOperationException(
-                "MS SQL Server does not necessarily have datetime literals.");
+            Expression parent = Parent as Expression;
+            if (parent != null)
+            {
+                if (parent.Left == node)
+                {
+                    parent.Left = MakeConvert(node);
+                }
+                else if (parent.Right == node)
+                {
+                    parent.Right = MakeConvert(node);
+                }
+                else
+                {
+                    throw new InvalidOperationException(
+                        "No datetime literal child in expression parent.");
+                }
+            }
+            else
+            {
+                // SQL Server 2005 does, but we want to be more general than that
+                throw new InvalidOperationException(
+                    "MS SQL Server does not necessarily have datetime literals.");
+            }
         }
 
         public override void PerformBefore(SwitchFunction node)
@@ -213,61 +271,6 @@ namespace MacroScope
             functionCall.ExpressionArguments = new ExpressionItem(extractFunction.FieldSpec);
             functionCall.ExpressionArguments.Add(new ExpressionItem(extractFunction.Source));
             return functionCall;
-        }
-
-        void ReplaceOperator(Expression node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            if (node.Operator == ExpressionOperator.MAccessMod)
-            {
-                node.Operator = ExpressionOperator.Mod;
-            }
-            else if (node.Operator == ExpressionOperator.StrConcat)
-            {
-                node.Operator = ExpressionOperator.Plus;
-            }
-        }
-
-        static void ReplaceDate(Expression node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            LiteralDateTime left = node.Left as LiteralDateTime;
-            if (left != null)
-            {
-                node.Left = MakeConvert(left);
-            }
-
-            LiteralDateTime right = node.Right as LiteralDateTime;
-            if (right != null)
-            {
-                node.Right = MakeConvert(right);
-            }
-        }
-
-        static void ReplaceSysdate(Expression node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            if (TailorUtil.IsSysdateTerm(node.Left))
-            {
-                node.Left = new FunctionCall(TailorUtil.GETDATE.ToUpperInvariant());
-            }
-
-            if (TailorUtil.IsSysdateTerm(node.Right))
-            {
-                node.Right = new FunctionCall(TailorUtil.GETDATE.ToUpperInvariant());
-            }
         }
 
         static Expression MakeNotNullCheck(ExpressionItem list)
