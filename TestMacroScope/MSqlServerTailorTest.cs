@@ -54,6 +54,22 @@ WHERE JOB_LASTTIME + INTERVAL '3' SECOND * JOB_INTERVAL < GETDATE()",
             CheckSelect(@"select interval '15' minute +
 interval '30' minute +
 2007-07-18T16:30:00", expected.ToString());
+
+            expected = new StringBuilder();
+            expected.Append("SELECT DATEADD(MINUTE, (15 + 30) + 60, ");
+            expected.Append("CONVERT(datetime, '2007-07-18 16:30:00', 120))");
+            CheckSelect(@"select interval '15' minute +
+interval '30' minute +
+interval '60' minute +
+2007-07-18T16:30:00", expected.ToString());
+
+            expected = new StringBuilder();
+            expected.Append("SELECT DATEADD(MINUTE, 30, ");
+            expected.Append("DATEADD(MINUTE, 15, ");
+            expected.Append("CONVERT(datetime, '2007-07-18 16:30:00', 120)))");
+            CheckSelect(@"select interval '15' minute +
+2007-07-18T16:30:00 +
+interval '30' minute", expected.ToString());
         }
 
         [Test]
@@ -214,6 +230,12 @@ FROM address", expected.ToString());
 WHERE ?<=address_id and address_id<?", expected.ToString());
         }
 
+        [Test]
+        public void TestTailorError()
+        {
+            CheckTailorError("select a.* from a where RowNum < n");
+        }
+
         void CheckSelect(string idempotent)
         {
             CheckSelect(idempotent, idempotent);
@@ -258,6 +280,28 @@ WHERE ?<=address_id and address_id<?", expected.ToString());
             MSqlServerTailor tailor = new MSqlServerTailor();
             statement.Traverse(tailor);
             Assert.AreEqual(to, TestUtil.Stringify(statement));
+        }
+
+        void CheckTailorError(string tooHard)
+        {
+            if (tooHard == null)
+            {
+                throw new ArgumentNullException("tooHard");
+            }
+
+            IStatement statement = Factory.CreateStatement(tooHard);
+            Assert.IsNotNull(statement);
+
+            try
+            {
+                MSqlServerTailor tailor = new MSqlServerTailor();
+                statement.Traverse(tailor);
+                Assert.Fail();
+            }
+            catch (InvalidOperationException exception)
+            {
+                Assert.IsNotNull(exception);
+            }
         }
     }
 }

@@ -69,6 +69,27 @@ namespace MacroScope
             return parent;
         }
 
+        public INode GetParent(INode child)
+        {
+            if (child == null)
+            {
+                return Parent;
+            }
+
+            for (int i = m_ancestors.Count - 1; i > 0; --i)
+            {
+                Debug.Assert(m_ancestors[i] != null);
+                if (m_ancestors[i] == child)
+                {
+                    INode parent = m_ancestors[i - 1];
+                    Debug.Assert(parent != null);
+                    return parent;
+                }
+            }
+
+            return null;
+        }
+
         public Node GetAncestor<Node>(INode child, INode parent) where Node : class
         {
             bool foundStart = child == null;

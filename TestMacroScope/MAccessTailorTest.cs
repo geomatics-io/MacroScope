@@ -45,13 +45,21 @@ WHERE JOB_LASTTIME + JOB_INTERVAL * INTERVAL '2' SECOND < GETDATE()",
 WHERE JOB_LASTTIME + INTERVAL '3' SECOND * JOB_INTERVAL < GETDATE()",
                 expected.ToString());
 
-            expected = new StringBuilder();
             CheckSelect("select interval '45' minute + 2007-07-18T16:30:00",
                 "SELECT DATEADD(\"n\", 45, #2007-07-18 16:30:00#)");
             CheckSelect(@"select interval '15' minute +
 interval '30' minute +
 2007-07-18T16:30:00",
                 "SELECT DATEADD(\"n\", 15 + 30, #2007-07-18 16:30:00#)");
+            CheckSelect(@"select interval '15' minute +
+interval '30' minute +
+interval '60' minute +
+2007-07-18T16:30:00",
+                "SELECT DATEADD(\"n\", (15 + 30) + 60, #2007-07-18 16:30:00#)");
+            CheckSelect(@"select interval '15' minute +
+2007-07-18T16:30:00 +
+interval '30' minute",
+                "SELECT DATEADD(\"n\", 30, DATEADD(\"n\", 15, #2007-07-18 16:30:00#))");
         }
 
         [Test]

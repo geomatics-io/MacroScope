@@ -16,8 +16,6 @@ namespace MacroScope
 
         private readonly ExpressionOperator m_modOp;
 
-        private readonly List<Expression> m_expressionStack;
-
         #endregion
 
         #region Constructor
@@ -30,7 +28,6 @@ namespace MacroScope
             }
 
             m_modOp = modOp;
-            m_expressionStack = new List<Expression>();
         }
 
         #endregion
@@ -64,19 +61,55 @@ namespace MacroScope
 
         #region IVisitor Members
 
-        public override void PerformAfter(ExpressionItem node)
+        public override void PerformBefore(Expression node)
         {
             if (node == null)
             {
                 throw new ArgumentNullException("node");
             }
 
-            base.PerformAfter(node);
+            base.PerformBefore(node);
 
-            // this isn't called in all the places where it should be,
-            // but apart from being inefficient, extra nodes in
-            // the stack probably shouldn't cause any trouble...
-            m_expressionStack.Clear();
+            ReplaceSubstring(node);
+            ReplaceExtract(node);
+
+            Expression leftMod = GetModCall(node.Left);
+            if (leftMod != null)
+            {
+                node.Left = leftMod;
+            }
+
+            Expression rightMod = GetModCall(node.Right);
+            if (rightMod != null)
+            {
+                node.Right = rightMod;
+            }
+
+            Namer.PerformBefore(node);
+        }
+
+        public override void PerformBefore(ExtractFunction node)
+        {
+            if (node == null)
+            {
+                throw new ArgumentNullException("node");
+            }
+
+            base.PerformBefore(node);
+
+            throw new InvalidOperationException("EXTRACT not in expression.");
+        }
+
+        public override void PerformBefore(Interval node)
+        {
+            if (node == null)
+            {
+                throw new ArgumentNullException("node");
+            }
+
+            ReplaceIntervals(null);
+
+            base.PerformBefore(node);
         }
 
         public override void Perform(Identifier node)
@@ -151,45 +184,6 @@ namespace MacroScope
             }
         }
 
-        public override void PerformBefore(Expression node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            base.PerformBefore(node);
-
-            ReplaceSubstring(node);
-            ReplaceExtract(node);
-
-            Expression leftMod = GetModCall(node.Left);
-            if (leftMod != null)
-            {
-                node.Left = leftMod;
-            }
-
-            Expression rightMod = GetModCall(node.Right);
-            if (rightMod != null)
-            {
-                node.Right = rightMod;
-            }
-
-            Namer.PerformBefore(node);            
-        }
-
-        public override void PerformBefore(ExtractFunction node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            base.PerformBefore(node);
-
-            throw new InvalidOperationException("EXTRACT not in expression.");
-        }
-
         public override void PerformBefore(QueryExpression node)
         {
             if (node == null)
@@ -226,34 +220,6 @@ namespace MacroScope
                     }
                 }
             }
-        }
-
-        public override void PerformBeforeBinaryOp(Expression node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            base.PerformBeforeBinaryOp(node);
-
-            m_expressionStack.Add(node);
-            ReplaceIntervals(m_expressionStack.Count - 1);
-        }
-
-        public override void PerformOnWhere(QueryExpression node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            base.PerformOnWhere(node);
-
-            // this isn't called in all the places where it should be,
-            // but apart from being inefficient, extra nodes in
-            // the stack probably shouldn't cause any trouble...
-            m_expressionStack.Clear();
         }
 
         public override void Perform(Variable node)
@@ -342,14 +308,13 @@ namespace MacroScope
             }
         }
 
-        void ReplaceIntervals(int last)
+        void ReplaceIntervals(Expression done)
         {
-            if (last < 0)
+            Expression node = GetExpressionParent(done);
+            if (node == null)
             {
-                throw new ArgumentOutOfRangeException("last");
+                return;
             }
-
-            Expression node = m_expressionStack[last];
 
             Interval leftInterval = GetInterval(node.Left);
             Interval rightInterval = GetInterval(node.Right);
@@ -358,26 +323,28 @@ namespace MacroScope
             {
                 if (rightInterval != null)
                 {
-                    ReplaceBothIntervals(last, node, leftInterval, rightInterval);
+                    ReplaceBothIntervals(node, leftInterval, rightInterval);
                 }
                 else
                 {
-                    ReplaceLeftInterval(last, node, leftInterval);
+                    ReplaceLeftInterval(node, leftInterval);
                 }
             }
             else if (rightInterval != null)
             {
-                ReplaceRightInterval(last, node, rightInterval);
+                ReplaceRightInterval(node, rightInterval);
             }
         }
 
-        void ReplaceBothIntervals(int last, Expression node, Interval leftInterval,
+        void ReplaceBothIntervals(Expression node, Interval leftInterval,
             Interval rightInterval)
         {
             if (leftInterval.DateTimeUnit != rightInterval.DateTimeUnit)
             {
                 throw new InvalidOperationException(
                     "Can't combine intervals with different units.");
+                // well, technically we could (at least for some units), but nobody
+                // needed that yet
             }
 
             if ((node.Operator != ExpressionOperator.Plus) &&
@@ -394,13 +361,10 @@ namespace MacroScope
             node.Operator = null;
             node.Right = null;
 
-            if (last > 0)
-            {
-                ReplaceIntervals(last - 1);
-            }
+            ReplaceIntervals(node);
         }
 
-        void ReplaceLeftInterval(int last, Expression node, Interval leftInterval)
+        void ReplaceLeftInterval(Expression node, Interval leftInterval)
         {
             if (node.Operator == ExpressionOperator.Plus)
             {
@@ -425,10 +389,7 @@ namespace MacroScope
                 node.Operator = null;
                 node.Left = null;
 
-                if (last > 0)
-                {
-                    ReplaceIntervals(last - 1);
-                }
+                ReplaceIntervals(node);
             }
             else
             {
@@ -437,7 +398,7 @@ namespace MacroScope
             }
         }
 
-        void ReplaceRightInterval(int last, Expression node, Interval rightInterval)
+        void ReplaceRightInterval(Expression node, Interval rightInterval)
         {
             if (node.Operator == ExpressionOperator.Plus)
             {
@@ -474,10 +435,7 @@ namespace MacroScope
                 node.Operator = null;
                 node.Left = null;
 
-                if (last > 0)
-                {
-                    ReplaceIntervals(last - 1);
-                }
+                ReplaceIntervals(node);
             }
             else
             {
@@ -518,6 +476,17 @@ namespace MacroScope
             }
 
             return newValue;
+        }
+
+        Expression GetExpressionParent(Expression child)
+        {
+            Expression expr = GetParent(child) as Expression;
+            while ((expr != null) && (expr.Operator == null))
+            {
+                expr = GetParent(expr) as Expression;
+            }
+
+            return expr;
         }
 
         Expression GetExpressionAncestor(Expression child, INode parent)
