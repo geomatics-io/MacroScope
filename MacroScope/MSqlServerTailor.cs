@@ -88,8 +88,7 @@ namespace MacroScope
                 throw new ArgumentNullException("node");
             }
 
-            string name = node.Name.ToLowerInvariant();
-            if (name.Equals(TailorUtil.NOW))
+            if (TailorUtil.NOW.Equals(node.Name.ToLowerInvariant()))
             {
                 node.Name = TailorUtil.GETDATE.ToUpperInvariant();
             }
@@ -134,19 +133,6 @@ namespace MacroScope
             base.Perform(node);
 
             ReplaceTerm(node, MakeConvert(node));
-        }
-
-        public override void PerformBefore(SwitchFunction node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            base.PerformBefore(node);
-
-            throw new InvalidOperationException(
-                "Switch not in expression.");
         }
 
         #endregion
