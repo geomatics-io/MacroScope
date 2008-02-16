@@ -70,19 +70,22 @@ namespace MacroScope
 
             base.PerformBefore(node);
 
-            Expression leftMod = GetModCall(node.Left);
-            if (leftMod != null)
-            {
-                node.Left = leftMod;
-            }
-
-            Expression rightMod = GetModCall(node.Right);
-            if (rightMod != null)
-            {
-                node.Right = rightMod;
-            }
-
             Namer.PerformBefore(node);
+        }
+
+        public override void PerformAfter(FunctionCall node)
+        {
+            if (node == null)
+            {
+                throw new ArgumentNullException("node");
+            }
+
+            base.PerformAfter(node);
+
+            if (TailorUtil.MOD.Equals(node.Name.ToLowerInvariant()))
+            {
+                ReplaceTerm(node, MakeModCall(node));
+            }
         }
 
         public override void PerformBefore(Interval node)
@@ -225,6 +228,40 @@ namespace MacroScope
 
         protected abstract FunctionCall GetDateaddCall(DateTimeUnit unit,
             INode number, INode date);
+
+        protected void ReplaceTerm(INode oldChild, INode newChild)
+        {
+            if (oldChild == null)
+            {
+                throw new ArgumentNullException("oldChild");
+            }
+
+            if (newChild == null)
+            {
+                throw new ArgumentNullException("newChild");
+            }
+
+            Expression parent = Parent as Expression;
+            if (parent != null)
+            {
+                if (parent.Left == oldChild)
+                {
+                    parent.Left = newChild;
+                }
+                else if (parent.Right == oldChild)
+                {
+                    parent.Right = newChild;
+                }
+                else
+                {
+                    throw new InvalidOperationException("No child found in expression parent.");
+                }
+            }
+            else
+            {
+                throw new InvalidOperationException("Term not in expression.");
+            }
+        }
 
         static void SetTop(QueryExpression query, int limit)
         {
@@ -419,7 +456,7 @@ namespace MacroScope
         }
 
         /// <summary>
-        /// Finds an non-trivial (i.e. having an operator) expression.
+        /// Finds a non-trivial (i.e. having an operator) expression.
         /// </summary>
         /// <param name="child">
         /// If not null, the found expression is the first
@@ -452,17 +489,11 @@ namespace MacroScope
             return expr;
         }
 
-        Expression GetModCall(INode arg)
+        Expression MakeModCall(FunctionCall functionCall)
         {
-            FunctionCall functionCall = arg as FunctionCall;
             if (functionCall == null)
             {
-                return null;
-            }
-
-            if (!TailorUtil.MOD.Equals(functionCall.Name.ToLowerInvariant()))
-            {
-                return null;
+                throw new ArgumentNullException("functionCall");
             }
 
             ExpressionItem head = functionCall.ExpressionArguments;

@@ -110,27 +110,7 @@ namespace MacroScope
                 throw new ArgumentNullException("node");
             }
 
-            Expression parent = Parent as Expression;
-            if (parent != null)
-            {
-                if (parent.Left == node)
-                {
-                    parent.Left = MakeSwitch(node);
-                }
-                else if (parent.Right == node)
-                {
-                    parent.Right = MakeSwitch(node);
-                }
-                else
-                {
-                    throw new InvalidOperationException(
-                        "No CASE child in expression parent.");
-                }
-            }
-            else
-            {
-                throw new InvalidOperationException("CASE not in expression.");
-            }
+            ReplaceTerm(node, MakeSwitch(node));
 
             base.PerformBefore(node);
         }
@@ -146,30 +126,8 @@ namespace MacroScope
             {
                 if (TailorUtil.IsSysdate(node.Identifier))
                 {
-                    Expression parent = Parent as Expression;
-                    if (parent != null)
-                    {
-                        if (parent.Left == node)
-                        {
-                            parent.Left = new FunctionCall(
-                                TailorUtil.GetCapitalized(TailorUtil.NOW));
-                        }
-                        else if (parent.Right == node)
-                        {
-                            parent.Right = new FunctionCall(
-                                TailorUtil.GetCapitalized(TailorUtil.NOW));
-                        }
-                        else
-                        {
-                            throw new InvalidOperationException(
-                                "No object child in expression parent.");
-                        }
-                    }
-                    else
-                    {
-                        throw new InvalidOperationException(
-                            "Date function not in expression.");
-                    }
+                    ReplaceTerm(node, new FunctionCall(
+                        TailorUtil.GetCapitalized(TailorUtil.NOW)));
                 }
 
                 if (!m_inSelectItems && (m_selectItemAliases != null))
@@ -178,19 +136,7 @@ namespace MacroScope
                     if (m_selectItemAliases.ContainsKey(key))
                     {
                         AliasedItem orig = m_selectItemAliases[key];
-
-                        Expression parent = Parent as Expression;
-                        if (parent != null)
-                        {
-                            if (parent.Left == node)
-                            {
-                                parent.Left = orig.Item.Clone();
-                            }
-                            else if (parent.Right == node)
-                            {
-                                parent.Right = orig.Item.Clone();
-                            }
-                        }
+                        ReplaceTerm(node, orig.Item.Clone());
                     }
                 }
             }
@@ -256,26 +202,7 @@ namespace MacroScope
 
             base.PerformAfter(node);
 
-            Expression parent = Parent as Expression;
-            if (parent != null)
-            {
-                if (parent.Left == node)
-                {
-                    parent.Left = MakeDateExtractor(node);
-                }
-                else if (parent.Right == node)
-                {
-                    parent.Right = MakeDateExtractor(node);
-                }
-                else
-                {
-                    throw new InvalidOperationException("No EXTRACT function child in expression parent.");
-                }
-            }
-            else
-            {
-                throw new InvalidOperationException("EXTRACT not in expression.");
-            }
+            ReplaceTerm(node, MakeDateExtractor(node));
         }
 
         public override void PerformBefore(FunctionCall node)
@@ -305,26 +232,7 @@ namespace MacroScope
 
             if (TailorUtil.SUBSTRING.Equals(node.Name.ToLowerInvariant()))
             {
-                Expression parent = Parent as Expression;
-                if (parent != null)
-                {
-                    if (parent.Left == node)
-                    {
-                        parent.Left = MakeSubstring(node);
-                    }
-                    else if (parent.Right == node)
-                    {
-                        parent.Right = MakeSubstring(node);
-                    }
-                    else
-                    {
-                        throw new InvalidOperationException("No function call child in expression parent.");
-                    }
-                }
-                else
-                {
-                    throw new InvalidOperationException("SUBSTRING not in expression.");
-                }
+                ReplaceTerm(node, MakeSubstring(node));
             }
         }
 
@@ -488,28 +396,7 @@ namespace MacroScope
             Debug.Assert(key != null);
             if (m_dates.ContainsKey(key))
             {
-                LiteralDateTime literalDateTime = new LiteralDateTime(m_dates[key]);
-                Expression parent = Parent as Expression;
-                if (parent != null)
-                {
-                    if (parent.Left == node)
-                    {
-                        parent.Left = literalDateTime;
-                    }
-                    else if (parent.Right == node)
-                    {
-                        parent.Right = literalDateTime;
-                    }
-                    else
-                    {
-                        throw new InvalidOperationException(
-                            "No variable child in expression parent.");
-                    }
-                }
-                else
-                {
-                    throw new InvalidOperationException("Variable not in expression.");
-                }
+                ReplaceTerm(node, new LiteralDateTime(m_dates[key]));
             }
         }
 

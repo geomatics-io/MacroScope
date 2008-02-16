@@ -27,28 +27,7 @@ namespace MacroScope
 
             if (!node.HasNext && TailorUtil.IsSysdate(node.Identifier))
             {
-                Expression parent = Parent as Expression;
-                if (parent != null)
-                {
-                    if (parent.Left == node)
-                    {
-                        parent.Left = new FunctionCall(TailorUtil.GETDATE.ToUpperInvariant());
-                    }
-                    else if (parent.Right == node)
-                    {
-                        parent.Right = new FunctionCall(TailorUtil.GETDATE.ToUpperInvariant());
-                    }
-                    else
-                    {
-                        throw new InvalidOperationException(
-                            "No object child in expression parent.");
-                    }
-                }
-                else
-                {
-                    throw new InvalidOperationException(
-                        "Date function not in expression.");
-                }
+                ReplaceTerm(node, new FunctionCall(TailorUtil.GETDATE.ToUpperInvariant()));
             }
 
             base.PerformBefore(node);
@@ -99,26 +78,7 @@ namespace MacroScope
 
             base.PerformAfter(node);
 
-            Expression parent = Parent as Expression;
-            if (parent != null)
-            {
-                if (parent.Left == node)
-                {
-                    parent.Left = MakeDateExtractor(node);
-                }
-                else if (parent.Right == node)
-                {
-                    parent.Right = MakeDateExtractor(node);
-                }
-                else
-                {
-                    throw new InvalidOperationException("No EXTRACT function child in expression parent.");
-                }
-            }
-            else
-            {
-                throw new InvalidOperationException("EXTRACT not in expression.");
-            }
+            ReplaceTerm(node, MakeDateExtractor(node));
         }
 
         public override void PerformBefore(FunctionCall node)
@@ -148,26 +108,7 @@ namespace MacroScope
 
             if (TailorUtil.SUBSTRING.Equals(node.Name.ToLowerInvariant()))
             {
-                Expression parent = Parent as Expression;
-                if (parent != null)
-                {
-                    if (parent.Left == node)
-                    {
-                        parent.Left = MakeSubstring(node);
-                    }
-                    else if (parent.Right == node)
-                    {
-                        parent.Right = MakeSubstring(node);
-                    }
-                    else
-                    {
-                        throw new InvalidOperationException("No function call child in expression parent.");
-                    }
-                }
-                else
-                {
-                    throw new InvalidOperationException("SUBSTRING not in expression.");
-                }
+                ReplaceTerm(node, MakeSubstring(node));
             }
         }
 
@@ -192,29 +133,7 @@ namespace MacroScope
 
             base.Perform(node);
 
-            Expression parent = Parent as Expression;
-            if (parent != null)
-            {
-                if (parent.Left == node)
-                {
-                    parent.Left = MakeConvert(node);
-                }
-                else if (parent.Right == node)
-                {
-                    parent.Right = MakeConvert(node);
-                }
-                else
-                {
-                    throw new InvalidOperationException(
-                        "No datetime literal child in expression parent.");
-                }
-            }
-            else
-            {
-                // SQL Server 2005 does, but we want to be more general than that
-                throw new InvalidOperationException(
-                    "MS SQL Server does not necessarily have datetime literals.");
-            }
+            ReplaceTerm(node, MakeConvert(node));
         }
 
         public override void PerformBefore(SwitchFunction node)
