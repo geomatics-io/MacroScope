@@ -229,40 +229,6 @@ namespace MacroScope
         protected abstract FunctionCall GetDateaddCall(DateTimeUnit unit,
             INode number, INode date);
 
-        protected void ReplaceTerm(INode oldChild, INode newChild)
-        {
-            if (oldChild == null)
-            {
-                throw new ArgumentNullException("oldChild");
-            }
-
-            if (newChild == null)
-            {
-                throw new ArgumentNullException("newChild");
-            }
-
-            Expression parent = Parent as Expression;
-            if (parent != null)
-            {
-                if (parent.Left == oldChild)
-                {
-                    parent.Left = newChild;
-                }
-                else if (parent.Right == oldChild)
-                {
-                    parent.Right = newChild;
-                }
-                else
-                {
-                    throw new InvalidOperationException("No child found in expression parent.");
-                }
-            }
-            else
-            {
-                throw new InvalidOperationException("Term not in expression.");
-            }
-        }
-
         static void SetTop(QueryExpression query, int limit)
         {
             if (query == null)

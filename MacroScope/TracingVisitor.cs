@@ -121,6 +121,55 @@ namespace MacroScope
             return null;
         }
 
+        /// <summary>
+        /// Replaces <paramref name="oldChild"/> by <paramref name="newChild"/>
+        /// in an expression which is <paramref name="oldChild"/>'s parent.
+        /// </summary>
+        /// <param name="oldChild">
+        /// The node to remove from the tree. Must not be null.
+        /// </param>
+        /// <param name="newChild">
+        /// The node to add to the tree. Must not be null.
+        /// </param>
+        /// <exception cref="InvalidOperationException">
+        /// Thrown when the current <see cref="Parent"/> isn't an
+        /// <see cref="Expression"/>, or when <paramref name="oldChild"/>
+        /// isn't the child of <see cref="Parent"/>.
+        /// </exception>
+        public void ReplaceTerm(INode oldChild, INode newChild)
+        {
+            if (oldChild == null)
+            {
+                throw new ArgumentNullException("oldChild");
+            }
+
+            if (newChild == null)
+            {
+                throw new ArgumentNullException("newChild");
+            }
+
+            Expression parent = Parent as Expression;
+            if (parent != null)
+            {
+                if (parent.Left == oldChild)
+                {
+                    parent.Left = newChild;
+                }
+                else if (parent.Right == oldChild)
+                {
+                    parent.Right = newChild;
+                }
+                else
+                {
+                    throw new InvalidOperationException("No child found in expression parent.");
+                }
+            }
+            else
+            {
+                throw new InvalidOperationException("Term not in expression.");
+            }
+        }
+
         #endregion
 
         #region IVisitor Members

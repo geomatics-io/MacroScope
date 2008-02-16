@@ -185,6 +185,8 @@ and (ROWNUM <= 10)", expected.ToString());
         {
             CheckSelect("SELECT 5 % 3", "SELECT 5 % 3");
             CheckSelect("SELECT mod(5, 3)", "SELECT 5 % 3");
+            CheckSelect("SELECT MOD(7, MOD(5, 3))\r\nFROM dual", "SELECT 7 % (5 % 3)");
+            CheckSelect("SELECT MOD(MOD(7, 5), 3)\r\nFROM dual", "SELECT (7 % 5) % 3");
         }
 
         [Test]

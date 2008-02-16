@@ -113,6 +113,8 @@ VALUES(@libname, 2006-12-31T23:59:58)", expected.ToString());
         {
             CheckSelect("SELECT 5 % 3", "SELECT MOD(5, 3)\r\nFROM dual");
             CheckSelect("SELECT mod(5, 3)", "SELECT mod(5, 3)\r\nFROM dual");
+            CheckSelect("SELECT 7 % (5 % 3)", "SELECT MOD(7, MOD(5, 3))\r\nFROM dual");
+            CheckSelect("SELECT (7 % 5) % 3", "SELECT MOD(MOD(7, 5), 3)\r\nFROM dual");
         }
 
         [Test]

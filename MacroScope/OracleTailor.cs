@@ -60,8 +60,6 @@ namespace MacroScope
 
             Namer.PerformBefore(node);
             ReplaceOperator(node);
-            ReplaceDate(node);
-            ReplaceCurrentDate(node);
         }
 
         public override void Perform(ExpressionOperator node)
@@ -87,20 +85,18 @@ namespace MacroScope
                 throw new ArgumentNullException("node");
             }
 
+            string name = node.Name.ToLowerInvariant();
+            if (name.Equals(TailorUtil.GETDATE) || name.Equals(TailorUtil.NOW))
+            {
+                ReplaceTerm(node, new DbObject(new Identifier(
+                    TailorUtil.SYSDATE.ToUpperInvariant())));
+            }
+
             base.PerformBefore(node);
 
-            string name = node.Name.ToLowerInvariant();
-            if (name.Equals(TailorUtil.GETDATE))
-            {
-                throw new InvalidOperationException("GETDATE() not in expression.");
-            }
-            else if (name.Equals(TailorUtil.LEFT))
+            if (name.Equals(TailorUtil.LEFT))
             {
                 ReplaceLeft(node);
-            }
-            else if (name.Equals(TailorUtil.NOW))
-            {
-                throw new InvalidOperationException("Now() not in expression.");
             }
             else if (name.Equals(TailorUtil.RIGHT))
             {
@@ -181,8 +177,7 @@ namespace MacroScope
 
             base.Perform(node);
 
-            throw new InvalidOperationException(
-                "Oracle does not have datetime literals.");
+            ReplaceTerm(node, MakeToDate(node));
         }
 
         public override void PerformBefore(QueryExpression node)
@@ -305,60 +300,6 @@ namespace MacroScope
                 node.Left = functionCall;
                 node.Right = null;
             }
-        }
-
-        static void ReplaceDate(Expression node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            LiteralDateTime left = node.Left as LiteralDateTime;
-            if (left != null)
-            {
-                node.Left = MakeToDate(left);
-            }
-
-            LiteralDateTime right = node.Right as LiteralDateTime;
-            if (right != null)
-            {
-                node.Right = MakeToDate(right);
-            }
-        }
-
-        static void ReplaceCurrentDate(Expression node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            FunctionCall left = TailorUtil.CondGetFunctionCall(node.Left);
-            if (IsCurrentDate(left))
-            {
-                node.Left = new DbObject(new Identifier(
-                    TailorUtil.SYSDATE.ToUpperInvariant()));
-            }
-
-            FunctionCall right = TailorUtil.CondGetFunctionCall(node.Right);
-            if (IsCurrentDate(right))
-            {
-                node.Right = new DbObject(new Identifier(
-                    TailorUtil.SYSDATE.ToUpperInvariant()));
-            }
-        }
-
-        static bool IsCurrentDate(FunctionCall functionCall)
-        {
-            if (functionCall == null)
-            {
-                return false;
-            }
-
-            string name = functionCall.Name;
-            name = name.ToLowerInvariant();
-            return name.Equals(TailorUtil.GETDATE) || name.Equals(TailorUtil.NOW);
         }
 
         static void ReplaceTop(QueryExpression node)
