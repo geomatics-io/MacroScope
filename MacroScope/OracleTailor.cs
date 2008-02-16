@@ -58,7 +58,6 @@ namespace MacroScope
 
             base.PerformBefore(node);
 
-            Namer.PerformBefore(node);
             ReplaceOperator(node);
         }
 
@@ -178,6 +177,18 @@ namespace MacroScope
             base.Perform(node);
 
             ReplaceTerm(node, MakeToDate(node));
+        }
+
+        public override void Perform(Placeholder node)
+        {
+            if (node == null)
+            {
+                throw new ArgumentNullException("node");
+            }
+
+            base.Perform(node);
+
+            Namer.Perform(this, node);
         }
 
         public override void PerformBefore(QueryExpression node)

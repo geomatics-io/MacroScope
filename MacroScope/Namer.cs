@@ -53,42 +53,26 @@ namespace MacroScope
 
         #endregion
 
-        #region IVisitor members
+        #region Implementation of IVisitor members
 
-        public void PerformBefore(Expression node)
+        public void Perform(TracingVisitor owner, Placeholder node)
         {
+            if (owner == null)
+            {
+                throw new ArgumentNullException("owner");
+            }
+
             if (node == null)
             {
                 throw new ArgumentNullException("node");
             }
 
-            Variable left = CondGetVariable(node.Left);
-            if (left != null)
-            {
-                node.Left = left;
-            }
-
-            Variable right = CondGetVariable(node.Right);
-            if (right != null)
-            {
-                node.Right = right;
-            }
+            owner.ReplaceTerm(node, new Variable(GenName()));
         }
 
         #endregion
 
         #region Transformations
-
-        Variable CondGetVariable(INode arg)
-        {
-            Placeholder p = arg as Placeholder;
-            if (p == null)
-            {
-                return null;
-            }
-
-            return new Variable(GenName());
-        }
 
         public string GenName()
         {

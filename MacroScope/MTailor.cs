@@ -61,18 +61,6 @@ namespace MacroScope
 
         #region IVisitor Members
 
-        public override void PerformBefore(Expression node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            base.PerformBefore(node);
-
-            Namer.PerformBefore(node);
-        }
-
         public override void PerformAfter(FunctionCall node)
         {
             if (node == null)
@@ -170,6 +158,18 @@ namespace MacroScope
                         "MS engines do not have ROWNUM.");
                 }
             }
+        }
+
+        public override void Perform(Placeholder node)
+        {
+            if (node == null)
+            {
+                throw new ArgumentNullException("node");
+            }
+
+            base.Perform(node);
+
+            Namer.Perform(this, node);
         }
 
         public override void PerformBefore(QueryExpression node)
