@@ -247,6 +247,37 @@ namespace MacroScope
             }
         }
 
+        public override void PerformAfter(ExtractFunction node)
+        {
+            if (node == null)
+            {
+                throw new ArgumentNullException("node");
+            }
+
+            base.PerformAfter(node);
+
+            Expression parent = Parent as Expression;
+            if (parent != null)
+            {
+                if (parent.Left == node)
+                {
+                    parent.Left = MakeDateExtractor(node);
+                }
+                else if (parent.Right == node)
+                {
+                    parent.Right = MakeDateExtractor(node);
+                }
+                else
+                {
+                    throw new InvalidOperationException("No EXTRACT function child in expression parent.");
+                }
+            }
+            else
+            {
+                throw new InvalidOperationException("EXTRACT not in expression.");
+            }
+        }
+
         public override void PerformBefore(FunctionCall node)
         {
             if (node == null)
@@ -588,7 +619,7 @@ namespace MacroScope
             }
         }
 
-        protected override FunctionCall ReplaceExtractFunction(
+        FunctionCall MakeDateExtractor(
             ExtractFunction extractFunction)
         {
             if (extractFunction == null)

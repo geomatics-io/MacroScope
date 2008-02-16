@@ -70,8 +70,6 @@ namespace MacroScope
 
             base.PerformBefore(node);
 
-            ReplaceExtract(node);
-
             Expression leftMod = GetModCall(node.Left);
             if (leftMod != null)
             {
@@ -85,18 +83,6 @@ namespace MacroScope
             }
 
             Namer.PerformBefore(node);
-        }
-
-        public override void PerformBefore(ExtractFunction node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            base.PerformBefore(node);
-
-            throw new InvalidOperationException("EXTRACT not in expression.");
         }
 
         public override void PerformBefore(Interval node)
@@ -240,9 +226,6 @@ namespace MacroScope
         protected abstract FunctionCall GetDateaddCall(DateTimeUnit unit,
             INode number, INode date);
 
-        protected abstract FunctionCall ReplaceExtractFunction(
-            ExtractFunction extractFunction);
-
         static void SetTop(QueryExpression query, int limit)
         {
             if (query == null)
@@ -262,26 +245,6 @@ namespace MacroScope
             else
             {
                 query.Top = Math.Min((int)(query.Top), limit);
-            }
-        }
-
-        void ReplaceExtract(Expression node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            ExtractFunction leftExtract = TailorUtil.GetExtractTerm(node.Left);
-            if (leftExtract != null)
-            {
-                node.Left = ReplaceExtractFunction(leftExtract);
-            }
-
-            ExtractFunction rightExtract = TailorUtil.GetExtractTerm(node.Right);
-            if (rightExtract != null)
-            {
-                node.Right = ReplaceExtractFunction(rightExtract);
             }
         }
 
@@ -455,6 +418,18 @@ namespace MacroScope
             return newValue;
         }
 
+        /// <summary>
+        /// Finds an non-trivial (i.e. having an operator) expression.
+        /// </summary>
+        /// <param name="child">
+        /// If not null, the found expression is the first
+        /// ancestor of <paramref name="child"/>, otherwise
+        /// it's the newest expression on the ancestor stack.
+        /// </param>
+        /// <returns>
+        /// An ancestor <see cref="Expression"/>, or (when there isn't any)
+        /// null.
+        /// </returns>
         Expression GetExpressionParent(Expression child)
         {
             Expression expr = GetParent(child) as Expression;

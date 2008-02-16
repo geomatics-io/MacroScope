@@ -100,17 +100,6 @@ namespace MacroScope
 
         #region Utility functions
 
-        public static ExtractFunction GetExtractTerm(INode arg)
-        {
-            if (arg == null)
-            {
-                return null;
-            }
-
-            arg = TailorUtil.GetTerm(arg);
-            return arg as ExtractFunction;
-        }
-
         public static bool HasNullArgument(FunctionCall functionCall)
         {
             if (functionCall == null)

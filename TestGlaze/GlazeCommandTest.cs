@@ -1226,6 +1226,10 @@ VALUES('Counted', 2008-01-29T09:35:24)";
             command.CommandText = "SELECT EXTRACT(second FROM 2007-07-18T16:30:04)";
             c = command.ExecuteScalar();
             Assert.AreEqual(4, c);
+
+            command.CommandText = "SELECT EXTRACT(second FROM null)";
+            c = command.ExecuteScalar();
+            Assert.AreEqual(DBNull.Value, c);
         }
 
         void CheckDateTimeInterval(DbConnection connection)
