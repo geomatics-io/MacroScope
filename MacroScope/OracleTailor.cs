@@ -12,7 +12,7 @@ namespace MacroScope
     /// either have failed, or returned an empty string, may instead
     /// return null.
     /// </remarks>
-    public class OracleTailor : PassiveVisitor
+    public class OracleTailor : TracingVisitor
     {
         #region Fields
 
@@ -56,6 +56,8 @@ namespace MacroScope
                 throw new ArgumentNullException("node");
             }
 
+            base.PerformBefore(node);
+
             Namer.PerformBefore(node);
             ReplaceOperator(node);
             ReplaceDate(node);
@@ -68,6 +70,8 @@ namespace MacroScope
             {
                 throw new ArgumentNullException("node");
             }
+
+            base.Perform(node);
 
             if ((node == ExpressionOperator.Mod) ||
                 (node == ExpressionOperator.MAccessMod))
@@ -82,6 +86,8 @@ namespace MacroScope
             {
                 throw new ArgumentNullException("node");
             }
+
+            base.PerformBefore(node);
 
             string name = node.Name.ToLowerInvariant();
             if (name.Equals(TailorUtil.GETDATE))
@@ -113,6 +119,8 @@ namespace MacroScope
                 throw new ArgumentNullException("node");
             }
 
+            base.Perform(node);
+
             // Oracle 10g doesn't support table names in quotes, but then,
             // it also doesn't support table names which _need_ quoting,
             // so if this call doesn't remove the quotes from a table name,
@@ -129,6 +137,8 @@ namespace MacroScope
             {
                 throw new ArgumentNullException("node");
             }
+
+            base.PerformBefore(node);
 
             IntegerValue integerValue = node.Value as IntegerValue;
             if (integerValue == null)
@@ -169,6 +179,8 @@ namespace MacroScope
                 throw new ArgumentNullException("node");
             }
 
+            base.Perform(node);
+
             throw new InvalidOperationException(
                 "Oracle does not have datetime literals.");
         }
@@ -179,6 +191,8 @@ namespace MacroScope
             {
                 throw new ArgumentNullException("node");
             }
+
+            base.PerformBefore(node);
 
             if (node.Top != null)
             {
@@ -192,25 +206,14 @@ namespace MacroScope
             }
         }
 
-        public override void PerformBefore(SwitchFunction node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            base.PerformBefore(node);
-
-            throw new InvalidOperationException(
-                "Switch not in expression.");
-        }
-
         public override void Perform(Variable node)
         {
             if (node == null)
             {
                 throw new ArgumentNullException("node");
             }
+
+            base.Perform(node);
 
             node.Prefix = ':';
         }
