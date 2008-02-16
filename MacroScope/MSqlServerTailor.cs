@@ -106,6 +106,40 @@ namespace MacroScope
             base.PerformBefore(node);
         }
 
+        public override void PerformAfter(FunctionCall node)
+        {
+            if (node == null)
+            {
+                throw new ArgumentNullException("node");
+            }
+
+            base.PerformAfter(node);
+
+            if (TailorUtil.SUBSTRING.Equals(node.Name.ToLowerInvariant()))
+            {
+                Expression parent = Parent as Expression;
+                if (parent != null)
+                {
+                    if (parent.Left == node)
+                    {
+                        parent.Left = MakeSubstring(node);
+                    }
+                    else if (parent.Right == node)
+                    {
+                        parent.Right = MakeSubstring(node);
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("No function call child in expression parent.");
+                    }
+                }
+                else
+                {
+                    throw new InvalidOperationException("SUBSTRING not in expression.");
+                }
+            }
+        }
+
         public override void Perform(Identifier node)
         {
             if (node == null)
@@ -199,7 +233,7 @@ namespace MacroScope
             return dateadd;
         }
 
-        protected override INode CompleteSubstring(FunctionCall substringCall)
+        INode MakeSubstring(FunctionCall substringCall)
         {
             if (substringCall == null)
             {

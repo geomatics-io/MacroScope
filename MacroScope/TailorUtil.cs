@@ -100,18 +100,6 @@ namespace MacroScope
 
         #region Utility functions
 
-        public static FunctionCall GetSubstringTerm(INode arg)
-        {
-            FunctionCall functionCall = CondGetFunctionCall(arg);
-            if (functionCall == null)
-            {
-                return null;
-            }
-
-            string name = functionCall.Name.ToLowerInvariant();
-            return name.Equals(SUBSTRING) ? functionCall : null;
-        }
-
         public static ExtractFunction GetExtractTerm(INode arg)
         {
             if (arg == null)

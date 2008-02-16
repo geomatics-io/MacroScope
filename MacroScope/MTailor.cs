@@ -70,7 +70,6 @@ namespace MacroScope
 
             base.PerformBefore(node);
 
-            ReplaceSubstring(node);
             ReplaceExtract(node);
 
             Expression leftMod = GetModCall(node.Left);
@@ -241,8 +240,6 @@ namespace MacroScope
         protected abstract FunctionCall GetDateaddCall(DateTimeUnit unit,
             INode number, INode date);
 
-        protected abstract INode CompleteSubstring(FunctionCall substringCall);
-
         protected abstract FunctionCall ReplaceExtractFunction(
             ExtractFunction extractFunction);
 
@@ -265,26 +262,6 @@ namespace MacroScope
             else
             {
                 query.Top = Math.Min((int)(query.Top), limit);
-            }
-        }
-
-        void ReplaceSubstring(Expression node)
-        {
-            if (node == null)
-            {
-                throw new ArgumentNullException("node");
-            }
-
-            FunctionCall leftSubstring = TailorUtil.GetSubstringTerm(node.Left);
-            if (leftSubstring != null)
-            {
-                node.Left = CompleteSubstring(leftSubstring);
-            }
-
-            FunctionCall rightSubstring = TailorUtil.GetSubstringTerm(node.Right);
-            if (rightSubstring != null)
-            {
-                node.Right = CompleteSubstring(rightSubstring);
             }
         }
 

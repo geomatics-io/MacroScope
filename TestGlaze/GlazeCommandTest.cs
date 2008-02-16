@@ -880,8 +880,11 @@ where number1a=2";
             CheckStringExpression(connection, "substring('abcdefgh' from 1 for 2)", "ab");
             CheckStringExpression(connection, "substring(N'kως' from 2 for 2)", "ως");
             CheckStringExpression(connection, "substring(null from 2)", null);
+            CheckStringExpression(connection, "substring('abc' from null)", null);
+            CheckStringExpression(connection, "substring('abc' from 1 for null)", null);
             CheckStringExpression(connection, "substring('abc' from 4)", "");
             CheckStringExpression(connection, "substring('abc' from 1 for 5)", "abc");
+            CheckStringExpression(connection, "substring('a' || 'b' || 'c' from 1 for 5)", "abc");
 
             CheckStringFunctions(connection);
 
