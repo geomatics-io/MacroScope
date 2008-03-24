@@ -5,7 +5,7 @@ using MacroScope;
 namespace TestMacroScope
 {
     [TestFixture]
-    public class MAccessDateTimeTest
+    public class LiteralDateTimeTest
     {
         [Test]
         public void TestDateTime()
@@ -33,7 +33,7 @@ namespace TestMacroScope
         public void TestLiteral()
         {
             LiteralDateTime ldt = new LiteralDateTime("#2007-07-11 16:30:00#");
-            Assert.AreEqual("2007-07-11 16:30:00", ldt.Literal);
+            Assert.AreEqual("2007-07-11T16:30:00", ldt.Literal);
 
             ldt = new LiteralDateTime("#2007-07-11 16:30:00#");
             ldt.Delimiter = '#';

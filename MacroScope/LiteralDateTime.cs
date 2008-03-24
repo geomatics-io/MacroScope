@@ -62,12 +62,13 @@ namespace MacroScope
                     RegexOptions.IgnoreCase);
             }
 
-            m_delimiter = ' ';
+            m_delimiter = 'T';
         }
 
         public LiteralDateTime(DateTime dateTime)
         {
             m_bareLiteral = dateTime.ToString("yyyy-MM-dd HH:mm:ss");
+            m_delimiter = 'T';
         }
 
         #endregion
@@ -76,7 +77,7 @@ namespace MacroScope
 
         /// <summary>
         /// Valid values are '#' for MS Access formatting, or
-        /// ' ' (the default), 't' or 'T' for ISO8601 .
+        /// ' ', 't' or 'T' (the default) for ISO8601 .
         /// </summary>
         public char Delimiter
         {
