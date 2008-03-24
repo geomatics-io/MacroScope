@@ -312,6 +312,18 @@ namespace MacroScope
             base.PerformBefore(node);
         }
 
+        public override void Perform(LiteralDateTime node)
+        {
+            if (node == null)
+            {
+                throw new ArgumentNullException("node");
+            }
+
+            base.Perform(node);
+
+            node.Delimiter = '#';
+        }
+
         public override void PerformBefore(QueryExpression node)
         {
             if (node == null)
@@ -396,7 +408,9 @@ namespace MacroScope
             Debug.Assert(key != null);
             if (m_dates.ContainsKey(key))
             {
-                ReplaceTerm(node, new LiteralDateTime(m_dates[key]));
+                LiteralDateTime literalDateTime = new LiteralDateTime(m_dates[key]);
+                literalDateTime.Delimiter = '#';
+                ReplaceTerm(node, literalDateTime);
             }
         }
 

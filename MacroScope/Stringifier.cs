@@ -29,8 +29,6 @@ namespace MacroScope
 
         private readonly StringBuilder m_sql;
 
-        private bool m_outputIso8601;
-
         private bool m_ignoreNextOperator;
 
         private bool m_separatePreviousQueryExpression;
@@ -44,27 +42,12 @@ namespace MacroScope
         public Stringifier()
         {
             m_sql = new StringBuilder();
-            m_outputIso8601 = false;
             m_ignoreNextOperator = false;
         }
 
         #endregion
 
         #region Accessors
-
-        /// <summary>
-        /// Set to output datetime literals in
-        /// ISO 8601 format, i.e. <c>yyyy-MM-ddTHH:mm:ss</c>.
-        /// </summary>
-        /// <remarks>
-        /// Default is <c>false</c>, meaning datetime literals
-        /// are formatted for MS Access.
-        /// </remarks>
-        public bool OutputIso8601
-        {
-            get { return m_outputIso8601; }
-            set { m_outputIso8601 = value; }
-        }
 
         public string ToSql()
         {
@@ -735,8 +718,7 @@ namespace MacroScope
                 throw new ArgumentNullException("node");
             }
 
-            string literal = m_outputIso8601 ? node.Iso8601Literal : node.MAccessLiteral;
-            m_sql.Append(literal);
+            m_sql.Append(node.Literal);
         }
 
         public override void Perform(NullValue node)

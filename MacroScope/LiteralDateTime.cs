@@ -14,9 +14,9 @@ namespace MacroScope
     {
         #region Fields
 
-        private static readonly string T = "T";
-
         private readonly string m_bareLiteral;
+
+        private char m_delimiter;
 
         #endregion
 
@@ -58,9 +58,11 @@ namespace MacroScope
             }
             else
             {
-                m_bareLiteral = Regex.Replace(literal, T, " ",
+                m_bareLiteral = Regex.Replace(literal, "T", " ",
                     RegexOptions.IgnoreCase);
             }
+
+            m_delimiter = ' ';
         }
 
         public LiteralDateTime(DateTime dateTime)
@@ -72,19 +74,47 @@ namespace MacroScope
 
         #region Properties
 
-        public string MAccessLiteral
+        /// <summary>
+        /// Valid values are '#' for MS Access formatting, or
+        /// ' ' (the default), 't' or 'T' for ISO8601 .
+        /// </summary>
+        public char Delimiter
         {
             get
             {
-                return string.Format("#{0}#", m_bareLiteral);
+                return m_delimiter;
+            }
+
+            set
+            {
+                if ((value != '#') && (value != ' ') && (value != 't') &&
+                    (value != 'T'))
+                {
+                    string message = string.Format("Invalid date delimiter {0}.",
+                        value);
+                    throw new ArgumentException(message, "value");
+                }
+
+                m_delimiter = value;
             }
         }
 
-        public string Iso8601Literal
+        public string Literal
         {
             get
             {
-                return Regex.Replace(m_bareLiteral, " ", T);
+                if (m_delimiter == '#')
+                {
+                    return string.Format("#{0}#", m_bareLiteral);
+                }
+                else if (m_delimiter == ' ')
+                {
+                    return m_bareLiteral;
+                }
+                else
+                {
+                    return Regex.Replace(m_bareLiteral, " ", m_delimiter.ToString());
+                }
             }
         }
 
