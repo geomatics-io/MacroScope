@@ -9,6 +9,14 @@ namespace TestMacroScope
     public class MSqlServerTailorTest
     {
         [Test]
+        public void TestConcat()
+        {
+            CheckSelect("select substr(t1.Major, 1,5) || t2.Minor from t2",
+                @"SELECT substr(t1.Major, 1, 5) + t2.Minor
+FROM t2");
+        }
+
+        [Test]
         public void TestSelectInterval()
         {
             StringBuilder expected = new StringBuilder();

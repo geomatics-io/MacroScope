@@ -946,11 +946,11 @@ AsciiStringRun :
 	;
 
 AsciiStringLiteral :
-	'\'' { text = ""; }
-	( s = AsciiStringRun { text = $s.text; } )? '\''
+	'\'' { $text = ""; }
+	( s = AsciiStringRun { $text = $s.text; } )? '\''
 	( '\'' {
-			text = text + "\'";
-		} ( s = AsciiStringRun { text = text + $s.text; } )? '\''
+			$text = $text + "\'";
+		} ( s = AsciiStringRun { $text = $text + $s.text; } )? '\''
 	)*
 	;
 
@@ -960,11 +960,11 @@ UnicodeStringRun :
 	;
 
 UnicodeStringLiteral :
-	'n' '\'' { text = ""; }
-	( s = UnicodeStringRun { text = $s.text; } )? '\''
+	'n' '\'' { $text = ""; }
+	( s = UnicodeStringRun { $text = $s.text; } )? '\''
 	( '\'' {
-			text = text + "\'";
-		} ( s = UnicodeStringRun { text = text + $s.text; } )? '\''
+			$text = $text + "\'";
+		} ( s = UnicodeStringRun { $text = $text + $s.text; } )? '\''
 	)*
 	;
 

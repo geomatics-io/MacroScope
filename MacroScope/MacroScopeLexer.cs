@@ -1,4 +1,4 @@
-// $ANTLR 3.0.1 MacroScope\\MacroScope.g 2008-01-12 20:02:55
+// $ANTLR 3.0.1 MacroScope\\MacroScope.g 2008-06-09 11:56:26
 namespace 
 	MacroScope
 
@@ -141,8 +141,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = ALL;
-            // MacroScope\\MacroScope.g:801:5: ( 'all' )
-            // MacroScope\\MacroScope.g:801:7: 'all'
+            // MacroScope\\MacroScope.g:800:5: ( 'all' )
+            // MacroScope\\MacroScope.g:800:7: 'all'
             {
             	Match("all"); if (failed) return ;
 
@@ -163,8 +163,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = AND;
-            // MacroScope\\MacroScope.g:802:5: ( 'and' )
-            // MacroScope\\MacroScope.g:802:7: 'and'
+            // MacroScope\\MacroScope.g:801:5: ( 'and' )
+            // MacroScope\\MacroScope.g:801:7: 'and'
             {
             	Match("and"); if (failed) return ;
 
@@ -185,8 +185,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = ANY;
-            // MacroScope\\MacroScope.g:803:5: ( 'any' )
-            // MacroScope\\MacroScope.g:803:7: 'any'
+            // MacroScope\\MacroScope.g:802:5: ( 'any' )
+            // MacroScope\\MacroScope.g:802:7: 'any'
             {
             	Match("any"); if (failed) return ;
 
@@ -207,8 +207,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = AS;
-            // MacroScope\\MacroScope.g:804:4: ( 'as' )
-            // MacroScope\\MacroScope.g:804:6: 'as'
+            // MacroScope\\MacroScope.g:803:4: ( 'as' )
+            // MacroScope\\MacroScope.g:803:6: 'as'
             {
             	Match("as"); if (failed) return ;
 
@@ -229,8 +229,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = ASC;
-            // MacroScope\\MacroScope.g:805:5: ( 'asc' )
-            // MacroScope\\MacroScope.g:805:7: 'asc'
+            // MacroScope\\MacroScope.g:804:5: ( 'asc' )
+            // MacroScope\\MacroScope.g:804:7: 'asc'
             {
             	Match("asc"); if (failed) return ;
 
@@ -251,8 +251,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = BETWEEN;
-            // MacroScope\\MacroScope.g:806:9: ( 'between' )
-            // MacroScope\\MacroScope.g:806:11: 'between'
+            // MacroScope\\MacroScope.g:805:9: ( 'between' )
+            // MacroScope\\MacroScope.g:805:11: 'between'
             {
             	Match("between"); if (failed) return ;
 
@@ -273,8 +273,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = BY;
-            // MacroScope\\MacroScope.g:807:4: ( 'by' )
-            // MacroScope\\MacroScope.g:807:6: 'by'
+            // MacroScope\\MacroScope.g:806:4: ( 'by' )
+            // MacroScope\\MacroScope.g:806:6: 'by'
             {
             	Match("by"); if (failed) return ;
 
@@ -295,8 +295,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = CASE;
-            // MacroScope\\MacroScope.g:808:6: ( 'case' )
-            // MacroScope\\MacroScope.g:808:8: 'case'
+            // MacroScope\\MacroScope.g:807:6: ( 'case' )
+            // MacroScope\\MacroScope.g:807:8: 'case'
             {
             	Match("case"); if (failed) return ;
 
@@ -317,8 +317,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = CAST;
-            // MacroScope\\MacroScope.g:809:6: ( 'cast' )
-            // MacroScope\\MacroScope.g:809:8: 'cast'
+            // MacroScope\\MacroScope.g:808:6: ( 'cast' )
+            // MacroScope\\MacroScope.g:808:8: 'cast'
             {
             	Match("cast"); if (failed) return ;
 
@@ -339,8 +339,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = CROSS;
-            // MacroScope\\MacroScope.g:810:7: ( 'cross' )
-            // MacroScope\\MacroScope.g:810:9: 'cross'
+            // MacroScope\\MacroScope.g:809:7: ( 'cross' )
+            // MacroScope\\MacroScope.g:809:9: 'cross'
             {
             	Match("cross"); if (failed) return ;
 
@@ -361,8 +361,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = DAY;
-            // MacroScope\\MacroScope.g:811:5: ( 'day' )
-            // MacroScope\\MacroScope.g:811:7: 'day'
+            // MacroScope\\MacroScope.g:810:5: ( 'day' )
+            // MacroScope\\MacroScope.g:810:7: 'day'
             {
             	Match("day"); if (failed) return ;
 
@@ -383,8 +383,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = DEFAULT;
-            // MacroScope\\MacroScope.g:812:9: ( 'default' )
-            // MacroScope\\MacroScope.g:812:11: 'default'
+            // MacroScope\\MacroScope.g:811:9: ( 'default' )
+            // MacroScope\\MacroScope.g:811:11: 'default'
             {
             	Match("default"); if (failed) return ;
 
@@ -405,8 +405,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = DELETE;
-            // MacroScope\\MacroScope.g:813:8: ( 'delete' )
-            // MacroScope\\MacroScope.g:813:10: 'delete'
+            // MacroScope\\MacroScope.g:812:8: ( 'delete' )
+            // MacroScope\\MacroScope.g:812:10: 'delete'
             {
             	Match("delete"); if (failed) return ;
 
@@ -427,8 +427,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = DESC;
-            // MacroScope\\MacroScope.g:814:6: ( 'desc' )
-            // MacroScope\\MacroScope.g:814:8: 'desc'
+            // MacroScope\\MacroScope.g:813:6: ( 'desc' )
+            // MacroScope\\MacroScope.g:813:8: 'desc'
             {
             	Match("desc"); if (failed) return ;
 
@@ -449,8 +449,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = DISTINCT;
-            // MacroScope\\MacroScope.g:815:10: ( 'distinct' )
-            // MacroScope\\MacroScope.g:815:12: 'distinct'
+            // MacroScope\\MacroScope.g:814:10: ( 'distinct' )
+            // MacroScope\\MacroScope.g:814:12: 'distinct'
             {
             	Match("distinct"); if (failed) return ;
 
@@ -471,8 +471,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = ELSE;
-            // MacroScope\\MacroScope.g:816:6: ( 'else' )
-            // MacroScope\\MacroScope.g:816:8: 'else'
+            // MacroScope\\MacroScope.g:815:6: ( 'else' )
+            // MacroScope\\MacroScope.g:815:8: 'else'
             {
             	Match("else"); if (failed) return ;
 
@@ -493,8 +493,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = END;
-            // MacroScope\\MacroScope.g:817:5: ( 'end' )
-            // MacroScope\\MacroScope.g:817:7: 'end'
+            // MacroScope\\MacroScope.g:816:5: ( 'end' )
+            // MacroScope\\MacroScope.g:816:7: 'end'
             {
             	Match("end"); if (failed) return ;
 
@@ -515,8 +515,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = ESCAPE;
-            // MacroScope\\MacroScope.g:818:8: ( 'escape' )
-            // MacroScope\\MacroScope.g:818:10: 'escape'
+            // MacroScope\\MacroScope.g:817:8: ( 'escape' )
+            // MacroScope\\MacroScope.g:817:10: 'escape'
             {
             	Match("escape"); if (failed) return ;
 
@@ -537,8 +537,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = EXISTS;
-            // MacroScope\\MacroScope.g:819:8: ( 'exists' )
-            // MacroScope\\MacroScope.g:819:10: 'exists'
+            // MacroScope\\MacroScope.g:818:8: ( 'exists' )
+            // MacroScope\\MacroScope.g:818:10: 'exists'
             {
             	Match("exists"); if (failed) return ;
 
@@ -559,8 +559,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = EXTRACT;
-            // MacroScope\\MacroScope.g:820:9: ( 'extract' )
-            // MacroScope\\MacroScope.g:820:11: 'extract'
+            // MacroScope\\MacroScope.g:819:9: ( 'extract' )
+            // MacroScope\\MacroScope.g:819:11: 'extract'
             {
             	Match("extract"); if (failed) return ;
 
@@ -581,8 +581,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = FOR;
-            // MacroScope\\MacroScope.g:821:5: ( 'for' )
-            // MacroScope\\MacroScope.g:821:7: 'for'
+            // MacroScope\\MacroScope.g:820:5: ( 'for' )
+            // MacroScope\\MacroScope.g:820:7: 'for'
             {
             	Match("for"); if (failed) return ;
 
@@ -603,8 +603,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = FROM;
-            // MacroScope\\MacroScope.g:822:6: ( 'from' )
-            // MacroScope\\MacroScope.g:822:8: 'from'
+            // MacroScope\\MacroScope.g:821:6: ( 'from' )
+            // MacroScope\\MacroScope.g:821:8: 'from'
             {
             	Match("from"); if (failed) return ;
 
@@ -625,8 +625,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = FULL;
-            // MacroScope\\MacroScope.g:823:6: ( 'full' )
-            // MacroScope\\MacroScope.g:823:8: 'full'
+            // MacroScope\\MacroScope.g:822:6: ( 'full' )
+            // MacroScope\\MacroScope.g:822:8: 'full'
             {
             	Match("full"); if (failed) return ;
 
@@ -647,8 +647,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = GROUP;
-            // MacroScope\\MacroScope.g:824:7: ( 'group' )
-            // MacroScope\\MacroScope.g:824:9: 'group'
+            // MacroScope\\MacroScope.g:823:7: ( 'group' )
+            // MacroScope\\MacroScope.g:823:9: 'group'
             {
             	Match("group"); if (failed) return ;
 
@@ -669,8 +669,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = HAVING;
-            // MacroScope\\MacroScope.g:825:8: ( 'having' )
-            // MacroScope\\MacroScope.g:825:10: 'having'
+            // MacroScope\\MacroScope.g:824:8: ( 'having' )
+            // MacroScope\\MacroScope.g:824:10: 'having'
             {
             	Match("having"); if (failed) return ;
 
@@ -691,8 +691,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = HOUR;
-            // MacroScope\\MacroScope.g:826:6: ( 'hour' )
-            // MacroScope\\MacroScope.g:826:8: 'hour'
+            // MacroScope\\MacroScope.g:825:6: ( 'hour' )
+            // MacroScope\\MacroScope.g:825:8: 'hour'
             {
             	Match("hour"); if (failed) return ;
 
@@ -713,8 +713,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = IN;
-            // MacroScope\\MacroScope.g:827:4: ( 'in' )
-            // MacroScope\\MacroScope.g:827:6: 'in'
+            // MacroScope\\MacroScope.g:826:4: ( 'in' )
+            // MacroScope\\MacroScope.g:826:6: 'in'
             {
             	Match("in"); if (failed) return ;
 
@@ -735,8 +735,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = INNER;
-            // MacroScope\\MacroScope.g:828:7: ( 'inner' )
-            // MacroScope\\MacroScope.g:828:9: 'inner'
+            // MacroScope\\MacroScope.g:827:7: ( 'inner' )
+            // MacroScope\\MacroScope.g:827:9: 'inner'
             {
             	Match("inner"); if (failed) return ;
 
@@ -757,8 +757,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = INSERT;
-            // MacroScope\\MacroScope.g:829:8: ( 'insert' )
-            // MacroScope\\MacroScope.g:829:10: 'insert'
+            // MacroScope\\MacroScope.g:828:8: ( 'insert' )
+            // MacroScope\\MacroScope.g:828:10: 'insert'
             {
             	Match("insert"); if (failed) return ;
 
@@ -779,8 +779,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = INTERVAL;
-            // MacroScope\\MacroScope.g:830:10: ( 'interval' )
-            // MacroScope\\MacroScope.g:830:12: 'interval'
+            // MacroScope\\MacroScope.g:829:10: ( 'interval' )
+            // MacroScope\\MacroScope.g:829:12: 'interval'
             {
             	Match("interval"); if (failed) return ;
 
@@ -801,8 +801,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = INTO;
-            // MacroScope\\MacroScope.g:831:6: ( 'into' )
-            // MacroScope\\MacroScope.g:831:8: 'into'
+            // MacroScope\\MacroScope.g:830:6: ( 'into' )
+            // MacroScope\\MacroScope.g:830:8: 'into'
             {
             	Match("into"); if (failed) return ;
 
@@ -823,8 +823,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = IS;
-            // MacroScope\\MacroScope.g:832:4: ( 'is' )
-            // MacroScope\\MacroScope.g:832:6: 'is'
+            // MacroScope\\MacroScope.g:831:4: ( 'is' )
+            // MacroScope\\MacroScope.g:831:6: 'is'
             {
             	Match("is"); if (failed) return ;
 
@@ -845,8 +845,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = JOIN;
-            // MacroScope\\MacroScope.g:833:6: ( 'join' )
-            // MacroScope\\MacroScope.g:833:8: 'join'
+            // MacroScope\\MacroScope.g:832:6: ( 'join' )
+            // MacroScope\\MacroScope.g:832:8: 'join'
             {
             	Match("join"); if (failed) return ;
 
@@ -867,8 +867,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = LEFT;
-            // MacroScope\\MacroScope.g:834:6: ( 'left' )
-            // MacroScope\\MacroScope.g:834:8: 'left'
+            // MacroScope\\MacroScope.g:833:6: ( 'left' )
+            // MacroScope\\MacroScope.g:833:8: 'left'
             {
             	Match("left"); if (failed) return ;
 
@@ -889,8 +889,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = LIKE;
-            // MacroScope\\MacroScope.g:835:6: ( 'like' )
-            // MacroScope\\MacroScope.g:835:8: 'like'
+            // MacroScope\\MacroScope.g:834:6: ( 'like' )
+            // MacroScope\\MacroScope.g:834:8: 'like'
             {
             	Match("like"); if (failed) return ;
 
@@ -911,8 +911,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = MINUTE;
-            // MacroScope\\MacroScope.g:836:8: ( 'minute' )
-            // MacroScope\\MacroScope.g:836:10: 'minute'
+            // MacroScope\\MacroScope.g:835:8: ( 'minute' )
+            // MacroScope\\MacroScope.g:835:10: 'minute'
             {
             	Match("minute"); if (failed) return ;
 
@@ -933,8 +933,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = MONTH;
-            // MacroScope\\MacroScope.g:837:7: ( 'month' )
-            // MacroScope\\MacroScope.g:837:9: 'month'
+            // MacroScope\\MacroScope.g:836:7: ( 'month' )
+            // MacroScope\\MacroScope.g:836:9: 'month'
             {
             	Match("month"); if (failed) return ;
 
@@ -955,8 +955,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = NOT;
-            // MacroScope\\MacroScope.g:838:5: ( 'not' )
-            // MacroScope\\MacroScope.g:838:7: 'not'
+            // MacroScope\\MacroScope.g:837:5: ( 'not' )
+            // MacroScope\\MacroScope.g:837:7: 'not'
             {
             	Match("not"); if (failed) return ;
 
@@ -977,8 +977,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = NULL;
-            // MacroScope\\MacroScope.g:839:6: ( 'null' )
-            // MacroScope\\MacroScope.g:839:8: 'null'
+            // MacroScope\\MacroScope.g:838:6: ( 'null' )
+            // MacroScope\\MacroScope.g:838:8: 'null'
             {
             	Match("null"); if (failed) return ;
 
@@ -999,8 +999,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = ON;
-            // MacroScope\\MacroScope.g:840:4: ( 'on' )
-            // MacroScope\\MacroScope.g:840:6: 'on'
+            // MacroScope\\MacroScope.g:839:4: ( 'on' )
+            // MacroScope\\MacroScope.g:839:6: 'on'
             {
             	Match("on"); if (failed) return ;
 
@@ -1021,8 +1021,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = OR;
-            // MacroScope\\MacroScope.g:841:4: ( 'or' )
-            // MacroScope\\MacroScope.g:841:6: 'or'
+            // MacroScope\\MacroScope.g:840:4: ( 'or' )
+            // MacroScope\\MacroScope.g:840:6: 'or'
             {
             	Match("or"); if (failed) return ;
 
@@ -1043,8 +1043,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = ORDER;
-            // MacroScope\\MacroScope.g:842:7: ( 'order' )
-            // MacroScope\\MacroScope.g:842:9: 'order'
+            // MacroScope\\MacroScope.g:841:7: ( 'order' )
+            // MacroScope\\MacroScope.g:841:9: 'order'
             {
             	Match("order"); if (failed) return ;
 
@@ -1065,8 +1065,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = OUTER;
-            // MacroScope\\MacroScope.g:843:7: ( 'outer' )
-            // MacroScope\\MacroScope.g:843:9: 'outer'
+            // MacroScope\\MacroScope.g:842:7: ( 'outer' )
+            // MacroScope\\MacroScope.g:842:9: 'outer'
             {
             	Match("outer"); if (failed) return ;
 
@@ -1087,8 +1087,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = RIGHT;
-            // MacroScope\\MacroScope.g:844:7: ( 'right' )
-            // MacroScope\\MacroScope.g:844:9: 'right'
+            // MacroScope\\MacroScope.g:843:7: ( 'right' )
+            // MacroScope\\MacroScope.g:843:9: 'right'
             {
             	Match("right"); if (failed) return ;
 
@@ -1109,8 +1109,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = SECOND;
-            // MacroScope\\MacroScope.g:845:8: ( 'second' )
-            // MacroScope\\MacroScope.g:845:10: 'second'
+            // MacroScope\\MacroScope.g:844:8: ( 'second' )
+            // MacroScope\\MacroScope.g:844:10: 'second'
             {
             	Match("second"); if (failed) return ;
 
@@ -1131,8 +1131,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = SELECT;
-            // MacroScope\\MacroScope.g:846:8: ( 'select' )
-            // MacroScope\\MacroScope.g:846:10: 'select'
+            // MacroScope\\MacroScope.g:845:8: ( 'select' )
+            // MacroScope\\MacroScope.g:845:10: 'select'
             {
             	Match("select"); if (failed) return ;
 
@@ -1153,8 +1153,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = SET;
-            // MacroScope\\MacroScope.g:847:5: ( 'set' )
-            // MacroScope\\MacroScope.g:847:7: 'set'
+            // MacroScope\\MacroScope.g:846:5: ( 'set' )
+            // MacroScope\\MacroScope.g:846:7: 'set'
             {
             	Match("set"); if (failed) return ;
 
@@ -1175,8 +1175,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = SOME;
-            // MacroScope\\MacroScope.g:848:6: ( 'some' )
-            // MacroScope\\MacroScope.g:848:8: 'some'
+            // MacroScope\\MacroScope.g:847:6: ( 'some' )
+            // MacroScope\\MacroScope.g:847:8: 'some'
             {
             	Match("some"); if (failed) return ;
 
@@ -1197,8 +1197,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = SUBSTRING;
-            // MacroScope\\MacroScope.g:849:11: ( 'substring' )
-            // MacroScope\\MacroScope.g:849:13: 'substring'
+            // MacroScope\\MacroScope.g:848:11: ( 'substring' )
+            // MacroScope\\MacroScope.g:848:13: 'substring'
             {
             	Match("substring"); if (failed) return ;
 
@@ -1219,8 +1219,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = THEN;
-            // MacroScope\\MacroScope.g:850:6: ( 'then' )
-            // MacroScope\\MacroScope.g:850:8: 'then'
+            // MacroScope\\MacroScope.g:849:6: ( 'then' )
+            // MacroScope\\MacroScope.g:849:8: 'then'
             {
             	Match("then"); if (failed) return ;
 
@@ -1241,8 +1241,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = TOP;
-            // MacroScope\\MacroScope.g:851:5: ( 'top' )
-            // MacroScope\\MacroScope.g:851:7: 'top'
+            // MacroScope\\MacroScope.g:850:5: ( 'top' )
+            // MacroScope\\MacroScope.g:850:7: 'top'
             {
             	Match("top"); if (failed) return ;
 
@@ -1263,8 +1263,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = UNION;
-            // MacroScope\\MacroScope.g:852:7: ( 'union' )
-            // MacroScope\\MacroScope.g:852:9: 'union'
+            // MacroScope\\MacroScope.g:851:7: ( 'union' )
+            // MacroScope\\MacroScope.g:851:9: 'union'
             {
             	Match("union"); if (failed) return ;
 
@@ -1285,8 +1285,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = UPDATE;
-            // MacroScope\\MacroScope.g:853:8: ( 'update' )
-            // MacroScope\\MacroScope.g:853:10: 'update'
+            // MacroScope\\MacroScope.g:852:8: ( 'update' )
+            // MacroScope\\MacroScope.g:852:10: 'update'
             {
             	Match("update"); if (failed) return ;
 
@@ -1307,8 +1307,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = VALUES;
-            // MacroScope\\MacroScope.g:854:8: ( 'values' )
-            // MacroScope\\MacroScope.g:854:10: 'values'
+            // MacroScope\\MacroScope.g:853:8: ( 'values' )
+            // MacroScope\\MacroScope.g:853:10: 'values'
             {
             	Match("values"); if (failed) return ;
 
@@ -1329,8 +1329,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = WHEN;
-            // MacroScope\\MacroScope.g:855:6: ( 'when' )
-            // MacroScope\\MacroScope.g:855:8: 'when'
+            // MacroScope\\MacroScope.g:854:6: ( 'when' )
+            // MacroScope\\MacroScope.g:854:8: 'when'
             {
             	Match("when"); if (failed) return ;
 
@@ -1351,8 +1351,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = WHERE;
-            // MacroScope\\MacroScope.g:856:7: ( 'where' )
-            // MacroScope\\MacroScope.g:856:9: 'where'
+            // MacroScope\\MacroScope.g:855:7: ( 'where' )
+            // MacroScope\\MacroScope.g:855:9: 'where'
             {
             	Match("where"); if (failed) return ;
 
@@ -1373,8 +1373,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = YEAR;
-            // MacroScope\\MacroScope.g:857:6: ( 'year' )
-            // MacroScope\\MacroScope.g:857:8: 'year'
+            // MacroScope\\MacroScope.g:856:6: ( 'year' )
+            // MacroScope\\MacroScope.g:856:8: 'year'
             {
             	Match("year"); if (failed) return ;
 
@@ -1395,8 +1395,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = DOT_STAR;
-            // MacroScope\\MacroScope.g:859:9: ( '.*' )
-            // MacroScope\\MacroScope.g:859:11: '.*'
+            // MacroScope\\MacroScope.g:858:9: ( '.*' )
+            // MacroScope\\MacroScope.g:858:11: '.*'
             {
             	Match(".*"); if (failed) return ;
 
@@ -1417,8 +1417,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = DOT;
-            // MacroScope\\MacroScope.g:860:5: ( '.' )
-            // MacroScope\\MacroScope.g:860:7: '.'
+            // MacroScope\\MacroScope.g:859:5: ( '.' )
+            // MacroScope\\MacroScope.g:859:7: '.'
             {
             	Match('.'); if (failed) return ;
             
@@ -1438,8 +1438,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = COMMA;
-            // MacroScope\\MacroScope.g:861:7: ( ',' )
-            // MacroScope\\MacroScope.g:861:9: ','
+            // MacroScope\\MacroScope.g:860:7: ( ',' )
+            // MacroScope\\MacroScope.g:860:9: ','
             {
             	Match(','); if (failed) return ;
             
@@ -1459,8 +1459,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = LPAREN;
-            // MacroScope\\MacroScope.g:862:8: ( '(' )
-            // MacroScope\\MacroScope.g:862:10: '('
+            // MacroScope\\MacroScope.g:861:8: ( '(' )
+            // MacroScope\\MacroScope.g:861:10: '('
             {
             	Match('('); if (failed) return ;
             
@@ -1480,8 +1480,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = RPAREN;
-            // MacroScope\\MacroScope.g:863:8: ( ')' )
-            // MacroScope\\MacroScope.g:863:10: ')'
+            // MacroScope\\MacroScope.g:862:8: ( ')' )
+            // MacroScope\\MacroScope.g:862:10: ')'
             {
             	Match(')'); if (failed) return ;
             
@@ -1501,8 +1501,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = ASSIGNEQUAL;
-            // MacroScope\\MacroScope.g:865:13: ( '=' )
-            // MacroScope\\MacroScope.g:865:15: '='
+            // MacroScope\\MacroScope.g:864:13: ( '=' )
+            // MacroScope\\MacroScope.g:864:15: '='
             {
             	Match('='); if (failed) return ;
             
@@ -1522,8 +1522,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = NOTEQUAL1;
-            // MacroScope\\MacroScope.g:866:11: ( '<>' )
-            // MacroScope\\MacroScope.g:866:13: '<>'
+            // MacroScope\\MacroScope.g:865:11: ( '<>' )
+            // MacroScope\\MacroScope.g:865:13: '<>'
             {
             	Match("<>"); if (failed) return ;
 
@@ -1544,8 +1544,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = NOTEQUAL2;
-            // MacroScope\\MacroScope.g:867:11: ( '!=' )
-            // MacroScope\\MacroScope.g:867:13: '!='
+            // MacroScope\\MacroScope.g:866:11: ( '!=' )
+            // MacroScope\\MacroScope.g:866:13: '!='
             {
             	Match("!="); if (failed) return ;
 
@@ -1566,8 +1566,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = LESSTHANOREQUALTO1;
-            // MacroScope\\MacroScope.g:868:20: ( '<=' )
-            // MacroScope\\MacroScope.g:868:22: '<='
+            // MacroScope\\MacroScope.g:867:20: ( '<=' )
+            // MacroScope\\MacroScope.g:867:22: '<='
             {
             	Match("<="); if (failed) return ;
 
@@ -1588,8 +1588,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = LESSTHAN;
-            // MacroScope\\MacroScope.g:869:10: ( '<' )
-            // MacroScope\\MacroScope.g:869:12: '<'
+            // MacroScope\\MacroScope.g:868:10: ( '<' )
+            // MacroScope\\MacroScope.g:868:12: '<'
             {
             	Match('<'); if (failed) return ;
             
@@ -1609,8 +1609,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = GREATERTHANOREQUALTO1;
-            // MacroScope\\MacroScope.g:870:23: ( '>=' )
-            // MacroScope\\MacroScope.g:870:25: '>='
+            // MacroScope\\MacroScope.g:869:23: ( '>=' )
+            // MacroScope\\MacroScope.g:869:25: '>='
             {
             	Match(">="); if (failed) return ;
 
@@ -1631,8 +1631,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = GREATERTHAN;
-            // MacroScope\\MacroScope.g:871:13: ( '>' )
-            // MacroScope\\MacroScope.g:871:15: '>'
+            // MacroScope\\MacroScope.g:870:13: ( '>' )
+            // MacroScope\\MacroScope.g:870:15: '>'
             {
             	Match('>'); if (failed) return ;
             
@@ -1652,8 +1652,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = DIVIDE;
-            // MacroScope\\MacroScope.g:873:8: ( '/' )
-            // MacroScope\\MacroScope.g:873:10: '/'
+            // MacroScope\\MacroScope.g:872:8: ( '/' )
+            // MacroScope\\MacroScope.g:872:10: '/'
             {
             	Match('/'); if (failed) return ;
             
@@ -1673,8 +1673,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = PLUS;
-            // MacroScope\\MacroScope.g:874:6: ( '+' )
-            // MacroScope\\MacroScope.g:874:8: '+'
+            // MacroScope\\MacroScope.g:873:6: ( '+' )
+            // MacroScope\\MacroScope.g:873:8: '+'
             {
             	Match('+'); if (failed) return ;
             
@@ -1694,8 +1694,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = STAR;
-            // MacroScope\\MacroScope.g:875:6: ( '*' )
-            // MacroScope\\MacroScope.g:875:8: '*'
+            // MacroScope\\MacroScope.g:874:6: ( '*' )
+            // MacroScope\\MacroScope.g:874:8: '*'
             {
             	Match('*'); if (failed) return ;
             
@@ -1715,8 +1715,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = MOD;
-            // MacroScope\\MacroScope.g:876:5: ( '%' )
-            // MacroScope\\MacroScope.g:876:7: '%'
+            // MacroScope\\MacroScope.g:875:5: ( '%' )
+            // MacroScope\\MacroScope.g:875:7: '%'
             {
             	Match('%'); if (failed) return ;
             
@@ -1736,8 +1736,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = STRCONCAT;
-            // MacroScope\\MacroScope.g:878:11: ( '||' )
-            // MacroScope\\MacroScope.g:878:13: '||'
+            // MacroScope\\MacroScope.g:877:11: ( '||' )
+            // MacroScope\\MacroScope.g:877:13: '||'
             {
             	Match("||"); if (failed) return ;
 
@@ -1758,8 +1758,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = PLACEHOLDER;
-            // MacroScope\\MacroScope.g:880:12: ( '?' )
-            // MacroScope\\MacroScope.g:880:14: '?'
+            // MacroScope\\MacroScope.g:879:12: ( '?' )
+            // MacroScope\\MacroScope.g:879:14: '?'
             {
             	Match('?'); if (failed) return ;
             
@@ -1778,8 +1778,8 @@ public class MacroScopeLexer : Lexer
     {
         try 
     	{
-            // MacroScope\\MacroScope.g:883:8: ( 'a' .. 'z' )
-            // MacroScope\\MacroScope.g:883:10: 'a' .. 'z'
+            // MacroScope\\MacroScope.g:882:8: ( 'a' .. 'z' )
+            // MacroScope\\MacroScope.g:882:10: 'a' .. 'z'
             {
             	MatchRange('a','z'); if (failed) return ;
             
@@ -1797,8 +1797,8 @@ public class MacroScopeLexer : Lexer
     {
         try 
     	{
-            // MacroScope\\MacroScope.g:886:7: ( '0' .. '9' )
-            // MacroScope\\MacroScope.g:886:9: '0' .. '9'
+            // MacroScope\\MacroScope.g:885:7: ( '0' .. '9' )
+            // MacroScope\\MacroScope.g:885:9: '0' .. '9'
             {
             	MatchRange('0','9'); if (failed) return ;
             
@@ -1816,8 +1816,8 @@ public class MacroScopeLexer : Lexer
     {
         try 
     	{
-            // MacroScope\\MacroScope.g:889:9: ()
-            // MacroScope\\MacroScope.g:889:10: 
+            // MacroScope\\MacroScope.g:888:9: ()
+            // MacroScope\\MacroScope.g:888:10: 
             {
             }
 
@@ -1833,8 +1833,8 @@ public class MacroScopeLexer : Lexer
     {
         try 
     	{
-            // MacroScope\\MacroScope.g:892:6: ()
-            // MacroScope\\MacroScope.g:892:7: 
+            // MacroScope\\MacroScope.g:891:6: ()
+            // MacroScope\\MacroScope.g:891:7: 
             {
             }
 
@@ -1850,11 +1850,11 @@ public class MacroScopeLexer : Lexer
     {
         try 
     	{
-            // MacroScope\\MacroScope.g:895:10: ( 'e' ( '+' | '-' )? ( Digit )+ )
-            // MacroScope\\MacroScope.g:896:2: 'e' ( '+' | '-' )? ( Digit )+
+            // MacroScope\\MacroScope.g:894:10: ( 'e' ( '+' | '-' )? ( Digit )+ )
+            // MacroScope\\MacroScope.g:895:2: 'e' ( '+' | '-' )? ( Digit )+
             {
             	Match('e'); if (failed) return ;
-            	// MacroScope\\MacroScope.g:896:6: ( '+' | '-' )?
+            	// MacroScope\\MacroScope.g:895:6: ( '+' | '-' )?
             	int alt1 = 2;
             	int LA1_0 = input.LA(1);
             	
@@ -1886,7 +1886,7 @@ public class MacroScopeLexer : Lexer
             	
             	}
 
-            	// MacroScope\\MacroScope.g:896:21: ( Digit )+
+            	// MacroScope\\MacroScope.g:895:21: ( Digit )+
             	int cnt2 = 0;
             	do 
             	{
@@ -1902,7 +1902,7 @@ public class MacroScopeLexer : Lexer
             	    switch (alt2) 
             		{
             			case 1 :
-            			    // MacroScope\\MacroScope.g:896:22: Digit
+            			    // MacroScope\\MacroScope.g:895:22: Digit
             			    {
             			    	mDigit(); if (failed) return ;
             			    
@@ -1938,8 +1938,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = MAccessDateTime;
-            // MacroScope\\MacroScope.g:899:17: ( '#' Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ' ' Digit Digit ':' Digit Digit ':' Digit Digit '#' )
-            // MacroScope\\MacroScope.g:900:2: '#' Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ' ' Digit Digit ':' Digit Digit ':' Digit Digit '#'
+            // MacroScope\\MacroScope.g:898:17: ( '#' Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ' ' Digit Digit ':' Digit Digit ':' Digit Digit '#' )
+            // MacroScope\\MacroScope.g:899:2: '#' Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ' ' Digit Digit ':' Digit Digit ':' Digit Digit '#'
             {
             	Match('#'); if (failed) return ;
             	mDigit(); if (failed) return ;
@@ -1979,8 +1979,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = Iso8601DateTime;
-            // MacroScope\\MacroScope.g:906:17: ( Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ( 't' | ' ' ) Digit Digit ':' Digit Digit ':' Digit Digit )
-            // MacroScope\\MacroScope.g:907:2: Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ( 't' | ' ' ) Digit Digit ':' Digit Digit ':' Digit Digit
+            // MacroScope\\MacroScope.g:905:17: ( Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ( 't' | ' ' ) Digit Digit ':' Digit Digit ':' Digit Digit )
+            // MacroScope\\MacroScope.g:906:2: Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ( 't' | ' ' ) Digit Digit ':' Digit Digit ':' Digit Digit
             {
             	mDigit(); if (failed) return ;
             	mDigit(); if (failed) return ;
@@ -2030,15 +2030,15 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = Number;
-            // MacroScope\\MacroScope.g:912:8: ( ( ( Digit )+ ( '.' | 'e' ) )=> ( Digit )+ ( '.' ( Digit )* ( Exponent )? | Exponent ) | '.' ( ( Digit )+ ( Exponent )? )? | ( Digit )+ | '0x' ( 'a' .. 'f' | Digit )* )
+            // MacroScope\\MacroScope.g:911:8: ( ( ( Digit )+ ( '.' | 'e' ) )=> ( Digit )+ ( '.' ( Digit )* ( Exponent )? | Exponent ) | '.' ( ( Digit )+ ( Exponent )? )? | ( Digit )+ | '0x' ( 'a' .. 'f' | Digit )* )
             int alt12 = 4;
             alt12 = dfa12.Predict(input);
             switch (alt12) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:913:2: ( ( Digit )+ ( '.' | 'e' ) )=> ( Digit )+ ( '.' ( Digit )* ( Exponent )? | Exponent )
+                    // MacroScope\\MacroScope.g:912:2: ( ( Digit )+ ( '.' | 'e' ) )=> ( Digit )+ ( '.' ( Digit )* ( Exponent )? | Exponent )
                     {
-                    	// MacroScope\\MacroScope.g:913:30: ( Digit )+
+                    	// MacroScope\\MacroScope.g:912:30: ( Digit )+
                     	int cnt3 = 0;
                     	do 
                     	{
@@ -2054,7 +2054,7 @@ public class MacroScopeLexer : Lexer
                     	    switch (alt3) 
                     		{
                     			case 1 :
-                    			    // MacroScope\\MacroScope.g:913:31: Digit
+                    			    // MacroScope\\MacroScope.g:912:31: Digit
                     			    {
                     			    	mDigit(); if (failed) return ;
                     			    
@@ -2074,7 +2074,7 @@ public class MacroScopeLexer : Lexer
                     	loop3:
                     		;	// Stops C# compiler whinging that label 'loop3' has no statements
 
-                    	// MacroScope\\MacroScope.g:913:39: ( '.' ( Digit )* ( Exponent )? | Exponent )
+                    	// MacroScope\\MacroScope.g:912:39: ( '.' ( Digit )* ( Exponent )? | Exponent )
                     	int alt6 = 2;
                     	int LA6_0 = input.LA(1);
                     	
@@ -2090,17 +2090,17 @@ public class MacroScopeLexer : Lexer
                     	{
                     	    if ( backtracking > 0 ) {failed = true; return ;}
                     	    NoViableAltException nvae_d6s0 =
-                    	        new NoViableAltException("913:39: ( '.' ( Digit )* ( Exponent )? | Exponent )", 6, 0, input);
+                    	        new NoViableAltException("912:39: ( '.' ( Digit )* ( Exponent )? | Exponent )", 6, 0, input);
                     	
                     	    throw nvae_d6s0;
                     	}
                     	switch (alt6) 
                     	{
                     	    case 1 :
-                    	        // MacroScope\\MacroScope.g:913:41: '.' ( Digit )* ( Exponent )?
+                    	        // MacroScope\\MacroScope.g:912:41: '.' ( Digit )* ( Exponent )?
                     	        {
                     	        	Match('.'); if (failed) return ;
-                    	        	// MacroScope\\MacroScope.g:913:45: ( Digit )*
+                    	        	// MacroScope\\MacroScope.g:912:45: ( Digit )*
                     	        	do 
                     	        	{
                     	        	    int alt4 = 2;
@@ -2115,7 +2115,7 @@ public class MacroScopeLexer : Lexer
                     	        	    switch (alt4) 
                     	        		{
                     	        			case 1 :
-                    	        			    // MacroScope\\MacroScope.g:913:46: Digit
+                    	        			    // MacroScope\\MacroScope.g:912:46: Digit
                     	        			    {
                     	        			    	mDigit(); if (failed) return ;
                     	        			    
@@ -2130,7 +2130,7 @@ public class MacroScopeLexer : Lexer
                     	        	loop4:
                     	        		;	// Stops C# compiler whinging that label 'loop4' has no statements
 
-                    	        	// MacroScope\\MacroScope.g:913:54: ( Exponent )?
+                    	        	// MacroScope\\MacroScope.g:912:54: ( Exponent )?
                     	        	int alt5 = 2;
                     	        	int LA5_0 = input.LA(1);
                     	        	
@@ -2141,7 +2141,7 @@ public class MacroScopeLexer : Lexer
                     	        	switch (alt5) 
                     	        	{
                     	        	    case 1 :
-                    	        	        // MacroScope\\MacroScope.g:913:55: Exponent
+                    	        	        // MacroScope\\MacroScope.g:912:55: Exponent
                     	        	        {
                     	        	        	mExponent(); if (failed) return ;
                     	        	        
@@ -2154,7 +2154,7 @@ public class MacroScopeLexer : Lexer
                     	        }
                     	        break;
                     	    case 2 :
-                    	        // MacroScope\\MacroScope.g:913:68: Exponent
+                    	        // MacroScope\\MacroScope.g:912:68: Exponent
                     	        {
                     	        	mExponent(); if (failed) return ;
                     	        
@@ -2171,14 +2171,14 @@ public class MacroScopeLexer : Lexer
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:914:4: '.' ( ( Digit )+ ( Exponent )? )?
+                    // MacroScope\\MacroScope.g:913:4: '.' ( ( Digit )+ ( Exponent )? )?
                     {
                     	Match('.'); if (failed) return ;
                     	if ( backtracking == 0 ) 
                     	{
                     	   _type = DOT; 
                     	}
-                    	// MacroScope\\MacroScope.g:914:25: ( ( Digit )+ ( Exponent )? )?
+                    	// MacroScope\\MacroScope.g:913:25: ( ( Digit )+ ( Exponent )? )?
                     	int alt9 = 2;
                     	int LA9_0 = input.LA(1);
                     	
@@ -2189,9 +2189,9 @@ public class MacroScopeLexer : Lexer
                     	switch (alt9) 
                     	{
                     	    case 1 :
-                    	        // MacroScope\\MacroScope.g:914:27: ( Digit )+ ( Exponent )?
+                    	        // MacroScope\\MacroScope.g:913:27: ( Digit )+ ( Exponent )?
                     	        {
-                    	        	// MacroScope\\MacroScope.g:914:27: ( Digit )+
+                    	        	// MacroScope\\MacroScope.g:913:27: ( Digit )+
                     	        	int cnt7 = 0;
                     	        	do 
                     	        	{
@@ -2207,7 +2207,7 @@ public class MacroScopeLexer : Lexer
                     	        	    switch (alt7) 
                     	        		{
                     	        			case 1 :
-                    	        			    // MacroScope\\MacroScope.g:914:28: Digit
+                    	        			    // MacroScope\\MacroScope.g:913:28: Digit
                     	        			    {
                     	        			    	mDigit(); if (failed) return ;
                     	        			    
@@ -2227,7 +2227,7 @@ public class MacroScopeLexer : Lexer
                     	        	loop7:
                     	        		;	// Stops C# compiler whinging that label 'loop7' has no statements
 
-                    	        	// MacroScope\\MacroScope.g:914:36: ( Exponent )?
+                    	        	// MacroScope\\MacroScope.g:913:36: ( Exponent )?
                     	        	int alt8 = 2;
                     	        	int LA8_0 = input.LA(1);
                     	        	
@@ -2238,7 +2238,7 @@ public class MacroScopeLexer : Lexer
                     	        	switch (alt8) 
                     	        	{
                     	        	    case 1 :
-                    	        	        // MacroScope\\MacroScope.g:914:37: Exponent
+                    	        	        // MacroScope\\MacroScope.g:913:37: Exponent
                     	        	        {
                     	        	        	mExponent(); if (failed) return ;
                     	        	        
@@ -2261,9 +2261,9 @@ public class MacroScopeLexer : Lexer
                     }
                     break;
                 case 3 :
-                    // MacroScope\\MacroScope.g:915:4: ( Digit )+
+                    // MacroScope\\MacroScope.g:914:4: ( Digit )+
                     {
-                    	// MacroScope\\MacroScope.g:915:4: ( Digit )+
+                    	// MacroScope\\MacroScope.g:914:4: ( Digit )+
                     	int cnt10 = 0;
                     	do 
                     	{
@@ -2279,7 +2279,7 @@ public class MacroScopeLexer : Lexer
                     	    switch (alt10) 
                     		{
                     			case 1 :
-                    			    // MacroScope\\MacroScope.g:915:5: Digit
+                    			    // MacroScope\\MacroScope.g:914:5: Digit
                     			    {
                     			    	mDigit(); if (failed) return ;
                     			    
@@ -2307,11 +2307,11 @@ public class MacroScopeLexer : Lexer
                     }
                     break;
                 case 4 :
-                    // MacroScope\\MacroScope.g:916:4: '0x' ( 'a' .. 'f' | Digit )*
+                    // MacroScope\\MacroScope.g:915:4: '0x' ( 'a' .. 'f' | Digit )*
                     {
                     	Match("0x"); if (failed) return ;
 
-                    	// MacroScope\\MacroScope.g:916:9: ( 'a' .. 'f' | Digit )*
+                    	// MacroScope\\MacroScope.g:915:9: ( 'a' .. 'f' | Digit )*
                     	do 
                     	{
                     	    int alt11 = 2;
@@ -2375,10 +2375,10 @@ public class MacroScopeLexer : Lexer
     {
         try 
     	{
-            // MacroScope\\MacroScope.g:920:10: ( ( Letter | Digit | '_' )* )
-            // MacroScope\\MacroScope.g:921:2: ( Letter | Digit | '_' )*
+            // MacroScope\\MacroScope.g:919:10: ( ( Letter | Digit | '_' )* )
+            // MacroScope\\MacroScope.g:920:2: ( Letter | Digit | '_' )*
             {
-            	// MacroScope\\MacroScope.g:921:2: ( Letter | Digit | '_' )*
+            	// MacroScope\\MacroScope.g:920:2: ( Letter | Digit | '_' )*
             	do 
             	{
             	    int alt13 = 2;
@@ -2436,8 +2436,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = NonQuotedIdentifier;
-            // MacroScope\\MacroScope.g:924:21: ( Letter WordTail )
-            // MacroScope\\MacroScope.g:924:23: Letter WordTail
+            // MacroScope\\MacroScope.g:923:21: ( Letter WordTail )
+            // MacroScope\\MacroScope.g:923:23: Letter WordTail
             {
             	mLetter(); if (failed) return ;
             	mWordTail(); if (failed) return ;
@@ -2458,7 +2458,7 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = QuotedIdentifier;
-            // MacroScope\\MacroScope.g:926:18: ( '[' (~ ']' )* ']' ( ']' (~ ']' )* ']' )* | '\"' (~ '\"' )* '\"' ( '\"' (~ '\"' )* '\"' )* | '`' (~ '`' )* '`' )
+            // MacroScope\\MacroScope.g:925:18: ( '[' (~ ']' )* ']' ( ']' (~ ']' )* ']' )* | '\"' (~ '\"' )* '\"' ( '\"' (~ '\"' )* '\"' )* | '`' (~ '`' )* '`' )
             int alt21 = 3;
             switch ( input.LA(1) ) 
             {
@@ -2480,7 +2480,7 @@ public class MacroScopeLexer : Lexer
             	default:
             	    if ( backtracking > 0 ) {failed = true; return ;}
             	    NoViableAltException nvae_d21s0 =
-            	        new NoViableAltException("926:1: QuotedIdentifier : ( '[' (~ ']' )* ']' ( ']' (~ ']' )* ']' )* | '\"' (~ '\"' )* '\"' ( '\"' (~ '\"' )* '\"' )* | '`' (~ '`' )* '`' );", 21, 0, input);
+            	        new NoViableAltException("925:1: QuotedIdentifier : ( '[' (~ ']' )* ']' ( ']' (~ ']' )* ']' )* | '\"' (~ '\"' )* '\"' ( '\"' (~ '\"' )* '\"' )* | '`' (~ '`' )* '`' );", 21, 0, input);
             
             	    throw nvae_d21s0;
             }
@@ -2488,10 +2488,10 @@ public class MacroScopeLexer : Lexer
             switch (alt21) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:927:2: '[' (~ ']' )* ']' ( ']' (~ ']' )* ']' )*
+                    // MacroScope\\MacroScope.g:926:2: '[' (~ ']' )* ']' ( ']' (~ ']' )* ']' )*
                     {
                     	Match('['); if (failed) return ;
-                    	// MacroScope\\MacroScope.g:927:6: (~ ']' )*
+                    	// MacroScope\\MacroScope.g:926:6: (~ ']' )*
                     	do 
                     	{
                     	    int alt14 = 2;
@@ -2506,7 +2506,7 @@ public class MacroScopeLexer : Lexer
                     	    switch (alt14) 
                     		{
                     			case 1 :
-                    			    // MacroScope\\MacroScope.g:927:7: ~ ']'
+                    			    // MacroScope\\MacroScope.g:926:7: ~ ']'
                     			    {
                     			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\\') || (input.LA(1) >= '^' && input.LA(1) <= '\uFFFE') ) 
                     			    	{
@@ -2534,7 +2534,7 @@ public class MacroScopeLexer : Lexer
                     		;	// Stops C# compiler whinging that label 'loop14' has no statements
 
                     	Match(']'); if (failed) return ;
-                    	// MacroScope\\MacroScope.g:927:18: ( ']' (~ ']' )* ']' )*
+                    	// MacroScope\\MacroScope.g:926:18: ( ']' (~ ']' )* ']' )*
                     	do 
                     	{
                     	    int alt16 = 2;
@@ -2549,10 +2549,10 @@ public class MacroScopeLexer : Lexer
                     	    switch (alt16) 
                     		{
                     			case 1 :
-                    			    // MacroScope\\MacroScope.g:927:19: ']' (~ ']' )* ']'
+                    			    // MacroScope\\MacroScope.g:926:19: ']' (~ ']' )* ']'
                     			    {
                     			    	Match(']'); if (failed) return ;
-                    			    	// MacroScope\\MacroScope.g:927:23: (~ ']' )*
+                    			    	// MacroScope\\MacroScope.g:926:23: (~ ']' )*
                     			    	do 
                     			    	{
                     			    	    int alt15 = 2;
@@ -2567,7 +2567,7 @@ public class MacroScopeLexer : Lexer
                     			    	    switch (alt15) 
                     			    		{
                     			    			case 1 :
-                    			    			    // MacroScope\\MacroScope.g:927:24: ~ ']'
+                    			    			    // MacroScope\\MacroScope.g:926:24: ~ ']'
                     			    			    {
                     			    			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\\') || (input.LA(1) >= '^' && input.LA(1) <= '\uFFFE') ) 
                     			    			    	{
@@ -2611,10 +2611,10 @@ public class MacroScopeLexer : Lexer
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:928:4: '\"' (~ '\"' )* '\"' ( '\"' (~ '\"' )* '\"' )*
+                    // MacroScope\\MacroScope.g:927:4: '\"' (~ '\"' )* '\"' ( '\"' (~ '\"' )* '\"' )*
                     {
                     	Match('\"'); if (failed) return ;
-                    	// MacroScope\\MacroScope.g:928:8: (~ '\"' )*
+                    	// MacroScope\\MacroScope.g:927:8: (~ '\"' )*
                     	do 
                     	{
                     	    int alt17 = 2;
@@ -2629,7 +2629,7 @@ public class MacroScopeLexer : Lexer
                     	    switch (alt17) 
                     		{
                     			case 1 :
-                    			    // MacroScope\\MacroScope.g:928:9: ~ '\"'
+                    			    // MacroScope\\MacroScope.g:927:9: ~ '\"'
                     			    {
                     			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!') || (input.LA(1) >= '#' && input.LA(1) <= '\uFFFE') ) 
                     			    	{
@@ -2657,7 +2657,7 @@ public class MacroScopeLexer : Lexer
                     		;	// Stops C# compiler whinging that label 'loop17' has no statements
 
                     	Match('\"'); if (failed) return ;
-                    	// MacroScope\\MacroScope.g:928:20: ( '\"' (~ '\"' )* '\"' )*
+                    	// MacroScope\\MacroScope.g:927:20: ( '\"' (~ '\"' )* '\"' )*
                     	do 
                     	{
                     	    int alt19 = 2;
@@ -2672,10 +2672,10 @@ public class MacroScopeLexer : Lexer
                     	    switch (alt19) 
                     		{
                     			case 1 :
-                    			    // MacroScope\\MacroScope.g:928:21: '\"' (~ '\"' )* '\"'
+                    			    // MacroScope\\MacroScope.g:927:21: '\"' (~ '\"' )* '\"'
                     			    {
                     			    	Match('\"'); if (failed) return ;
-                    			    	// MacroScope\\MacroScope.g:928:25: (~ '\"' )*
+                    			    	// MacroScope\\MacroScope.g:927:25: (~ '\"' )*
                     			    	do 
                     			    	{
                     			    	    int alt18 = 2;
@@ -2690,7 +2690,7 @@ public class MacroScopeLexer : Lexer
                     			    	    switch (alt18) 
                     			    		{
                     			    			case 1 :
-                    			    			    // MacroScope\\MacroScope.g:928:26: ~ '\"'
+                    			    			    // MacroScope\\MacroScope.g:927:26: ~ '\"'
                     			    			    {
                     			    			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!') || (input.LA(1) >= '#' && input.LA(1) <= '\uFFFE') ) 
                     			    			    	{
@@ -2734,10 +2734,10 @@ public class MacroScopeLexer : Lexer
                     }
                     break;
                 case 3 :
-                    // MacroScope\\MacroScope.g:929:4: '`' (~ '`' )* '`'
+                    // MacroScope\\MacroScope.g:928:4: '`' (~ '`' )* '`'
                     {
                     	Match('`'); if (failed) return ;
-                    	// MacroScope\\MacroScope.g:929:8: (~ '`' )*
+                    	// MacroScope\\MacroScope.g:928:8: (~ '`' )*
                     	do 
                     	{
                     	    int alt20 = 2;
@@ -2752,7 +2752,7 @@ public class MacroScopeLexer : Lexer
                     	    switch (alt20) 
                     		{
                     			case 1 :
-                    			    // MacroScope\\MacroScope.g:929:9: ~ '`'
+                    			    // MacroScope\\MacroScope.g:928:9: ~ '`'
                     			    {
                     			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '_') || (input.LA(1) >= 'a' && input.LA(1) <= '\uFFFE') ) 
                     			    	{
@@ -2799,8 +2799,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = Variable;
-            // MacroScope\\MacroScope.g:939:10: ( ( '@' | ':' ) Letter WordTail )
-            // MacroScope\\MacroScope.g:940:2: ( '@' | ':' ) Letter WordTail
+            // MacroScope\\MacroScope.g:938:10: ( ( '@' | ':' ) Letter WordTail )
+            // MacroScope\\MacroScope.g:939:2: ( '@' | ':' ) Letter WordTail
             {
             	if ( input.LA(1) == ':' || input.LA(1) == '@' ) 
             	{
@@ -2833,10 +2833,10 @@ public class MacroScopeLexer : Lexer
     {
         try 
     	{
-            // MacroScope\\MacroScope.g:944:16: ( ( '\\t' | ' ' .. '&' | '(' .. '~' )+ )
-            // MacroScope\\MacroScope.g:946:2: ( '\\t' | ' ' .. '&' | '(' .. '~' )+
+            // MacroScope\\MacroScope.g:943:16: ( ( '\\t' | ' ' .. '&' | '(' .. '~' )+ )
+            // MacroScope\\MacroScope.g:945:2: ( '\\t' | ' ' .. '&' | '(' .. '~' )+
             {
-            	// MacroScope\\MacroScope.g:946:2: ( '\\t' | ' ' .. '&' | '(' .. '~' )+
+            	// MacroScope\\MacroScope.g:945:2: ( '\\t' | ' ' .. '&' | '(' .. '~' )+
             	int cnt22 = 0;
             	do 
             	{
@@ -2902,15 +2902,15 @@ public class MacroScopeLexer : Lexer
             int _type = AsciiStringLiteral;
             Token s = null;
     
-            // MacroScope\\MacroScope.g:949:20: ( '\\'' (s= AsciiStringRun )? '\\'' ( '\\'' (s= AsciiStringRun )? '\\'' )* )
-            // MacroScope\\MacroScope.g:950:2: '\\'' (s= AsciiStringRun )? '\\'' ( '\\'' (s= AsciiStringRun )? '\\'' )*
+            // MacroScope\\MacroScope.g:948:20: ( '\\'' (s= AsciiStringRun )? '\\'' ( '\\'' (s= AsciiStringRun )? '\\'' )* )
+            // MacroScope\\MacroScope.g:949:2: '\\'' (s= AsciiStringRun )? '\\'' ( '\\'' (s= AsciiStringRun )? '\\'' )*
             {
             	Match('\''); if (failed) return ;
             	if ( backtracking == 0 ) 
             	{
-            	   text = ""; 
+            	   Text = ""; 
             	}
-            	// MacroScope\\MacroScope.g:951:2: (s= AsciiStringRun )?
+            	// MacroScope\\MacroScope.g:950:2: (s= AsciiStringRun )?
             	int alt23 = 2;
             	int LA23_0 = input.LA(1);
             	
@@ -2921,14 +2921,14 @@ public class MacroScopeLexer : Lexer
             	switch (alt23) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:951:4: s= AsciiStringRun
+            	        // MacroScope\\MacroScope.g:950:4: s= AsciiStringRun
             	        {
             	        	int sStart1227 = CharIndex;
             	        	mAsciiStringRun(); if (failed) return ;
             	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1227, CharIndex-1);
             	        	if ( backtracking == 0 ) 
             	        	{
-            	        	   text = s.Text; 
+            	        	   Text = s.Text; 
             	        	}
             	        
             	        }
@@ -2937,7 +2937,7 @@ public class MacroScopeLexer : Lexer
             	}
 
             	Match('\''); if (failed) return ;
-            	// MacroScope\\MacroScope.g:952:2: ( '\\'' (s= AsciiStringRun )? '\\'' )*
+            	// MacroScope\\MacroScope.g:951:2: ( '\\'' (s= AsciiStringRun )? '\\'' )*
             	do 
             	{
             	    int alt25 = 2;
@@ -2952,16 +2952,16 @@ public class MacroScopeLexer : Lexer
             	    switch (alt25) 
             		{
             			case 1 :
-            			    // MacroScope\\MacroScope.g:952:4: '\\'' (s= AsciiStringRun )? '\\''
+            			    // MacroScope\\MacroScope.g:951:4: '\\'' (s= AsciiStringRun )? '\\''
             			    {
             			    	Match('\''); if (failed) return ;
             			    	if ( backtracking == 0 ) 
             			    	{
             			    	  
-            			    	  			text = text + "\'";
+            			    	  			Text = Text + "\'";
             			    	  		
             			    	}
-            			    	// MacroScope\\MacroScope.g:954:5: (s= AsciiStringRun )?
+            			    	// MacroScope\\MacroScope.g:953:5: (s= AsciiStringRun )?
             			    	int alt24 = 2;
             			    	int LA24_0 = input.LA(1);
             			    	
@@ -2972,14 +2972,14 @@ public class MacroScopeLexer : Lexer
             			    	switch (alt24) 
             			    	{
             			    	    case 1 :
-            			    	        // MacroScope\\MacroScope.g:954:7: s= AsciiStringRun
+            			    	        // MacroScope\\MacroScope.g:953:7: s= AsciiStringRun
             			    	        {
             			    	        	int sStart1249 = CharIndex;
             			    	        	mAsciiStringRun(); if (failed) return ;
             			    	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1249, CharIndex-1);
             			    	        	if ( backtracking == 0 ) 
             			    	        	{
-            			    	        	   text = text + s.Text; 
+            			    	        	   Text = Text + s.Text; 
             			    	        	}
             			    	        
             			    	        }
@@ -3016,10 +3016,10 @@ public class MacroScopeLexer : Lexer
     {
         try 
     	{
-            // MacroScope\\MacroScope.g:959:18: ( (~ '\\'' )+ )
-            // MacroScope\\MacroScope.g:960:2: (~ '\\'' )+
+            // MacroScope\\MacroScope.g:958:18: ( (~ '\\'' )+ )
+            // MacroScope\\MacroScope.g:959:2: (~ '\\'' )+
             {
-            	// MacroScope\\MacroScope.g:960:2: (~ '\\'' )+
+            	// MacroScope\\MacroScope.g:959:2: (~ '\\'' )+
             	int cnt26 = 0;
             	do 
             	{
@@ -3035,7 +3035,7 @@ public class MacroScopeLexer : Lexer
             	    switch (alt26) 
             		{
             			case 1 :
-            			    // MacroScope\\MacroScope.g:960:3: ~ '\\''
+            			    // MacroScope\\MacroScope.g:959:3: ~ '\\''
             			    {
             			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&') || (input.LA(1) >= '(' && input.LA(1) <= '\uFFFE') ) 
             			    	{
@@ -3085,16 +3085,16 @@ public class MacroScopeLexer : Lexer
             int _type = UnicodeStringLiteral;
             Token s = null;
     
-            // MacroScope\\MacroScope.g:963:22: ( 'n' '\\'' (s= UnicodeStringRun )? '\\'' ( '\\'' (s= UnicodeStringRun )? '\\'' )* )
-            // MacroScope\\MacroScope.g:964:2: 'n' '\\'' (s= UnicodeStringRun )? '\\'' ( '\\'' (s= UnicodeStringRun )? '\\'' )*
+            // MacroScope\\MacroScope.g:962:22: ( 'n' '\\'' (s= UnicodeStringRun )? '\\'' ( '\\'' (s= UnicodeStringRun )? '\\'' )* )
+            // MacroScope\\MacroScope.g:963:2: 'n' '\\'' (s= UnicodeStringRun )? '\\'' ( '\\'' (s= UnicodeStringRun )? '\\'' )*
             {
             	Match('n'); if (failed) return ;
             	Match('\''); if (failed) return ;
             	if ( backtracking == 0 ) 
             	{
-            	   text = ""; 
+            	   Text = ""; 
             	}
-            	// MacroScope\\MacroScope.g:965:2: (s= UnicodeStringRun )?
+            	// MacroScope\\MacroScope.g:964:2: (s= UnicodeStringRun )?
             	int alt27 = 2;
             	int LA27_0 = input.LA(1);
             	
@@ -3105,14 +3105,14 @@ public class MacroScopeLexer : Lexer
             	switch (alt27) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:965:4: s= UnicodeStringRun
+            	        // MacroScope\\MacroScope.g:964:4: s= UnicodeStringRun
             	        {
             	        	int sStart1305 = CharIndex;
             	        	mUnicodeStringRun(); if (failed) return ;
             	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1305, CharIndex-1);
             	        	if ( backtracking == 0 ) 
             	        	{
-            	        	   text = s.Text; 
+            	        	   Text = s.Text; 
             	        	}
             	        
             	        }
@@ -3121,7 +3121,7 @@ public class MacroScopeLexer : Lexer
             	}
 
             	Match('\''); if (failed) return ;
-            	// MacroScope\\MacroScope.g:966:2: ( '\\'' (s= UnicodeStringRun )? '\\'' )*
+            	// MacroScope\\MacroScope.g:965:2: ( '\\'' (s= UnicodeStringRun )? '\\'' )*
             	do 
             	{
             	    int alt29 = 2;
@@ -3136,16 +3136,16 @@ public class MacroScopeLexer : Lexer
             	    switch (alt29) 
             		{
             			case 1 :
-            			    // MacroScope\\MacroScope.g:966:4: '\\'' (s= UnicodeStringRun )? '\\''
+            			    // MacroScope\\MacroScope.g:965:4: '\\'' (s= UnicodeStringRun )? '\\''
             			    {
             			    	Match('\''); if (failed) return ;
             			    	if ( backtracking == 0 ) 
             			    	{
             			    	  
-            			    	  			text = text + "\'";
+            			    	  			Text = Text + "\'";
             			    	  		
             			    	}
-            			    	// MacroScope\\MacroScope.g:968:5: (s= UnicodeStringRun )?
+            			    	// MacroScope\\MacroScope.g:967:5: (s= UnicodeStringRun )?
             			    	int alt28 = 2;
             			    	int LA28_0 = input.LA(1);
             			    	
@@ -3156,14 +3156,14 @@ public class MacroScopeLexer : Lexer
             			    	switch (alt28) 
             			    	{
             			    	    case 1 :
-            			    	        // MacroScope\\MacroScope.g:968:7: s= UnicodeStringRun
+            			    	        // MacroScope\\MacroScope.g:967:7: s= UnicodeStringRun
             			    	        {
             			    	        	int sStart1327 = CharIndex;
             			    	        	mUnicodeStringRun(); if (failed) return ;
             			    	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1327, CharIndex-1);
             			    	        	if ( backtracking == 0 ) 
             			    	        	{
-            			    	        	   text = text + s.Text; 
+            			    	        	   Text = Text + s.Text; 
             			    	        	}
             			    	        
             			    	        }
@@ -3200,8 +3200,8 @@ public class MacroScopeLexer : Lexer
     {
         try 
     	{
-            // MacroScope\\MacroScope.g:973:12: ()
-            // MacroScope\\MacroScope.g:975:2: 
+            // MacroScope\\MacroScope.g:972:12: ()
+            // MacroScope\\MacroScope.g:974:2: 
             {
             }
 
@@ -3218,8 +3218,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = MINUS;
-            // MacroScope\\MacroScope.g:977:7: ( '-' )
-            // MacroScope\\MacroScope.g:977:9: '-'
+            // MacroScope\\MacroScope.g:976:7: ( '-' )
+            // MacroScope\\MacroScope.g:976:9: '-'
             {
             	Match('-'); if (failed) return ;
             
@@ -3239,8 +3239,8 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = COLON;
-            // MacroScope\\MacroScope.g:978:7: ( ':' )
-            // MacroScope\\MacroScope.g:978:9: ':'
+            // MacroScope\\MacroScope.g:977:7: ( ':' )
+            // MacroScope\\MacroScope.g:977:9: ':'
             {
             	Match(':'); if (failed) return ;
             
@@ -3260,10 +3260,10 @@ public class MacroScopeLexer : Lexer
         try 
     	{
             int _type = Whitespace;
-            // MacroScope\\MacroScope.g:980:12: ( ( '\\t' | ' ' | '\\r' | '\\n' )+ )
-            // MacroScope\\MacroScope.g:980:14: ( '\\t' | ' ' | '\\r' | '\\n' )+
+            // MacroScope\\MacroScope.g:979:12: ( ( '\\t' | ' ' | '\\r' | '\\n' )+ )
+            // MacroScope\\MacroScope.g:979:14: ( '\\t' | ' ' | '\\r' | '\\n' )+
             {
-            	// MacroScope\\MacroScope.g:980:14: ( '\\t' | ' ' | '\\r' | '\\n' )+
+            	// MacroScope\\MacroScope.g:979:14: ( '\\t' | ' ' | '\\r' | '\\n' )+
             	int cnt30 = 0;
             	do 
             	{
@@ -6283,10 +6283,10 @@ public class MacroScopeLexer : Lexer
     // $ANTLR start synpred1
     public void synpred1_fragment() //throws RecognitionException
     {   
-        // MacroScope\\MacroScope.g:913:2: ( ( Digit )+ ( '.' | 'e' ) )
-        // MacroScope\\MacroScope.g:913:4: ( Digit )+ ( '.' | 'e' )
+        // MacroScope\\MacroScope.g:912:2: ( ( Digit )+ ( '.' | 'e' ) )
+        // MacroScope\\MacroScope.g:912:4: ( Digit )+ ( '.' | 'e' )
         {
-        	// MacroScope\\MacroScope.g:913:4: ( Digit )+
+        	// MacroScope\\MacroScope.g:912:4: ( Digit )+
         	int cnt32 = 0;
         	do 
         	{
@@ -6302,7 +6302,7 @@ public class MacroScopeLexer : Lexer
         	    switch (alt32) 
         		{
         			case 1 :
-        			    // MacroScope\\MacroScope.g:913:5: Digit
+        			    // MacroScope\\MacroScope.g:912:5: Digit
         			    {
         			    	mDigit(); if (failed) return ;
         			    
@@ -6433,7 +6433,7 @@ public class MacroScopeLexer : Lexer
     
         override public string Description
         {
-            get { return "912:1: Number : ( ( ( Digit )+ ( '.' | 'e' ) )=> ( Digit )+ ( '.' ( Digit )* ( Exponent )? | Exponent ) | '.' ( ( Digit )+ ( Exponent )? )? | ( Digit )+ | '0x' ( 'a' .. 'f' | Digit )* );"; }
+            get { return "911:1: Number : ( ( ( Digit )+ ( '.' | 'e' ) )=> ( Digit )+ ( '.' ( Digit )* ( Exponent )? | Exponent ) | '.' ( ( Digit )+ ( Exponent )? )? | ( Digit )+ | '0x' ( 'a' .. 'f' | Digit )* );"; }
         }
     
     }

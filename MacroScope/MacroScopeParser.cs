@@ -1,4 +1,4 @@
-// $ANTLR 3.0.1 MacroScope\\MacroScope.g 2008-01-12 20:02:54
+// $ANTLR 3.0.1 MacroScope\\MacroScope.g 2008-06-09 11:56:25
 namespace 
 	MacroScope
 
@@ -221,7 +221,7 @@ public class MacroScopeParser : Parser
     		: base(input)
     	{
     		InitializeCyclicDFAs();
-            ruleMemo = new IDictionary[70+1];
+            ruleMemo = new IDictionary[69+1];
          }
         
 
@@ -3160,7 +3160,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start subTableSource
-    // MacroScope\\MacroScope.g:380:1: subTableSource returns [ Table value ] : ( LPAREN ( ( joinedTables )=>t= joinedTables RPAREN | ( queryExpression )=>q= queryExpression RPAREN a= alias1 ) | ( function )=>f= function (a= alias1 )? | o= dbObject (a= alias1 )? );
+    // MacroScope\\MacroScope.g:380:1: subTableSource returns [ Table value ] : ( LPAREN ( ( joinedTables )=>t= joinedTables RPAREN | q= queryExpression RPAREN a= alias1 ) | ( function )=>f= function (a= alias1 )? | o= dbObject (a= alias1 )? );
     public Table subTableSource() // throws RecognitionException [1]
     {   
 
@@ -3179,7 +3179,7 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:380:40: ( LPAREN ( ( joinedTables )=>t= joinedTables RPAREN | ( queryExpression )=>q= queryExpression RPAREN a= alias1 ) | ( function )=>f= function (a= alias1 )? | o= dbObject (a= alias1 )? )
+            // MacroScope\\MacroScope.g:380:40: ( LPAREN ( ( joinedTables )=>t= joinedTables RPAREN | q= queryExpression RPAREN a= alias1 ) | ( function )=>f= function (a= alias1 )? | o= dbObject (a= alias1 )? )
             int alt46 = 3;
             int LA46_0 = input.LA(1);
             
@@ -3187,11 +3187,11 @@ public class MacroScopeParser : Parser
             {
                 alt46 = 1;
             }
-            else if ( (LA46_0 == SUBSTRING) && (synpred7()) )
+            else if ( (LA46_0 == SUBSTRING) && (synpred6()) )
             {
                 alt46 = 2;
             }
-            else if ( (LA46_0 == EXTRACT) && (synpred7()) )
+            else if ( (LA46_0 == EXTRACT) && (synpred6()) )
             {
                 alt46 = 2;
             }
@@ -3199,7 +3199,7 @@ public class MacroScopeParser : Parser
             {
                 int LA46_4 = input.LA(2);
                 
-                if ( (LA46_4 == LPAREN) && (synpred7()) )
+                if ( (LA46_4 == LPAREN) && (synpred6()) )
                 {
                     alt46 = 2;
                 }
@@ -3211,16 +3211,16 @@ public class MacroScopeParser : Parser
                 {
                     if ( backtracking > 0 ) {failed = true; return value;}
                     NoViableAltException nvae_d46s4 =
-                        new NoViableAltException("380:1: subTableSource returns [ Table value ] : ( LPAREN ( ( joinedTables )=>t= joinedTables RPAREN | ( queryExpression )=>q= queryExpression RPAREN a= alias1 ) | ( function )=>f= function (a= alias1 )? | o= dbObject (a= alias1 )? );", 46, 4, input);
+                        new NoViableAltException("380:1: subTableSource returns [ Table value ] : ( LPAREN ( ( joinedTables )=>t= joinedTables RPAREN | q= queryExpression RPAREN a= alias1 ) | ( function )=>f= function (a= alias1 )? | o= dbObject (a= alias1 )? );", 46, 4, input);
                 
                     throw nvae_d46s4;
                 }
             }
-            else if ( (LA46_0 == LEFT) && (synpred7()) )
+            else if ( (LA46_0 == LEFT) && (synpred6()) )
             {
                 alt46 = 2;
             }
-            else if ( (LA46_0 == RIGHT) && (synpred7()) )
+            else if ( (LA46_0 == RIGHT) && (synpred6()) )
             {
                 alt46 = 2;
             }
@@ -3232,17 +3232,17 @@ public class MacroScopeParser : Parser
             {
                 if ( backtracking > 0 ) {failed = true; return value;}
                 NoViableAltException nvae_d46s0 =
-                    new NoViableAltException("380:1: subTableSource returns [ Table value ] : ( LPAREN ( ( joinedTables )=>t= joinedTables RPAREN | ( queryExpression )=>q= queryExpression RPAREN a= alias1 ) | ( function )=>f= function (a= alias1 )? | o= dbObject (a= alias1 )? );", 46, 0, input);
+                    new NoViableAltException("380:1: subTableSource returns [ Table value ] : ( LPAREN ( ( joinedTables )=>t= joinedTables RPAREN | q= queryExpression RPAREN a= alias1 ) | ( function )=>f= function (a= alias1 )? | o= dbObject (a= alias1 )? );", 46, 0, input);
             
                 throw nvae_d46s0;
             }
             switch (alt46) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:381:2: LPAREN ( ( joinedTables )=>t= joinedTables RPAREN | ( queryExpression )=>q= queryExpression RPAREN a= alias1 )
+                    // MacroScope\\MacroScope.g:381:2: LPAREN ( ( joinedTables )=>t= joinedTables RPAREN | q= queryExpression RPAREN a= alias1 )
                     {
                     	Match(input,LPAREN,FOLLOW_LPAREN_in_subTableSource1663); if (failed) return value;
-                    	// MacroScope\\MacroScope.g:381:9: ( ( joinedTables )=>t= joinedTables RPAREN | ( queryExpression )=>q= queryExpression RPAREN a= alias1 )
+                    	// MacroScope\\MacroScope.g:381:9: ( ( joinedTables )=>t= joinedTables RPAREN | q= queryExpression RPAREN a= alias1 )
                     	int alt43 = 2;
                     	int LA43_0 = input.LA(1);
                     	
@@ -3254,7 +3254,7 @@ public class MacroScopeParser : Parser
                     	    {
                     	        alt43 = 1;
                     	    }
-                    	    else if ( (synpred6()) )
+                    	    else if ( (true) )
                     	    {
                     	        alt43 = 2;
                     	    }
@@ -3262,7 +3262,7 @@ public class MacroScopeParser : Parser
                     	    {
                     	        if ( backtracking > 0 ) {failed = true; return value;}
                     	        NoViableAltException nvae_d43s1 =
-                    	            new NoViableAltException("381:9: ( ( joinedTables )=>t= joinedTables RPAREN | ( queryExpression )=>q= queryExpression RPAREN a= alias1 )", 43, 1, input);
+                    	            new NoViableAltException("381:9: ( ( joinedTables )=>t= joinedTables RPAREN | q= queryExpression RPAREN a= alias1 )", 43, 1, input);
                     	    
                     	        throw nvae_d43s1;
                     	    }
@@ -3291,7 +3291,7 @@ public class MacroScopeParser : Parser
                     	{
                     	    alt43 = 1;
                     	}
-                    	else if ( (LA43_0 == SELECT) && (synpred6()) )
+                    	else if ( (LA43_0 == SELECT) )
                     	{
                     	    alt43 = 2;
                     	}
@@ -3299,7 +3299,7 @@ public class MacroScopeParser : Parser
                     	{
                     	    if ( backtracking > 0 ) {failed = true; return value;}
                     	    NoViableAltException nvae_d43s0 =
-                    	        new NoViableAltException("381:9: ( ( joinedTables )=>t= joinedTables RPAREN | ( queryExpression )=>q= queryExpression RPAREN a= alias1 )", 43, 0, input);
+                    	        new NoViableAltException("381:9: ( ( joinedTables )=>t= joinedTables RPAREN | q= queryExpression RPAREN a= alias1 )", 43, 0, input);
                     	
                     	    throw nvae_d43s0;
                     	}
@@ -3324,26 +3324,26 @@ public class MacroScopeParser : Parser
                     	        }
                     	        break;
                     	    case 2 :
-                    	        // MacroScope\\MacroScope.g:387:5: ( queryExpression )=>q= queryExpression RPAREN a= alias1
+                    	        // MacroScope\\MacroScope.g:388:5: q= queryExpression RPAREN a= alias1
                     	        {
-                    	        	PushFollow(FOLLOW_queryExpression_in_subTableSource1709);
+                    	        	PushFollow(FOLLOW_queryExpression_in_subTableSource1699);
                     	        	q = queryExpression();
                     	        	followingStackPointer_--;
                     	        	if (failed) return value;
-                    	        	Match(input,RPAREN,FOLLOW_RPAREN_in_subTableSource1711); if (failed) return value;
-                    	        	PushFollow(FOLLOW_alias1_in_subTableSource1717);
+                    	        	Match(input,RPAREN,FOLLOW_RPAREN_in_subTableSource1701); if (failed) return value;
+                    	        	PushFollow(FOLLOW_alias1_in_subTableSource1707);
                     	        	a = alias1();
                     	        	followingStackPointer_--;
                     	        	if (failed) return value;
                     	        	if ( backtracking == 0 ) 
                     	        	{
                     	        	  
-                    	        	  				BracketedExpression expr =
-                    	        	  					new BracketedExpression(q);
-                    	        	  				expr.Spaced = true;
-                    	        	  				value =  new Table(expr);
-                    	        	  				value.Alias = a;
-                    	        	  			
+                    	        	  			BracketedExpression expr =
+                    	        	  				new BracketedExpression(q);
+                    	        	  			expr.Spaced = true;
+                    	        	  			value =  new Table(expr);
+                    	        	  			value.Alias = a;
+                    	        	  		
                     	        	}
                     	        
                     	        }
@@ -3355,9 +3355,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:400:4: ( function )=>f= function (a= alias1 )?
+                    // MacroScope\\MacroScope.g:399:4: ( function )=>f= function (a= alias1 )?
                     {
-                    	PushFollow(FOLLOW_function_in_subTableSource1752);
+                    	PushFollow(FOLLOW_function_in_subTableSource1742);
                     	f = function();
                     	followingStackPointer_--;
                     	if (failed) return value;
@@ -3367,7 +3367,7 @@ public class MacroScopeParser : Parser
                     	  			value =  new Table(f);
                     	  		
                     	}
-                    	// MacroScope\\MacroScope.g:404:4: (a= alias1 )?
+                    	// MacroScope\\MacroScope.g:403:4: (a= alias1 )?
                     	int alt44 = 2;
                     	int LA44_0 = input.LA(1);
                     	
@@ -3378,9 +3378,9 @@ public class MacroScopeParser : Parser
                     	switch (alt44) 
                     	{
                     	    case 1 :
-                    	        // MacroScope\\MacroScope.g:404:6: a= alias1
+                    	        // MacroScope\\MacroScope.g:403:6: a= alias1
                     	        {
-                    	        	PushFollow(FOLLOW_alias1_in_subTableSource1765);
+                    	        	PushFollow(FOLLOW_alias1_in_subTableSource1755);
                     	        	a = alias1();
                     	        	followingStackPointer_--;
                     	        	if (failed) return value;
@@ -3398,9 +3398,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 3 :
-                    // MacroScope\\MacroScope.g:405:4: o= dbObject (a= alias1 )?
+                    // MacroScope\\MacroScope.g:404:4: o= dbObject (a= alias1 )?
                     {
-                    	PushFollow(FOLLOW_dbObject_in_subTableSource1779);
+                    	PushFollow(FOLLOW_dbObject_in_subTableSource1769);
                     	o = dbObject();
                     	followingStackPointer_--;
                     	if (failed) return value;
@@ -3408,7 +3408,7 @@ public class MacroScopeParser : Parser
                     	{
                     	   value =  new Table(o); 
                     	}
-                    	// MacroScope\\MacroScope.g:406:3: (a= alias1 )?
+                    	// MacroScope\\MacroScope.g:405:3: (a= alias1 )?
                     	int alt45 = 2;
                     	int LA45_0 = input.LA(1);
                     	
@@ -3419,9 +3419,9 @@ public class MacroScopeParser : Parser
                     	switch (alt45) 
                     	{
                     	    case 1 :
-                    	        // MacroScope\\MacroScope.g:406:5: a= alias1
+                    	        // MacroScope\\MacroScope.g:405:5: a= alias1
                     	        {
-                    	        	PushFollow(FOLLOW_alias1_in_subTableSource1791);
+                    	        	PushFollow(FOLLOW_alias1_in_subTableSource1781);
                     	        	a = alias1();
                     	        	followingStackPointer_--;
                     	        	if (failed) return value;
@@ -3451,7 +3451,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start joinOn
-    // MacroScope\\MacroScope.g:409:1: joinOn returns [ Join value ] : ( INNER | ( LEFT | RIGHT | FULL ) ( OUTER )? )? JOIN ;
+    // MacroScope\\MacroScope.g:408:1: joinOn returns [ Join value ] : ( INNER | ( LEFT | RIGHT | FULL ) ( OUTER )? )? JOIN ;
     public Join joinOn() // throws RecognitionException [1]
     {   
 
@@ -3459,10 +3459,10 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:409:31: ( ( INNER | ( LEFT | RIGHT | FULL ) ( OUTER )? )? JOIN )
-            // MacroScope\\MacroScope.g:410:2: ( INNER | ( LEFT | RIGHT | FULL ) ( OUTER )? )? JOIN
+            // MacroScope\\MacroScope.g:408:31: ( ( INNER | ( LEFT | RIGHT | FULL ) ( OUTER )? )? JOIN )
+            // MacroScope\\MacroScope.g:409:2: ( INNER | ( LEFT | RIGHT | FULL ) ( OUTER )? )? JOIN
             {
-            	// MacroScope\\MacroScope.g:410:2: ( INNER | ( LEFT | RIGHT | FULL ) ( OUTER )? )?
+            	// MacroScope\\MacroScope.g:409:2: ( INNER | ( LEFT | RIGHT | FULL ) ( OUTER )? )?
             	int alt49 = 3;
             	int LA49_0 = input.LA(1);
             	
@@ -3477,16 +3477,16 @@ public class MacroScopeParser : Parser
             	switch (alt49) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:410:4: INNER
+            	        // MacroScope\\MacroScope.g:409:4: INNER
             	        {
-            	        	Match(input,INNER,FOLLOW_INNER_in_joinOn1813); if (failed) return value;
+            	        	Match(input,INNER,FOLLOW_INNER_in_joinOn1803); if (failed) return value;
             	        
             	        }
             	        break;
             	    case 2 :
-            	        // MacroScope\\MacroScope.g:411:4: ( LEFT | RIGHT | FULL ) ( OUTER )?
+            	        // MacroScope\\MacroScope.g:410:4: ( LEFT | RIGHT | FULL ) ( OUTER )?
             	        {
-            	        	// MacroScope\\MacroScope.g:411:4: ( LEFT | RIGHT | FULL )
+            	        	// MacroScope\\MacroScope.g:410:4: ( LEFT | RIGHT | FULL )
             	        	int alt47 = 3;
             	        	switch ( input.LA(1) ) 
             	        	{
@@ -3508,7 +3508,7 @@ public class MacroScopeParser : Parser
             	        		default:
             	        		    if ( backtracking > 0 ) {failed = true; return value;}
             	        		    NoViableAltException nvae_d47s0 =
-            	        		        new NoViableAltException("411:4: ( LEFT | RIGHT | FULL )", 47, 0, input);
+            	        		        new NoViableAltException("410:4: ( LEFT | RIGHT | FULL )", 47, 0, input);
             	        	
             	        		    throw nvae_d47s0;
             	        	}
@@ -3516,9 +3516,9 @@ public class MacroScopeParser : Parser
             	        	switch (alt47) 
             	        	{
             	        	    case 1 :
-            	        	        // MacroScope\\MacroScope.g:411:6: LEFT
+            	        	        // MacroScope\\MacroScope.g:410:6: LEFT
             	        	        {
-            	        	        	Match(input,LEFT,FOLLOW_LEFT_in_joinOn1820); if (failed) return value;
+            	        	        	Match(input,LEFT,FOLLOW_LEFT_in_joinOn1810); if (failed) return value;
             	        	        	if ( backtracking == 0 ) 
             	        	        	{
             	        	        	   value =  Join.Left; 
@@ -3527,9 +3527,9 @@ public class MacroScopeParser : Parser
             	        	        }
             	        	        break;
             	        	    case 2 :
-            	        	        // MacroScope\\MacroScope.g:412:5: RIGHT
+            	        	        // MacroScope\\MacroScope.g:411:5: RIGHT
             	        	        {
-            	        	        	Match(input,RIGHT,FOLLOW_RIGHT_in_joinOn1828); if (failed) return value;
+            	        	        	Match(input,RIGHT,FOLLOW_RIGHT_in_joinOn1818); if (failed) return value;
             	        	        	if ( backtracking == 0 ) 
             	        	        	{
             	        	        	   value =  Join.Right; 
@@ -3538,9 +3538,9 @@ public class MacroScopeParser : Parser
             	        	        }
             	        	        break;
             	        	    case 3 :
-            	        	        // MacroScope\\MacroScope.g:413:5: FULL
+            	        	        // MacroScope\\MacroScope.g:412:5: FULL
             	        	        {
-            	        	        	Match(input,FULL,FOLLOW_FULL_in_joinOn1836); if (failed) return value;
+            	        	        	Match(input,FULL,FOLLOW_FULL_in_joinOn1826); if (failed) return value;
             	        	        	if ( backtracking == 0 ) 
             	        	        	{
             	        	        	   value =  Join.Full; 
@@ -3551,7 +3551,7 @@ public class MacroScopeParser : Parser
             	        	
             	        	}
 
-            	        	// MacroScope\\MacroScope.g:414:3: ( OUTER )?
+            	        	// MacroScope\\MacroScope.g:413:3: ( OUTER )?
             	        	int alt48 = 2;
             	        	int LA48_0 = input.LA(1);
             	        	
@@ -3562,9 +3562,9 @@ public class MacroScopeParser : Parser
             	        	switch (alt48) 
             	        	{
             	        	    case 1 :
-            	        	        // MacroScope\\MacroScope.g:414:5: OUTER
+            	        	        // MacroScope\\MacroScope.g:413:5: OUTER
             	        	        {
-            	        	        	Match(input,OUTER,FOLLOW_OUTER_in_joinOn1846); if (failed) return value;
+            	        	        	Match(input,OUTER,FOLLOW_OUTER_in_joinOn1836); if (failed) return value;
             	        	        
             	        	        }
             	        	        break;
@@ -3577,7 +3577,7 @@ public class MacroScopeParser : Parser
             	
             	}
 
-            	Match(input,JOIN,FOLLOW_JOIN_in_joinOn1856); if (failed) return value;
+            	Match(input,JOIN,FOLLOW_JOIN_in_joinOn1846); if (failed) return value;
             
             }
     
@@ -3592,7 +3592,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start joinedTable
-    // MacroScope\\MacroScope.g:418:1: joinedTable returns [ Table value ] : ( CROSS JOIN t= subTableSource | (j= joinOn t= tableSource ON c= searchCondition ) );
+    // MacroScope\\MacroScope.g:417:1: joinedTable returns [ Table value ] : ( CROSS JOIN t= subTableSource | (j= joinOn t= tableSource ON c= searchCondition ) );
     public Table joinedTable() // throws RecognitionException [1]
     {   
 
@@ -3607,7 +3607,7 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:418:37: ( CROSS JOIN t= subTableSource | (j= joinOn t= tableSource ON c= searchCondition ) )
+            // MacroScope\\MacroScope.g:417:37: ( CROSS JOIN t= subTableSource | (j= joinOn t= tableSource ON c= searchCondition ) )
             int alt50 = 2;
             int LA50_0 = input.LA(1);
             
@@ -3623,18 +3623,18 @@ public class MacroScopeParser : Parser
             {
                 if ( backtracking > 0 ) {failed = true; return value;}
                 NoViableAltException nvae_d50s0 =
-                    new NoViableAltException("418:1: joinedTable returns [ Table value ] : ( CROSS JOIN t= subTableSource | (j= joinOn t= tableSource ON c= searchCondition ) );", 50, 0, input);
+                    new NoViableAltException("417:1: joinedTable returns [ Table value ] : ( CROSS JOIN t= subTableSource | (j= joinOn t= tableSource ON c= searchCondition ) );", 50, 0, input);
             
                 throw nvae_d50s0;
             }
             switch (alt50) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:419:2: CROSS JOIN t= subTableSource
+                    // MacroScope\\MacroScope.g:418:2: CROSS JOIN t= subTableSource
                     {
-                    	Match(input,CROSS,FOLLOW_CROSS_in_joinedTable1871); if (failed) return value;
-                    	Match(input,JOIN,FOLLOW_JOIN_in_joinedTable1873); if (failed) return value;
-                    	PushFollow(FOLLOW_subTableSource_in_joinedTable1879);
+                    	Match(input,CROSS,FOLLOW_CROSS_in_joinedTable1861); if (failed) return value;
+                    	Match(input,JOIN,FOLLOW_JOIN_in_joinedTable1863); if (failed) return value;
+                    	PushFollow(FOLLOW_subTableSource_in_joinedTable1869);
                     	t = subTableSource();
                     	followingStackPointer_--;
                     	if (failed) return value;
@@ -3649,16 +3649,16 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:423:4: (j= joinOn t= tableSource ON c= searchCondition )
+                    // MacroScope\\MacroScope.g:422:4: (j= joinOn t= tableSource ON c= searchCondition )
                     {
-                    	// MacroScope\\MacroScope.g:423:4: (j= joinOn t= tableSource ON c= searchCondition )
-                    	// MacroScope\\MacroScope.g:424:3: j= joinOn t= tableSource ON c= searchCondition
+                    	// MacroScope\\MacroScope.g:422:4: (j= joinOn t= tableSource ON c= searchCondition )
+                    	// MacroScope\\MacroScope.g:423:3: j= joinOn t= tableSource ON c= searchCondition
                     	{
-                    		PushFollow(FOLLOW_joinOn_in_joinedTable1894);
+                    		PushFollow(FOLLOW_joinOn_in_joinedTable1884);
                     		j = joinOn();
                     		followingStackPointer_--;
                     		if (failed) return value;
-                    		PushFollow(FOLLOW_tableSource_in_joinedTable1903);
+                    		PushFollow(FOLLOW_tableSource_in_joinedTable1893);
                     		t = tableSource();
                     		followingStackPointer_--;
                     		if (failed) return value;
@@ -3671,8 +3671,8 @@ public class MacroScopeParser : Parser
                     		  					j;
                     		  			
                     		}
-                    		Match(input,ON,FOLLOW_ON_in_joinedTable1910); if (failed) return value;
-                    		PushFollow(FOLLOW_searchCondition_in_joinedTable1916);
+                    		Match(input,ON,FOLLOW_ON_in_joinedTable1900); if (failed) return value;
+                    		PushFollow(FOLLOW_searchCondition_in_joinedTable1906);
                     		c = searchCondition();
                     		followingStackPointer_--;
                     		if (failed) return value;
@@ -3701,7 +3701,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start joinedTables
-    // MacroScope\\MacroScope.g:437:1: joinedTables returns [ Table value ] : t= subTableSource (t= joinedTable )+ ;
+    // MacroScope\\MacroScope.g:436:1: joinedTables returns [ Table value ] : t= subTableSource (t= joinedTable )+ ;
     public Table joinedTables() // throws RecognitionException [1]
     {   
 
@@ -3712,10 +3712,10 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:437:38: (t= subTableSource (t= joinedTable )+ )
-            // MacroScope\\MacroScope.g:438:2: t= subTableSource (t= joinedTable )+
+            // MacroScope\\MacroScope.g:436:38: (t= subTableSource (t= joinedTable )+ )
+            // MacroScope\\MacroScope.g:437:2: t= subTableSource (t= joinedTable )+
             {
-            	PushFollow(FOLLOW_subTableSource_in_joinedTables1941);
+            	PushFollow(FOLLOW_subTableSource_in_joinedTables1931);
             	t = subTableSource();
             	followingStackPointer_--;
             	if (failed) return value;
@@ -3723,7 +3723,7 @@ public class MacroScopeParser : Parser
             	{
             	   value =  t; 
             	}
-            	// MacroScope\\MacroScope.g:439:3: (t= joinedTable )+
+            	// MacroScope\\MacroScope.g:438:3: (t= joinedTable )+
             	int cnt51 = 0;
             	do 
             	{
@@ -3739,9 +3739,9 @@ public class MacroScopeParser : Parser
             	    switch (alt51) 
             		{
             			case 1 :
-            			    // MacroScope\\MacroScope.g:439:5: t= joinedTable
+            			    // MacroScope\\MacroScope.g:438:5: t= joinedTable
             			    {
-            			    	PushFollow(FOLLOW_joinedTable_in_joinedTables1953);
+            			    	PushFollow(FOLLOW_joinedTable_in_joinedTables1943);
             			    	t = joinedTable();
             			    	followingStackPointer_--;
             			    	if (failed) return value;
@@ -3780,7 +3780,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start alias1
-    // MacroScope\\MacroScope.g:444:1: alias1 returns [ Identifier value ] : ( AS )? i= identifier ;
+    // MacroScope\\MacroScope.g:443:1: alias1 returns [ Identifier value ] : ( AS )? i= identifier ;
     public Identifier alias1() // throws RecognitionException [1]
     {   
 
@@ -3791,10 +3791,10 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:444:37: ( ( AS )? i= identifier )
-            // MacroScope\\MacroScope.g:445:2: ( AS )? i= identifier
+            // MacroScope\\MacroScope.g:443:37: ( ( AS )? i= identifier )
+            // MacroScope\\MacroScope.g:444:2: ( AS )? i= identifier
             {
-            	// MacroScope\\MacroScope.g:445:2: ( AS )?
+            	// MacroScope\\MacroScope.g:444:2: ( AS )?
             	int alt52 = 2;
             	int LA52_0 = input.LA(1);
             	
@@ -3805,16 +3805,16 @@ public class MacroScopeParser : Parser
             	switch (alt52) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:445:3: AS
+            	        // MacroScope\\MacroScope.g:444:3: AS
             	        {
-            	        	Match(input,AS,FOLLOW_AS_in_alias11976); if (failed) return value;
+            	        	Match(input,AS,FOLLOW_AS_in_alias11966); if (failed) return value;
             	        
             	        }
             	        break;
             	
             	}
 
-            	PushFollow(FOLLOW_identifier_in_alias11984);
+            	PushFollow(FOLLOW_identifier_in_alias11974);
             	i = identifier();
             	followingStackPointer_--;
             	if (failed) return value;
@@ -3836,7 +3836,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start alias2
-    // MacroScope\\MacroScope.g:448:1: alias2 returns [ Identifier value ] : i= identifier ASSIGNEQUAL ;
+    // MacroScope\\MacroScope.g:447:1: alias2 returns [ Identifier value ] : i= identifier ASSIGNEQUAL ;
     public Identifier alias2() // throws RecognitionException [1]
     {   
 
@@ -3847,10 +3847,10 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:448:37: (i= identifier ASSIGNEQUAL )
-            // MacroScope\\MacroScope.g:449:2: i= identifier ASSIGNEQUAL
+            // MacroScope\\MacroScope.g:447:37: (i= identifier ASSIGNEQUAL )
+            // MacroScope\\MacroScope.g:448:2: i= identifier ASSIGNEQUAL
             {
-            	PushFollow(FOLLOW_identifier_in_alias22005);
+            	PushFollow(FOLLOW_identifier_in_alias21995);
             	i = identifier();
             	followingStackPointer_--;
             	if (failed) return value;
@@ -3858,7 +3858,7 @@ public class MacroScopeParser : Parser
             	{
             	   value =  i; 
             	}
-            	Match(input,ASSIGNEQUAL,FOLLOW_ASSIGNEQUAL_in_alias22011); if (failed) return value;
+            	Match(input,ASSIGNEQUAL,FOLLOW_ASSIGNEQUAL_in_alias22001); if (failed) return value;
             
             }
     
@@ -3873,7 +3873,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start tableColumns
-    // MacroScope\\MacroScope.g:453:1: tableColumns returns [ TableWildcard value ] : o= dbObject DOT_STAR ;
+    // MacroScope\\MacroScope.g:452:1: tableColumns returns [ TableWildcard value ] : o= dbObject DOT_STAR ;
     public TableWildcard tableColumns() // throws RecognitionException [1]
     {   
 
@@ -3884,14 +3884,14 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:453:46: (o= dbObject DOT_STAR )
-            // MacroScope\\MacroScope.g:454:2: o= dbObject DOT_STAR
+            // MacroScope\\MacroScope.g:452:46: (o= dbObject DOT_STAR )
+            // MacroScope\\MacroScope.g:453:2: o= dbObject DOT_STAR
             {
-            	PushFollow(FOLLOW_dbObject_in_tableColumns2030);
+            	PushFollow(FOLLOW_dbObject_in_tableColumns2020);
             	o = dbObject();
             	followingStackPointer_--;
             	if (failed) return value;
-            	Match(input,DOT_STAR,FOLLOW_DOT_STAR_in_tableColumns2032); if (failed) return value;
+            	Match(input,DOT_STAR,FOLLOW_DOT_STAR_in_tableColumns2022); if (failed) return value;
             	if ( backtracking == 0 ) 
             	{
             	   value =  new TableWildcard(o); 
@@ -3910,7 +3910,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start column
-    // MacroScope\\MacroScope.g:458:1: column returns [ DbObject value ] : (o= dbObject | LPAREN o= column RPAREN );
+    // MacroScope\\MacroScope.g:457:1: column returns [ DbObject value ] : (o= dbObject | LPAREN o= column RPAREN );
     public DbObject column() // throws RecognitionException [1]
     {   
 
@@ -3921,7 +3921,7 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:458:35: (o= dbObject | LPAREN o= column RPAREN )
+            // MacroScope\\MacroScope.g:457:35: (o= dbObject | LPAREN o= column RPAREN )
             int alt53 = 2;
             int LA53_0 = input.LA(1);
             
@@ -3937,16 +3937,16 @@ public class MacroScopeParser : Parser
             {
                 if ( backtracking > 0 ) {failed = true; return value;}
                 NoViableAltException nvae_d53s0 =
-                    new NoViableAltException("458:1: column returns [ DbObject value ] : (o= dbObject | LPAREN o= column RPAREN );", 53, 0, input);
+                    new NoViableAltException("457:1: column returns [ DbObject value ] : (o= dbObject | LPAREN o= column RPAREN );", 53, 0, input);
             
                 throw nvae_d53s0;
             }
             switch (alt53) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:459:2: o= dbObject
+                    // MacroScope\\MacroScope.g:458:2: o= dbObject
                     {
-                    	PushFollow(FOLLOW_dbObject_in_column2054);
+                    	PushFollow(FOLLOW_dbObject_in_column2044);
                     	o = dbObject();
                     	followingStackPointer_--;
                     	if (failed) return value;
@@ -3958,14 +3958,14 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:461:4: LPAREN o= column RPAREN
+                    // MacroScope\\MacroScope.g:460:4: LPAREN o= column RPAREN
                     {
-                    	Match(input,LPAREN,FOLLOW_LPAREN_in_column2063); if (failed) return value;
-                    	PushFollow(FOLLOW_column_in_column2069);
+                    	Match(input,LPAREN,FOLLOW_LPAREN_in_column2053); if (failed) return value;
+                    	PushFollow(FOLLOW_column_in_column2059);
                     	o = column();
                     	followingStackPointer_--;
                     	if (failed) return value;
-                    	Match(input,RPAREN,FOLLOW_RPAREN_in_column2071); if (failed) return value;
+                    	Match(input,RPAREN,FOLLOW_RPAREN_in_column2061); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  o; 
@@ -3986,7 +3986,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start expression
-    // MacroScope\\MacroScope.g:464:1: expression returns [ IExpression value ] : e= additiveSubExpression (o= additiveOperator r= additiveSubExpression )* ;
+    // MacroScope\\MacroScope.g:463:1: expression returns [ IExpression value ] : e= additiveSubExpression (o= additiveOperator r= additiveSubExpression )* ;
     public IExpression expression() // throws RecognitionException [1]
     {   
 
@@ -4001,10 +4001,10 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:464:42: (e= additiveSubExpression (o= additiveOperator r= additiveSubExpression )* )
-            // MacroScope\\MacroScope.g:465:2: e= additiveSubExpression (o= additiveOperator r= additiveSubExpression )*
+            // MacroScope\\MacroScope.g:463:42: (e= additiveSubExpression (o= additiveOperator r= additiveSubExpression )* )
+            // MacroScope\\MacroScope.g:464:2: e= additiveSubExpression (o= additiveOperator r= additiveSubExpression )*
             {
-            	PushFollow(FOLLOW_additiveSubExpression_in_expression2092);
+            	PushFollow(FOLLOW_additiveSubExpression_in_expression2082);
             	e = additiveSubExpression();
             	followingStackPointer_--;
             	if (failed) return value;
@@ -4012,7 +4012,7 @@ public class MacroScopeParser : Parser
             	{
             	   value =  e; 
             	}
-            	// MacroScope\\MacroScope.g:466:2: (o= additiveOperator r= additiveSubExpression )*
+            	// MacroScope\\MacroScope.g:465:2: (o= additiveOperator r= additiveSubExpression )*
             	do 
             	{
             	    int alt54 = 2;
@@ -4027,13 +4027,13 @@ public class MacroScopeParser : Parser
             	    switch (alt54) 
             		{
             			case 1 :
-            			    // MacroScope\\MacroScope.g:466:4: o= additiveOperator r= additiveSubExpression
+            			    // MacroScope\\MacroScope.g:465:4: o= additiveOperator r= additiveSubExpression
             			    {
-            			    	PushFollow(FOLLOW_additiveOperator_in_expression2103);
+            			    	PushFollow(FOLLOW_additiveOperator_in_expression2093);
             			    	o = additiveOperator();
             			    	followingStackPointer_--;
             			    	if (failed) return value;
-            			    	PushFollow(FOLLOW_additiveSubExpression_in_expression2109);
+            			    	PushFollow(FOLLOW_additiveSubExpression_in_expression2099);
             			    	r = additiveSubExpression();
             			    	followingStackPointer_--;
             			    	if (failed) return value;
@@ -4070,7 +4070,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start additiveSubExpression
-    // MacroScope\\MacroScope.g:472:1: additiveSubExpression returns [ IExpression value ] : e= subExpression (o= multiplicativeArithmeticOperator r= subExpression )* ;
+    // MacroScope\\MacroScope.g:471:1: additiveSubExpression returns [ IExpression value ] : e= subExpression (o= multiplicativeArithmeticOperator r= subExpression )* ;
     public IExpression additiveSubExpression() // throws RecognitionException [1]
     {   
 
@@ -4085,10 +4085,10 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:472:53: (e= subExpression (o= multiplicativeArithmeticOperator r= subExpression )* )
-            // MacroScope\\MacroScope.g:473:2: e= subExpression (o= multiplicativeArithmeticOperator r= subExpression )*
+            // MacroScope\\MacroScope.g:471:53: (e= subExpression (o= multiplicativeArithmeticOperator r= subExpression )* )
+            // MacroScope\\MacroScope.g:472:2: e= subExpression (o= multiplicativeArithmeticOperator r= subExpression )*
             {
-            	PushFollow(FOLLOW_subExpression_in_additiveSubExpression2134);
+            	PushFollow(FOLLOW_subExpression_in_additiveSubExpression2124);
             	e = subExpression();
             	followingStackPointer_--;
             	if (failed) return value;
@@ -4096,7 +4096,7 @@ public class MacroScopeParser : Parser
             	{
             	   value =  e; 
             	}
-            	// MacroScope\\MacroScope.g:474:2: (o= multiplicativeArithmeticOperator r= subExpression )*
+            	// MacroScope\\MacroScope.g:473:2: (o= multiplicativeArithmeticOperator r= subExpression )*
             	do 
             	{
             	    int alt55 = 2;
@@ -4111,13 +4111,13 @@ public class MacroScopeParser : Parser
             	    switch (alt55) 
             		{
             			case 1 :
-            			    // MacroScope\\MacroScope.g:474:4: o= multiplicativeArithmeticOperator r= subExpression
+            			    // MacroScope\\MacroScope.g:473:4: o= multiplicativeArithmeticOperator r= subExpression
             			    {
-            			    	PushFollow(FOLLOW_multiplicativeArithmeticOperator_in_additiveSubExpression2145);
+            			    	PushFollow(FOLLOW_multiplicativeArithmeticOperator_in_additiveSubExpression2135);
             			    	o = multiplicativeArithmeticOperator();
             			    	followingStackPointer_--;
             			    	if (failed) return value;
-            			    	PushFollow(FOLLOW_subExpression_in_additiveSubExpression2151);
+            			    	PushFollow(FOLLOW_subExpression_in_additiveSubExpression2141);
             			    	r = subExpression();
             			    	followingStackPointer_--;
             			    	if (failed) return value;
@@ -4154,7 +4154,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start bracketedTerm
-    // MacroScope\\MacroScope.g:480:1: bracketedTerm returns [ IExpression value ] : LPAREN ( ( selectStatement )=>s= selectStatement RPAREN | e= expression RPAREN ) ;
+    // MacroScope\\MacroScope.g:479:1: bracketedTerm returns [ IExpression value ] : LPAREN ( ( selectStatement )=>s= selectStatement RPAREN | e= expression RPAREN ) ;
     public IExpression bracketedTerm() // throws RecognitionException [1]
     {   
 
@@ -4167,15 +4167,15 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:480:45: ( LPAREN ( ( selectStatement )=>s= selectStatement RPAREN | e= expression RPAREN ) )
-            // MacroScope\\MacroScope.g:481:2: LPAREN ( ( selectStatement )=>s= selectStatement RPAREN | e= expression RPAREN )
+            // MacroScope\\MacroScope.g:479:45: ( LPAREN ( ( selectStatement )=>s= selectStatement RPAREN | e= expression RPAREN ) )
+            // MacroScope\\MacroScope.g:480:2: LPAREN ( ( selectStatement )=>s= selectStatement RPAREN | e= expression RPAREN )
             {
-            	Match(input,LPAREN,FOLLOW_LPAREN_in_bracketedTerm2171); if (failed) return value;
-            	// MacroScope\\MacroScope.g:481:9: ( ( selectStatement )=>s= selectStatement RPAREN | e= expression RPAREN )
+            	Match(input,LPAREN,FOLLOW_LPAREN_in_bracketedTerm2161); if (failed) return value;
+            	// MacroScope\\MacroScope.g:480:9: ( ( selectStatement )=>s= selectStatement RPAREN | e= expression RPAREN )
             	int alt56 = 2;
             	int LA56_0 = input.LA(1);
             	
-            	if ( (LA56_0 == SELECT) && (synpred8()) )
+            	if ( (LA56_0 == SELECT) && (synpred7()) )
             	{
             	    alt56 = 1;
             	}
@@ -4183,7 +4183,7 @@ public class MacroScopeParser : Parser
             	{
             	    int LA56_2 = input.LA(2);
             	    
-            	    if ( (synpred8()) )
+            	    if ( (synpred7()) )
             	    {
             	        alt56 = 1;
             	    }
@@ -4195,7 +4195,7 @@ public class MacroScopeParser : Parser
             	    {
             	        if ( backtracking > 0 ) {failed = true; return value;}
             	        NoViableAltException nvae_d56s2 =
-            	            new NoViableAltException("481:9: ( ( selectStatement )=>s= selectStatement RPAREN | e= expression RPAREN )", 56, 2, input);
+            	            new NoViableAltException("480:9: ( ( selectStatement )=>s= selectStatement RPAREN | e= expression RPAREN )", 56, 2, input);
             	    
             	        throw nvae_d56s2;
             	    }
@@ -4208,20 +4208,20 @@ public class MacroScopeParser : Parser
             	{
             	    if ( backtracking > 0 ) {failed = true; return value;}
             	    NoViableAltException nvae_d56s0 =
-            	        new NoViableAltException("481:9: ( ( selectStatement )=>s= selectStatement RPAREN | e= expression RPAREN )", 56, 0, input);
+            	        new NoViableAltException("480:9: ( ( selectStatement )=>s= selectStatement RPAREN | e= expression RPAREN )", 56, 0, input);
             	
             	    throw nvae_d56s0;
             	}
             	switch (alt56) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:481:11: ( selectStatement )=>s= selectStatement RPAREN
+            	        // MacroScope\\MacroScope.g:480:11: ( selectStatement )=>s= selectStatement RPAREN
             	        {
-            	        	PushFollow(FOLLOW_selectStatement_in_bracketedTerm2189);
+            	        	PushFollow(FOLLOW_selectStatement_in_bracketedTerm2179);
             	        	s = selectStatement();
             	        	followingStackPointer_--;
             	        	if (failed) return value;
-            	        	Match(input,RPAREN,FOLLOW_RPAREN_in_bracketedTerm2191); if (failed) return value;
+            	        	Match(input,RPAREN,FOLLOW_RPAREN_in_bracketedTerm2181); if (failed) return value;
             	        	if ( backtracking == 0 ) 
             	        	{
             	        	  
@@ -4233,13 +4233,13 @@ public class MacroScopeParser : Parser
             	        }
             	        break;
             	    case 2 :
-            	        // MacroScope\\MacroScope.g:486:5: e= expression RPAREN
+            	        // MacroScope\\MacroScope.g:485:5: e= expression RPAREN
             	        {
-            	        	PushFollow(FOLLOW_expression_in_bracketedTerm2203);
+            	        	PushFollow(FOLLOW_expression_in_bracketedTerm2193);
             	        	e = expression();
             	        	followingStackPointer_--;
             	        	if (failed) return value;
-            	        	Match(input,RPAREN,FOLLOW_RPAREN_in_bracketedTerm2205); if (failed) return value;
+            	        	Match(input,RPAREN,FOLLOW_RPAREN_in_bracketedTerm2195); if (failed) return value;
             	        	if ( backtracking == 0 ) 
             	        	{
             	        	  
@@ -4266,7 +4266,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start subExpression
-    // MacroScope\\MacroScope.g:491:1: subExpression returns [ IExpression value ] : (o= unaryOperator )? (c= constant | v= variableReference | PLACEHOLDER | ( function )=>f= function | e= bracketedTerm | d= dbObject | p= caseFunction | q= castFunction ) ;
+    // MacroScope\\MacroScope.g:490:1: subExpression returns [ IExpression value ] : (o= unaryOperator )? (c= constant | v= variableReference | PLACEHOLDER | ( function )=>f= function | e= bracketedTerm | d= dbObject | p= caseFunction | q= castFunction ) ;
     public IExpression subExpression() // throws RecognitionException [1]
     {   
 
@@ -4291,10 +4291,10 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:491:45: ( (o= unaryOperator )? (c= constant | v= variableReference | PLACEHOLDER | ( function )=>f= function | e= bracketedTerm | d= dbObject | p= caseFunction | q= castFunction ) )
-            // MacroScope\\MacroScope.g:492:2: (o= unaryOperator )? (c= constant | v= variableReference | PLACEHOLDER | ( function )=>f= function | e= bracketedTerm | d= dbObject | p= caseFunction | q= castFunction )
+            // MacroScope\\MacroScope.g:490:45: ( (o= unaryOperator )? (c= constant | v= variableReference | PLACEHOLDER | ( function )=>f= function | e= bracketedTerm | d= dbObject | p= caseFunction | q= castFunction ) )
+            // MacroScope\\MacroScope.g:491:2: (o= unaryOperator )? (c= constant | v= variableReference | PLACEHOLDER | ( function )=>f= function | e= bracketedTerm | d= dbObject | p= caseFunction | q= castFunction )
             {
-            	// MacroScope\\MacroScope.g:492:2: (o= unaryOperator )?
+            	// MacroScope\\MacroScope.g:491:2: (o= unaryOperator )?
             	int alt57 = 2;
             	int LA57_0 = input.LA(1);
             	
@@ -4305,9 +4305,9 @@ public class MacroScopeParser : Parser
             	switch (alt57) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:492:4: o= unaryOperator
+            	        // MacroScope\\MacroScope.g:491:4: o= unaryOperator
             	        {
-            	        	PushFollow(FOLLOW_unaryOperator_in_subExpression2230);
+            	        	PushFollow(FOLLOW_unaryOperator_in_subExpression2220);
             	        	o = unaryOperator();
             	        	followingStackPointer_--;
             	        	if (failed) return value;
@@ -4324,7 +4324,7 @@ public class MacroScopeParser : Parser
             	
             	}
 
-            	// MacroScope\\MacroScope.g:495:7: (c= constant | v= variableReference | PLACEHOLDER | ( function )=>f= function | e= bracketedTerm | d= dbObject | p= caseFunction | q= castFunction )
+            	// MacroScope\\MacroScope.g:494:7: (c= constant | v= variableReference | PLACEHOLDER | ( function )=>f= function | e= bracketedTerm | d= dbObject | p= caseFunction | q= castFunction )
             	int alt58 = 8;
             	int LA58_0 = input.LA(1);
             	
@@ -4340,11 +4340,11 @@ public class MacroScopeParser : Parser
             	{
             	    alt58 = 3;
             	}
-            	else if ( (LA58_0 == SUBSTRING) && (synpred9()) )
+            	else if ( (LA58_0 == SUBSTRING) && (synpred8()) )
             	{
             	    alt58 = 4;
             	}
-            	else if ( (LA58_0 == EXTRACT) && (synpred9()) )
+            	else if ( (LA58_0 == EXTRACT) && (synpred8()) )
             	{
             	    alt58 = 4;
             	}
@@ -4352,28 +4352,28 @@ public class MacroScopeParser : Parser
             	{
             	    int LA58_6 = input.LA(2);
             	    
-            	    if ( (LA58_6 == LPAREN) && (synpred9()) )
-            	    {
-            	        alt58 = 4;
-            	    }
-            	    else if ( (LA58_6 == EOF || LA58_6 == RPAREN || (LA58_6 >= FROM && LA58_6 <= ASSIGNEQUAL) || (LA58_6 >= WHERE && LA58_6 <= ORDER) || (LA58_6 >= ASC && LA58_6 <= IS) || (LA58_6 >= LIKE && LA58_6 <= IN) || (LA58_6 >= STAR && LA58_6 <= FULL) || (LA58_6 >= JOIN && LA58_6 <= AS) || LA58_6 == FOR || LA58_6 == NonQuotedIdentifier || (LA58_6 >= WHEN && LA58_6 <= END) || LA58_6 == DOT || LA58_6 == QuotedIdentifier || (LA58_6 >= PLUS && LA58_6 <= UNION)) )
+            	    if ( (LA58_6 == EOF || LA58_6 == RPAREN || (LA58_6 >= FROM && LA58_6 <= ASSIGNEQUAL) || (LA58_6 >= WHERE && LA58_6 <= ORDER) || (LA58_6 >= ASC && LA58_6 <= IS) || (LA58_6 >= LIKE && LA58_6 <= IN) || (LA58_6 >= STAR && LA58_6 <= FULL) || (LA58_6 >= JOIN && LA58_6 <= AS) || LA58_6 == FOR || LA58_6 == NonQuotedIdentifier || (LA58_6 >= WHEN && LA58_6 <= END) || LA58_6 == DOT || LA58_6 == QuotedIdentifier || (LA58_6 >= PLUS && LA58_6 <= UNION)) )
             	    {
             	        alt58 = 6;
+            	    }
+            	    else if ( (LA58_6 == LPAREN) && (synpred8()) )
+            	    {
+            	        alt58 = 4;
             	    }
             	    else 
             	    {
             	        if ( backtracking > 0 ) {failed = true; return value;}
             	        NoViableAltException nvae_d58s6 =
-            	            new NoViableAltException("495:7: (c= constant | v= variableReference | PLACEHOLDER | ( function )=>f= function | e= bracketedTerm | d= dbObject | p= caseFunction | q= castFunction )", 58, 6, input);
+            	            new NoViableAltException("494:7: (c= constant | v= variableReference | PLACEHOLDER | ( function )=>f= function | e= bracketedTerm | d= dbObject | p= caseFunction | q= castFunction )", 58, 6, input);
             	    
             	        throw nvae_d58s6;
             	    }
             	}
-            	else if ( (LA58_0 == LEFT) && (synpred9()) )
+            	else if ( (LA58_0 == LEFT) && (synpred8()) )
             	{
             	    alt58 = 4;
             	}
-            	else if ( (LA58_0 == RIGHT) && (synpred9()) )
+            	else if ( (LA58_0 == RIGHT) && (synpred8()) )
             	{
             	    alt58 = 4;
             	}
@@ -4397,16 +4397,16 @@ public class MacroScopeParser : Parser
             	{
             	    if ( backtracking > 0 ) {failed = true; return value;}
             	    NoViableAltException nvae_d58s0 =
-            	        new NoViableAltException("495:7: (c= constant | v= variableReference | PLACEHOLDER | ( function )=>f= function | e= bracketedTerm | d= dbObject | p= caseFunction | q= castFunction )", 58, 0, input);
+            	        new NoViableAltException("494:7: (c= constant | v= variableReference | PLACEHOLDER | ( function )=>f= function | e= bracketedTerm | d= dbObject | p= caseFunction | q= castFunction )", 58, 0, input);
             	
             	    throw nvae_d58s0;
             	}
             	switch (alt58) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:496:3: c= constant
+            	        // MacroScope\\MacroScope.g:495:3: c= constant
             	        {
-            	        	PushFollow(FOLLOW_constant_in_subExpression2245);
+            	        	PushFollow(FOLLOW_constant_in_subExpression2235);
             	        	c = constant();
             	        	followingStackPointer_--;
             	        	if (failed) return value;
@@ -4425,9 +4425,9 @@ public class MacroScopeParser : Parser
             	        }
             	        break;
             	    case 2 :
-            	        // MacroScope\\MacroScope.g:504:5: v= variableReference
+            	        // MacroScope\\MacroScope.g:503:5: v= variableReference
             	        {
-            	        	PushFollow(FOLLOW_variableReference_in_subExpression2257);
+            	        	PushFollow(FOLLOW_variableReference_in_subExpression2247);
             	        	v = variableReference();
             	        	followingStackPointer_--;
             	        	if (failed) return value;
@@ -4446,9 +4446,9 @@ public class MacroScopeParser : Parser
             	        }
             	        break;
             	    case 3 :
-            	        // MacroScope\\MacroScope.g:512:5: PLACEHOLDER
+            	        // MacroScope\\MacroScope.g:511:5: PLACEHOLDER
             	        {
-            	        	Match(input,PLACEHOLDER,FOLLOW_PLACEHOLDER_in_subExpression2265); if (failed) return value;
+            	        	Match(input,PLACEHOLDER,FOLLOW_PLACEHOLDER_in_subExpression2255); if (failed) return value;
             	        	if ( backtracking == 0 ) 
             	        	{
             	        	  
@@ -4464,9 +4464,9 @@ public class MacroScopeParser : Parser
             	        }
             	        break;
             	    case 4 :
-            	        // MacroScope\\MacroScope.g:520:5: ( function )=>f= function
+            	        // MacroScope\\MacroScope.g:519:5: ( function )=>f= function
             	        {
-            	        	PushFollow(FOLLOW_function_in_subExpression2286);
+            	        	PushFollow(FOLLOW_function_in_subExpression2276);
             	        	f = function();
             	        	followingStackPointer_--;
             	        	if (failed) return value;
@@ -4488,9 +4488,9 @@ public class MacroScopeParser : Parser
             	        }
             	        break;
             	    case 5 :
-            	        // MacroScope\\MacroScope.g:532:5: e= bracketedTerm
+            	        // MacroScope\\MacroScope.g:531:5: e= bracketedTerm
             	        {
-            	        	PushFollow(FOLLOW_bracketedTerm_in_subExpression2298);
+            	        	PushFollow(FOLLOW_bracketedTerm_in_subExpression2288);
             	        	e = bracketedTerm();
             	        	followingStackPointer_--;
             	        	if (failed) return value;
@@ -4511,9 +4511,9 @@ public class MacroScopeParser : Parser
             	        }
             	        break;
             	    case 6 :
-            	        // MacroScope\\MacroScope.g:542:5: d= dbObject
+            	        // MacroScope\\MacroScope.g:541:5: d= dbObject
             	        {
-            	        	PushFollow(FOLLOW_dbObject_in_subExpression2310);
+            	        	PushFollow(FOLLOW_dbObject_in_subExpression2300);
             	        	d = dbObject();
             	        	followingStackPointer_--;
             	        	if (failed) return value;
@@ -4532,9 +4532,9 @@ public class MacroScopeParser : Parser
             	        }
             	        break;
             	    case 7 :
-            	        // MacroScope\\MacroScope.g:552:5: p= caseFunction
+            	        // MacroScope\\MacroScope.g:551:5: p= caseFunction
             	        {
-            	        	PushFollow(FOLLOW_caseFunction_in_subExpression2356);
+            	        	PushFollow(FOLLOW_caseFunction_in_subExpression2346);
             	        	p = caseFunction();
             	        	followingStackPointer_--;
             	        	if (failed) return value;
@@ -4556,9 +4556,9 @@ public class MacroScopeParser : Parser
             	        }
             	        break;
             	    case 8 :
-            	        // MacroScope\\MacroScope.g:563:5: q= castFunction
+            	        // MacroScope\\MacroScope.g:562:5: q= castFunction
             	        {
-            	        	PushFollow(FOLLOW_castFunction_in_subExpression2368);
+            	        	PushFollow(FOLLOW_castFunction_in_subExpression2358);
             	        	q = castFunction();
             	        	followingStackPointer_--;
             	        	if (failed) return value;
@@ -4595,7 +4595,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start variableReference
-    // MacroScope\\MacroScope.g:576:1: variableReference returns [ Variable value ] : Variable ;
+    // MacroScope\\MacroScope.g:575:1: variableReference returns [ Variable value ] : Variable ;
     public Variable variableReference() // throws RecognitionException [1]
     {   
 
@@ -4605,11 +4605,11 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:576:46: ( Variable )
-            // MacroScope\\MacroScope.g:577:2: Variable
+            // MacroScope\\MacroScope.g:575:46: ( Variable )
+            // MacroScope\\MacroScope.g:576:2: Variable
             {
             	Variable2 = (IToken)input.LT(1);
-            	Match(input,Variable,FOLLOW_Variable_in_variableReference2387); if (failed) return value;
+            	Match(input,Variable,FOLLOW_Variable_in_variableReference2377); if (failed) return value;
             	if ( backtracking == 0 ) 
             	{
             	   value =  new Variable(Variable2.Text); 
@@ -4628,7 +4628,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start function
-    // MacroScope\\MacroScope.g:581:1: function returns [ IExpression value ] : ( SUBSTRING LPAREN v= expression FROM s= expression ( FOR l= expression )? RPAREN | EXTRACT LPAREN d= datetimeField FROM s= expression RPAREN | f= genericFunction );
+    // MacroScope\\MacroScope.g:580:1: function returns [ IExpression value ] : ( SUBSTRING LPAREN v= expression FROM s= expression ( FOR l= expression )? RPAREN | EXTRACT LPAREN d= datetimeField FROM s= expression RPAREN | f= genericFunction );
     public IExpression function() // throws RecognitionException [1]
     {   
 
@@ -4647,7 +4647,7 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:581:40: ( SUBSTRING LPAREN v= expression FROM s= expression ( FOR l= expression )? RPAREN | EXTRACT LPAREN d= datetimeField FROM s= expression RPAREN | f= genericFunction )
+            // MacroScope\\MacroScope.g:580:40: ( SUBSTRING LPAREN v= expression FROM s= expression ( FOR l= expression )? RPAREN | EXTRACT LPAREN d= datetimeField FROM s= expression RPAREN | f= genericFunction )
             int alt60 = 3;
             switch ( input.LA(1) ) 
             {
@@ -4671,7 +4671,7 @@ public class MacroScopeParser : Parser
             	default:
             	    if ( backtracking > 0 ) {failed = true; return value;}
             	    NoViableAltException nvae_d60s0 =
-            	        new NoViableAltException("581:1: function returns [ IExpression value ] : ( SUBSTRING LPAREN v= expression FROM s= expression ( FOR l= expression )? RPAREN | EXTRACT LPAREN d= datetimeField FROM s= expression RPAREN | f= genericFunction );", 60, 0, input);
+            	        new NoViableAltException("580:1: function returns [ IExpression value ] : ( SUBSTRING LPAREN v= expression FROM s= expression ( FOR l= expression )? RPAREN | EXTRACT LPAREN d= datetimeField FROM s= expression RPAREN | f= genericFunction );", 60, 0, input);
             
             	    throw nvae_d60s0;
             }
@@ -4679,17 +4679,17 @@ public class MacroScopeParser : Parser
             switch (alt60) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:582:2: SUBSTRING LPAREN v= expression FROM s= expression ( FOR l= expression )? RPAREN
+                    // MacroScope\\MacroScope.g:581:2: SUBSTRING LPAREN v= expression FROM s= expression ( FOR l= expression )? RPAREN
                     {
-                    	Match(input,SUBSTRING,FOLLOW_SUBSTRING_in_function2405); if (failed) return value;
+                    	Match(input,SUBSTRING,FOLLOW_SUBSTRING_in_function2395); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	  
                     	  		value =  new FunctionCall(TailorUtil.SUBSTRING);
                     	  	
                     	}
-                    	Match(input,LPAREN,FOLLOW_LPAREN_in_function2409); if (failed) return value;
-                    	PushFollow(FOLLOW_expression_in_function2415);
+                    	Match(input,LPAREN,FOLLOW_LPAREN_in_function2399); if (failed) return value;
+                    	PushFollow(FOLLOW_expression_in_function2405);
                     	v = expression();
                     	followingStackPointer_--;
                     	if (failed) return value;
@@ -4700,8 +4700,8 @@ public class MacroScopeParser : Parser
                     	  				new ExpressionItem(v);
                     	  		
                     	}
-                    	Match(input,FROM,FOLLOW_FROM_in_function2419); if (failed) return value;
-                    	PushFollow(FOLLOW_expression_in_function2425);
+                    	Match(input,FROM,FOLLOW_FROM_in_function2409); if (failed) return value;
+                    	PushFollow(FOLLOW_expression_in_function2415);
                     	s = expression();
                     	followingStackPointer_--;
                     	if (failed) return value;
@@ -4712,7 +4712,7 @@ public class MacroScopeParser : Parser
                     	  				new ExpressionItem(s));
                     	  		
                     	}
-                    	// MacroScope\\MacroScope.g:590:5: ( FOR l= expression )?
+                    	// MacroScope\\MacroScope.g:589:5: ( FOR l= expression )?
                     	int alt59 = 2;
                     	int LA59_0 = input.LA(1);
                     	
@@ -4723,10 +4723,10 @@ public class MacroScopeParser : Parser
                     	switch (alt59) 
                     	{
                     	    case 1 :
-                    	        // MacroScope\\MacroScope.g:590:7: FOR l= expression
+                    	        // MacroScope\\MacroScope.g:589:7: FOR l= expression
                     	        {
-                    	        	Match(input,FOR,FOLLOW_FOR_in_function2431); if (failed) return value;
-                    	        	PushFollow(FOLLOW_expression_in_function2437);
+                    	        	Match(input,FOR,FOLLOW_FOR_in_function2421); if (failed) return value;
+                    	        	PushFollow(FOLLOW_expression_in_function2427);
                     	        	l = expression();
                     	        	followingStackPointer_--;
                     	        	if (failed) return value;
@@ -4742,21 +4742,21 @@ public class MacroScopeParser : Parser
                     	
                     	}
 
-                    	Match(input,RPAREN,FOLLOW_RPAREN_in_function2444); if (failed) return value;
+                    	Match(input,RPAREN,FOLLOW_RPAREN_in_function2434); if (failed) return value;
                     
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:593:4: EXTRACT LPAREN d= datetimeField FROM s= expression RPAREN
+                    // MacroScope\\MacroScope.g:592:4: EXTRACT LPAREN d= datetimeField FROM s= expression RPAREN
                     {
-                    	Match(input,EXTRACT,FOLLOW_EXTRACT_in_function2449); if (failed) return value;
-                    	Match(input,LPAREN,FOLLOW_LPAREN_in_function2451); if (failed) return value;
-                    	PushFollow(FOLLOW_datetimeField_in_function2457);
+                    	Match(input,EXTRACT,FOLLOW_EXTRACT_in_function2439); if (failed) return value;
+                    	Match(input,LPAREN,FOLLOW_LPAREN_in_function2441); if (failed) return value;
+                    	PushFollow(FOLLOW_datetimeField_in_function2447);
                     	d = datetimeField();
                     	followingStackPointer_--;
                     	if (failed) return value;
-                    	Match(input,FROM,FOLLOW_FROM_in_function2459); if (failed) return value;
-                    	PushFollow(FOLLOW_expression_in_function2465);
+                    	Match(input,FROM,FOLLOW_FROM_in_function2449); if (failed) return value;
+                    	PushFollow(FOLLOW_expression_in_function2455);
                     	s = expression();
                     	followingStackPointer_--;
                     	if (failed) return value;
@@ -4766,14 +4766,14 @@ public class MacroScopeParser : Parser
                     	  			value =  new ExtractFunction(d, s);
                     	  		
                     	}
-                    	Match(input,RPAREN,FOLLOW_RPAREN_in_function2469); if (failed) return value;
+                    	Match(input,RPAREN,FOLLOW_RPAREN_in_function2459); if (failed) return value;
                     
                     }
                     break;
                 case 3 :
-                    // MacroScope\\MacroScope.g:596:4: f= genericFunction
+                    // MacroScope\\MacroScope.g:595:4: f= genericFunction
                     {
-                    	PushFollow(FOLLOW_genericFunction_in_function2478);
+                    	PushFollow(FOLLOW_genericFunction_in_function2468);
                     	f = genericFunction();
                     	followingStackPointer_--;
                     	if (failed) return value;
@@ -4799,7 +4799,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start genericFunction
-    // MacroScope\\MacroScope.g:601:1: genericFunction returns [ FunctionCall value ] : ( NonQuotedIdentifier | LEFT | RIGHT ) LPAREN (e= functionArgument ( COMMA e= functionArgument )* | STAR | ( ALL | DISTINCT ) ( STAR | e= expression ) )? RPAREN ;
+    // MacroScope\\MacroScope.g:600:1: genericFunction returns [ FunctionCall value ] : ( NonQuotedIdentifier | LEFT | RIGHT ) LPAREN (e= functionArgument ( COMMA e= functionArgument )* | STAR | ( ALL | DISTINCT ) ( STAR | e= expression ) )? RPAREN ;
     public FunctionCall genericFunction() // throws RecognitionException [1]
     {   
 
@@ -4811,10 +4811,10 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:601:48: ( ( NonQuotedIdentifier | LEFT | RIGHT ) LPAREN (e= functionArgument ( COMMA e= functionArgument )* | STAR | ( ALL | DISTINCT ) ( STAR | e= expression ) )? RPAREN )
-            // MacroScope\\MacroScope.g:603:2: ( NonQuotedIdentifier | LEFT | RIGHT ) LPAREN (e= functionArgument ( COMMA e= functionArgument )* | STAR | ( ALL | DISTINCT ) ( STAR | e= expression ) )? RPAREN
+            // MacroScope\\MacroScope.g:600:48: ( ( NonQuotedIdentifier | LEFT | RIGHT ) LPAREN (e= functionArgument ( COMMA e= functionArgument )* | STAR | ( ALL | DISTINCT ) ( STAR | e= expression ) )? RPAREN )
+            // MacroScope\\MacroScope.g:602:2: ( NonQuotedIdentifier | LEFT | RIGHT ) LPAREN (e= functionArgument ( COMMA e= functionArgument )* | STAR | ( ALL | DISTINCT ) ( STAR | e= expression ) )? RPAREN
             {
-            	// MacroScope\\MacroScope.g:603:2: ( NonQuotedIdentifier | LEFT | RIGHT )
+            	// MacroScope\\MacroScope.g:602:2: ( NonQuotedIdentifier | LEFT | RIGHT )
             	int alt61 = 3;
             	switch ( input.LA(1) ) 
             	{
@@ -4836,7 +4836,7 @@ public class MacroScopeParser : Parser
             		default:
             		    if ( backtracking > 0 ) {failed = true; return value;}
             		    NoViableAltException nvae_d61s0 =
-            		        new NoViableAltException("603:2: ( NonQuotedIdentifier | LEFT | RIGHT )", 61, 0, input);
+            		        new NoViableAltException("602:2: ( NonQuotedIdentifier | LEFT | RIGHT )", 61, 0, input);
             	
             		    throw nvae_d61s0;
             	}
@@ -4844,10 +4844,10 @@ public class MacroScopeParser : Parser
             	switch (alt61) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:606:3: NonQuotedIdentifier
+            	        // MacroScope\\MacroScope.g:605:3: NonQuotedIdentifier
             	        {
             	        	NonQuotedIdentifier3 = (IToken)input.LT(1);
-            	        	Match(input,NonQuotedIdentifier,FOLLOW_NonQuotedIdentifier_in_genericFunction2507); if (failed) return value;
+            	        	Match(input,NonQuotedIdentifier,FOLLOW_NonQuotedIdentifier_in_genericFunction2497); if (failed) return value;
             	        	if ( backtracking == 0 ) 
             	        	{
             	        	  
@@ -4858,9 +4858,9 @@ public class MacroScopeParser : Parser
             	        }
             	        break;
             	    case 2 :
-            	        // MacroScope\\MacroScope.g:609:5: LEFT
+            	        // MacroScope\\MacroScope.g:608:5: LEFT
             	        {
-            	        	Match(input,LEFT,FOLLOW_LEFT_in_genericFunction2515); if (failed) return value;
+            	        	Match(input,LEFT,FOLLOW_LEFT_in_genericFunction2505); if (failed) return value;
             	        	if ( backtracking == 0 ) 
             	        	{
             	        	  
@@ -4872,9 +4872,9 @@ public class MacroScopeParser : Parser
             	        }
             	        break;
             	    case 3 :
-            	        // MacroScope\\MacroScope.g:613:5: RIGHT
+            	        // MacroScope\\MacroScope.g:612:5: RIGHT
             	        {
-            	        	Match(input,RIGHT,FOLLOW_RIGHT_in_genericFunction2523); if (failed) return value;
+            	        	Match(input,RIGHT,FOLLOW_RIGHT_in_genericFunction2513); if (failed) return value;
             	        	if ( backtracking == 0 ) 
             	        	{
             	        	  
@@ -4888,8 +4888,8 @@ public class MacroScopeParser : Parser
             	
             	}
 
-            	Match(input,LPAREN,FOLLOW_LPAREN_in_genericFunction2530); if (failed) return value;
-            	// MacroScope\\MacroScope.g:617:11: (e= functionArgument ( COMMA e= functionArgument )* | STAR | ( ALL | DISTINCT ) ( STAR | e= expression ) )?
+            	Match(input,LPAREN,FOLLOW_LPAREN_in_genericFunction2520); if (failed) return value;
+            	// MacroScope\\MacroScope.g:616:11: (e= functionArgument ( COMMA e= functionArgument )* | STAR | ( ALL | DISTINCT ) ( STAR | e= expression ) )?
             	int alt65 = 4;
             	switch ( input.LA(1) ) 
             	{
@@ -4941,9 +4941,9 @@ public class MacroScopeParser : Parser
             	switch (alt65) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:618:3: e= functionArgument ( COMMA e= functionArgument )*
+            	        // MacroScope\\MacroScope.g:617:3: e= functionArgument ( COMMA e= functionArgument )*
             	        {
-            	        	PushFollow(FOLLOW_functionArgument_in_genericFunction2540);
+            	        	PushFollow(FOLLOW_functionArgument_in_genericFunction2530);
             	        	e = functionArgument();
             	        	followingStackPointer_--;
             	        	if (failed) return value;
@@ -4954,7 +4954,7 @@ public class MacroScopeParser : Parser
             	        	  				new ExpressionItem(e);
             	        	  		
             	        	}
-            	        	// MacroScope\\MacroScope.g:622:4: ( COMMA e= functionArgument )*
+            	        	// MacroScope\\MacroScope.g:621:4: ( COMMA e= functionArgument )*
             	        	do 
             	        	{
             	        	    int alt62 = 2;
@@ -4969,10 +4969,10 @@ public class MacroScopeParser : Parser
             	        	    switch (alt62) 
             	        		{
             	        			case 1 :
-            	        			    // MacroScope\\MacroScope.g:622:6: COMMA e= functionArgument
+            	        			    // MacroScope\\MacroScope.g:621:6: COMMA e= functionArgument
             	        			    {
-            	        			    	Match(input,COMMA,FOLLOW_COMMA_in_genericFunction2549); if (failed) return value;
-            	        			    	PushFollow(FOLLOW_functionArgument_in_genericFunction2555);
+            	        			    	Match(input,COMMA,FOLLOW_COMMA_in_genericFunction2539); if (failed) return value;
+            	        			    	PushFollow(FOLLOW_functionArgument_in_genericFunction2545);
             	        			    	e = functionArgument();
             	        			    	followingStackPointer_--;
             	        			    	if (failed) return value;
@@ -4999,9 +4999,9 @@ public class MacroScopeParser : Parser
             	        }
             	        break;
             	    case 2 :
-            	        // MacroScope\\MacroScope.g:628:5: STAR
+            	        // MacroScope\\MacroScope.g:627:5: STAR
             	        {
-            	        	Match(input,STAR,FOLLOW_STAR_in_genericFunction2572); if (failed) return value;
+            	        	Match(input,STAR,FOLLOW_STAR_in_genericFunction2562); if (failed) return value;
             	        	if ( backtracking == 0 ) 
             	        	{
             	        	   value.Star = Wildcard.Value; 
@@ -5010,9 +5010,9 @@ public class MacroScopeParser : Parser
             	        }
             	        break;
             	    case 3 :
-            	        // MacroScope\\MacroScope.g:629:12: ( ALL | DISTINCT ) ( STAR | e= expression )
+            	        // MacroScope\\MacroScope.g:628:12: ( ALL | DISTINCT ) ( STAR | e= expression )
             	        {
-            	        	// MacroScope\\MacroScope.g:629:12: ( ALL | DISTINCT )
+            	        	// MacroScope\\MacroScope.g:628:12: ( ALL | DISTINCT )
             	        	int alt63 = 2;
             	        	int LA63_0 = input.LA(1);
             	        	
@@ -5028,23 +5028,23 @@ public class MacroScopeParser : Parser
             	        	{
             	        	    if ( backtracking > 0 ) {failed = true; return value;}
             	        	    NoViableAltException nvae_d63s0 =
-            	        	        new NoViableAltException("629:12: ( ALL | DISTINCT )", 63, 0, input);
+            	        	        new NoViableAltException("628:12: ( ALL | DISTINCT )", 63, 0, input);
             	        	
             	        	    throw nvae_d63s0;
             	        	}
             	        	switch (alt63) 
             	        	{
             	        	    case 1 :
-            	        	        // MacroScope\\MacroScope.g:629:13: ALL
+            	        	        // MacroScope\\MacroScope.g:628:13: ALL
             	        	        {
-            	        	        	Match(input,ALL,FOLLOW_ALL_in_genericFunction2588); if (failed) return value;
+            	        	        	Match(input,ALL,FOLLOW_ALL_in_genericFunction2578); if (failed) return value;
             	        	        
             	        	        }
             	        	        break;
             	        	    case 2 :
-            	        	        // MacroScope\\MacroScope.g:629:19: DISTINCT
+            	        	        // MacroScope\\MacroScope.g:628:19: DISTINCT
             	        	        {
-            	        	        	Match(input,DISTINCT,FOLLOW_DISTINCT_in_genericFunction2592); if (failed) return value;
+            	        	        	Match(input,DISTINCT,FOLLOW_DISTINCT_in_genericFunction2582); if (failed) return value;
             	        	        	if ( backtracking == 0 ) 
             	        	        	{
             	        	        	   value.Distinct = true; 
@@ -5055,7 +5055,7 @@ public class MacroScopeParser : Parser
             	        	
             	        	}
 
-            	        	// MacroScope\\MacroScope.g:629:58: ( STAR | e= expression )
+            	        	// MacroScope\\MacroScope.g:628:58: ( STAR | e= expression )
             	        	int alt64 = 2;
             	        	int LA64_0 = input.LA(1);
             	        	
@@ -5071,16 +5071,16 @@ public class MacroScopeParser : Parser
             	        	{
             	        	    if ( backtracking > 0 ) {failed = true; return value;}
             	        	    NoViableAltException nvae_d64s0 =
-            	        	        new NoViableAltException("629:58: ( STAR | e= expression )", 64, 0, input);
+            	        	        new NoViableAltException("628:58: ( STAR | e= expression )", 64, 0, input);
             	        	
             	        	    throw nvae_d64s0;
             	        	}
             	        	switch (alt64) 
             	        	{
             	        	    case 1 :
-            	        	        // MacroScope\\MacroScope.g:630:4: STAR
+            	        	        // MacroScope\\MacroScope.g:629:4: STAR
             	        	        {
-            	        	        	Match(input,STAR,FOLLOW_STAR_in_genericFunction2603); if (failed) return value;
+            	        	        	Match(input,STAR,FOLLOW_STAR_in_genericFunction2593); if (failed) return value;
             	        	        	if ( backtracking == 0 ) 
             	        	        	{
             	        	        	   value.Star = Wildcard.Value;
@@ -5090,9 +5090,9 @@ public class MacroScopeParser : Parser
             	        	        }
             	        	        break;
             	        	    case 2 :
-            	        	        // MacroScope\\MacroScope.g:633:6: e= expression
+            	        	        // MacroScope\\MacroScope.g:632:6: e= expression
             	        	        {
-            	        	        	PushFollow(FOLLOW_expression_in_genericFunction2620);
+            	        	        	PushFollow(FOLLOW_expression_in_genericFunction2610);
             	        	        	e = expression();
             	        	        	followingStackPointer_--;
             	        	        	if (failed) return value;
@@ -5115,7 +5115,7 @@ public class MacroScopeParser : Parser
             	
             	}
 
-            	Match(input,RPAREN,FOLLOW_RPAREN_in_genericFunction2642); if (failed) return value;
+            	Match(input,RPAREN,FOLLOW_RPAREN_in_genericFunction2632); if (failed) return value;
             
             }
     
@@ -5130,7 +5130,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start functionArgument
-    // MacroScope\\MacroScope.g:642:1: functionArgument returns [ IExpression value ] : (e= expression | d= datetimeField );
+    // MacroScope\\MacroScope.g:641:1: functionArgument returns [ IExpression value ] : (e= expression | d= datetimeField );
     public IExpression functionArgument() // throws RecognitionException [1]
     {   
 
@@ -5143,7 +5143,7 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:642:48: (e= expression | d= datetimeField )
+            // MacroScope\\MacroScope.g:641:48: (e= expression | d= datetimeField )
             int alt66 = 2;
             int LA66_0 = input.LA(1);
             
@@ -5159,16 +5159,16 @@ public class MacroScopeParser : Parser
             {
                 if ( backtracking > 0 ) {failed = true; return value;}
                 NoViableAltException nvae_d66s0 =
-                    new NoViableAltException("642:1: functionArgument returns [ IExpression value ] : (e= expression | d= datetimeField );", 66, 0, input);
+                    new NoViableAltException("641:1: functionArgument returns [ IExpression value ] : (e= expression | d= datetimeField );", 66, 0, input);
             
                 throw nvae_d66s0;
             }
             switch (alt66) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:643:2: e= expression
+                    // MacroScope\\MacroScope.g:642:2: e= expression
                     {
-                    	PushFollow(FOLLOW_expression_in_functionArgument2661);
+                    	PushFollow(FOLLOW_expression_in_functionArgument2651);
                     	e = expression();
                     	followingStackPointer_--;
                     	if (failed) return value;
@@ -5182,9 +5182,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:646:4: d= datetimeField
+                    // MacroScope\\MacroScope.g:645:4: d= datetimeField
                     {
-                    	PushFollow(FOLLOW_datetimeField_in_functionArgument2672);
+                    	PushFollow(FOLLOW_datetimeField_in_functionArgument2662);
                     	d = datetimeField();
                     	followingStackPointer_--;
                     	if (failed) return value;
@@ -5211,7 +5211,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start caseFunction
-    // MacroScope\\MacroScope.g:652:1: caseFunction returns [ CaseExpression value ] : CASE (e= expression ( WHEN e= expression THEN f= expression )+ | ( WHEN e= searchCondition THEN f= expression )+ ) ( ELSE e= expression )? END ( CASE )? ;
+    // MacroScope\\MacroScope.g:651:1: caseFunction returns [ CaseExpression value ] : CASE (e= expression ( WHEN e= expression THEN f= expression )+ | ( WHEN e= searchCondition THEN f= expression )+ ) ( ELSE e= expression )? END ( CASE )? ;
     public CaseExpression caseFunction() // throws RecognitionException [1]
     {   
 
@@ -5224,15 +5224,15 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:652:47: ( CASE (e= expression ( WHEN e= expression THEN f= expression )+ | ( WHEN e= searchCondition THEN f= expression )+ ) ( ELSE e= expression )? END ( CASE )? )
-            // MacroScope\\MacroScope.g:653:2: CASE (e= expression ( WHEN e= expression THEN f= expression )+ | ( WHEN e= searchCondition THEN f= expression )+ ) ( ELSE e= expression )? END ( CASE )?
+            // MacroScope\\MacroScope.g:651:47: ( CASE (e= expression ( WHEN e= expression THEN f= expression )+ | ( WHEN e= searchCondition THEN f= expression )+ ) ( ELSE e= expression )? END ( CASE )? )
+            // MacroScope\\MacroScope.g:652:2: CASE (e= expression ( WHEN e= expression THEN f= expression )+ | ( WHEN e= searchCondition THEN f= expression )+ ) ( ELSE e= expression )? END ( CASE )?
             {
-            	Match(input,CASE,FOLLOW_CASE_in_caseFunction2689); if (failed) return value;
+            	Match(input,CASE,FOLLOW_CASE_in_caseFunction2679); if (failed) return value;
             	if ( backtracking == 0 ) 
             	{
             	   value =  new CaseExpression(); 
             	}
-            	// MacroScope\\MacroScope.g:653:42: (e= expression ( WHEN e= expression THEN f= expression )+ | ( WHEN e= searchCondition THEN f= expression )+ )
+            	// MacroScope\\MacroScope.g:652:42: (e= expression ( WHEN e= expression THEN f= expression )+ | ( WHEN e= searchCondition THEN f= expression )+ )
             	int alt69 = 2;
             	int LA69_0 = input.LA(1);
             	
@@ -5248,16 +5248,16 @@ public class MacroScopeParser : Parser
             	{
             	    if ( backtracking > 0 ) {failed = true; return value;}
             	    NoViableAltException nvae_d69s0 =
-            	        new NoViableAltException("653:42: (e= expression ( WHEN e= expression THEN f= expression )+ | ( WHEN e= searchCondition THEN f= expression )+ )", 69, 0, input);
+            	        new NoViableAltException("652:42: (e= expression ( WHEN e= expression THEN f= expression )+ | ( WHEN e= searchCondition THEN f= expression )+ )", 69, 0, input);
             	
             	    throw nvae_d69s0;
             	}
             	switch (alt69) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:654:3: e= expression ( WHEN e= expression THEN f= expression )+
+            	        // MacroScope\\MacroScope.g:653:3: e= expression ( WHEN e= expression THEN f= expression )+
             	        {
-            	        	PushFollow(FOLLOW_expression_in_caseFunction2701);
+            	        	PushFollow(FOLLOW_expression_in_caseFunction2691);
             	        	e = expression();
             	        	followingStackPointer_--;
             	        	if (failed) return value;
@@ -5265,7 +5265,7 @@ public class MacroScopeParser : Parser
             	        	{
             	        	   value.Case = e; 
             	        	}
-            	        	// MacroScope\\MacroScope.g:655:4: ( WHEN e= expression THEN f= expression )+
+            	        	// MacroScope\\MacroScope.g:654:4: ( WHEN e= expression THEN f= expression )+
             	        	int cnt67 = 0;
             	        	do 
             	        	{
@@ -5281,15 +5281,15 @@ public class MacroScopeParser : Parser
             	        	    switch (alt67) 
             	        		{
             	        			case 1 :
-            	        			    // MacroScope\\MacroScope.g:655:6: WHEN e= expression THEN f= expression
+            	        			    // MacroScope\\MacroScope.g:654:6: WHEN e= expression THEN f= expression
             	        			    {
-            	        			    	Match(input,WHEN,FOLLOW_WHEN_in_caseFunction2710); if (failed) return value;
-            	        			    	PushFollow(FOLLOW_expression_in_caseFunction2716);
+            	        			    	Match(input,WHEN,FOLLOW_WHEN_in_caseFunction2700); if (failed) return value;
+            	        			    	PushFollow(FOLLOW_expression_in_caseFunction2706);
             	        			    	e = expression();
             	        			    	followingStackPointer_--;
             	        			    	if (failed) return value;
-            	        			    	Match(input,THEN,FOLLOW_THEN_in_caseFunction2718); if (failed) return value;
-            	        			    	PushFollow(FOLLOW_expression_in_caseFunction2724);
+            	        			    	Match(input,THEN,FOLLOW_THEN_in_caseFunction2708); if (failed) return value;
+            	        			    	PushFollow(FOLLOW_expression_in_caseFunction2714);
             	        			    	f = expression();
             	        			    	followingStackPointer_--;
             	        			    	if (failed) return value;
@@ -5321,9 +5321,9 @@ public class MacroScopeParser : Parser
             	        }
             	        break;
             	    case 2 :
-            	        // MacroScope\\MacroScope.g:660:11: ( WHEN e= searchCondition THEN f= expression )+
+            	        // MacroScope\\MacroScope.g:659:11: ( WHEN e= searchCondition THEN f= expression )+
             	        {
-            	        	// MacroScope\\MacroScope.g:660:11: ( WHEN e= searchCondition THEN f= expression )+
+            	        	// MacroScope\\MacroScope.g:659:11: ( WHEN e= searchCondition THEN f= expression )+
             	        	int cnt68 = 0;
             	        	do 
             	        	{
@@ -5339,15 +5339,15 @@ public class MacroScopeParser : Parser
             	        	    switch (alt68) 
             	        		{
             	        			case 1 :
-            	        			    // MacroScope\\MacroScope.g:660:13: WHEN e= searchCondition THEN f= expression
+            	        			    // MacroScope\\MacroScope.g:659:13: WHEN e= searchCondition THEN f= expression
             	        			    {
-            	        			    	Match(input,WHEN,FOLLOW_WHEN_in_caseFunction2745); if (failed) return value;
-            	        			    	PushFollow(FOLLOW_searchCondition_in_caseFunction2751);
+            	        			    	Match(input,WHEN,FOLLOW_WHEN_in_caseFunction2735); if (failed) return value;
+            	        			    	PushFollow(FOLLOW_searchCondition_in_caseFunction2741);
             	        			    	e = searchCondition();
             	        			    	followingStackPointer_--;
             	        			    	if (failed) return value;
-            	        			    	Match(input,THEN,FOLLOW_THEN_in_caseFunction2753); if (failed) return value;
-            	        			    	PushFollow(FOLLOW_expression_in_caseFunction2759);
+            	        			    	Match(input,THEN,FOLLOW_THEN_in_caseFunction2743); if (failed) return value;
+            	        			    	PushFollow(FOLLOW_expression_in_caseFunction2749);
             	        			    	f = expression();
             	        			    	followingStackPointer_--;
             	        			    	if (failed) return value;
@@ -5381,7 +5381,7 @@ public class MacroScopeParser : Parser
             	
             	}
 
-            	// MacroScope\\MacroScope.g:665:3: ( ELSE e= expression )?
+            	// MacroScope\\MacroScope.g:664:3: ( ELSE e= expression )?
             	int alt70 = 2;
             	int LA70_0 = input.LA(1);
             	
@@ -5392,10 +5392,10 @@ public class MacroScopeParser : Parser
             	switch (alt70) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:665:5: ELSE e= expression
+            	        // MacroScope\\MacroScope.g:664:5: ELSE e= expression
             	        {
-            	        	Match(input,ELSE,FOLLOW_ELSE_in_caseFunction2780); if (failed) return value;
-            	        	PushFollow(FOLLOW_expression_in_caseFunction2786);
+            	        	Match(input,ELSE,FOLLOW_ELSE_in_caseFunction2770); if (failed) return value;
+            	        	PushFollow(FOLLOW_expression_in_caseFunction2776);
             	        	e = expression();
             	        	followingStackPointer_--;
             	        	if (failed) return value;
@@ -5411,8 +5411,8 @@ public class MacroScopeParser : Parser
             	
             	}
 
-            	Match(input,END,FOLLOW_END_in_caseFunction2793); if (failed) return value;
-            	// MacroScope\\MacroScope.g:667:12: ( CASE )?
+            	Match(input,END,FOLLOW_END_in_caseFunction2783); if (failed) return value;
+            	// MacroScope\\MacroScope.g:666:12: ( CASE )?
             	int alt71 = 2;
             	int LA71_0 = input.LA(1);
             	
@@ -5423,9 +5423,9 @@ public class MacroScopeParser : Parser
             	switch (alt71) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:667:14: CASE
+            	        // MacroScope\\MacroScope.g:666:14: CASE
             	        {
-            	        	Match(input,CASE,FOLLOW_CASE_in_caseFunction2797); if (failed) return value;
+            	        	Match(input,CASE,FOLLOW_CASE_in_caseFunction2787); if (failed) return value;
             	        
             	        }
             	        break;
@@ -5446,7 +5446,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start castFunction
-    // MacroScope\\MacroScope.g:670:1: castFunction returns [ TypeCast value ] : CAST LPAREN e= expression AS t= typeIdentifier ( LPAREN p= nonNegativeInteger ( COMMA p= nonNegativeInteger )? RPAREN )? RPAREN ;
+    // MacroScope\\MacroScope.g:669:1: castFunction returns [ TypeCast value ] : CAST LPAREN e= expression AS t= typeIdentifier ( LPAREN p= nonNegativeInteger ( COMMA p= nonNegativeInteger )? RPAREN )? RPAREN ;
     public TypeCast castFunction() // throws RecognitionException [1]
     {   
 
@@ -5461,17 +5461,17 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:670:41: ( CAST LPAREN e= expression AS t= typeIdentifier ( LPAREN p= nonNegativeInteger ( COMMA p= nonNegativeInteger )? RPAREN )? RPAREN )
-            // MacroScope\\MacroScope.g:671:2: CAST LPAREN e= expression AS t= typeIdentifier ( LPAREN p= nonNegativeInteger ( COMMA p= nonNegativeInteger )? RPAREN )? RPAREN
+            // MacroScope\\MacroScope.g:669:41: ( CAST LPAREN e= expression AS t= typeIdentifier ( LPAREN p= nonNegativeInteger ( COMMA p= nonNegativeInteger )? RPAREN )? RPAREN )
+            // MacroScope\\MacroScope.g:670:2: CAST LPAREN e= expression AS t= typeIdentifier ( LPAREN p= nonNegativeInteger ( COMMA p= nonNegativeInteger )? RPAREN )? RPAREN
             {
-            	Match(input,CAST,FOLLOW_CAST_in_castFunction2816); if (failed) return value;
-            	Match(input,LPAREN,FOLLOW_LPAREN_in_castFunction2818); if (failed) return value;
-            	PushFollow(FOLLOW_expression_in_castFunction2824);
+            	Match(input,CAST,FOLLOW_CAST_in_castFunction2806); if (failed) return value;
+            	Match(input,LPAREN,FOLLOW_LPAREN_in_castFunction2808); if (failed) return value;
+            	PushFollow(FOLLOW_expression_in_castFunction2814);
             	e = expression();
             	followingStackPointer_--;
             	if (failed) return value;
-            	Match(input,AS,FOLLOW_AS_in_castFunction2826); if (failed) return value;
-            	PushFollow(FOLLOW_typeIdentifier_in_castFunction2832);
+            	Match(input,AS,FOLLOW_AS_in_castFunction2816); if (failed) return value;
+            	PushFollow(FOLLOW_typeIdentifier_in_castFunction2822);
             	t = typeIdentifier();
             	followingStackPointer_--;
             	if (failed) return value;
@@ -5481,7 +5481,7 @@ public class MacroScopeParser : Parser
             	  		value =  new TypeCast(e, t);
             	  	
             	}
-            	// MacroScope\\MacroScope.g:674:3: ( LPAREN p= nonNegativeInteger ( COMMA p= nonNegativeInteger )? RPAREN )?
+            	// MacroScope\\MacroScope.g:673:3: ( LPAREN p= nonNegativeInteger ( COMMA p= nonNegativeInteger )? RPAREN )?
             	int alt73 = 2;
             	int LA73_0 = input.LA(1);
             	
@@ -5492,10 +5492,10 @@ public class MacroScopeParser : Parser
             	switch (alt73) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:674:5: LPAREN p= nonNegativeInteger ( COMMA p= nonNegativeInteger )? RPAREN
+            	        // MacroScope\\MacroScope.g:673:5: LPAREN p= nonNegativeInteger ( COMMA p= nonNegativeInteger )? RPAREN
             	        {
-            	        	Match(input,LPAREN,FOLLOW_LPAREN_in_castFunction2840); if (failed) return value;
-            	        	PushFollow(FOLLOW_nonNegativeInteger_in_castFunction2846);
+            	        	Match(input,LPAREN,FOLLOW_LPAREN_in_castFunction2830); if (failed) return value;
+            	        	PushFollow(FOLLOW_nonNegativeInteger_in_castFunction2836);
             	        	p = nonNegativeInteger();
             	        	followingStackPointer_--;
             	        	if (failed) return value;
@@ -5505,7 +5505,7 @@ public class MacroScopeParser : Parser
             	        	  			value.Precision = p;
             	        	  		
             	        	}
-            	        	// MacroScope\\MacroScope.g:676:5: ( COMMA p= nonNegativeInteger )?
+            	        	// MacroScope\\MacroScope.g:675:5: ( COMMA p= nonNegativeInteger )?
             	        	int alt72 = 2;
             	        	int LA72_0 = input.LA(1);
             	        	
@@ -5516,10 +5516,10 @@ public class MacroScopeParser : Parser
             	        	switch (alt72) 
             	        	{
             	        	    case 1 :
-            	        	        // MacroScope\\MacroScope.g:676:7: COMMA p= nonNegativeInteger
+            	        	        // MacroScope\\MacroScope.g:675:7: COMMA p= nonNegativeInteger
             	        	        {
-            	        	        	Match(input,COMMA,FOLLOW_COMMA_in_castFunction2852); if (failed) return value;
-            	        	        	PushFollow(FOLLOW_nonNegativeInteger_in_castFunction2858);
+            	        	        	Match(input,COMMA,FOLLOW_COMMA_in_castFunction2842); if (failed) return value;
+            	        	        	PushFollow(FOLLOW_nonNegativeInteger_in_castFunction2848);
             	        	        	p = nonNegativeInteger();
             	        	        	followingStackPointer_--;
             	        	        	if (failed) return value;
@@ -5535,14 +5535,14 @@ public class MacroScopeParser : Parser
             	        	
             	        	}
 
-            	        	Match(input,RPAREN,FOLLOW_RPAREN_in_castFunction2865); if (failed) return value;
+            	        	Match(input,RPAREN,FOLLOW_RPAREN_in_castFunction2855); if (failed) return value;
             	        
             	        }
             	        break;
             	
             	}
 
-            	Match(input,RPAREN,FOLLOW_RPAREN_in_castFunction2870); if (failed) return value;
+            	Match(input,RPAREN,FOLLOW_RPAREN_in_castFunction2860); if (failed) return value;
             
             }
     
@@ -5557,7 +5557,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start dbObject
-    // MacroScope\\MacroScope.g:681:1: dbObject returns [ DbObject value ] : i= identifier ( DOT i= identifier )* ;
+    // MacroScope\\MacroScope.g:680:1: dbObject returns [ DbObject value ] : i= identifier ( DOT i= identifier )* ;
     public DbObject dbObject() // throws RecognitionException [1]
     {   
 
@@ -5568,10 +5568,10 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:681:37: (i= identifier ( DOT i= identifier )* )
-            // MacroScope\\MacroScope.g:682:2: i= identifier ( DOT i= identifier )*
+            // MacroScope\\MacroScope.g:680:37: (i= identifier ( DOT i= identifier )* )
+            // MacroScope\\MacroScope.g:681:2: i= identifier ( DOT i= identifier )*
             {
-            	PushFollow(FOLLOW_identifier_in_dbObject2889);
+            	PushFollow(FOLLOW_identifier_in_dbObject2879);
             	i = identifier();
             	followingStackPointer_--;
             	if (failed) return value;
@@ -5579,7 +5579,7 @@ public class MacroScopeParser : Parser
             	{
             	   value =  new DbObject(i); 
             	}
-            	// MacroScope\\MacroScope.g:683:2: ( DOT i= identifier )*
+            	// MacroScope\\MacroScope.g:682:2: ( DOT i= identifier )*
             	do 
             	{
             	    int alt74 = 2;
@@ -5594,10 +5594,10 @@ public class MacroScopeParser : Parser
             	    switch (alt74) 
             		{
             			case 1 :
-            			    // MacroScope\\MacroScope.g:683:4: DOT i= identifier
+            			    // MacroScope\\MacroScope.g:682:4: DOT i= identifier
             			    {
-            			    	Match(input,DOT,FOLLOW_DOT_in_dbObject2896); if (failed) return value;
-            			    	PushFollow(FOLLOW_identifier_in_dbObject2902);
+            			    	Match(input,DOT,FOLLOW_DOT_in_dbObject2886); if (failed) return value;
+            			    	PushFollow(FOLLOW_identifier_in_dbObject2892);
             			    	i = identifier();
             			    	followingStackPointer_--;
             			    	if (failed) return value;
@@ -5631,7 +5631,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start stringLiteral
-    // MacroScope\\MacroScope.g:689:1: stringLiteral returns [ StringValue value ] : s= singleStringLiteral (s= singleStringLiteral )* ;
+    // MacroScope\\MacroScope.g:688:1: stringLiteral returns [ StringValue value ] : s= singleStringLiteral (s= singleStringLiteral )* ;
     public StringValue stringLiteral() // throws RecognitionException [1]
     {   
 
@@ -5642,10 +5642,10 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:689:45: (s= singleStringLiteral (s= singleStringLiteral )* )
-            // MacroScope\\MacroScope.g:690:2: s= singleStringLiteral (s= singleStringLiteral )*
+            // MacroScope\\MacroScope.g:688:45: (s= singleStringLiteral (s= singleStringLiteral )* )
+            // MacroScope\\MacroScope.g:689:2: s= singleStringLiteral (s= singleStringLiteral )*
             {
-            	PushFollow(FOLLOW_singleStringLiteral_in_stringLiteral2930);
+            	PushFollow(FOLLOW_singleStringLiteral_in_stringLiteral2920);
             	s = singleStringLiteral();
             	followingStackPointer_--;
             	if (failed) return value;
@@ -5655,7 +5655,7 @@ public class MacroScopeParser : Parser
             	  		value =  s;
             	  	
             	}
-            	// MacroScope\\MacroScope.g:692:4: (s= singleStringLiteral )*
+            	// MacroScope\\MacroScope.g:691:4: (s= singleStringLiteral )*
             	do 
             	{
             	    int alt75 = 2;
@@ -5670,9 +5670,9 @@ public class MacroScopeParser : Parser
             	    switch (alt75) 
             		{
             			case 1 :
-            			    // MacroScope\\MacroScope.g:692:6: s= singleStringLiteral
+            			    // MacroScope\\MacroScope.g:691:6: s= singleStringLiteral
             			    {
-            			    	PushFollow(FOLLOW_singleStringLiteral_in_stringLiteral2940);
+            			    	PushFollow(FOLLOW_singleStringLiteral_in_stringLiteral2930);
             			    	s = singleStringLiteral();
             			    	followingStackPointer_--;
             			    	if (failed) return value;
@@ -5708,7 +5708,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start singleStringLiteral
-    // MacroScope\\MacroScope.g:697:1: singleStringLiteral returns [ StringValue value ] : ( UnicodeStringLiteral | AsciiStringLiteral );
+    // MacroScope\\MacroScope.g:696:1: singleStringLiteral returns [ StringValue value ] : ( UnicodeStringLiteral | AsciiStringLiteral );
     public StringValue singleStringLiteral() // throws RecognitionException [1]
     {   
 
@@ -5719,7 +5719,7 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:697:51: ( UnicodeStringLiteral | AsciiStringLiteral )
+            // MacroScope\\MacroScope.g:696:51: ( UnicodeStringLiteral | AsciiStringLiteral )
             int alt76 = 2;
             int LA76_0 = input.LA(1);
             
@@ -5735,17 +5735,17 @@ public class MacroScopeParser : Parser
             {
                 if ( backtracking > 0 ) {failed = true; return value;}
                 NoViableAltException nvae_d76s0 =
-                    new NoViableAltException("697:1: singleStringLiteral returns [ StringValue value ] : ( UnicodeStringLiteral | AsciiStringLiteral );", 76, 0, input);
+                    new NoViableAltException("696:1: singleStringLiteral returns [ StringValue value ] : ( UnicodeStringLiteral | AsciiStringLiteral );", 76, 0, input);
             
                 throw nvae_d76s0;
             }
             switch (alt76) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:698:2: UnicodeStringLiteral
+                    // MacroScope\\MacroScope.g:697:2: UnicodeStringLiteral
                     {
                     	UnicodeStringLiteral4 = (IToken)input.LT(1);
-                    	Match(input,UnicodeStringLiteral,FOLLOW_UnicodeStringLiteral_in_singleStringLiteral2960); if (failed) return value;
+                    	Match(input,UnicodeStringLiteral,FOLLOW_UnicodeStringLiteral_in_singleStringLiteral2950); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	  
@@ -5757,10 +5757,10 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:702:4: AsciiStringLiteral
+                    // MacroScope\\MacroScope.g:701:4: AsciiStringLiteral
                     {
                     	AsciiStringLiteral5 = (IToken)input.LT(1);
-                    	Match(input,AsciiStringLiteral,FOLLOW_AsciiStringLiteral_in_singleStringLiteral2967); if (failed) return value;
+                    	Match(input,AsciiStringLiteral,FOLLOW_AsciiStringLiteral_in_singleStringLiteral2957); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	  
@@ -5783,7 +5783,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start identifier
-    // MacroScope\\MacroScope.g:707:1: identifier returns [ Identifier value ] : ( NonQuotedIdentifier | QuotedIdentifier );
+    // MacroScope\\MacroScope.g:706:1: identifier returns [ Identifier value ] : ( NonQuotedIdentifier | QuotedIdentifier );
     public Identifier identifier() // throws RecognitionException [1]
     {   
 
@@ -5794,7 +5794,7 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:707:41: ( NonQuotedIdentifier | QuotedIdentifier )
+            // MacroScope\\MacroScope.g:706:41: ( NonQuotedIdentifier | QuotedIdentifier )
             int alt77 = 2;
             int LA77_0 = input.LA(1);
             
@@ -5810,17 +5810,17 @@ public class MacroScopeParser : Parser
             {
                 if ( backtracking > 0 ) {failed = true; return value;}
                 NoViableAltException nvae_d77s0 =
-                    new NoViableAltException("707:1: identifier returns [ Identifier value ] : ( NonQuotedIdentifier | QuotedIdentifier );", 77, 0, input);
+                    new NoViableAltException("706:1: identifier returns [ Identifier value ] : ( NonQuotedIdentifier | QuotedIdentifier );", 77, 0, input);
             
                 throw nvae_d77s0;
             }
             switch (alt77) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:708:2: NonQuotedIdentifier
+                    // MacroScope\\MacroScope.g:707:2: NonQuotedIdentifier
                     {
                     	NonQuotedIdentifier6 = (IToken)input.LT(1);
-                    	Match(input,NonQuotedIdentifier,FOLLOW_NonQuotedIdentifier_in_identifier2984); if (failed) return value;
+                    	Match(input,NonQuotedIdentifier,FOLLOW_NonQuotedIdentifier_in_identifier2974); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	  
@@ -5831,10 +5831,10 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:711:4: QuotedIdentifier
+                    // MacroScope\\MacroScope.g:710:4: QuotedIdentifier
                     {
                     	QuotedIdentifier7 = (IToken)input.LT(1);
-                    	Match(input,QuotedIdentifier,FOLLOW_QuotedIdentifier_in_identifier2991); if (failed) return value;
+                    	Match(input,QuotedIdentifier,FOLLOW_QuotedIdentifier_in_identifier2981); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	  
@@ -5857,7 +5857,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start typeIdentifier
-    // MacroScope\\MacroScope.g:716:1: typeIdentifier returns [ string value ] : NonQuotedIdentifier ;
+    // MacroScope\\MacroScope.g:715:1: typeIdentifier returns [ string value ] : NonQuotedIdentifier ;
     public string typeIdentifier() // throws RecognitionException [1]
     {   
 
@@ -5867,11 +5867,11 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:716:41: ( NonQuotedIdentifier )
-            // MacroScope\\MacroScope.g:717:2: NonQuotedIdentifier
+            // MacroScope\\MacroScope.g:715:41: ( NonQuotedIdentifier )
+            // MacroScope\\MacroScope.g:716:2: NonQuotedIdentifier
             {
             	NonQuotedIdentifier8 = (IToken)input.LT(1);
-            	Match(input,NonQuotedIdentifier,FOLLOW_NonQuotedIdentifier_in_typeIdentifier3008); if (failed) return value;
+            	Match(input,NonQuotedIdentifier,FOLLOW_NonQuotedIdentifier_in_typeIdentifier2998); if (failed) return value;
             	if ( backtracking == 0 ) 
             	{
             	   value =  NonQuotedIdentifier8.Text; 
@@ -5890,7 +5890,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start constant
-    // MacroScope\\MacroScope.g:720:1: constant returns [ INode value ] : (i= nonNegativeInteger | Real | NULL | s= stringLiteral | j= intervalLiteral | HexLiteral | MAccessDateTime | Iso8601DateTime );
+    // MacroScope\\MacroScope.g:719:1: constant returns [ INode value ] : (i= nonNegativeInteger | Real | NULL | s= stringLiteral | j= intervalLiteral | HexLiteral | MAccessDateTime | Iso8601DateTime );
     public INode constant() // throws RecognitionException [1]
     {   
 
@@ -5909,7 +5909,7 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:720:34: (i= nonNegativeInteger | Real | NULL | s= stringLiteral | j= intervalLiteral | HexLiteral | MAccessDateTime | Iso8601DateTime )
+            // MacroScope\\MacroScope.g:719:34: (i= nonNegativeInteger | Real | NULL | s= stringLiteral | j= intervalLiteral | HexLiteral | MAccessDateTime | Iso8601DateTime )
             int alt78 = 8;
             switch ( input.LA(1) ) 
             {
@@ -5957,7 +5957,7 @@ public class MacroScopeParser : Parser
             	default:
             	    if ( backtracking > 0 ) {failed = true; return value;}
             	    NoViableAltException nvae_d78s0 =
-            	        new NoViableAltException("720:1: constant returns [ INode value ] : (i= nonNegativeInteger | Real | NULL | s= stringLiteral | j= intervalLiteral | HexLiteral | MAccessDateTime | Iso8601DateTime );", 78, 0, input);
+            	        new NoViableAltException("719:1: constant returns [ INode value ] : (i= nonNegativeInteger | Real | NULL | s= stringLiteral | j= intervalLiteral | HexLiteral | MAccessDateTime | Iso8601DateTime );", 78, 0, input);
             
             	    throw nvae_d78s0;
             }
@@ -5965,9 +5965,9 @@ public class MacroScopeParser : Parser
             switch (alt78) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:721:2: i= nonNegativeInteger
+                    // MacroScope\\MacroScope.g:720:2: i= nonNegativeInteger
                     {
-                    	PushFollow(FOLLOW_nonNegativeInteger_in_constant3029);
+                    	PushFollow(FOLLOW_nonNegativeInteger_in_constant3019);
                     	i = nonNegativeInteger();
                     	followingStackPointer_--;
                     	if (failed) return value;
@@ -5979,10 +5979,10 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:722:4: Real
+                    // MacroScope\\MacroScope.g:721:4: Real
                     {
                     	Real9 = (IToken)input.LT(1);
-                    	Match(input,Real,FOLLOW_Real_in_constant3036); if (failed) return value;
+                    	Match(input,Real,FOLLOW_Real_in_constant3026); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  new DoubleValue(DoubleValue.Parse(Real9.Text)); 
@@ -5991,9 +5991,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 3 :
-                    // MacroScope\\MacroScope.g:723:4: NULL
+                    // MacroScope\\MacroScope.g:722:4: NULL
                     {
-                    	Match(input,NULL,FOLLOW_NULL_in_constant3043); if (failed) return value;
+                    	Match(input,NULL,FOLLOW_NULL_in_constant3033); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  NullValue.Value; 
@@ -6002,9 +6002,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 4 :
-                    // MacroScope\\MacroScope.g:724:4: s= stringLiteral
+                    // MacroScope\\MacroScope.g:723:4: s= stringLiteral
                     {
-                    	PushFollow(FOLLOW_stringLiteral_in_constant3054);
+                    	PushFollow(FOLLOW_stringLiteral_in_constant3044);
                     	s = stringLiteral();
                     	followingStackPointer_--;
                     	if (failed) return value;
@@ -6016,9 +6016,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 5 :
-                    // MacroScope\\MacroScope.g:725:4: j= intervalLiteral
+                    // MacroScope\\MacroScope.g:724:4: j= intervalLiteral
                     {
-                    	PushFollow(FOLLOW_intervalLiteral_in_constant3065);
+                    	PushFollow(FOLLOW_intervalLiteral_in_constant3055);
                     	j = intervalLiteral();
                     	followingStackPointer_--;
                     	if (failed) return value;
@@ -6030,10 +6030,10 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 6 :
-                    // MacroScope\\MacroScope.g:726:4: HexLiteral
+                    // MacroScope\\MacroScope.g:725:4: HexLiteral
                     {
                     	HexLiteral10 = (IToken)input.LT(1);
-                    	Match(input,HexLiteral,FOLLOW_HexLiteral_in_constant3072); if (failed) return value;
+                    	Match(input,HexLiteral,FOLLOW_HexLiteral_in_constant3062); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	  
@@ -6045,10 +6045,10 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 7 :
-                    // MacroScope\\MacroScope.g:731:4: MAccessDateTime
+                    // MacroScope\\MacroScope.g:730:4: MAccessDateTime
                     {
                     	MAccessDateTime11 = (IToken)input.LT(1);
-                    	Match(input,MAccessDateTime,FOLLOW_MAccessDateTime_in_constant3081); if (failed) return value;
+                    	Match(input,MAccessDateTime,FOLLOW_MAccessDateTime_in_constant3071); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	  
@@ -6059,10 +6059,10 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 8 :
-                    // MacroScope\\MacroScope.g:735:4: Iso8601DateTime
+                    // MacroScope\\MacroScope.g:734:4: Iso8601DateTime
                     {
                     	Iso8601DateTime12 = (IToken)input.LT(1);
-                    	Match(input,Iso8601DateTime,FOLLOW_Iso8601DateTime_in_constant3090); if (failed) return value;
+                    	Match(input,Iso8601DateTime,FOLLOW_Iso8601DateTime_in_constant3080); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	  
@@ -6085,7 +6085,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start intervalLiteral
-    // MacroScope\\MacroScope.g:741:1: intervalLiteral returns [ Interval value ] : INTERVAL (u= unaryOperator )? AsciiStringLiteral d= datetimeField ( LPAREN Integer RPAREN )? ;
+    // MacroScope\\MacroScope.g:740:1: intervalLiteral returns [ Interval value ] : INTERVAL (u= unaryOperator )? AsciiStringLiteral d= datetimeField ( LPAREN Integer RPAREN )? ;
     public Interval intervalLiteral() // throws RecognitionException [1]
     {   
 
@@ -6101,11 +6101,11 @@ public class MacroScopeParser : Parser
          bool positive = true; int intervalNumber = 0; 
         try 
     	{
-            // MacroScope\\MacroScope.g:742:57: ( INTERVAL (u= unaryOperator )? AsciiStringLiteral d= datetimeField ( LPAREN Integer RPAREN )? )
-            // MacroScope\\MacroScope.g:743:2: INTERVAL (u= unaryOperator )? AsciiStringLiteral d= datetimeField ( LPAREN Integer RPAREN )?
+            // MacroScope\\MacroScope.g:741:57: ( INTERVAL (u= unaryOperator )? AsciiStringLiteral d= datetimeField ( LPAREN Integer RPAREN )? )
+            // MacroScope\\MacroScope.g:742:2: INTERVAL (u= unaryOperator )? AsciiStringLiteral d= datetimeField ( LPAREN Integer RPAREN )?
             {
-            	Match(input,INTERVAL,FOLLOW_INTERVAL_in_intervalLiteral3114); if (failed) return value;
-            	// MacroScope\\MacroScope.g:743:11: (u= unaryOperator )?
+            	Match(input,INTERVAL,FOLLOW_INTERVAL_in_intervalLiteral3104); if (failed) return value;
+            	// MacroScope\\MacroScope.g:742:11: (u= unaryOperator )?
             	int alt79 = 2;
             	int LA79_0 = input.LA(1);
             	
@@ -6116,9 +6116,9 @@ public class MacroScopeParser : Parser
             	switch (alt79) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:743:13: u= unaryOperator
+            	        // MacroScope\\MacroScope.g:742:13: u= unaryOperator
             	        {
-            	        	PushFollow(FOLLOW_unaryOperator_in_intervalLiteral3122);
+            	        	PushFollow(FOLLOW_unaryOperator_in_intervalLiteral3112);
             	        	u = unaryOperator();
             	        	followingStackPointer_--;
             	        	if (failed) return value;
@@ -6135,7 +6135,7 @@ public class MacroScopeParser : Parser
             	}
 
             	AsciiStringLiteral13 = (IToken)input.LT(1);
-            	Match(input,AsciiStringLiteral,FOLLOW_AsciiStringLiteral_in_intervalLiteral3129); if (failed) return value;
+            	Match(input,AsciiStringLiteral,FOLLOW_AsciiStringLiteral_in_intervalLiteral3119); if (failed) return value;
             	if ( backtracking == 0 ) 
             	{
             	  
@@ -6143,7 +6143,7 @@ public class MacroScopeParser : Parser
             	  				AsciiStringLiteral13.Text);
             	  		
             	}
-            	PushFollow(FOLLOW_datetimeField_in_intervalLiteral3137);
+            	PushFollow(FOLLOW_datetimeField_in_intervalLiteral3127);
             	d = datetimeField();
             	followingStackPointer_--;
             	if (failed) return value;
@@ -6154,7 +6154,7 @@ public class MacroScopeParser : Parser
             	  				d);
             	  		
             	}
-            	// MacroScope\\MacroScope.g:751:5: ( LPAREN Integer RPAREN )?
+            	// MacroScope\\MacroScope.g:750:5: ( LPAREN Integer RPAREN )?
             	int alt80 = 2;
             	int LA80_0 = input.LA(1);
             	
@@ -6165,18 +6165,18 @@ public class MacroScopeParser : Parser
             	switch (alt80) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:751:7: LPAREN Integer RPAREN
+            	        // MacroScope\\MacroScope.g:750:7: LPAREN Integer RPAREN
             	        {
-            	        	Match(input,LPAREN,FOLLOW_LPAREN_in_intervalLiteral3143); if (failed) return value;
+            	        	Match(input,LPAREN,FOLLOW_LPAREN_in_intervalLiteral3133); if (failed) return value;
             	        	Integer14 = (IToken)input.LT(1);
-            	        	Match(input,Integer,FOLLOW_Integer_in_intervalLiteral3145); if (failed) return value;
+            	        	Match(input,Integer,FOLLOW_Integer_in_intervalLiteral3135); if (failed) return value;
             	        	if ( backtracking == 0 ) 
             	        	{
             	        	  
             	        	  			value.Precision = int.Parse(Integer14.Text);
             	        	  		
             	        	}
-            	        	Match(input,RPAREN,FOLLOW_RPAREN_in_intervalLiteral3149); if (failed) return value;
+            	        	Match(input,RPAREN,FOLLOW_RPAREN_in_intervalLiteral3139); if (failed) return value;
             	        
             	        }
             	        break;
@@ -6197,7 +6197,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start nonNegativeInteger
-    // MacroScope\\MacroScope.g:756:1: nonNegativeInteger returns [ int value ] : Integer ;
+    // MacroScope\\MacroScope.g:755:1: nonNegativeInteger returns [ int value ] : Integer ;
     public int nonNegativeInteger() // throws RecognitionException [1]
     {   
 
@@ -6207,11 +6207,11 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:756:42: ( Integer )
-            // MacroScope\\MacroScope.g:757:2: Integer
+            // MacroScope\\MacroScope.g:755:42: ( Integer )
+            // MacroScope\\MacroScope.g:756:2: Integer
             {
             	Integer15 = (IToken)input.LT(1);
-            	Match(input,Integer,FOLLOW_Integer_in_nonNegativeInteger3167); if (failed) return value;
+            	Match(input,Integer,FOLLOW_Integer_in_nonNegativeInteger3157); if (failed) return value;
             	if ( backtracking == 0 ) 
             	{
             	   value =  int.Parse(Integer15.Text); 
@@ -6230,7 +6230,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start unaryOperator
-    // MacroScope\\MacroScope.g:760:1: unaryOperator returns [ ExpressionOperator value ] : ( PLUS | MINUS );
+    // MacroScope\\MacroScope.g:759:1: unaryOperator returns [ ExpressionOperator value ] : ( PLUS | MINUS );
     public ExpressionOperator unaryOperator() // throws RecognitionException [1]
     {   
 
@@ -6238,7 +6238,7 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:760:52: ( PLUS | MINUS )
+            // MacroScope\\MacroScope.g:759:52: ( PLUS | MINUS )
             int alt81 = 2;
             int LA81_0 = input.LA(1);
             
@@ -6254,16 +6254,16 @@ public class MacroScopeParser : Parser
             {
                 if ( backtracking > 0 ) {failed = true; return value;}
                 NoViableAltException nvae_d81s0 =
-                    new NoViableAltException("760:1: unaryOperator returns [ ExpressionOperator value ] : ( PLUS | MINUS );", 81, 0, input);
+                    new NoViableAltException("759:1: unaryOperator returns [ ExpressionOperator value ] : ( PLUS | MINUS );", 81, 0, input);
             
                 throw nvae_d81s0;
             }
             switch (alt81) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:761:2: PLUS
+                    // MacroScope\\MacroScope.g:760:2: PLUS
                     {
-                    	Match(input,PLUS,FOLLOW_PLUS_in_unaryOperator3184); if (failed) return value;
+                    	Match(input,PLUS,FOLLOW_PLUS_in_unaryOperator3174); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  ExpressionOperator.Plus; 
@@ -6272,9 +6272,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:762:4: MINUS
+                    // MacroScope\\MacroScope.g:761:4: MINUS
                     {
-                    	Match(input,MINUS,FOLLOW_MINUS_in_unaryOperator3191); if (failed) return value;
+                    	Match(input,MINUS,FOLLOW_MINUS_in_unaryOperator3181); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  ExpressionOperator.Minus; 
@@ -6295,7 +6295,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start additiveOperator
-    // MacroScope\\MacroScope.g:765:1: additiveOperator returns [ ExpressionOperator value ] : ( PLUS | MINUS | STRCONCAT );
+    // MacroScope\\MacroScope.g:764:1: additiveOperator returns [ ExpressionOperator value ] : ( PLUS | MINUS | STRCONCAT );
     public ExpressionOperator additiveOperator() // throws RecognitionException [1]
     {   
 
@@ -6303,7 +6303,7 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:765:55: ( PLUS | MINUS | STRCONCAT )
+            // MacroScope\\MacroScope.g:764:55: ( PLUS | MINUS | STRCONCAT )
             int alt82 = 3;
             switch ( input.LA(1) ) 
             {
@@ -6325,7 +6325,7 @@ public class MacroScopeParser : Parser
             	default:
             	    if ( backtracking > 0 ) {failed = true; return value;}
             	    NoViableAltException nvae_d82s0 =
-            	        new NoViableAltException("765:1: additiveOperator returns [ ExpressionOperator value ] : ( PLUS | MINUS | STRCONCAT );", 82, 0, input);
+            	        new NoViableAltException("764:1: additiveOperator returns [ ExpressionOperator value ] : ( PLUS | MINUS | STRCONCAT );", 82, 0, input);
             
             	    throw nvae_d82s0;
             }
@@ -6333,9 +6333,9 @@ public class MacroScopeParser : Parser
             switch (alt82) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:766:2: PLUS
+                    // MacroScope\\MacroScope.g:765:2: PLUS
                     {
-                    	Match(input,PLUS,FOLLOW_PLUS_in_additiveOperator3208); if (failed) return value;
+                    	Match(input,PLUS,FOLLOW_PLUS_in_additiveOperator3198); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  ExpressionOperator.Plus; 
@@ -6344,9 +6344,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:767:4: MINUS
+                    // MacroScope\\MacroScope.g:766:4: MINUS
                     {
-                    	Match(input,MINUS,FOLLOW_MINUS_in_additiveOperator3215); if (failed) return value;
+                    	Match(input,MINUS,FOLLOW_MINUS_in_additiveOperator3205); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  ExpressionOperator.Minus; 
@@ -6355,9 +6355,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 3 :
-                    // MacroScope\\MacroScope.g:768:4: STRCONCAT
+                    // MacroScope\\MacroScope.g:767:4: STRCONCAT
                     {
-                    	Match(input,STRCONCAT,FOLLOW_STRCONCAT_in_additiveOperator3222); if (failed) return value;
+                    	Match(input,STRCONCAT,FOLLOW_STRCONCAT_in_additiveOperator3212); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  ExpressionOperator.StrConcat; 
@@ -6378,7 +6378,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start multiplicativeArithmeticOperator
-    // MacroScope\\MacroScope.g:771:1: multiplicativeArithmeticOperator returns [ ExpressionOperator value ] : ( STAR | DIVIDE | MOD );
+    // MacroScope\\MacroScope.g:770:1: multiplicativeArithmeticOperator returns [ ExpressionOperator value ] : ( STAR | DIVIDE | MOD );
     public ExpressionOperator multiplicativeArithmeticOperator() // throws RecognitionException [1]
     {   
 
@@ -6386,7 +6386,7 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:771:71: ( STAR | DIVIDE | MOD )
+            // MacroScope\\MacroScope.g:770:71: ( STAR | DIVIDE | MOD )
             int alt83 = 3;
             switch ( input.LA(1) ) 
             {
@@ -6408,7 +6408,7 @@ public class MacroScopeParser : Parser
             	default:
             	    if ( backtracking > 0 ) {failed = true; return value;}
             	    NoViableAltException nvae_d83s0 =
-            	        new NoViableAltException("771:1: multiplicativeArithmeticOperator returns [ ExpressionOperator value ] : ( STAR | DIVIDE | MOD );", 83, 0, input);
+            	        new NoViableAltException("770:1: multiplicativeArithmeticOperator returns [ ExpressionOperator value ] : ( STAR | DIVIDE | MOD );", 83, 0, input);
             
             	    throw nvae_d83s0;
             }
@@ -6416,9 +6416,9 @@ public class MacroScopeParser : Parser
             switch (alt83) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:772:2: STAR
+                    // MacroScope\\MacroScope.g:771:2: STAR
                     {
-                    	Match(input,STAR,FOLLOW_STAR_in_multiplicativeArithmeticOperator3243); if (failed) return value;
+                    	Match(input,STAR,FOLLOW_STAR_in_multiplicativeArithmeticOperator3233); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  ExpressionOperator.Mult; 
@@ -6427,9 +6427,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:773:4: DIVIDE
+                    // MacroScope\\MacroScope.g:772:4: DIVIDE
                     {
-                    	Match(input,DIVIDE,FOLLOW_DIVIDE_in_multiplicativeArithmeticOperator3250); if (failed) return value;
+                    	Match(input,DIVIDE,FOLLOW_DIVIDE_in_multiplicativeArithmeticOperator3240); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  ExpressionOperator.Div; 
@@ -6438,9 +6438,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 3 :
-                    // MacroScope\\MacroScope.g:774:4: MOD
+                    // MacroScope\\MacroScope.g:773:4: MOD
                     {
-                    	Match(input,MOD,FOLLOW_MOD_in_multiplicativeArithmeticOperator3257); if (failed) return value;
+                    	Match(input,MOD,FOLLOW_MOD_in_multiplicativeArithmeticOperator3247); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  ExpressionOperator.Mod; 
@@ -6461,7 +6461,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start comparisonOperator
-    // MacroScope\\MacroScope.g:777:1: comparisonOperator returns [ ExpressionOperator value ] : ( ASSIGNEQUAL | NOTEQUAL1 | NOTEQUAL2 | LESSTHANOREQUALTO1 | LESSTHAN | GREATERTHANOREQUALTO1 | GREATERTHAN );
+    // MacroScope\\MacroScope.g:776:1: comparisonOperator returns [ ExpressionOperator value ] : ( ASSIGNEQUAL | NOTEQUAL1 | NOTEQUAL2 | LESSTHANOREQUALTO1 | LESSTHAN | GREATERTHANOREQUALTO1 | GREATERTHAN );
     public ExpressionOperator comparisonOperator() // throws RecognitionException [1]
     {   
 
@@ -6469,7 +6469,7 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:777:57: ( ASSIGNEQUAL | NOTEQUAL1 | NOTEQUAL2 | LESSTHANOREQUALTO1 | LESSTHAN | GREATERTHANOREQUALTO1 | GREATERTHAN )
+            // MacroScope\\MacroScope.g:776:57: ( ASSIGNEQUAL | NOTEQUAL1 | NOTEQUAL2 | LESSTHANOREQUALTO1 | LESSTHAN | GREATERTHANOREQUALTO1 | GREATERTHAN )
             int alt84 = 7;
             switch ( input.LA(1) ) 
             {
@@ -6511,7 +6511,7 @@ public class MacroScopeParser : Parser
             	default:
             	    if ( backtracking > 0 ) {failed = true; return value;}
             	    NoViableAltException nvae_d84s0 =
-            	        new NoViableAltException("777:1: comparisonOperator returns [ ExpressionOperator value ] : ( ASSIGNEQUAL | NOTEQUAL1 | NOTEQUAL2 | LESSTHANOREQUALTO1 | LESSTHAN | GREATERTHANOREQUALTO1 | GREATERTHAN );", 84, 0, input);
+            	        new NoViableAltException("776:1: comparisonOperator returns [ ExpressionOperator value ] : ( ASSIGNEQUAL | NOTEQUAL1 | NOTEQUAL2 | LESSTHANOREQUALTO1 | LESSTHAN | GREATERTHANOREQUALTO1 | GREATERTHAN );", 84, 0, input);
             
             	    throw nvae_d84s0;
             }
@@ -6519,9 +6519,9 @@ public class MacroScopeParser : Parser
             switch (alt84) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:778:2: ASSIGNEQUAL
+                    // MacroScope\\MacroScope.g:777:2: ASSIGNEQUAL
                     {
-                    	Match(input,ASSIGNEQUAL,FOLLOW_ASSIGNEQUAL_in_comparisonOperator3278); if (failed) return value;
+                    	Match(input,ASSIGNEQUAL,FOLLOW_ASSIGNEQUAL_in_comparisonOperator3268); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  ExpressionOperator.Equal; 
@@ -6530,9 +6530,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:779:4: NOTEQUAL1
+                    // MacroScope\\MacroScope.g:778:4: NOTEQUAL1
                     {
-                    	Match(input,NOTEQUAL1,FOLLOW_NOTEQUAL1_in_comparisonOperator3285); if (failed) return value;
+                    	Match(input,NOTEQUAL1,FOLLOW_NOTEQUAL1_in_comparisonOperator3275); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  ExpressionOperator.NotEqual; 
@@ -6541,9 +6541,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 3 :
-                    // MacroScope\\MacroScope.g:780:4: NOTEQUAL2
+                    // MacroScope\\MacroScope.g:779:4: NOTEQUAL2
                     {
-                    	Match(input,NOTEQUAL2,FOLLOW_NOTEQUAL2_in_comparisonOperator3292); if (failed) return value;
+                    	Match(input,NOTEQUAL2,FOLLOW_NOTEQUAL2_in_comparisonOperator3282); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  ExpressionOperator.NotEqual; 
@@ -6552,9 +6552,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 4 :
-                    // MacroScope\\MacroScope.g:781:4: LESSTHANOREQUALTO1
+                    // MacroScope\\MacroScope.g:780:4: LESSTHANOREQUALTO1
                     {
-                    	Match(input,LESSTHANOREQUALTO1,FOLLOW_LESSTHANOREQUALTO1_in_comparisonOperator3299); if (failed) return value;
+                    	Match(input,LESSTHANOREQUALTO1,FOLLOW_LESSTHANOREQUALTO1_in_comparisonOperator3289); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  ExpressionOperator.LessOrEqual; 
@@ -6563,9 +6563,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 5 :
-                    // MacroScope\\MacroScope.g:782:4: LESSTHAN
+                    // MacroScope\\MacroScope.g:781:4: LESSTHAN
                     {
-                    	Match(input,LESSTHAN,FOLLOW_LESSTHAN_in_comparisonOperator3306); if (failed) return value;
+                    	Match(input,LESSTHAN,FOLLOW_LESSTHAN_in_comparisonOperator3296); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  ExpressionOperator.Less; 
@@ -6574,9 +6574,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 6 :
-                    // MacroScope\\MacroScope.g:783:4: GREATERTHANOREQUALTO1
+                    // MacroScope\\MacroScope.g:782:4: GREATERTHANOREQUALTO1
                     {
-                    	Match(input,GREATERTHANOREQUALTO1,FOLLOW_GREATERTHANOREQUALTO1_in_comparisonOperator3313); if (failed) return value;
+                    	Match(input,GREATERTHANOREQUALTO1,FOLLOW_GREATERTHANOREQUALTO1_in_comparisonOperator3303); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  ExpressionOperator.GreaterOrEqual; 
@@ -6585,9 +6585,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 7 :
-                    // MacroScope\\MacroScope.g:784:4: GREATERTHAN
+                    // MacroScope\\MacroScope.g:783:4: GREATERTHAN
                     {
-                    	Match(input,GREATERTHAN,FOLLOW_GREATERTHAN_in_comparisonOperator3320); if (failed) return value;
+                    	Match(input,GREATERTHAN,FOLLOW_GREATERTHAN_in_comparisonOperator3310); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  ExpressionOperator.Greater; 
@@ -6608,7 +6608,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start unionOperator
-    // MacroScope\\MacroScope.g:787:1: unionOperator returns [ bool value ] : UNION ( ALL )? ;
+    // MacroScope\\MacroScope.g:786:1: unionOperator returns [ bool value ] : UNION ( ALL )? ;
     public bool unionOperator() // throws RecognitionException [1]
     {   
 
@@ -6616,15 +6616,15 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:787:38: ( UNION ( ALL )? )
-            // MacroScope\\MacroScope.g:788:2: UNION ( ALL )?
+            // MacroScope\\MacroScope.g:786:38: ( UNION ( ALL )? )
+            // MacroScope\\MacroScope.g:787:2: UNION ( ALL )?
             {
-            	Match(input,UNION,FOLLOW_UNION_in_unionOperator3337); if (failed) return value;
+            	Match(input,UNION,FOLLOW_UNION_in_unionOperator3327); if (failed) return value;
             	if ( backtracking == 0 ) 
             	{
             	   value =  false; 
             	}
-            	// MacroScope\\MacroScope.g:789:2: ( ALL )?
+            	// MacroScope\\MacroScope.g:788:2: ( ALL )?
             	int alt85 = 2;
             	int LA85_0 = input.LA(1);
             	
@@ -6635,9 +6635,9 @@ public class MacroScopeParser : Parser
             	switch (alt85) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:789:4: ALL
+            	        // MacroScope\\MacroScope.g:788:4: ALL
             	        {
-            	        	Match(input,ALL,FOLLOW_ALL_in_unionOperator3344); if (failed) return value;
+            	        	Match(input,ALL,FOLLOW_ALL_in_unionOperator3334); if (failed) return value;
             	        	if ( backtracking == 0 ) 
             	        	{
             	        	   value =  true; 
@@ -6662,7 +6662,7 @@ public class MacroScopeParser : Parser
 
     
     // $ANTLR start datetimeField
-    // MacroScope\\MacroScope.g:792:1: datetimeField returns [ DateTimeUnit value ] : ( YEAR | MONTH | DAY | HOUR | MINUTE | SECOND );
+    // MacroScope\\MacroScope.g:791:1: datetimeField returns [ DateTimeUnit value ] : ( YEAR | MONTH | DAY | HOUR | MINUTE | SECOND );
     public DateTimeUnit datetimeField() // throws RecognitionException [1]
     {   
 
@@ -6670,7 +6670,7 @@ public class MacroScopeParser : Parser
     
         try 
     	{
-            // MacroScope\\MacroScope.g:792:46: ( YEAR | MONTH | DAY | HOUR | MINUTE | SECOND )
+            // MacroScope\\MacroScope.g:791:46: ( YEAR | MONTH | DAY | HOUR | MINUTE | SECOND )
             int alt86 = 6;
             switch ( input.LA(1) ) 
             {
@@ -6707,7 +6707,7 @@ public class MacroScopeParser : Parser
             	default:
             	    if ( backtracking > 0 ) {failed = true; return value;}
             	    NoViableAltException nvae_d86s0 =
-            	        new NoViableAltException("792:1: datetimeField returns [ DateTimeUnit value ] : ( YEAR | MONTH | DAY | HOUR | MINUTE | SECOND );", 86, 0, input);
+            	        new NoViableAltException("791:1: datetimeField returns [ DateTimeUnit value ] : ( YEAR | MONTH | DAY | HOUR | MINUTE | SECOND );", 86, 0, input);
             
             	    throw nvae_d86s0;
             }
@@ -6715,9 +6715,9 @@ public class MacroScopeParser : Parser
             switch (alt86) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:793:2: YEAR
+                    // MacroScope\\MacroScope.g:792:2: YEAR
                     {
-                    	Match(input,YEAR,FOLLOW_YEAR_in_datetimeField3364); if (failed) return value;
+                    	Match(input,YEAR,FOLLOW_YEAR_in_datetimeField3354); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  DateTimeUnit.Year; 
@@ -6726,9 +6726,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:794:4: MONTH
+                    // MacroScope\\MacroScope.g:793:4: MONTH
                     {
-                    	Match(input,MONTH,FOLLOW_MONTH_in_datetimeField3371); if (failed) return value;
+                    	Match(input,MONTH,FOLLOW_MONTH_in_datetimeField3361); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  DateTimeUnit.Month; 
@@ -6737,9 +6737,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 3 :
-                    // MacroScope\\MacroScope.g:795:4: DAY
+                    // MacroScope\\MacroScope.g:794:4: DAY
                     {
-                    	Match(input,DAY,FOLLOW_DAY_in_datetimeField3378); if (failed) return value;
+                    	Match(input,DAY,FOLLOW_DAY_in_datetimeField3368); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  DateTimeUnit.Day; 
@@ -6748,9 +6748,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 4 :
-                    // MacroScope\\MacroScope.g:796:4: HOUR
+                    // MacroScope\\MacroScope.g:795:4: HOUR
                     {
-                    	Match(input,HOUR,FOLLOW_HOUR_in_datetimeField3385); if (failed) return value;
+                    	Match(input,HOUR,FOLLOW_HOUR_in_datetimeField3375); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  DateTimeUnit.Hour; 
@@ -6759,9 +6759,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 5 :
-                    // MacroScope\\MacroScope.g:797:4: MINUTE
+                    // MacroScope\\MacroScope.g:796:4: MINUTE
                     {
-                    	Match(input,MINUTE,FOLLOW_MINUTE_in_datetimeField3392); if (failed) return value;
+                    	Match(input,MINUTE,FOLLOW_MINUTE_in_datetimeField3382); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  DateTimeUnit.Minute; 
@@ -6770,9 +6770,9 @@ public class MacroScopeParser : Parser
                     }
                     break;
                 case 6 :
-                    // MacroScope\\MacroScope.g:798:4: SECOND
+                    // MacroScope\\MacroScope.g:797:4: SECOND
                     {
-                    	Match(input,SECOND,FOLLOW_SECOND_in_datetimeField3399); if (failed) return value;
+                    	Match(input,SECOND,FOLLOW_SECOND_in_datetimeField3389); if (failed) return value;
                     	if ( backtracking == 0 ) 
                     	{
                     	   value =  DateTimeUnit.Second; 
@@ -6869,11 +6869,11 @@ public class MacroScopeParser : Parser
     // $ANTLR start synpred6
     public void synpred6_fragment() //throws RecognitionException
     {   
-        // MacroScope\\MacroScope.g:387:5: ( queryExpression )
-        // MacroScope\\MacroScope.g:387:6: queryExpression
+        // MacroScope\\MacroScope.g:399:4: ( function )
+        // MacroScope\\MacroScope.g:399:5: function
         {
-        	PushFollow(FOLLOW_queryExpression_in_synpred61693);
-        	queryExpression();
+        	PushFollow(FOLLOW_function_in_synpred61731);
+        	function();
         	followingStackPointer_--;
         	if (failed) return ;
         
@@ -6884,11 +6884,11 @@ public class MacroScopeParser : Parser
     // $ANTLR start synpred7
     public void synpred7_fragment() //throws RecognitionException
     {   
-        // MacroScope\\MacroScope.g:400:4: ( function )
-        // MacroScope\\MacroScope.g:400:5: function
+        // MacroScope\\MacroScope.g:480:11: ( selectStatement )
+        // MacroScope\\MacroScope.g:480:12: selectStatement
         {
-        	PushFollow(FOLLOW_function_in_synpred71741);
-        	function();
+        	PushFollow(FOLLOW_selectStatement_in_synpred72166);
+        	selectStatement();
         	followingStackPointer_--;
         	if (failed) return ;
         
@@ -6899,11 +6899,11 @@ public class MacroScopeParser : Parser
     // $ANTLR start synpred8
     public void synpred8_fragment() //throws RecognitionException
     {   
-        // MacroScope\\MacroScope.g:481:11: ( selectStatement )
-        // MacroScope\\MacroScope.g:481:12: selectStatement
+        // MacroScope\\MacroScope.g:519:5: ( function )
+        // MacroScope\\MacroScope.g:519:6: function
         {
-        	PushFollow(FOLLOW_selectStatement_in_synpred82176);
-        	selectStatement();
+        	PushFollow(FOLLOW_function_in_synpred82264);
+        	function();
         	followingStackPointer_--;
         	if (failed) return ;
         
@@ -6911,39 +6911,6 @@ public class MacroScopeParser : Parser
     }
     // $ANTLR end synpred8
 
-    // $ANTLR start synpred9
-    public void synpred9_fragment() //throws RecognitionException
-    {   
-        // MacroScope\\MacroScope.g:520:5: ( function )
-        // MacroScope\\MacroScope.g:520:6: function
-        {
-        	PushFollow(FOLLOW_function_in_synpred92274);
-        	function();
-        	followingStackPointer_--;
-        	if (failed) return ;
-        
-        }
-    }
-    // $ANTLR end synpred9
-
-   	public bool synpred9() 
-   	{
-   	    backtracking++;
-   	    int start = input.Mark();
-   	    try 
-   	    {
-   	        synpred9_fragment(); // can never throw exception
-   	    }
-   	    catch (RecognitionException re) 
-   	    {
-   	        Console.Error.WriteLine("impossible: "+re);
-   	    }
-   	    bool success = !failed;
-   	    input.Rewind(start);
-   	    backtracking--;
-   	    failed = false;
-   	    return success;
-   	}
    	public bool synpred5() 
    	{
    	    backtracking++;
@@ -7110,55 +7077,55 @@ public class MacroScopeParser : Parser
         73, 83, 83, 0, 66, 0, 0, 83, 83
         };
     static readonly short[] DFA39_accept = {
-        -1, -1, -1, 3, -1, 2, 1, -1, -1
+        -1, -1, -1, 3, -1, 1, 2, -1, -1
         };
     static readonly short[] DFA39_special = {
-        -1, 2, 0, -1, -1, -1, -1, 1, 3
+        -1, 3, 1, -1, -1, -1, -1, 2, 0
         };
     
     static readonly short[] dfa39_transition_null = null;
 
     static readonly short[] dfa39_transition0 = {
-    	3, -1, -1, -1, -1, 3, 3, 6, -1, -1, -1, -1, -1, -1, 3, 3, -1, -1, -1, 
+    	3, -1, -1, -1, -1, 3, 3, -1, -1, -1, -1, -1, -1, -1, 3, 3, -1, -1, 
+    	    -1, 3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 3, -1, 
+    	    -1, -1, -1, -1, -1, -1, -1, 3, 6, -1, -1, -1, -1, -1, 3, -1, -1, 
+    	    -1, -1, -1, -1, 4, -1, -1, 3, -1, -1, -1, -1, -1, 3, 3, 3, 3, 3, 
+    	    -1, -1, -1, -1, -1, -1, 3
+    	};
+    static readonly short[] dfa39_transition1 = {
+    	3, -1, -1, -1, -1, 3, 3, 5, -1, -1, -1, -1, -1, -1, 3, 3, -1, -1, -1, 
     	    3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 3, -1, -1, 
-    	    -1, -1, -1, -1, -1, -1, 3, 5, -1, -1, -1, -1, -1, 3, -1, -1, -1, 
+    	    -1, -1, -1, -1, -1, -1, 3, 6, -1, -1, -1, -1, -1, 3, -1, -1, -1, 
     	    -1, -1, -1, 4, -1, -1, 3, -1, -1, -1, -1, -1, 3, 3, 3, 3, 3, -1, 
     	    -1, -1, -1, -1, -1, 3
     	};
-    static readonly short[] dfa39_transition1 = {
+    static readonly short[] dfa39_transition2 = {
+    	3, 3, -1, -1, -1, -1, 3, 3, 5, -1, -1, -1, -1, -1, -1, 3, 3, -1, -1, 
+    	    -1, 3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 3, -1, 
+    	    -1, -1, -1, -1, -1, -1, -1, 3, 6, -1, -1, -1, -1, -1, 3, -1, -1, 
+    	    -1, -1, -1, -1, 4, -1, -1, 3, -1, -1, -1, -1, -1, 3, 3, 3, 3, 3, 
+    	    -1, -1, -1, -1, -1, -1, 3
+    	};
+    static readonly short[] dfa39_transition3 = {
     	3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 3, -1, -1, -1, 
     	    -1, -1, -1, -1, -1, -1, -1, -1, 3, -1, -1, -1, -1, -1, -1, -1, 
     	    -1, -1, 3, 3, -1, -1, -1, -1, -1, -1, -1, 3, 3, 3, -1, 3, 1, 3, 
     	    -1, -1, -1, -1, 3, -1, 3, 3, 2, 3, 3, 3, 3, 3, 3, 3
     	};
-    static readonly short[] dfa39_transition2 = {
-    	7, -1, -1, -1, -1, -1, -1, -1, -1, -1, 8
-    	};
-    static readonly short[] dfa39_transition3 = {
-    	3, -1, -1, -1, -1, 3, 3, -1, -1, -1, -1, -1, -1, -1, 3, 3, -1, -1, 
-    	    -1, 3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 3, -1, 
-    	    -1, -1, -1, -1, -1, -1, -1, 3, 5, -1, -1, -1, -1, -1, 3, -1, -1, 
-    	    -1, -1, -1, -1, 4, -1, -1, 3, -1, -1, -1, -1, -1, 3, 3, 3, 3, 3, 
-    	    -1, -1, -1, -1, -1, -1, 3
-    	};
     static readonly short[] dfa39_transition4 = {
-    	3, 3, -1, -1, -1, -1, 3, 3, 6, -1, -1, -1, -1, -1, -1, 3, 3, -1, -1, 
-    	    -1, 3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 3, -1, 
-    	    -1, -1, -1, -1, -1, -1, -1, 3, 5, -1, -1, -1, -1, -1, 3, -1, -1, 
-    	    -1, -1, -1, -1, 4, -1, -1, 3, -1, -1, -1, -1, -1, 3, 3, 3, 3, 3, 
-    	    -1, -1, -1, -1, -1, -1, 3
+    	7, -1, -1, -1, -1, -1, -1, -1, -1, -1, 8
     	};
     
     static readonly short[][] DFA39_transition = {
-    	dfa39_transition1,
-    	dfa39_transition4,
-    	dfa39_transition0,
-    	dfa39_transition_null,
-    	dfa39_transition2,
-    	dfa39_transition_null,
-    	dfa39_transition_null,
     	dfa39_transition3,
-    	dfa39_transition3
+    	dfa39_transition2,
+    	dfa39_transition1,
+    	dfa39_transition_null,
+    	dfa39_transition4,
+    	dfa39_transition_null,
+    	dfa39_transition_null,
+    	dfa39_transition0,
+    	dfa39_transition0
         };
     
     protected class DFA39 : DFA
@@ -7191,44 +7158,62 @@ public class MacroScopeParser : Parser
         {
 
                	case 0 : 
+                   	int LA39_8 = input.LA(1);
+                   	
+                   	 
+                   	int index39_8 = input.Index();
+                   	input.Rewind();
+                   	s = -1;
+                   	if ( (LA39_8 == DOT_STAR) && (synpred4()) ) { s = 6; }
+
+                   	else if ( (LA39_8 == DOT) ) { s = 4; }
+
+                   	else if ( (LA39_8 == EOF || LA39_8 == RPAREN || (LA39_8 >= FROM && LA39_8 <= COMMA) || (LA39_8 >= WHERE && LA39_8 <= ORDER) || LA39_8 == GROUP || LA39_8 == STAR || LA39_8 == AS || LA39_8 == NonQuotedIdentifier || LA39_8 == QuotedIdentifier || (LA39_8 >= PLUS && LA39_8 <= MOD) || LA39_8 == UNION) ) { s = 3; }
+                   	
+                   	 
+                   	input.Seek(index39_8);
+                   	if ( s >= 0 ) return s;
+                   	break;
+
+               	case 1 : 
                    	int LA39_2 = input.LA(1);
                    	
                    	 
                    	int index39_2 = input.Index();
                    	input.Rewind();
                    	s = -1;
-                   	if ( (LA39_2 == ASSIGNEQUAL) && (synpred3()) ) { s = 6; }
-
-                   	else if ( (LA39_2 == DOT) ) { s = 4; }
+                   	if ( (LA39_2 == DOT) ) { s = 4; }
 
                    	else if ( (LA39_2 == EOF || LA39_2 == RPAREN || (LA39_2 >= FROM && LA39_2 <= COMMA) || (LA39_2 >= WHERE && LA39_2 <= ORDER) || LA39_2 == GROUP || LA39_2 == STAR || LA39_2 == AS || LA39_2 == NonQuotedIdentifier || LA39_2 == QuotedIdentifier || (LA39_2 >= PLUS && LA39_2 <= MOD) || LA39_2 == UNION) ) { s = 3; }
 
-                   	else if ( (LA39_2 == DOT_STAR) && (synpred4()) ) { s = 5; }
+                   	else if ( (LA39_2 == DOT_STAR) && (synpred4()) ) { s = 6; }
+
+                   	else if ( (LA39_2 == ASSIGNEQUAL) && (synpred3()) ) { s = 5; }
                    	
                    	 
                    	input.Seek(index39_2);
                    	if ( s >= 0 ) return s;
                    	break;
 
-               	case 1 : 
+               	case 2 : 
                    	int LA39_7 = input.LA(1);
                    	
                    	 
                    	int index39_7 = input.Index();
                    	input.Rewind();
                    	s = -1;
-                   	if ( (LA39_7 == EOF || LA39_7 == RPAREN || (LA39_7 >= FROM && LA39_7 <= COMMA) || (LA39_7 >= WHERE && LA39_7 <= ORDER) || LA39_7 == GROUP || LA39_7 == STAR || LA39_7 == AS || LA39_7 == NonQuotedIdentifier || LA39_7 == QuotedIdentifier || (LA39_7 >= PLUS && LA39_7 <= MOD) || LA39_7 == UNION) ) { s = 3; }
+                   	if ( (LA39_7 == DOT_STAR) && (synpred4()) ) { s = 6; }
 
                    	else if ( (LA39_7 == DOT) ) { s = 4; }
 
-                   	else if ( (LA39_7 == DOT_STAR) && (synpred4()) ) { s = 5; }
+                   	else if ( (LA39_7 == EOF || LA39_7 == RPAREN || (LA39_7 >= FROM && LA39_7 <= COMMA) || (LA39_7 >= WHERE && LA39_7 <= ORDER) || LA39_7 == GROUP || LA39_7 == STAR || LA39_7 == AS || LA39_7 == NonQuotedIdentifier || LA39_7 == QuotedIdentifier || (LA39_7 >= PLUS && LA39_7 <= MOD) || LA39_7 == UNION) ) { s = 3; }
                    	
                    	 
                    	input.Seek(index39_7);
                    	if ( s >= 0 ) return s;
                    	break;
 
-               	case 2 : 
+               	case 3 : 
                    	int LA39_1 = input.LA(1);
                    	
                    	 
@@ -7237,32 +7222,14 @@ public class MacroScopeParser : Parser
                    	s = -1;
                    	if ( (LA39_1 == DOT) ) { s = 4; }
 
-                   	else if ( (LA39_1 == DOT_STAR) && (synpred4()) ) { s = 5; }
-
-                   	else if ( (LA39_1 == ASSIGNEQUAL) && (synpred3()) ) { s = 6; }
-
                    	else if ( (LA39_1 == EOF || (LA39_1 >= LPAREN && LA39_1 <= RPAREN) || (LA39_1 >= FROM && LA39_1 <= COMMA) || (LA39_1 >= WHERE && LA39_1 <= ORDER) || LA39_1 == GROUP || LA39_1 == STAR || LA39_1 == AS || LA39_1 == NonQuotedIdentifier || LA39_1 == QuotedIdentifier || (LA39_1 >= PLUS && LA39_1 <= MOD) || LA39_1 == UNION) ) { s = 3; }
+
+                   	else if ( (LA39_1 == ASSIGNEQUAL) && (synpred3()) ) { s = 5; }
+
+                   	else if ( (LA39_1 == DOT_STAR) && (synpred4()) ) { s = 6; }
                    	
                    	 
                    	input.Seek(index39_1);
-                   	if ( s >= 0 ) return s;
-                   	break;
-
-               	case 3 : 
-                   	int LA39_8 = input.LA(1);
-                   	
-                   	 
-                   	int index39_8 = input.Index();
-                   	input.Rewind();
-                   	s = -1;
-                   	if ( (LA39_8 == EOF || LA39_8 == RPAREN || (LA39_8 >= FROM && LA39_8 <= COMMA) || (LA39_8 >= WHERE && LA39_8 <= ORDER) || LA39_8 == GROUP || LA39_8 == STAR || LA39_8 == AS || LA39_8 == NonQuotedIdentifier || LA39_8 == QuotedIdentifier || (LA39_8 >= PLUS && LA39_8 <= MOD) || LA39_8 == UNION) ) { s = 3; }
-
-                   	else if ( (LA39_8 == DOT) ) { s = 4; }
-
-                   	else if ( (LA39_8 == DOT_STAR) && (synpred4()) ) { s = 5; }
-                   	
-                   	 
-                   	input.Seek(index39_8);
                    	if ( s >= 0 ) return s;
                    	break;
         }
@@ -7416,172 +7383,171 @@ public class MacroScopeParser : Parser
     public static readonly BitSet FOLLOW_LPAREN_in_subTableSource1663 = new BitSet(new ulong[]{0x01A00C0000010040UL,0x0000000000000004UL});
     public static readonly BitSet FOLLOW_joinedTables_in_subTableSource1682 = new BitSet(new ulong[]{0x0000000000000080UL});
     public static readonly BitSet FOLLOW_RPAREN_in_subTableSource1684 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_queryExpression_in_subTableSource1709 = new BitSet(new ulong[]{0x0000000000000080UL});
-    public static readonly BitSet FOLLOW_RPAREN_in_subTableSource1711 = new BitSet(new ulong[]{0x0102000000000000UL,0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_alias1_in_subTableSource1717 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_function_in_subTableSource1752 = new BitSet(new ulong[]{0x0102000000000002UL,0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_alias1_in_subTableSource1765 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_dbObject_in_subTableSource1779 = new BitSet(new ulong[]{0x0102000000000002UL,0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_alias1_in_subTableSource1791 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_INNER_in_joinOn1813 = new BitSet(new ulong[]{0x0000400000000000UL});
-    public static readonly BitSet FOLLOW_LEFT_in_joinOn1820 = new BitSet(new ulong[]{0x0000600000000000UL});
-    public static readonly BitSet FOLLOW_RIGHT_in_joinOn1828 = new BitSet(new ulong[]{0x0000600000000000UL});
-    public static readonly BitSet FOLLOW_FULL_in_joinOn1836 = new BitSet(new ulong[]{0x0000600000000000UL});
-    public static readonly BitSet FOLLOW_OUTER_in_joinOn1846 = new BitSet(new ulong[]{0x0000400000000000UL});
-    public static readonly BitSet FOLLOW_JOIN_in_joinOn1856 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_CROSS_in_joinedTable1871 = new BitSet(new ulong[]{0x0000400000000000UL});
-    public static readonly BitSet FOLLOW_JOIN_in_joinedTable1873 = new BitSet(new ulong[]{0x01A00C0000000040UL,0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_subTableSource_in_joinedTable1879 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_joinOn_in_joinedTable1894 = new BitSet(new ulong[]{0x01A00C0000000040UL,0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_tableSource_in_joinedTable1903 = new BitSet(new ulong[]{0x0001000000000000UL});
-    public static readonly BitSet FOLLOW_ON_in_joinedTable1910 = new BitSet(new ulong[]{0x43B80C2140100040UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_searchCondition_in_joinedTable1916 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_subTableSource_in_joinedTables1941 = new BitSet(new ulong[]{0x0000DE0000000000UL});
-    public static readonly BitSet FOLLOW_joinedTable_in_joinedTables1953 = new BitSet(new ulong[]{0x0000DE0000000002UL});
-    public static readonly BitSet FOLLOW_AS_in_alias11976 = new BitSet(new ulong[]{0x0100000000000000UL,0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_identifier_in_alias11984 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_identifier_in_alias22005 = new BitSet(new ulong[]{0x0000000000004000UL});
-    public static readonly BitSet FOLLOW_ASSIGNEQUAL_in_alias22011 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_dbObject_in_tableColumns2030 = new BitSet(new ulong[]{0x0004000000000000UL});
-    public static readonly BitSet FOLLOW_DOT_STAR_in_tableColumns2032 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_dbObject_in_column2054 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_column2063 = new BitSet(new ulong[]{0x0100000000000040UL,0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_column_in_column2069 = new BitSet(new ulong[]{0x0000000000000080UL});
-    public static readonly BitSet FOLLOW_RPAREN_in_column2071 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_additiveSubExpression_in_expression2092 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000700UL});
-    public static readonly BitSet FOLLOW_additiveOperator_in_expression2103 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_additiveSubExpression_in_expression2109 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000700UL});
-    public static readonly BitSet FOLLOW_subExpression_in_additiveSubExpression2134 = new BitSet(new ulong[]{0x0000010000000002UL,0x0000000000001800UL});
-    public static readonly BitSet FOLLOW_multiplicativeArithmeticOperator_in_additiveSubExpression2145 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_subExpression_in_additiveSubExpression2151 = new BitSet(new ulong[]{0x0000010000000002UL,0x0000000000001800UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_bracketedTerm2171 = new BitSet(new ulong[]{0x43B80C0100110040UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_selectStatement_in_bracketedTerm2189 = new BitSet(new ulong[]{0x0000000000000080UL});
-    public static readonly BitSet FOLLOW_RPAREN_in_bracketedTerm2191 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_expression_in_bracketedTerm2203 = new BitSet(new ulong[]{0x0000000000000080UL});
-    public static readonly BitSet FOLLOW_RPAREN_in_bracketedTerm2205 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_unaryOperator_in_subExpression2230 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000000FFUL});
-    public static readonly BitSet FOLLOW_constant_in_subExpression2245 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_variableReference_in_subExpression2257 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_PLACEHOLDER_in_subExpression2265 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_function_in_subExpression2286 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_bracketedTerm_in_subExpression2298 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_dbObject_in_subExpression2310 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_caseFunction_in_subExpression2356 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_castFunction_in_subExpression2368 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_Variable_in_variableReference2387 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_SUBSTRING_in_function2405 = new BitSet(new ulong[]{0x0000000000000040UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_function2409 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_expression_in_function2415 = new BitSet(new ulong[]{0x0000000000001000UL});
-    public static readonly BitSet FOLLOW_FROM_in_function2419 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_expression_in_function2425 = new BitSet(new ulong[]{0x0040000000000080UL});
-    public static readonly BitSet FOLLOW_FOR_in_function2431 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_expression_in_function2437 = new BitSet(new ulong[]{0x0000000000000080UL});
-    public static readonly BitSet FOLLOW_RPAREN_in_function2444 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_EXTRACT_in_function2449 = new BitSet(new ulong[]{0x0000000000000040UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_function2451 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000003F00000UL});
-    public static readonly BitSet FOLLOW_datetimeField_in_function2457 = new BitSet(new ulong[]{0x0000000000001000UL});
-    public static readonly BitSet FOLLOW_FROM_in_function2459 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_expression_in_function2465 = new BitSet(new ulong[]{0x0000000000000080UL});
-    public static readonly BitSet FOLLOW_RPAREN_in_function2469 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_genericFunction_in_function2478 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_NonQuotedIdentifier_in_genericFunction2507 = new BitSet(new ulong[]{0x0000000000000040UL});
-    public static readonly BitSet FOLLOW_LEFT_in_genericFunction2515 = new BitSet(new ulong[]{0x0000000000000040UL});
-    public static readonly BitSet FOLLOW_RIGHT_in_genericFunction2523 = new BitSet(new ulong[]{0x0000000000000040UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_genericFunction2530 = new BitSet(new ulong[]{0x43B80D01001600C0UL,0x0000000003F003FFUL});
-    public static readonly BitSet FOLLOW_functionArgument_in_genericFunction2540 = new BitSet(new ulong[]{0x0000000000002080UL});
-    public static readonly BitSet FOLLOW_COMMA_in_genericFunction2549 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x0000000003F003FFUL});
-    public static readonly BitSet FOLLOW_functionArgument_in_genericFunction2555 = new BitSet(new ulong[]{0x0000000000002080UL});
-    public static readonly BitSet FOLLOW_STAR_in_genericFunction2572 = new BitSet(new ulong[]{0x0000000000000080UL});
-    public static readonly BitSet FOLLOW_ALL_in_genericFunction2588 = new BitSet(new ulong[]{0x43B80D0100100040UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_DISTINCT_in_genericFunction2592 = new BitSet(new ulong[]{0x43B80D0100100040UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_STAR_in_genericFunction2603 = new BitSet(new ulong[]{0x0000000000000080UL});
-    public static readonly BitSet FOLLOW_expression_in_genericFunction2620 = new BitSet(new ulong[]{0x0000000000000080UL});
-    public static readonly BitSet FOLLOW_RPAREN_in_genericFunction2642 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_expression_in_functionArgument2661 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_datetimeField_in_functionArgument2672 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_CASE_in_caseFunction2689 = new BitSet(new ulong[]{0x47B80C0100100040UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_expression_in_caseFunction2701 = new BitSet(new ulong[]{0x0400000000000000UL});
-    public static readonly BitSet FOLLOW_WHEN_in_caseFunction2710 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_expression_in_caseFunction2716 = new BitSet(new ulong[]{0x0800000000000000UL});
-    public static readonly BitSet FOLLOW_THEN_in_caseFunction2718 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_expression_in_caseFunction2724 = new BitSet(new ulong[]{0x3400000000000000UL});
-    public static readonly BitSet FOLLOW_WHEN_in_caseFunction2745 = new BitSet(new ulong[]{0x43B80C2140100040UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_searchCondition_in_caseFunction2751 = new BitSet(new ulong[]{0x0800000000000000UL});
-    public static readonly BitSet FOLLOW_THEN_in_caseFunction2753 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_expression_in_caseFunction2759 = new BitSet(new ulong[]{0x3400000000000000UL});
-    public static readonly BitSet FOLLOW_ELSE_in_caseFunction2780 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_expression_in_caseFunction2786 = new BitSet(new ulong[]{0x2000000000000000UL});
-    public static readonly BitSet FOLLOW_END_in_caseFunction2793 = new BitSet(new ulong[]{0x0200000000000002UL});
-    public static readonly BitSet FOLLOW_CASE_in_caseFunction2797 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_CAST_in_castFunction2816 = new BitSet(new ulong[]{0x0000000000000040UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_castFunction2818 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_expression_in_castFunction2824 = new BitSet(new ulong[]{0x0002000000000000UL});
-    public static readonly BitSet FOLLOW_AS_in_castFunction2826 = new BitSet(new ulong[]{0x0100000000000000UL});
-    public static readonly BitSet FOLLOW_typeIdentifier_in_castFunction2832 = new BitSet(new ulong[]{0x00000000000000C0UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_castFunction2840 = new BitSet(new ulong[]{0x0000000000100000UL});
-    public static readonly BitSet FOLLOW_nonNegativeInteger_in_castFunction2846 = new BitSet(new ulong[]{0x0000000000002080UL});
-    public static readonly BitSet FOLLOW_COMMA_in_castFunction2852 = new BitSet(new ulong[]{0x0000000000100000UL});
-    public static readonly BitSet FOLLOW_nonNegativeInteger_in_castFunction2858 = new BitSet(new ulong[]{0x0000000000000080UL});
-    public static readonly BitSet FOLLOW_RPAREN_in_castFunction2865 = new BitSet(new ulong[]{0x0000000000000080UL});
-    public static readonly BitSet FOLLOW_RPAREN_in_castFunction2870 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_identifier_in_dbObject2889 = new BitSet(new ulong[]{0x8000000000000002UL});
-    public static readonly BitSet FOLLOW_DOT_in_dbObject2896 = new BitSet(new ulong[]{0x0100000000000000UL,0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_identifier_in_dbObject2902 = new BitSet(new ulong[]{0x8000000000000002UL});
+    public static readonly BitSet FOLLOW_queryExpression_in_subTableSource1699 = new BitSet(new ulong[]{0x0000000000000080UL});
+    public static readonly BitSet FOLLOW_RPAREN_in_subTableSource1701 = new BitSet(new ulong[]{0x0102000000000000UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_alias1_in_subTableSource1707 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_function_in_subTableSource1742 = new BitSet(new ulong[]{0x0102000000000002UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_alias1_in_subTableSource1755 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_dbObject_in_subTableSource1769 = new BitSet(new ulong[]{0x0102000000000002UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_alias1_in_subTableSource1781 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_INNER_in_joinOn1803 = new BitSet(new ulong[]{0x0000400000000000UL});
+    public static readonly BitSet FOLLOW_LEFT_in_joinOn1810 = new BitSet(new ulong[]{0x0000600000000000UL});
+    public static readonly BitSet FOLLOW_RIGHT_in_joinOn1818 = new BitSet(new ulong[]{0x0000600000000000UL});
+    public static readonly BitSet FOLLOW_FULL_in_joinOn1826 = new BitSet(new ulong[]{0x0000600000000000UL});
+    public static readonly BitSet FOLLOW_OUTER_in_joinOn1836 = new BitSet(new ulong[]{0x0000400000000000UL});
+    public static readonly BitSet FOLLOW_JOIN_in_joinOn1846 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_CROSS_in_joinedTable1861 = new BitSet(new ulong[]{0x0000400000000000UL});
+    public static readonly BitSet FOLLOW_JOIN_in_joinedTable1863 = new BitSet(new ulong[]{0x01A00C0000000040UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_subTableSource_in_joinedTable1869 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_joinOn_in_joinedTable1884 = new BitSet(new ulong[]{0x01A00C0000000040UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_tableSource_in_joinedTable1893 = new BitSet(new ulong[]{0x0001000000000000UL});
+    public static readonly BitSet FOLLOW_ON_in_joinedTable1900 = new BitSet(new ulong[]{0x43B80C2140100040UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_searchCondition_in_joinedTable1906 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_subTableSource_in_joinedTables1931 = new BitSet(new ulong[]{0x0000DE0000000000UL});
+    public static readonly BitSet FOLLOW_joinedTable_in_joinedTables1943 = new BitSet(new ulong[]{0x0000DE0000000002UL});
+    public static readonly BitSet FOLLOW_AS_in_alias11966 = new BitSet(new ulong[]{0x0100000000000000UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_identifier_in_alias11974 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_identifier_in_alias21995 = new BitSet(new ulong[]{0x0000000000004000UL});
+    public static readonly BitSet FOLLOW_ASSIGNEQUAL_in_alias22001 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_dbObject_in_tableColumns2020 = new BitSet(new ulong[]{0x0004000000000000UL});
+    public static readonly BitSet FOLLOW_DOT_STAR_in_tableColumns2022 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_dbObject_in_column2044 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_LPAREN_in_column2053 = new BitSet(new ulong[]{0x0100000000000040UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_column_in_column2059 = new BitSet(new ulong[]{0x0000000000000080UL});
+    public static readonly BitSet FOLLOW_RPAREN_in_column2061 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_additiveSubExpression_in_expression2082 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000700UL});
+    public static readonly BitSet FOLLOW_additiveOperator_in_expression2093 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_additiveSubExpression_in_expression2099 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000700UL});
+    public static readonly BitSet FOLLOW_subExpression_in_additiveSubExpression2124 = new BitSet(new ulong[]{0x0000010000000002UL,0x0000000000001800UL});
+    public static readonly BitSet FOLLOW_multiplicativeArithmeticOperator_in_additiveSubExpression2135 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_subExpression_in_additiveSubExpression2141 = new BitSet(new ulong[]{0x0000010000000002UL,0x0000000000001800UL});
+    public static readonly BitSet FOLLOW_LPAREN_in_bracketedTerm2161 = new BitSet(new ulong[]{0x43B80C0100110040UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_selectStatement_in_bracketedTerm2179 = new BitSet(new ulong[]{0x0000000000000080UL});
+    public static readonly BitSet FOLLOW_RPAREN_in_bracketedTerm2181 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_expression_in_bracketedTerm2193 = new BitSet(new ulong[]{0x0000000000000080UL});
+    public static readonly BitSet FOLLOW_RPAREN_in_bracketedTerm2195 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_unaryOperator_in_subExpression2220 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000000FFUL});
+    public static readonly BitSet FOLLOW_constant_in_subExpression2235 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_variableReference_in_subExpression2247 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_PLACEHOLDER_in_subExpression2255 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_function_in_subExpression2276 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_bracketedTerm_in_subExpression2288 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_dbObject_in_subExpression2300 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_caseFunction_in_subExpression2346 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_castFunction_in_subExpression2358 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_Variable_in_variableReference2377 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_SUBSTRING_in_function2395 = new BitSet(new ulong[]{0x0000000000000040UL});
+    public static readonly BitSet FOLLOW_LPAREN_in_function2399 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_expression_in_function2405 = new BitSet(new ulong[]{0x0000000000001000UL});
+    public static readonly BitSet FOLLOW_FROM_in_function2409 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_expression_in_function2415 = new BitSet(new ulong[]{0x0040000000000080UL});
+    public static readonly BitSet FOLLOW_FOR_in_function2421 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_expression_in_function2427 = new BitSet(new ulong[]{0x0000000000000080UL});
+    public static readonly BitSet FOLLOW_RPAREN_in_function2434 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_EXTRACT_in_function2439 = new BitSet(new ulong[]{0x0000000000000040UL});
+    public static readonly BitSet FOLLOW_LPAREN_in_function2441 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000003F00000UL});
+    public static readonly BitSet FOLLOW_datetimeField_in_function2447 = new BitSet(new ulong[]{0x0000000000001000UL});
+    public static readonly BitSet FOLLOW_FROM_in_function2449 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_expression_in_function2455 = new BitSet(new ulong[]{0x0000000000000080UL});
+    public static readonly BitSet FOLLOW_RPAREN_in_function2459 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_genericFunction_in_function2468 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_NonQuotedIdentifier_in_genericFunction2497 = new BitSet(new ulong[]{0x0000000000000040UL});
+    public static readonly BitSet FOLLOW_LEFT_in_genericFunction2505 = new BitSet(new ulong[]{0x0000000000000040UL});
+    public static readonly BitSet FOLLOW_RIGHT_in_genericFunction2513 = new BitSet(new ulong[]{0x0000000000000040UL});
+    public static readonly BitSet FOLLOW_LPAREN_in_genericFunction2520 = new BitSet(new ulong[]{0x43B80D01001600C0UL,0x0000000003F003FFUL});
+    public static readonly BitSet FOLLOW_functionArgument_in_genericFunction2530 = new BitSet(new ulong[]{0x0000000000002080UL});
+    public static readonly BitSet FOLLOW_COMMA_in_genericFunction2539 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x0000000003F003FFUL});
+    public static readonly BitSet FOLLOW_functionArgument_in_genericFunction2545 = new BitSet(new ulong[]{0x0000000000002080UL});
+    public static readonly BitSet FOLLOW_STAR_in_genericFunction2562 = new BitSet(new ulong[]{0x0000000000000080UL});
+    public static readonly BitSet FOLLOW_ALL_in_genericFunction2578 = new BitSet(new ulong[]{0x43B80D0100100040UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_DISTINCT_in_genericFunction2582 = new BitSet(new ulong[]{0x43B80D0100100040UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_STAR_in_genericFunction2593 = new BitSet(new ulong[]{0x0000000000000080UL});
+    public static readonly BitSet FOLLOW_expression_in_genericFunction2610 = new BitSet(new ulong[]{0x0000000000000080UL});
+    public static readonly BitSet FOLLOW_RPAREN_in_genericFunction2632 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_expression_in_functionArgument2651 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_datetimeField_in_functionArgument2662 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_CASE_in_caseFunction2679 = new BitSet(new ulong[]{0x47B80C0100100040UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_expression_in_caseFunction2691 = new BitSet(new ulong[]{0x0400000000000000UL});
+    public static readonly BitSet FOLLOW_WHEN_in_caseFunction2700 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_expression_in_caseFunction2706 = new BitSet(new ulong[]{0x0800000000000000UL});
+    public static readonly BitSet FOLLOW_THEN_in_caseFunction2708 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_expression_in_caseFunction2714 = new BitSet(new ulong[]{0x3400000000000000UL});
+    public static readonly BitSet FOLLOW_WHEN_in_caseFunction2735 = new BitSet(new ulong[]{0x43B80C2140100040UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_searchCondition_in_caseFunction2741 = new BitSet(new ulong[]{0x0800000000000000UL});
+    public static readonly BitSet FOLLOW_THEN_in_caseFunction2743 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_expression_in_caseFunction2749 = new BitSet(new ulong[]{0x3400000000000000UL});
+    public static readonly BitSet FOLLOW_ELSE_in_caseFunction2770 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_expression_in_caseFunction2776 = new BitSet(new ulong[]{0x2000000000000000UL});
+    public static readonly BitSet FOLLOW_END_in_caseFunction2783 = new BitSet(new ulong[]{0x0200000000000002UL});
+    public static readonly BitSet FOLLOW_CASE_in_caseFunction2787 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_CAST_in_castFunction2806 = new BitSet(new ulong[]{0x0000000000000040UL});
+    public static readonly BitSet FOLLOW_LPAREN_in_castFunction2808 = new BitSet(new ulong[]{0x43B80C0100100040UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_expression_in_castFunction2814 = new BitSet(new ulong[]{0x0002000000000000UL});
+    public static readonly BitSet FOLLOW_AS_in_castFunction2816 = new BitSet(new ulong[]{0x0100000000000000UL});
+    public static readonly BitSet FOLLOW_typeIdentifier_in_castFunction2822 = new BitSet(new ulong[]{0x00000000000000C0UL});
+    public static readonly BitSet FOLLOW_LPAREN_in_castFunction2830 = new BitSet(new ulong[]{0x0000000000100000UL});
+    public static readonly BitSet FOLLOW_nonNegativeInteger_in_castFunction2836 = new BitSet(new ulong[]{0x0000000000002080UL});
+    public static readonly BitSet FOLLOW_COMMA_in_castFunction2842 = new BitSet(new ulong[]{0x0000000000100000UL});
+    public static readonly BitSet FOLLOW_nonNegativeInteger_in_castFunction2848 = new BitSet(new ulong[]{0x0000000000000080UL});
+    public static readonly BitSet FOLLOW_RPAREN_in_castFunction2855 = new BitSet(new ulong[]{0x0000000000000080UL});
+    public static readonly BitSet FOLLOW_RPAREN_in_castFunction2860 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_identifier_in_dbObject2879 = new BitSet(new ulong[]{0x8000000000000002UL});
+    public static readonly BitSet FOLLOW_DOT_in_dbObject2886 = new BitSet(new ulong[]{0x0100000000000000UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_identifier_in_dbObject2892 = new BitSet(new ulong[]{0x8000000000000002UL});
+    public static readonly BitSet FOLLOW_singleStringLiteral_in_stringLiteral2920 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000003UL});
     public static readonly BitSet FOLLOW_singleStringLiteral_in_stringLiteral2930 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000003UL});
-    public static readonly BitSet FOLLOW_singleStringLiteral_in_stringLiteral2940 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000003UL});
-    public static readonly BitSet FOLLOW_UnicodeStringLiteral_in_singleStringLiteral2960 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_AsciiStringLiteral_in_singleStringLiteral2967 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_NonQuotedIdentifier_in_identifier2984 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_QuotedIdentifier_in_identifier2991 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_NonQuotedIdentifier_in_typeIdentifier3008 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_nonNegativeInteger_in_constant3029 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_Real_in_constant3036 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_NULL_in_constant3043 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_stringLiteral_in_constant3054 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_intervalLiteral_in_constant3065 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_HexLiteral_in_constant3072 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_MAccessDateTime_in_constant3081 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_Iso8601DateTime_in_constant3090 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_INTERVAL_in_intervalLiteral3114 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000000000302UL});
-    public static readonly BitSet FOLLOW_unaryOperator_in_intervalLiteral3122 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_AsciiStringLiteral_in_intervalLiteral3129 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000003F00000UL});
-    public static readonly BitSet FOLLOW_datetimeField_in_intervalLiteral3137 = new BitSet(new ulong[]{0x0000000000000042UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_intervalLiteral3143 = new BitSet(new ulong[]{0x0000000000100000UL});
-    public static readonly BitSet FOLLOW_Integer_in_intervalLiteral3145 = new BitSet(new ulong[]{0x0000000000000080UL});
-    public static readonly BitSet FOLLOW_RPAREN_in_intervalLiteral3149 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_Integer_in_nonNegativeInteger3167 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_PLUS_in_unaryOperator3184 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_MINUS_in_unaryOperator3191 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_PLUS_in_additiveOperator3208 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_MINUS_in_additiveOperator3215 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_STRCONCAT_in_additiveOperator3222 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_STAR_in_multiplicativeArithmeticOperator3243 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_DIVIDE_in_multiplicativeArithmeticOperator3250 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_MOD_in_multiplicativeArithmeticOperator3257 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_ASSIGNEQUAL_in_comparisonOperator3278 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_NOTEQUAL1_in_comparisonOperator3285 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_NOTEQUAL2_in_comparisonOperator3292 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_LESSTHANOREQUALTO1_in_comparisonOperator3299 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_LESSTHAN_in_comparisonOperator3306 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_GREATERTHANOREQUALTO1_in_comparisonOperator3313 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_GREATERTHAN_in_comparisonOperator3320 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_UNION_in_unionOperator3337 = new BitSet(new ulong[]{0x0000000000020002UL});
-    public static readonly BitSet FOLLOW_ALL_in_unionOperator3344 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_YEAR_in_datetimeField3364 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_MONTH_in_datetimeField3371 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_DAY_in_datetimeField3378 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_HOUR_in_datetimeField3385 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_MINUTE_in_datetimeField3392 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_SECOND_in_datetimeField3399 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_UnicodeStringLiteral_in_singleStringLiteral2950 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_AsciiStringLiteral_in_singleStringLiteral2957 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_NonQuotedIdentifier_in_identifier2974 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_QuotedIdentifier_in_identifier2981 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_NonQuotedIdentifier_in_typeIdentifier2998 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_nonNegativeInteger_in_constant3019 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_Real_in_constant3026 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_NULL_in_constant3033 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_stringLiteral_in_constant3044 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_intervalLiteral_in_constant3055 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_HexLiteral_in_constant3062 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_MAccessDateTime_in_constant3071 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_Iso8601DateTime_in_constant3080 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_INTERVAL_in_intervalLiteral3104 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000000000302UL});
+    public static readonly BitSet FOLLOW_unaryOperator_in_intervalLiteral3112 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_AsciiStringLiteral_in_intervalLiteral3119 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000003F00000UL});
+    public static readonly BitSet FOLLOW_datetimeField_in_intervalLiteral3127 = new BitSet(new ulong[]{0x0000000000000042UL});
+    public static readonly BitSet FOLLOW_LPAREN_in_intervalLiteral3133 = new BitSet(new ulong[]{0x0000000000100000UL});
+    public static readonly BitSet FOLLOW_Integer_in_intervalLiteral3135 = new BitSet(new ulong[]{0x0000000000000080UL});
+    public static readonly BitSet FOLLOW_RPAREN_in_intervalLiteral3139 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_Integer_in_nonNegativeInteger3157 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_PLUS_in_unaryOperator3174 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_MINUS_in_unaryOperator3181 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_PLUS_in_additiveOperator3198 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_MINUS_in_additiveOperator3205 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_STRCONCAT_in_additiveOperator3212 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_STAR_in_multiplicativeArithmeticOperator3233 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_DIVIDE_in_multiplicativeArithmeticOperator3240 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_MOD_in_multiplicativeArithmeticOperator3247 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_ASSIGNEQUAL_in_comparisonOperator3268 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_NOTEQUAL1_in_comparisonOperator3275 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_NOTEQUAL2_in_comparisonOperator3282 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_LESSTHANOREQUALTO1_in_comparisonOperator3289 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_LESSTHAN_in_comparisonOperator3296 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_GREATERTHANOREQUALTO1_in_comparisonOperator3303 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_GREATERTHAN_in_comparisonOperator3310 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_UNION_in_unionOperator3327 = new BitSet(new ulong[]{0x0000000000020002UL});
+    public static readonly BitSet FOLLOW_ALL_in_unionOperator3334 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_YEAR_in_datetimeField3354 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_MONTH_in_datetimeField3361 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_DAY_in_datetimeField3368 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_HOUR_in_datetimeField3375 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_MINUTE_in_datetimeField3382 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_SECOND_in_datetimeField3389 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_bracketedSearchCondition_in_synpred11047 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_selectStatement_in_synpred21308 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_alias2_in_synpred31494 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_tableColumns_in_synpred41531 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_joinedTables_in_synpred51670 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_queryExpression_in_synpred61693 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_function_in_synpred71741 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_selectStatement_in_synpred82176 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_function_in_synpred92274 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_function_in_synpred61731 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_selectStatement_in_synpred72166 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_function_in_synpred82264 = new BitSet(new ulong[]{0x0000000000000002UL});
 
 }
 }
