@@ -1,4 +1,8 @@
-// $ANTLR 3.0.1 MacroScope\\MacroScope.g 2008-06-09 11:56:26
+// $ANTLR 3.1 MacroScope\\MacroScope.g 2008-08-16 20:50:43
+// The variable 'variable' is assigned but its value is never used.
+#pragma warning disable 168, 219
+// Unreachable code detected.
+#pragma warning disable 162
 namespace 
 	MacroScope
 
@@ -13,9 +17,7 @@ using Stack 		= Antlr.Runtime.Collections.StackList;
 using IDictionary	= System.Collections.IDictionary;
 using Hashtable 	= System.Collections.Hashtable;
 
-
-public class MacroScopeLexer : Lexer 
-{
+public partial class MacroScopeLexer : Lexer {
     public const int CAST = 62;
     public const int STAR = 40;
     public const int MOD = 76;
@@ -95,7 +97,6 @@ public class MacroScopeLexer : Lexer
     public const int MINUS = 73;
     public const int HOUR = 87;
     public const int Digit = 91;
-    public const int Tokens = 99;
     public const int QuotedIdentifier = 66;
     public const int WordTail = 94;
     public const int JOIN = 46;
@@ -113,1676 +114,1831 @@ public class MacroScopeLexer : Lexer
     public const int BETWEEN = 35;
     public const int Integer = 20;
     public const int Iso8601DateTime = 70;
-    
+
     	public override void ReportError(RecognitionException e)
     	{
     	}
 
 
+    // delegates
+    // delegators
+
     public MacroScopeLexer() 
     {
 		InitializeCyclicDFAs();
     }
-    public MacroScopeLexer(ICharStream input) 
-		: base(input)
-	{
-		InitializeCyclicDFAs();
-        ruleMemo = new IDictionary[97+1];
-     }
+    public MacroScopeLexer(ICharStream input)
+		: this(input, null) {
+    }
+    public MacroScopeLexer(ICharStream input, RecognizerSharedState state)
+		: base(input, state) {
+		InitializeCyclicDFAs(); 
+
+    }
     
     override public string GrammarFileName
     {
     	get { return "MacroScope\\MacroScope.g";} 
     }
 
-    // $ANTLR start ALL 
+    // $ANTLR start "ALL"
     public void mALL() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = ALL;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:800:5: ( 'all' )
             // MacroScope\\MacroScope.g:800:7: 'all'
             {
-            	Match("all"); if (failed) return ;
+            	Match("all"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end ALL
+    // $ANTLR end "ALL"
 
-    // $ANTLR start AND 
+    // $ANTLR start "AND"
     public void mAND() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = AND;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:801:5: ( 'and' )
             // MacroScope\\MacroScope.g:801:7: 'and'
             {
-            	Match("and"); if (failed) return ;
+            	Match("and"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end AND
+    // $ANTLR end "AND"
 
-    // $ANTLR start ANY 
+    // $ANTLR start "ANY"
     public void mANY() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = ANY;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:802:5: ( 'any' )
             // MacroScope\\MacroScope.g:802:7: 'any'
             {
-            	Match("any"); if (failed) return ;
+            	Match("any"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end ANY
+    // $ANTLR end "ANY"
 
-    // $ANTLR start AS 
+    // $ANTLR start "AS"
     public void mAS() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = AS;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:803:4: ( 'as' )
             // MacroScope\\MacroScope.g:803:6: 'as'
             {
-            	Match("as"); if (failed) return ;
+            	Match("as"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end AS
+    // $ANTLR end "AS"
 
-    // $ANTLR start ASC 
+    // $ANTLR start "ASC"
     public void mASC() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = ASC;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:804:5: ( 'asc' )
             // MacroScope\\MacroScope.g:804:7: 'asc'
             {
-            	Match("asc"); if (failed) return ;
+            	Match("asc"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end ASC
+    // $ANTLR end "ASC"
 
-    // $ANTLR start BETWEEN 
+    // $ANTLR start "BETWEEN"
     public void mBETWEEN() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = BETWEEN;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:805:9: ( 'between' )
             // MacroScope\\MacroScope.g:805:11: 'between'
             {
-            	Match("between"); if (failed) return ;
+            	Match("between"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end BETWEEN
+    // $ANTLR end "BETWEEN"
 
-    // $ANTLR start BY 
+    // $ANTLR start "BY"
     public void mBY() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = BY;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:806:4: ( 'by' )
             // MacroScope\\MacroScope.g:806:6: 'by'
             {
-            	Match("by"); if (failed) return ;
+            	Match("by"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end BY
+    // $ANTLR end "BY"
 
-    // $ANTLR start CASE 
+    // $ANTLR start "CASE"
     public void mCASE() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = CASE;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:807:6: ( 'case' )
             // MacroScope\\MacroScope.g:807:8: 'case'
             {
-            	Match("case"); if (failed) return ;
+            	Match("case"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end CASE
+    // $ANTLR end "CASE"
 
-    // $ANTLR start CAST 
+    // $ANTLR start "CAST"
     public void mCAST() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = CAST;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:808:6: ( 'cast' )
             // MacroScope\\MacroScope.g:808:8: 'cast'
             {
-            	Match("cast"); if (failed) return ;
+            	Match("cast"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end CAST
+    // $ANTLR end "CAST"
 
-    // $ANTLR start CROSS 
+    // $ANTLR start "CROSS"
     public void mCROSS() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = CROSS;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:809:7: ( 'cross' )
             // MacroScope\\MacroScope.g:809:9: 'cross'
             {
-            	Match("cross"); if (failed) return ;
+            	Match("cross"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end CROSS
+    // $ANTLR end "CROSS"
 
-    // $ANTLR start DAY 
+    // $ANTLR start "DAY"
     public void mDAY() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = DAY;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:810:5: ( 'day' )
             // MacroScope\\MacroScope.g:810:7: 'day'
             {
-            	Match("day"); if (failed) return ;
+            	Match("day"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end DAY
+    // $ANTLR end "DAY"
 
-    // $ANTLR start DEFAULT 
+    // $ANTLR start "DEFAULT"
     public void mDEFAULT() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = DEFAULT;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:811:9: ( 'default' )
             // MacroScope\\MacroScope.g:811:11: 'default'
             {
-            	Match("default"); if (failed) return ;
+            	Match("default"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end DEFAULT
+    // $ANTLR end "DEFAULT"
 
-    // $ANTLR start DELETE 
+    // $ANTLR start "DELETE"
     public void mDELETE() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = DELETE;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:812:8: ( 'delete' )
             // MacroScope\\MacroScope.g:812:10: 'delete'
             {
-            	Match("delete"); if (failed) return ;
+            	Match("delete"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end DELETE
+    // $ANTLR end "DELETE"
 
-    // $ANTLR start DESC 
+    // $ANTLR start "DESC"
     public void mDESC() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = DESC;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:813:6: ( 'desc' )
             // MacroScope\\MacroScope.g:813:8: 'desc'
             {
-            	Match("desc"); if (failed) return ;
+            	Match("desc"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end DESC
+    // $ANTLR end "DESC"
 
-    // $ANTLR start DISTINCT 
+    // $ANTLR start "DISTINCT"
     public void mDISTINCT() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = DISTINCT;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:814:10: ( 'distinct' )
             // MacroScope\\MacroScope.g:814:12: 'distinct'
             {
-            	Match("distinct"); if (failed) return ;
+            	Match("distinct"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end DISTINCT
+    // $ANTLR end "DISTINCT"
 
-    // $ANTLR start ELSE 
+    // $ANTLR start "ELSE"
     public void mELSE() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = ELSE;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:815:6: ( 'else' )
             // MacroScope\\MacroScope.g:815:8: 'else'
             {
-            	Match("else"); if (failed) return ;
+            	Match("else"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end ELSE
+    // $ANTLR end "ELSE"
 
-    // $ANTLR start END 
+    // $ANTLR start "END"
     public void mEND() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = END;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:816:5: ( 'end' )
             // MacroScope\\MacroScope.g:816:7: 'end'
             {
-            	Match("end"); if (failed) return ;
+            	Match("end"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end END
+    // $ANTLR end "END"
 
-    // $ANTLR start ESCAPE 
+    // $ANTLR start "ESCAPE"
     public void mESCAPE() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = ESCAPE;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:817:8: ( 'escape' )
             // MacroScope\\MacroScope.g:817:10: 'escape'
             {
-            	Match("escape"); if (failed) return ;
+            	Match("escape"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end ESCAPE
+    // $ANTLR end "ESCAPE"
 
-    // $ANTLR start EXISTS 
+    // $ANTLR start "EXISTS"
     public void mEXISTS() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = EXISTS;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:818:8: ( 'exists' )
             // MacroScope\\MacroScope.g:818:10: 'exists'
             {
-            	Match("exists"); if (failed) return ;
+            	Match("exists"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end EXISTS
+    // $ANTLR end "EXISTS"
 
-    // $ANTLR start EXTRACT 
+    // $ANTLR start "EXTRACT"
     public void mEXTRACT() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = EXTRACT;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:819:9: ( 'extract' )
             // MacroScope\\MacroScope.g:819:11: 'extract'
             {
-            	Match("extract"); if (failed) return ;
+            	Match("extract"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end EXTRACT
+    // $ANTLR end "EXTRACT"
 
-    // $ANTLR start FOR 
+    // $ANTLR start "FOR"
     public void mFOR() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = FOR;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:820:5: ( 'for' )
             // MacroScope\\MacroScope.g:820:7: 'for'
             {
-            	Match("for"); if (failed) return ;
+            	Match("for"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end FOR
+    // $ANTLR end "FOR"
 
-    // $ANTLR start FROM 
+    // $ANTLR start "FROM"
     public void mFROM() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = FROM;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:821:6: ( 'from' )
             // MacroScope\\MacroScope.g:821:8: 'from'
             {
-            	Match("from"); if (failed) return ;
+            	Match("from"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end FROM
+    // $ANTLR end "FROM"
 
-    // $ANTLR start FULL 
+    // $ANTLR start "FULL"
     public void mFULL() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = FULL;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:822:6: ( 'full' )
             // MacroScope\\MacroScope.g:822:8: 'full'
             {
-            	Match("full"); if (failed) return ;
+            	Match("full"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end FULL
+    // $ANTLR end "FULL"
 
-    // $ANTLR start GROUP 
+    // $ANTLR start "GROUP"
     public void mGROUP() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = GROUP;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:823:7: ( 'group' )
             // MacroScope\\MacroScope.g:823:9: 'group'
             {
-            	Match("group"); if (failed) return ;
+            	Match("group"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end GROUP
+    // $ANTLR end "GROUP"
 
-    // $ANTLR start HAVING 
+    // $ANTLR start "HAVING"
     public void mHAVING() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = HAVING;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:824:8: ( 'having' )
             // MacroScope\\MacroScope.g:824:10: 'having'
             {
-            	Match("having"); if (failed) return ;
+            	Match("having"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end HAVING
+    // $ANTLR end "HAVING"
 
-    // $ANTLR start HOUR 
+    // $ANTLR start "HOUR"
     public void mHOUR() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = HOUR;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:825:6: ( 'hour' )
             // MacroScope\\MacroScope.g:825:8: 'hour'
             {
-            	Match("hour"); if (failed) return ;
+            	Match("hour"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end HOUR
+    // $ANTLR end "HOUR"
 
-    // $ANTLR start IN 
+    // $ANTLR start "IN"
     public void mIN() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = IN;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:826:4: ( 'in' )
             // MacroScope\\MacroScope.g:826:6: 'in'
             {
-            	Match("in"); if (failed) return ;
+            	Match("in"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end IN
+    // $ANTLR end "IN"
 
-    // $ANTLR start INNER 
+    // $ANTLR start "INNER"
     public void mINNER() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = INNER;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:827:7: ( 'inner' )
             // MacroScope\\MacroScope.g:827:9: 'inner'
             {
-            	Match("inner"); if (failed) return ;
+            	Match("inner"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end INNER
+    // $ANTLR end "INNER"
 
-    // $ANTLR start INSERT 
+    // $ANTLR start "INSERT"
     public void mINSERT() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = INSERT;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:828:8: ( 'insert' )
             // MacroScope\\MacroScope.g:828:10: 'insert'
             {
-            	Match("insert"); if (failed) return ;
+            	Match("insert"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end INSERT
+    // $ANTLR end "INSERT"
 
-    // $ANTLR start INTERVAL 
+    // $ANTLR start "INTERVAL"
     public void mINTERVAL() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = INTERVAL;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:829:10: ( 'interval' )
             // MacroScope\\MacroScope.g:829:12: 'interval'
             {
-            	Match("interval"); if (failed) return ;
+            	Match("interval"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end INTERVAL
+    // $ANTLR end "INTERVAL"
 
-    // $ANTLR start INTO 
+    // $ANTLR start "INTO"
     public void mINTO() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = INTO;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:830:6: ( 'into' )
             // MacroScope\\MacroScope.g:830:8: 'into'
             {
-            	Match("into"); if (failed) return ;
+            	Match("into"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end INTO
+    // $ANTLR end "INTO"
 
-    // $ANTLR start IS 
+    // $ANTLR start "IS"
     public void mIS() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = IS;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:831:4: ( 'is' )
             // MacroScope\\MacroScope.g:831:6: 'is'
             {
-            	Match("is"); if (failed) return ;
+            	Match("is"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end IS
+    // $ANTLR end "IS"
 
-    // $ANTLR start JOIN 
+    // $ANTLR start "JOIN"
     public void mJOIN() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = JOIN;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:832:6: ( 'join' )
             // MacroScope\\MacroScope.g:832:8: 'join'
             {
-            	Match("join"); if (failed) return ;
+            	Match("join"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end JOIN
+    // $ANTLR end "JOIN"
 
-    // $ANTLR start LEFT 
+    // $ANTLR start "LEFT"
     public void mLEFT() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = LEFT;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:833:6: ( 'left' )
             // MacroScope\\MacroScope.g:833:8: 'left'
             {
-            	Match("left"); if (failed) return ;
+            	Match("left"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end LEFT
+    // $ANTLR end "LEFT"
 
-    // $ANTLR start LIKE 
+    // $ANTLR start "LIKE"
     public void mLIKE() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = LIKE;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:834:6: ( 'like' )
             // MacroScope\\MacroScope.g:834:8: 'like'
             {
-            	Match("like"); if (failed) return ;
+            	Match("like"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end LIKE
+    // $ANTLR end "LIKE"
 
-    // $ANTLR start MINUTE 
+    // $ANTLR start "MINUTE"
     public void mMINUTE() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = MINUTE;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:835:8: ( 'minute' )
             // MacroScope\\MacroScope.g:835:10: 'minute'
             {
-            	Match("minute"); if (failed) return ;
+            	Match("minute"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end MINUTE
+    // $ANTLR end "MINUTE"
 
-    // $ANTLR start MONTH 
+    // $ANTLR start "MONTH"
     public void mMONTH() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = MONTH;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:836:7: ( 'month' )
             // MacroScope\\MacroScope.g:836:9: 'month'
             {
-            	Match("month"); if (failed) return ;
+            	Match("month"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end MONTH
+    // $ANTLR end "MONTH"
 
-    // $ANTLR start NOT 
+    // $ANTLR start "NOT"
     public void mNOT() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = NOT;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:837:5: ( 'not' )
             // MacroScope\\MacroScope.g:837:7: 'not'
             {
-            	Match("not"); if (failed) return ;
+            	Match("not"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end NOT
+    // $ANTLR end "NOT"
 
-    // $ANTLR start NULL 
+    // $ANTLR start "NULL"
     public void mNULL() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = NULL;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:838:6: ( 'null' )
             // MacroScope\\MacroScope.g:838:8: 'null'
             {
-            	Match("null"); if (failed) return ;
+            	Match("null"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end NULL
+    // $ANTLR end "NULL"
 
-    // $ANTLR start ON 
+    // $ANTLR start "ON"
     public void mON() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = ON;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:839:4: ( 'on' )
             // MacroScope\\MacroScope.g:839:6: 'on'
             {
-            	Match("on"); if (failed) return ;
+            	Match("on"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end ON
+    // $ANTLR end "ON"
 
-    // $ANTLR start OR 
+    // $ANTLR start "OR"
     public void mOR() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = OR;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:840:4: ( 'or' )
             // MacroScope\\MacroScope.g:840:6: 'or'
             {
-            	Match("or"); if (failed) return ;
+            	Match("or"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end OR
+    // $ANTLR end "OR"
 
-    // $ANTLR start ORDER 
+    // $ANTLR start "ORDER"
     public void mORDER() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = ORDER;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:841:7: ( 'order' )
             // MacroScope\\MacroScope.g:841:9: 'order'
             {
-            	Match("order"); if (failed) return ;
+            	Match("order"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end ORDER
+    // $ANTLR end "ORDER"
 
-    // $ANTLR start OUTER 
+    // $ANTLR start "OUTER"
     public void mOUTER() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = OUTER;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:842:7: ( 'outer' )
             // MacroScope\\MacroScope.g:842:9: 'outer'
             {
-            	Match("outer"); if (failed) return ;
+            	Match("outer"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end OUTER
+    // $ANTLR end "OUTER"
 
-    // $ANTLR start RIGHT 
+    // $ANTLR start "RIGHT"
     public void mRIGHT() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = RIGHT;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:843:7: ( 'right' )
             // MacroScope\\MacroScope.g:843:9: 'right'
             {
-            	Match("right"); if (failed) return ;
+            	Match("right"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end RIGHT
+    // $ANTLR end "RIGHT"
 
-    // $ANTLR start SECOND 
+    // $ANTLR start "SECOND"
     public void mSECOND() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = SECOND;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:844:8: ( 'second' )
             // MacroScope\\MacroScope.g:844:10: 'second'
             {
-            	Match("second"); if (failed) return ;
+            	Match("second"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end SECOND
+    // $ANTLR end "SECOND"
 
-    // $ANTLR start SELECT 
+    // $ANTLR start "SELECT"
     public void mSELECT() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = SELECT;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:845:8: ( 'select' )
             // MacroScope\\MacroScope.g:845:10: 'select'
             {
-            	Match("select"); if (failed) return ;
+            	Match("select"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end SELECT
+    // $ANTLR end "SELECT"
 
-    // $ANTLR start SET 
+    // $ANTLR start "SET"
     public void mSET() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = SET;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:846:5: ( 'set' )
             // MacroScope\\MacroScope.g:846:7: 'set'
             {
-            	Match("set"); if (failed) return ;
+            	Match("set"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end SET
+    // $ANTLR end "SET"
 
-    // $ANTLR start SOME 
+    // $ANTLR start "SOME"
     public void mSOME() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = SOME;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:847:6: ( 'some' )
             // MacroScope\\MacroScope.g:847:8: 'some'
             {
-            	Match("some"); if (failed) return ;
+            	Match("some"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end SOME
+    // $ANTLR end "SOME"
 
-    // $ANTLR start SUBSTRING 
+    // $ANTLR start "SUBSTRING"
     public void mSUBSTRING() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = SUBSTRING;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:848:11: ( 'substring' )
             // MacroScope\\MacroScope.g:848:13: 'substring'
             {
-            	Match("substring"); if (failed) return ;
+            	Match("substring"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end SUBSTRING
+    // $ANTLR end "SUBSTRING"
 
-    // $ANTLR start THEN 
+    // $ANTLR start "THEN"
     public void mTHEN() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = THEN;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:849:6: ( 'then' )
             // MacroScope\\MacroScope.g:849:8: 'then'
             {
-            	Match("then"); if (failed) return ;
+            	Match("then"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end THEN
+    // $ANTLR end "THEN"
 
-    // $ANTLR start TOP 
+    // $ANTLR start "TOP"
     public void mTOP() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = TOP;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:850:5: ( 'top' )
             // MacroScope\\MacroScope.g:850:7: 'top'
             {
-            	Match("top"); if (failed) return ;
+            	Match("top"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end TOP
+    // $ANTLR end "TOP"
 
-    // $ANTLR start UNION 
+    // $ANTLR start "UNION"
     public void mUNION() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = UNION;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:851:7: ( 'union' )
             // MacroScope\\MacroScope.g:851:9: 'union'
             {
-            	Match("union"); if (failed) return ;
+            	Match("union"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end UNION
+    // $ANTLR end "UNION"
 
-    // $ANTLR start UPDATE 
+    // $ANTLR start "UPDATE"
     public void mUPDATE() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = UPDATE;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:852:8: ( 'update' )
             // MacroScope\\MacroScope.g:852:10: 'update'
             {
-            	Match("update"); if (failed) return ;
+            	Match("update"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end UPDATE
+    // $ANTLR end "UPDATE"
 
-    // $ANTLR start VALUES 
+    // $ANTLR start "VALUES"
     public void mVALUES() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = VALUES;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:853:8: ( 'values' )
             // MacroScope\\MacroScope.g:853:10: 'values'
             {
-            	Match("values"); if (failed) return ;
+            	Match("values"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end VALUES
+    // $ANTLR end "VALUES"
 
-    // $ANTLR start WHEN 
+    // $ANTLR start "WHEN"
     public void mWHEN() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = WHEN;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:854:6: ( 'when' )
             // MacroScope\\MacroScope.g:854:8: 'when'
             {
-            	Match("when"); if (failed) return ;
+            	Match("when"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end WHEN
+    // $ANTLR end "WHEN"
 
-    // $ANTLR start WHERE 
+    // $ANTLR start "WHERE"
     public void mWHERE() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = WHERE;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:855:7: ( 'where' )
             // MacroScope\\MacroScope.g:855:9: 'where'
             {
-            	Match("where"); if (failed) return ;
+            	Match("where"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end WHERE
+    // $ANTLR end "WHERE"
 
-    // $ANTLR start YEAR 
+    // $ANTLR start "YEAR"
     public void mYEAR() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = YEAR;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:856:6: ( 'year' )
             // MacroScope\\MacroScope.g:856:8: 'year'
             {
-            	Match("year"); if (failed) return ;
+            	Match("year"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end YEAR
+    // $ANTLR end "YEAR"
 
-    // $ANTLR start DOT_STAR 
+    // $ANTLR start "DOT_STAR"
     public void mDOT_STAR() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = DOT_STAR;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:858:9: ( '.*' )
             // MacroScope\\MacroScope.g:858:11: '.*'
             {
-            	Match(".*"); if (failed) return ;
+            	Match(".*"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end DOT_STAR
+    // $ANTLR end "DOT_STAR"
 
-    // $ANTLR start DOT 
+    // $ANTLR start "DOT"
     public void mDOT() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = DOT;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:859:5: ( '.' )
             // MacroScope\\MacroScope.g:859:7: '.'
             {
-            	Match('.'); if (failed) return ;
-            
+            	Match('.'); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end DOT
+    // $ANTLR end "DOT"
 
-    // $ANTLR start COMMA 
+    // $ANTLR start "COMMA"
     public void mCOMMA() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = COMMA;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:860:7: ( ',' )
             // MacroScope\\MacroScope.g:860:9: ','
             {
-            	Match(','); if (failed) return ;
-            
+            	Match(','); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end COMMA
+    // $ANTLR end "COMMA"
 
-    // $ANTLR start LPAREN 
+    // $ANTLR start "LPAREN"
     public void mLPAREN() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = LPAREN;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:861:8: ( '(' )
             // MacroScope\\MacroScope.g:861:10: '('
             {
-            	Match('('); if (failed) return ;
-            
+            	Match('('); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end LPAREN
+    // $ANTLR end "LPAREN"
 
-    // $ANTLR start RPAREN 
+    // $ANTLR start "RPAREN"
     public void mRPAREN() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = RPAREN;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:862:8: ( ')' )
             // MacroScope\\MacroScope.g:862:10: ')'
             {
-            	Match(')'); if (failed) return ;
-            
+            	Match(')'); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end RPAREN
+    // $ANTLR end "RPAREN"
 
-    // $ANTLR start ASSIGNEQUAL 
+    // $ANTLR start "ASSIGNEQUAL"
     public void mASSIGNEQUAL() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = ASSIGNEQUAL;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:864:13: ( '=' )
             // MacroScope\\MacroScope.g:864:15: '='
             {
-            	Match('='); if (failed) return ;
-            
+            	Match('='); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end ASSIGNEQUAL
+    // $ANTLR end "ASSIGNEQUAL"
 
-    // $ANTLR start NOTEQUAL1 
+    // $ANTLR start "NOTEQUAL1"
     public void mNOTEQUAL1() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = NOTEQUAL1;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:865:11: ( '<>' )
             // MacroScope\\MacroScope.g:865:13: '<>'
             {
-            	Match("<>"); if (failed) return ;
+            	Match("<>"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end NOTEQUAL1
+    // $ANTLR end "NOTEQUAL1"
 
-    // $ANTLR start NOTEQUAL2 
+    // $ANTLR start "NOTEQUAL2"
     public void mNOTEQUAL2() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = NOTEQUAL2;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:866:11: ( '!=' )
             // MacroScope\\MacroScope.g:866:13: '!='
             {
-            	Match("!="); if (failed) return ;
+            	Match("!="); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end NOTEQUAL2
+    // $ANTLR end "NOTEQUAL2"
 
-    // $ANTLR start LESSTHANOREQUALTO1 
+    // $ANTLR start "LESSTHANOREQUALTO1"
     public void mLESSTHANOREQUALTO1() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = LESSTHANOREQUALTO1;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:867:20: ( '<=' )
             // MacroScope\\MacroScope.g:867:22: '<='
             {
-            	Match("<="); if (failed) return ;
+            	Match("<="); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end LESSTHANOREQUALTO1
+    // $ANTLR end "LESSTHANOREQUALTO1"
 
-    // $ANTLR start LESSTHAN 
+    // $ANTLR start "LESSTHAN"
     public void mLESSTHAN() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = LESSTHAN;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:868:10: ( '<' )
             // MacroScope\\MacroScope.g:868:12: '<'
             {
-            	Match('<'); if (failed) return ;
-            
+            	Match('<'); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end LESSTHAN
+    // $ANTLR end "LESSTHAN"
 
-    // $ANTLR start GREATERTHANOREQUALTO1 
+    // $ANTLR start "GREATERTHANOREQUALTO1"
     public void mGREATERTHANOREQUALTO1() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = GREATERTHANOREQUALTO1;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:869:23: ( '>=' )
             // MacroScope\\MacroScope.g:869:25: '>='
             {
-            	Match(">="); if (failed) return ;
+            	Match(">="); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end GREATERTHANOREQUALTO1
+    // $ANTLR end "GREATERTHANOREQUALTO1"
 
-    // $ANTLR start GREATERTHAN 
+    // $ANTLR start "GREATERTHAN"
     public void mGREATERTHAN() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = GREATERTHAN;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:870:13: ( '>' )
             // MacroScope\\MacroScope.g:870:15: '>'
             {
-            	Match('>'); if (failed) return ;
-            
+            	Match('>'); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end GREATERTHAN
+    // $ANTLR end "GREATERTHAN"
 
-    // $ANTLR start DIVIDE 
+    // $ANTLR start "DIVIDE"
     public void mDIVIDE() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = DIVIDE;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:872:8: ( '/' )
             // MacroScope\\MacroScope.g:872:10: '/'
             {
-            	Match('/'); if (failed) return ;
-            
+            	Match('/'); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end DIVIDE
+    // $ANTLR end "DIVIDE"
 
-    // $ANTLR start PLUS 
+    // $ANTLR start "PLUS"
     public void mPLUS() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = PLUS;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:873:6: ( '+' )
             // MacroScope\\MacroScope.g:873:8: '+'
             {
-            	Match('+'); if (failed) return ;
-            
+            	Match('+'); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end PLUS
+    // $ANTLR end "PLUS"
 
-    // $ANTLR start STAR 
+    // $ANTLR start "STAR"
     public void mSTAR() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = STAR;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:874:6: ( '*' )
             // MacroScope\\MacroScope.g:874:8: '*'
             {
-            	Match('*'); if (failed) return ;
-            
+            	Match('*'); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end STAR
+    // $ANTLR end "STAR"
 
-    // $ANTLR start MOD 
+    // $ANTLR start "MOD"
     public void mMOD() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = MOD;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:875:5: ( '%' )
             // MacroScope\\MacroScope.g:875:7: '%'
             {
-            	Match('%'); if (failed) return ;
-            
+            	Match('%'); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end MOD
+    // $ANTLR end "MOD"
 
-    // $ANTLR start STRCONCAT 
+    // $ANTLR start "STRCONCAT"
     public void mSTRCONCAT() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = STRCONCAT;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:877:11: ( '||' )
             // MacroScope\\MacroScope.g:877:13: '||'
             {
-            	Match("||"); if (failed) return ;
+            	Match("||"); if (state.failed) return ;
 
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end STRCONCAT
+    // $ANTLR end "STRCONCAT"
 
-    // $ANTLR start PLACEHOLDER 
+    // $ANTLR start "PLACEHOLDER"
     public void mPLACEHOLDER() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = PLACEHOLDER;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:879:12: ( '?' )
             // MacroScope\\MacroScope.g:879:14: '?'
             {
-            	Match('?'); if (failed) return ;
-            
+            	Match('?'); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end PLACEHOLDER
+    // $ANTLR end "PLACEHOLDER"
 
-    // $ANTLR start Letter 
+    // $ANTLR start "Letter"
     public void mLetter() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             // MacroScope\\MacroScope.g:882:8: ( 'a' .. 'z' )
             // MacroScope\\MacroScope.g:882:10: 'a' .. 'z'
             {
-            	MatchRange('a','z'); if (failed) return ;
-            
+            	MatchRange('a','z'); if (state.failed) return ;
+
             }
 
         }
@@ -1790,18 +1946,18 @@ public class MacroScopeLexer : Lexer
     	{
         }
     }
-    // $ANTLR end Letter
+    // $ANTLR end "Letter"
 
-    // $ANTLR start Digit 
+    // $ANTLR start "Digit"
     public void mDigit() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             // MacroScope\\MacroScope.g:885:7: ( '0' .. '9' )
             // MacroScope\\MacroScope.g:885:9: '0' .. '9'
             {
-            	MatchRange('0','9'); if (failed) return ;
-            
+            	MatchRange('0','9'); if (state.failed) return ;
+
             }
 
         }
@@ -1809,13 +1965,13 @@ public class MacroScopeLexer : Lexer
     	{
         }
     }
-    // $ANTLR end Digit
+    // $ANTLR end "Digit"
 
-    // $ANTLR start Integer 
+    // $ANTLR start "Integer"
     public void mInteger() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             // MacroScope\\MacroScope.g:888:9: ()
             // MacroScope\\MacroScope.g:888:10: 
             {
@@ -1826,13 +1982,13 @@ public class MacroScopeLexer : Lexer
     	{
         }
     }
-    // $ANTLR end Integer
+    // $ANTLR end "Integer"
 
-    // $ANTLR start Real 
+    // $ANTLR start "Real"
     public void mReal() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             // MacroScope\\MacroScope.g:891:6: ()
             // MacroScope\\MacroScope.g:891:7: 
             {
@@ -1843,21 +1999,21 @@ public class MacroScopeLexer : Lexer
     	{
         }
     }
-    // $ANTLR end Real
+    // $ANTLR end "Real"
 
-    // $ANTLR start Exponent 
+    // $ANTLR start "Exponent"
     public void mExponent() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             // MacroScope\\MacroScope.g:894:10: ( 'e' ( '+' | '-' )? ( Digit )+ )
             // MacroScope\\MacroScope.g:895:2: 'e' ( '+' | '-' )? ( Digit )+
             {
-            	Match('e'); if (failed) return ;
+            	Match('e'); if (state.failed) return ;
             	// MacroScope\\MacroScope.g:895:6: ( '+' | '-' )?
             	int alt1 = 2;
             	int LA1_0 = input.LA(1);
-            	
+
             	if ( (LA1_0 == '+' || LA1_0 == '-') )
             	{
             	    alt1 = 1;
@@ -1870,20 +2026,19 @@ public class MacroScopeLexer : Lexer
             	        	if ( input.LA(1) == '+' || input.LA(1) == '-' ) 
             	        	{
             	        	    input.Consume();
-            	        	failed = false;
+            	        	state.failed = false;
             	        	}
             	        	else 
             	        	{
-            	        	    if ( backtracking > 0 ) {failed = true; return ;}
-            	        	    MismatchedSetException mse =
-            	        	        new MismatchedSetException(null,input);
-            	        	    Recover(mse);    throw mse;
-            	        	}
+            	        	    if ( state.backtracking > 0 ) {state.failed = true; return ;}
+            	        	    MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        	    Recover(mse);
+            	        	    throw mse;}
 
-            	        
+
             	        }
             	        break;
-            	
+
             	}
 
             	// MacroScope\\MacroScope.g:895:21: ( Digit )+
@@ -1892,37 +2047,37 @@ public class MacroScopeLexer : Lexer
             	{
             	    int alt2 = 2;
             	    int LA2_0 = input.LA(1);
-            	    
+
             	    if ( ((LA2_0 >= '0' && LA2_0 <= '9')) )
             	    {
             	        alt2 = 1;
             	    }
-            	    
-            	
+
+
             	    switch (alt2) 
             		{
             			case 1 :
             			    // MacroScope\\MacroScope.g:895:22: Digit
             			    {
-            			    	mDigit(); if (failed) return ;
-            			    
+            			    	mDigit(); if (state.failed) return ;
+
             			    }
             			    break;
-            	
+
             			default:
             			    if ( cnt2 >= 1 ) goto loop2;
-            			    if ( backtracking > 0 ) {failed = true; return ;}
+            			    if ( state.backtracking > 0 ) {state.failed = true; return ;}
             		            EarlyExitException eee =
             		                new EarlyExitException(2, input);
             		            throw eee;
             	    }
             	    cnt2++;
             	} while (true);
-            	
+
             	loop2:
             		;	// Stops C# compiler whinging that label 'loop2' has no statements
 
-            
+
             }
 
         }
@@ -1930,106 +2085,110 @@ public class MacroScopeLexer : Lexer
     	{
         }
     }
-    // $ANTLR end Exponent
+    // $ANTLR end "Exponent"
 
-    // $ANTLR start MAccessDateTime 
+    // $ANTLR start "MAccessDateTime"
     public void mMAccessDateTime() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = MAccessDateTime;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:898:17: ( '#' Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ' ' Digit Digit ':' Digit Digit ':' Digit Digit '#' )
             // MacroScope\\MacroScope.g:899:2: '#' Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ' ' Digit Digit ':' Digit Digit ':' Digit Digit '#'
             {
-            	Match('#'); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	Match('-'); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	Match('-'); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	Match(' '); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	Match(':'); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	Match(':'); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	Match('#'); if (failed) return ;
-            
+            	Match('#'); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	Match('-'); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	Match('-'); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	Match(' '); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	Match(':'); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	Match(':'); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	Match('#'); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end MAccessDateTime
+    // $ANTLR end "MAccessDateTime"
 
-    // $ANTLR start Iso8601DateTime 
+    // $ANTLR start "Iso8601DateTime"
     public void mIso8601DateTime() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = Iso8601DateTime;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:905:17: ( Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ( 't' | ' ' ) Digit Digit ':' Digit Digit ':' Digit Digit )
             // MacroScope\\MacroScope.g:906:2: Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ( 't' | ' ' ) Digit Digit ':' Digit Digit ':' Digit Digit
             {
-            	mDigit(); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	Match('-'); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	Match('-'); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	mDigit(); if (failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	Match('-'); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	Match('-'); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
             	if ( input.LA(1) == ' ' || input.LA(1) == 't' ) 
             	{
             	    input.Consume();
-            	failed = false;
+            	state.failed = false;
             	}
             	else 
             	{
-            	    if ( backtracking > 0 ) {failed = true; return ;}
-            	    MismatchedSetException mse =
-            	        new MismatchedSetException(null,input);
-            	    Recover(mse);    throw mse;
-            	}
+            	    if ( state.backtracking > 0 ) {state.failed = true; return ;}
+            	    MismatchedSetException mse = new MismatchedSetException(null,input);
+            	    Recover(mse);
+            	    throw mse;}
 
-            	mDigit(); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	Match(':'); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	Match(':'); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            	mDigit(); if (failed) return ;
-            
+            	mDigit(); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	Match(':'); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	Match(':'); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+            	mDigit(); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end Iso8601DateTime
+    // $ANTLR end "Iso8601DateTime"
 
-    // $ANTLR start Number 
+    // $ANTLR start "Number"
     public void mNumber() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = Number;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:911:8: ( ( ( Digit )+ ( '.' | 'e' ) )=> ( Digit )+ ( '.' ( Digit )* ( Exponent )? | Exponent ) | '.' ( ( Digit )+ ( Exponent )? )? | ( Digit )+ | '0x' ( 'a' .. 'f' | Digit )* )
             int alt12 = 4;
             alt12 = dfa12.Predict(input);
@@ -2044,40 +2203,40 @@ public class MacroScopeLexer : Lexer
                     	{
                     	    int alt3 = 2;
                     	    int LA3_0 = input.LA(1);
-                    	    
+
                     	    if ( ((LA3_0 >= '0' && LA3_0 <= '9')) )
                     	    {
                     	        alt3 = 1;
                     	    }
-                    	    
-                    	
+
+
                     	    switch (alt3) 
                     		{
                     			case 1 :
                     			    // MacroScope\\MacroScope.g:912:31: Digit
                     			    {
-                    			    	mDigit(); if (failed) return ;
-                    			    
+                    			    	mDigit(); if (state.failed) return ;
+
                     			    }
                     			    break;
-                    	
+
                     			default:
                     			    if ( cnt3 >= 1 ) goto loop3;
-                    			    if ( backtracking > 0 ) {failed = true; return ;}
+                    			    if ( state.backtracking > 0 ) {state.failed = true; return ;}
                     		            EarlyExitException eee =
                     		                new EarlyExitException(3, input);
                     		            throw eee;
                     	    }
                     	    cnt3++;
                     	} while (true);
-                    	
+
                     	loop3:
                     		;	// Stops C# compiler whinging that label 'loop3' has no statements
 
                     	// MacroScope\\MacroScope.g:912:39: ( '.' ( Digit )* ( Exponent )? | Exponent )
                     	int alt6 = 2;
                     	int LA6_0 = input.LA(1);
-                    	
+
                     	if ( (LA6_0 == '.') )
                     	{
                     	    alt6 = 1;
@@ -2088,10 +2247,10 @@ public class MacroScopeLexer : Lexer
                     	}
                     	else 
                     	{
-                    	    if ( backtracking > 0 ) {failed = true; return ;}
+                    	    if ( state.backtracking > 0 ) {state.failed = true; return ;}
                     	    NoViableAltException nvae_d6s0 =
-                    	        new NoViableAltException("912:39: ( '.' ( Digit )* ( Exponent )? | Exponent )", 6, 0, input);
-                    	
+                    	        new NoViableAltException("", 6, 0, input);
+
                     	    throw nvae_d6s0;
                     	}
                     	switch (alt6) 
@@ -2099,41 +2258,41 @@ public class MacroScopeLexer : Lexer
                     	    case 1 :
                     	        // MacroScope\\MacroScope.g:912:41: '.' ( Digit )* ( Exponent )?
                     	        {
-                    	        	Match('.'); if (failed) return ;
+                    	        	Match('.'); if (state.failed) return ;
                     	        	// MacroScope\\MacroScope.g:912:45: ( Digit )*
                     	        	do 
                     	        	{
                     	        	    int alt4 = 2;
                     	        	    int LA4_0 = input.LA(1);
-                    	        	    
+
                     	        	    if ( ((LA4_0 >= '0' && LA4_0 <= '9')) )
                     	        	    {
                     	        	        alt4 = 1;
                     	        	    }
-                    	        	    
-                    	        	
+
+
                     	        	    switch (alt4) 
                     	        		{
                     	        			case 1 :
                     	        			    // MacroScope\\MacroScope.g:912:46: Digit
                     	        			    {
-                    	        			    	mDigit(); if (failed) return ;
-                    	        			    
+                    	        			    	mDigit(); if (state.failed) return ;
+
                     	        			    }
                     	        			    break;
-                    	        	
+
                     	        			default:
                     	        			    goto loop4;
                     	        	    }
                     	        	} while (true);
-                    	        	
+
                     	        	loop4:
-                    	        		;	// Stops C# compiler whinging that label 'loop4' has no statements
+                    	        		;	// Stops C# compiler whining that label 'loop4' has no statements
 
                     	        	// MacroScope\\MacroScope.g:912:54: ( Exponent )?
                     	        	int alt5 = 2;
                     	        	int LA5_0 = input.LA(1);
-                    	        	
+
                     	        	if ( (LA5_0 == 'e') )
                     	        	{
                     	        	    alt5 = 1;
@@ -2143,45 +2302,45 @@ public class MacroScopeLexer : Lexer
                     	        	    case 1 :
                     	        	        // MacroScope\\MacroScope.g:912:55: Exponent
                     	        	        {
-                    	        	        	mExponent(); if (failed) return ;
-                    	        	        
+                    	        	        	mExponent(); if (state.failed) return ;
+
                     	        	        }
                     	        	        break;
-                    	        	
+
                     	        	}
 
-                    	        
+
                     	        }
                     	        break;
                     	    case 2 :
                     	        // MacroScope\\MacroScope.g:912:68: Exponent
                     	        {
-                    	        	mExponent(); if (failed) return ;
-                    	        
+                    	        	mExponent(); if (state.failed) return ;
+
                     	        }
                     	        break;
-                    	
+
                     	}
 
-                    	if ( backtracking == 0 ) 
+                    	if ( state.backtracking == 0 ) 
                     	{
                     	   _type = Real; 
                     	}
-                    
+
                     }
                     break;
                 case 2 :
                     // MacroScope\\MacroScope.g:913:4: '.' ( ( Digit )+ ( Exponent )? )?
                     {
-                    	Match('.'); if (failed) return ;
-                    	if ( backtracking == 0 ) 
+                    	Match('.'); if (state.failed) return ;
+                    	if ( state.backtracking == 0 ) 
                     	{
                     	   _type = DOT; 
                     	}
                     	// MacroScope\\MacroScope.g:913:25: ( ( Digit )+ ( Exponent )? )?
                     	int alt9 = 2;
                     	int LA9_0 = input.LA(1);
-                    	
+
                     	if ( ((LA9_0 >= '0' && LA9_0 <= '9')) )
                     	{
                     	    alt9 = 1;
@@ -2197,40 +2356,40 @@ public class MacroScopeLexer : Lexer
                     	        	{
                     	        	    int alt7 = 2;
                     	        	    int LA7_0 = input.LA(1);
-                    	        	    
+
                     	        	    if ( ((LA7_0 >= '0' && LA7_0 <= '9')) )
                     	        	    {
                     	        	        alt7 = 1;
                     	        	    }
-                    	        	    
-                    	        	
+
+
                     	        	    switch (alt7) 
                     	        		{
                     	        			case 1 :
                     	        			    // MacroScope\\MacroScope.g:913:28: Digit
                     	        			    {
-                    	        			    	mDigit(); if (failed) return ;
-                    	        			    
+                    	        			    	mDigit(); if (state.failed) return ;
+
                     	        			    }
                     	        			    break;
-                    	        	
+
                     	        			default:
                     	        			    if ( cnt7 >= 1 ) goto loop7;
-                    	        			    if ( backtracking > 0 ) {failed = true; return ;}
+                    	        			    if ( state.backtracking > 0 ) {state.failed = true; return ;}
                     	        		            EarlyExitException eee =
                     	        		                new EarlyExitException(7, input);
                     	        		            throw eee;
                     	        	    }
                     	        	    cnt7++;
                     	        	} while (true);
-                    	        	
+
                     	        	loop7:
                     	        		;	// Stops C# compiler whinging that label 'loop7' has no statements
 
                     	        	// MacroScope\\MacroScope.g:913:36: ( Exponent )?
                     	        	int alt8 = 2;
                     	        	int LA8_0 = input.LA(1);
-                    	        	
+
                     	        	if ( (LA8_0 == 'e') )
                     	        	{
                     	        	    alt8 = 1;
@@ -2240,24 +2399,24 @@ public class MacroScopeLexer : Lexer
                     	        	    case 1 :
                     	        	        // MacroScope\\MacroScope.g:913:37: Exponent
                     	        	        {
-                    	        	        	mExponent(); if (failed) return ;
-                    	        	        
+                    	        	        	mExponent(); if (state.failed) return ;
+
                     	        	        }
                     	        	        break;
-                    	        	
+
                     	        	}
 
-                    	        	if ( backtracking == 0 ) 
+                    	        	if ( state.backtracking == 0 ) 
                     	        	{
                     	        	   _type = Real; 
                     	        	}
-                    	        
+
                     	        }
                     	        break;
-                    	
+
                     	}
 
-                    
+
                     }
                     break;
                 case 3 :
@@ -2269,60 +2428,60 @@ public class MacroScopeLexer : Lexer
                     	{
                     	    int alt10 = 2;
                     	    int LA10_0 = input.LA(1);
-                    	    
+
                     	    if ( ((LA10_0 >= '0' && LA10_0 <= '9')) )
                     	    {
                     	        alt10 = 1;
                     	    }
-                    	    
-                    	
+
+
                     	    switch (alt10) 
                     		{
                     			case 1 :
                     			    // MacroScope\\MacroScope.g:914:5: Digit
                     			    {
-                    			    	mDigit(); if (failed) return ;
-                    			    
+                    			    	mDigit(); if (state.failed) return ;
+
                     			    }
                     			    break;
-                    	
+
                     			default:
                     			    if ( cnt10 >= 1 ) goto loop10;
-                    			    if ( backtracking > 0 ) {failed = true; return ;}
+                    			    if ( state.backtracking > 0 ) {state.failed = true; return ;}
                     		            EarlyExitException eee =
                     		                new EarlyExitException(10, input);
                     		            throw eee;
                     	    }
                     	    cnt10++;
                     	} while (true);
-                    	
+
                     	loop10:
                     		;	// Stops C# compiler whinging that label 'loop10' has no statements
 
-                    	if ( backtracking == 0 ) 
+                    	if ( state.backtracking == 0 ) 
                     	{
                     	   _type = Integer; 
                     	}
-                    
+
                     }
                     break;
                 case 4 :
                     // MacroScope\\MacroScope.g:915:4: '0x' ( 'a' .. 'f' | Digit )*
                     {
-                    	Match("0x"); if (failed) return ;
+                    	Match("0x"); if (state.failed) return ;
 
                     	// MacroScope\\MacroScope.g:915:9: ( 'a' .. 'f' | Digit )*
                     	do 
                     	{
                     	    int alt11 = 2;
                     	    int LA11_0 = input.LA(1);
-                    	    
+
                     	    if ( ((LA11_0 >= '0' && LA11_0 <= '9') || (LA11_0 >= 'a' && LA11_0 <= 'f')) )
                     	    {
                     	        alt11 = 1;
                     	    }
-                    	    
-                    	
+
+
                     	    switch (alt11) 
                     		{
                     			case 1 :
@@ -2331,50 +2490,50 @@ public class MacroScopeLexer : Lexer
                     			    	if ( (input.LA(1) >= '0' && input.LA(1) <= '9') || (input.LA(1) >= 'a' && input.LA(1) <= 'f') ) 
                     			    	{
                     			    	    input.Consume();
-                    			    	failed = false;
+                    			    	state.failed = false;
                     			    	}
                     			    	else 
                     			    	{
-                    			    	    if ( backtracking > 0 ) {failed = true; return ;}
-                    			    	    MismatchedSetException mse =
-                    			    	        new MismatchedSetException(null,input);
-                    			    	    Recover(mse);    throw mse;
-                    			    	}
+                    			    	    if ( state.backtracking > 0 ) {state.failed = true; return ;}
+                    			    	    MismatchedSetException mse = new MismatchedSetException(null,input);
+                    			    	    Recover(mse);
+                    			    	    throw mse;}
 
-                    			    
+
                     			    }
                     			    break;
-                    	
+
                     			default:
                     			    goto loop11;
                     	    }
                     	} while (true);
-                    	
-                    	loop11:
-                    		;	// Stops C# compiler whinging that label 'loop11' has no statements
 
-                    	if ( backtracking == 0 ) 
+                    	loop11:
+                    		;	// Stops C# compiler whining that label 'loop11' has no statements
+
+                    	if ( state.backtracking == 0 ) 
                     	{
                     	   _type = HexLiteral; 
                     	}
-                    
+
                     }
                     break;
-            
+
             }
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end Number
+    // $ANTLR end "Number"
 
-    // $ANTLR start WordTail 
+    // $ANTLR start "WordTail"
     public void mWordTail() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             // MacroScope\\MacroScope.g:919:10: ( ( Letter | Digit | '_' )* )
             // MacroScope\\MacroScope.g:920:2: ( Letter | Digit | '_' )*
             {
@@ -2383,13 +2542,13 @@ public class MacroScopeLexer : Lexer
             	{
             	    int alt13 = 2;
             	    int LA13_0 = input.LA(1);
-            	    
+
             	    if ( ((LA13_0 >= '0' && LA13_0 <= '9') || LA13_0 == '_' || (LA13_0 >= 'a' && LA13_0 <= 'z')) )
             	    {
             	        alt13 = 1;
             	    }
-            	    
-            	
+
+
             	    switch (alt13) 
             		{
             			case 1 :
@@ -2398,29 +2557,28 @@ public class MacroScopeLexer : Lexer
             			    	if ( (input.LA(1) >= '0' && input.LA(1) <= '9') || input.LA(1) == '_' || (input.LA(1) >= 'a' && input.LA(1) <= 'z') ) 
             			    	{
             			    	    input.Consume();
-            			    	failed = false;
+            			    	state.failed = false;
             			    	}
             			    	else 
             			    	{
-            			    	    if ( backtracking > 0 ) {failed = true; return ;}
-            			    	    MismatchedSetException mse =
-            			    	        new MismatchedSetException(null,input);
-            			    	    Recover(mse);    throw mse;
-            			    	}
+            			    	    if ( state.backtracking > 0 ) {state.failed = true; return ;}
+            			    	    MismatchedSetException mse = new MismatchedSetException(null,input);
+            			    	    Recover(mse);
+            			    	    throw mse;}
 
-            			    
+
             			    }
             			    break;
-            	
+
             			default:
             			    goto loop13;
             	    }
             	} while (true);
-            	
-            	loop13:
-            		;	// Stops C# compiler whinging that label 'loop13' has no statements
 
-            
+            	loop13:
+            		;	// Stops C# compiler whining that label 'loop13' has no statements
+
+
             }
 
         }
@@ -2428,36 +2586,39 @@ public class MacroScopeLexer : Lexer
     	{
         }
     }
-    // $ANTLR end WordTail
+    // $ANTLR end "WordTail"
 
-    // $ANTLR start NonQuotedIdentifier 
+    // $ANTLR start "NonQuotedIdentifier"
     public void mNonQuotedIdentifier() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = NonQuotedIdentifier;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:923:21: ( Letter WordTail )
             // MacroScope\\MacroScope.g:923:23: Letter WordTail
             {
-            	mLetter(); if (failed) return ;
-            	mWordTail(); if (failed) return ;
-            
+            	mLetter(); if (state.failed) return ;
+            	mWordTail(); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end NonQuotedIdentifier
+    // $ANTLR end "NonQuotedIdentifier"
 
-    // $ANTLR start QuotedIdentifier 
+    // $ANTLR start "QuotedIdentifier"
     public void mQuotedIdentifier() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = QuotedIdentifier;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:925:18: ( '[' (~ ']' )* ']' ( ']' (~ ']' )* ']' )* | '\"' (~ '\"' )* '\"' ( '\"' (~ '\"' )* '\"' )* | '`' (~ '`' )* '`' )
             int alt21 = 3;
             switch ( input.LA(1) ) 
@@ -2478,31 +2639,31 @@ public class MacroScopeLexer : Lexer
                 }
                 break;
             	default:
-            	    if ( backtracking > 0 ) {failed = true; return ;}
+            	    if ( state.backtracking > 0 ) {state.failed = true; return ;}
             	    NoViableAltException nvae_d21s0 =
-            	        new NoViableAltException("925:1: QuotedIdentifier : ( '[' (~ ']' )* ']' ( ']' (~ ']' )* ']' )* | '\"' (~ '\"' )* '\"' ( '\"' (~ '\"' )* '\"' )* | '`' (~ '`' )* '`' );", 21, 0, input);
-            
+            	        new NoViableAltException("", 21, 0, input);
+
             	    throw nvae_d21s0;
             }
-            
+
             switch (alt21) 
             {
                 case 1 :
                     // MacroScope\\MacroScope.g:926:2: '[' (~ ']' )* ']' ( ']' (~ ']' )* ']' )*
                     {
-                    	Match('['); if (failed) return ;
+                    	Match('['); if (state.failed) return ;
                     	// MacroScope\\MacroScope.g:926:6: (~ ']' )*
                     	do 
                     	{
                     	    int alt14 = 2;
                     	    int LA14_0 = input.LA(1);
-                    	    
+
                     	    if ( ((LA14_0 >= '\u0000' && LA14_0 <= '\\') || (LA14_0 >= '^' && LA14_0 <= '\uFFFE')) )
                     	    {
                     	        alt14 = 1;
                     	    }
-                    	    
-                    	
+
+
                     	    switch (alt14) 
                     		{
                     			case 1 :
@@ -2511,59 +2672,58 @@ public class MacroScopeLexer : Lexer
                     			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\\') || (input.LA(1) >= '^' && input.LA(1) <= '\uFFFE') ) 
                     			    	{
                     			    	    input.Consume();
-                    			    	failed = false;
+                    			    	state.failed = false;
                     			    	}
                     			    	else 
                     			    	{
-                    			    	    if ( backtracking > 0 ) {failed = true; return ;}
-                    			    	    MismatchedSetException mse =
-                    			    	        new MismatchedSetException(null,input);
-                    			    	    Recover(mse);    throw mse;
-                    			    	}
+                    			    	    if ( state.backtracking > 0 ) {state.failed = true; return ;}
+                    			    	    MismatchedSetException mse = new MismatchedSetException(null,input);
+                    			    	    Recover(mse);
+                    			    	    throw mse;}
 
-                    			    
+
                     			    }
                     			    break;
-                    	
+
                     			default:
                     			    goto loop14;
                     	    }
                     	} while (true);
-                    	
-                    	loop14:
-                    		;	// Stops C# compiler whinging that label 'loop14' has no statements
 
-                    	Match(']'); if (failed) return ;
+                    	loop14:
+                    		;	// Stops C# compiler whining that label 'loop14' has no statements
+
+                    	Match(']'); if (state.failed) return ;
                     	// MacroScope\\MacroScope.g:926:18: ( ']' (~ ']' )* ']' )*
                     	do 
                     	{
                     	    int alt16 = 2;
                     	    int LA16_0 = input.LA(1);
-                    	    
+
                     	    if ( (LA16_0 == ']') )
                     	    {
                     	        alt16 = 1;
                     	    }
-                    	    
-                    	
+
+
                     	    switch (alt16) 
                     		{
                     			case 1 :
                     			    // MacroScope\\MacroScope.g:926:19: ']' (~ ']' )* ']'
                     			    {
-                    			    	Match(']'); if (failed) return ;
+                    			    	Match(']'); if (state.failed) return ;
                     			    	// MacroScope\\MacroScope.g:926:23: (~ ']' )*
                     			    	do 
                     			    	{
                     			    	    int alt15 = 2;
                     			    	    int LA15_0 = input.LA(1);
-                    			    	    
+
                     			    	    if ( ((LA15_0 >= '\u0000' && LA15_0 <= '\\') || (LA15_0 >= '^' && LA15_0 <= '\uFFFE')) )
                     			    	    {
                     			    	        alt15 = 1;
                     			    	    }
-                    			    	    
-                    			    	
+
+
                     			    	    switch (alt15) 
                     			    		{
                     			    			case 1 :
@@ -2572,60 +2732,59 @@ public class MacroScopeLexer : Lexer
                     			    			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\\') || (input.LA(1) >= '^' && input.LA(1) <= '\uFFFE') ) 
                     			    			    	{
                     			    			    	    input.Consume();
-                    			    			    	failed = false;
+                    			    			    	state.failed = false;
                     			    			    	}
                     			    			    	else 
                     			    			    	{
-                    			    			    	    if ( backtracking > 0 ) {failed = true; return ;}
-                    			    			    	    MismatchedSetException mse =
-                    			    			    	        new MismatchedSetException(null,input);
-                    			    			    	    Recover(mse);    throw mse;
-                    			    			    	}
+                    			    			    	    if ( state.backtracking > 0 ) {state.failed = true; return ;}
+                    			    			    	    MismatchedSetException mse = new MismatchedSetException(null,input);
+                    			    			    	    Recover(mse);
+                    			    			    	    throw mse;}
 
-                    			    			    
+
                     			    			    }
                     			    			    break;
-                    			    	
+
                     			    			default:
                     			    			    goto loop15;
                     			    	    }
                     			    	} while (true);
-                    			    	
-                    			    	loop15:
-                    			    		;	// Stops C# compiler whinging that label 'loop15' has no statements
 
-                    			    	Match(']'); if (failed) return ;
-                    			    
+                    			    	loop15:
+                    			    		;	// Stops C# compiler whining that label 'loop15' has no statements
+
+                    			    	Match(']'); if (state.failed) return ;
+
                     			    }
                     			    break;
-                    	
+
                     			default:
                     			    goto loop16;
                     	    }
                     	} while (true);
-                    	
-                    	loop16:
-                    		;	// Stops C# compiler whinging that label 'loop16' has no statements
 
-                    
+                    	loop16:
+                    		;	// Stops C# compiler whining that label 'loop16' has no statements
+
+
                     }
                     break;
                 case 2 :
                     // MacroScope\\MacroScope.g:927:4: '\"' (~ '\"' )* '\"' ( '\"' (~ '\"' )* '\"' )*
                     {
-                    	Match('\"'); if (failed) return ;
+                    	Match('\"'); if (state.failed) return ;
                     	// MacroScope\\MacroScope.g:927:8: (~ '\"' )*
                     	do 
                     	{
                     	    int alt17 = 2;
                     	    int LA17_0 = input.LA(1);
-                    	    
+
                     	    if ( ((LA17_0 >= '\u0000' && LA17_0 <= '!') || (LA17_0 >= '#' && LA17_0 <= '\uFFFE')) )
                     	    {
                     	        alt17 = 1;
                     	    }
-                    	    
-                    	
+
+
                     	    switch (alt17) 
                     		{
                     			case 1 :
@@ -2634,59 +2793,58 @@ public class MacroScopeLexer : Lexer
                     			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!') || (input.LA(1) >= '#' && input.LA(1) <= '\uFFFE') ) 
                     			    	{
                     			    	    input.Consume();
-                    			    	failed = false;
+                    			    	state.failed = false;
                     			    	}
                     			    	else 
                     			    	{
-                    			    	    if ( backtracking > 0 ) {failed = true; return ;}
-                    			    	    MismatchedSetException mse =
-                    			    	        new MismatchedSetException(null,input);
-                    			    	    Recover(mse);    throw mse;
-                    			    	}
+                    			    	    if ( state.backtracking > 0 ) {state.failed = true; return ;}
+                    			    	    MismatchedSetException mse = new MismatchedSetException(null,input);
+                    			    	    Recover(mse);
+                    			    	    throw mse;}
 
-                    			    
+
                     			    }
                     			    break;
-                    	
+
                     			default:
                     			    goto loop17;
                     	    }
                     	} while (true);
-                    	
-                    	loop17:
-                    		;	// Stops C# compiler whinging that label 'loop17' has no statements
 
-                    	Match('\"'); if (failed) return ;
+                    	loop17:
+                    		;	// Stops C# compiler whining that label 'loop17' has no statements
+
+                    	Match('\"'); if (state.failed) return ;
                     	// MacroScope\\MacroScope.g:927:20: ( '\"' (~ '\"' )* '\"' )*
                     	do 
                     	{
                     	    int alt19 = 2;
                     	    int LA19_0 = input.LA(1);
-                    	    
+
                     	    if ( (LA19_0 == '\"') )
                     	    {
                     	        alt19 = 1;
                     	    }
-                    	    
-                    	
+
+
                     	    switch (alt19) 
                     		{
                     			case 1 :
                     			    // MacroScope\\MacroScope.g:927:21: '\"' (~ '\"' )* '\"'
                     			    {
-                    			    	Match('\"'); if (failed) return ;
+                    			    	Match('\"'); if (state.failed) return ;
                     			    	// MacroScope\\MacroScope.g:927:25: (~ '\"' )*
                     			    	do 
                     			    	{
                     			    	    int alt18 = 2;
                     			    	    int LA18_0 = input.LA(1);
-                    			    	    
+
                     			    	    if ( ((LA18_0 >= '\u0000' && LA18_0 <= '!') || (LA18_0 >= '#' && LA18_0 <= '\uFFFE')) )
                     			    	    {
                     			    	        alt18 = 1;
                     			    	    }
-                    			    	    
-                    			    	
+
+
                     			    	    switch (alt18) 
                     			    		{
                     			    			case 1 :
@@ -2695,60 +2853,59 @@ public class MacroScopeLexer : Lexer
                     			    			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!') || (input.LA(1) >= '#' && input.LA(1) <= '\uFFFE') ) 
                     			    			    	{
                     			    			    	    input.Consume();
-                    			    			    	failed = false;
+                    			    			    	state.failed = false;
                     			    			    	}
                     			    			    	else 
                     			    			    	{
-                    			    			    	    if ( backtracking > 0 ) {failed = true; return ;}
-                    			    			    	    MismatchedSetException mse =
-                    			    			    	        new MismatchedSetException(null,input);
-                    			    			    	    Recover(mse);    throw mse;
-                    			    			    	}
+                    			    			    	    if ( state.backtracking > 0 ) {state.failed = true; return ;}
+                    			    			    	    MismatchedSetException mse = new MismatchedSetException(null,input);
+                    			    			    	    Recover(mse);
+                    			    			    	    throw mse;}
 
-                    			    			    
+
                     			    			    }
                     			    			    break;
-                    			    	
+
                     			    			default:
                     			    			    goto loop18;
                     			    	    }
                     			    	} while (true);
-                    			    	
-                    			    	loop18:
-                    			    		;	// Stops C# compiler whinging that label 'loop18' has no statements
 
-                    			    	Match('\"'); if (failed) return ;
-                    			    
+                    			    	loop18:
+                    			    		;	// Stops C# compiler whining that label 'loop18' has no statements
+
+                    			    	Match('\"'); if (state.failed) return ;
+
                     			    }
                     			    break;
-                    	
+
                     			default:
                     			    goto loop19;
                     	    }
                     	} while (true);
-                    	
-                    	loop19:
-                    		;	// Stops C# compiler whinging that label 'loop19' has no statements
 
-                    
+                    	loop19:
+                    		;	// Stops C# compiler whining that label 'loop19' has no statements
+
+
                     }
                     break;
                 case 3 :
                     // MacroScope\\MacroScope.g:928:4: '`' (~ '`' )* '`'
                     {
-                    	Match('`'); if (failed) return ;
+                    	Match('`'); if (state.failed) return ;
                     	// MacroScope\\MacroScope.g:928:8: (~ '`' )*
                     	do 
                     	{
                     	    int alt20 = 2;
                     	    int LA20_0 = input.LA(1);
-                    	    
+
                     	    if ( ((LA20_0 >= '\u0000' && LA20_0 <= '_') || (LA20_0 >= 'a' && LA20_0 <= '\uFFFE')) )
                     	    {
                     	        alt20 = 1;
                     	    }
-                    	    
-                    	
+
+
                     	    switch (alt20) 
                     		{
                     			case 1 :
@@ -2757,82 +2914,83 @@ public class MacroScopeLexer : Lexer
                     			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '_') || (input.LA(1) >= 'a' && input.LA(1) <= '\uFFFE') ) 
                     			    	{
                     			    	    input.Consume();
-                    			    	failed = false;
+                    			    	state.failed = false;
                     			    	}
                     			    	else 
                     			    	{
-                    			    	    if ( backtracking > 0 ) {failed = true; return ;}
-                    			    	    MismatchedSetException mse =
-                    			    	        new MismatchedSetException(null,input);
-                    			    	    Recover(mse);    throw mse;
-                    			    	}
+                    			    	    if ( state.backtracking > 0 ) {state.failed = true; return ;}
+                    			    	    MismatchedSetException mse = new MismatchedSetException(null,input);
+                    			    	    Recover(mse);
+                    			    	    throw mse;}
 
-                    			    
+
                     			    }
                     			    break;
-                    	
+
                     			default:
                     			    goto loop20;
                     	    }
                     	} while (true);
-                    	
-                    	loop20:
-                    		;	// Stops C# compiler whinging that label 'loop20' has no statements
 
-                    	Match('`'); if (failed) return ;
-                    
+                    	loop20:
+                    		;	// Stops C# compiler whining that label 'loop20' has no statements
+
+                    	Match('`'); if (state.failed) return ;
+
                     }
                     break;
-            
+
             }
-            this.type = _type;
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end QuotedIdentifier
+    // $ANTLR end "QuotedIdentifier"
 
-    // $ANTLR start Variable 
+    // $ANTLR start "Variable"
     public void mVariable() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = Variable;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:938:10: ( ( '@' | ':' ) Letter WordTail )
             // MacroScope\\MacroScope.g:939:2: ( '@' | ':' ) Letter WordTail
             {
             	if ( input.LA(1) == ':' || input.LA(1) == '@' ) 
             	{
             	    input.Consume();
-            	failed = false;
+            	state.failed = false;
             	}
             	else 
             	{
-            	    if ( backtracking > 0 ) {failed = true; return ;}
-            	    MismatchedSetException mse =
-            	        new MismatchedSetException(null,input);
-            	    Recover(mse);    throw mse;
-            	}
+            	    if ( state.backtracking > 0 ) {state.failed = true; return ;}
+            	    MismatchedSetException mse = new MismatchedSetException(null,input);
+            	    Recover(mse);
+            	    throw mse;}
 
-            	mLetter(); if (failed) return ;
-            	mWordTail(); if (failed) return ;
-            
+            	mLetter(); if (state.failed) return ;
+            	mWordTail(); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end Variable
+    // $ANTLR end "Variable"
 
-    // $ANTLR start AsciiStringRun 
+    // $ANTLR start "AsciiStringRun"
     public void mAsciiStringRun() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             // MacroScope\\MacroScope.g:943:16: ( ( '\\t' | ' ' .. '&' | '(' .. '~' )+ )
             // MacroScope\\MacroScope.g:945:2: ( '\\t' | ' ' .. '&' | '(' .. '~' )+
             {
@@ -2842,13 +3000,13 @@ public class MacroScopeLexer : Lexer
             	{
             	    int alt22 = 2;
             	    int LA22_0 = input.LA(1);
-            	    
+
             	    if ( (LA22_0 == '\t' || (LA22_0 >= ' ' && LA22_0 <= '&') || (LA22_0 >= '(' && LA22_0 <= '~')) )
             	    {
             	        alt22 = 1;
             	    }
-            	    
-            	
+
+
             	    switch (alt22) 
             		{
             			case 1 :
@@ -2857,34 +3015,33 @@ public class MacroScopeLexer : Lexer
             			    	if ( input.LA(1) == '\t' || (input.LA(1) >= ' ' && input.LA(1) <= '&') || (input.LA(1) >= '(' && input.LA(1) <= '~') ) 
             			    	{
             			    	    input.Consume();
-            			    	failed = false;
+            			    	state.failed = false;
             			    	}
             			    	else 
             			    	{
-            			    	    if ( backtracking > 0 ) {failed = true; return ;}
-            			    	    MismatchedSetException mse =
-            			    	        new MismatchedSetException(null,input);
-            			    	    Recover(mse);    throw mse;
-            			    	}
+            			    	    if ( state.backtracking > 0 ) {state.failed = true; return ;}
+            			    	    MismatchedSetException mse = new MismatchedSetException(null,input);
+            			    	    Recover(mse);
+            			    	    throw mse;}
 
-            			    
+
             			    }
             			    break;
-            	
+
             			default:
             			    if ( cnt22 >= 1 ) goto loop22;
-            			    if ( backtracking > 0 ) {failed = true; return ;}
+            			    if ( state.backtracking > 0 ) {state.failed = true; return ;}
             		            EarlyExitException eee =
             		                new EarlyExitException(22, input);
             		            throw eee;
             	    }
             	    cnt22++;
             	} while (true);
-            	
+
             	loop22:
             		;	// Stops C# compiler whinging that label 'loop22' has no statements
 
-            
+
             }
 
         }
@@ -2892,28 +3049,29 @@ public class MacroScopeLexer : Lexer
     	{
         }
     }
-    // $ANTLR end AsciiStringRun
+    // $ANTLR end "AsciiStringRun"
 
-    // $ANTLR start AsciiStringLiteral 
+    // $ANTLR start "AsciiStringLiteral"
     public void mAsciiStringLiteral() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = AsciiStringLiteral;
-            Token s = null;
-    
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
+            IToken s = null;
+
             // MacroScope\\MacroScope.g:948:20: ( '\\'' (s= AsciiStringRun )? '\\'' ( '\\'' (s= AsciiStringRun )? '\\'' )* )
             // MacroScope\\MacroScope.g:949:2: '\\'' (s= AsciiStringRun )? '\\'' ( '\\'' (s= AsciiStringRun )? '\\'' )*
             {
-            	Match('\''); if (failed) return ;
-            	if ( backtracking == 0 ) 
+            	Match('\''); if (state.failed) return ;
+            	if ( state.backtracking == 0 ) 
             	{
             	   Text = ""; 
             	}
             	// MacroScope\\MacroScope.g:950:2: (s= AsciiStringRun )?
             	int alt23 = 2;
             	int LA23_0 = input.LA(1);
-            	
+
             	if ( (LA23_0 == '\t' || (LA23_0 >= ' ' && LA23_0 <= '&') || (LA23_0 >= '(' && LA23_0 <= '~')) )
             	{
             	    alt23 = 1;
@@ -2923,48 +3081,48 @@ public class MacroScopeLexer : Lexer
             	    case 1 :
             	        // MacroScope\\MacroScope.g:950:4: s= AsciiStringRun
             	        {
-            	        	int sStart1227 = CharIndex;
-            	        	mAsciiStringRun(); if (failed) return ;
-            	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1227, CharIndex-1);
-            	        	if ( backtracking == 0 ) 
+            	        	int sStart1228 = CharIndex;
+            	        	mAsciiStringRun(); if (state.failed) return ;
+            	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1228, CharIndex-1);
+            	        	if ( state.backtracking == 0 ) 
             	        	{
-            	        	   Text = s.Text; 
+            	        	   Text = ((s != null) ? s.Text : null); 
             	        	}
-            	        
+
             	        }
             	        break;
-            	
+
             	}
 
-            	Match('\''); if (failed) return ;
+            	Match('\''); if (state.failed) return ;
             	// MacroScope\\MacroScope.g:951:2: ( '\\'' (s= AsciiStringRun )? '\\'' )*
             	do 
             	{
             	    int alt25 = 2;
             	    int LA25_0 = input.LA(1);
-            	    
+
             	    if ( (LA25_0 == '\'') )
             	    {
             	        alt25 = 1;
             	    }
-            	    
-            	
+
+
             	    switch (alt25) 
             		{
             			case 1 :
             			    // MacroScope\\MacroScope.g:951:4: '\\'' (s= AsciiStringRun )? '\\''
             			    {
-            			    	Match('\''); if (failed) return ;
-            			    	if ( backtracking == 0 ) 
+            			    	Match('\''); if (state.failed) return ;
+            			    	if ( state.backtracking == 0 ) 
             			    	{
-            			    	  
+
             			    	  			Text = Text + "\'";
             			    	  		
             			    	}
             			    	// MacroScope\\MacroScope.g:953:5: (s= AsciiStringRun )?
             			    	int alt24 = 2;
             			    	int LA24_0 = input.LA(1);
-            			    	
+
             			    	if ( (LA24_0 == '\t' || (LA24_0 >= ' ' && LA24_0 <= '&') || (LA24_0 >= '(' && LA24_0 <= '~')) )
             			    	{
             			    	    alt24 = 1;
@@ -2974,48 +3132,49 @@ public class MacroScopeLexer : Lexer
             			    	    case 1 :
             			    	        // MacroScope\\MacroScope.g:953:7: s= AsciiStringRun
             			    	        {
-            			    	        	int sStart1249 = CharIndex;
-            			    	        	mAsciiStringRun(); if (failed) return ;
-            			    	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1249, CharIndex-1);
-            			    	        	if ( backtracking == 0 ) 
+            			    	        	int sStart1250 = CharIndex;
+            			    	        	mAsciiStringRun(); if (state.failed) return ;
+            			    	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1250, CharIndex-1);
+            			    	        	if ( state.backtracking == 0 ) 
             			    	        	{
-            			    	        	   Text = Text + s.Text; 
+            			    	        	   Text = Text + ((s != null) ? s.Text : null); 
             			    	        	}
-            			    	        
+
             			    	        }
             			    	        break;
-            			    	
+
             			    	}
 
-            			    	Match('\''); if (failed) return ;
-            			    
+            			    	Match('\''); if (state.failed) return ;
+
             			    }
             			    break;
-            	
+
             			default:
             			    goto loop25;
             	    }
             	} while (true);
-            	
-            	loop25:
-            		;	// Stops C# compiler whinging that label 'loop25' has no statements
 
-            
+            	loop25:
+            		;	// Stops C# compiler whining that label 'loop25' has no statements
+
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end AsciiStringLiteral
+    // $ANTLR end "AsciiStringLiteral"
 
-    // $ANTLR start UnicodeStringRun 
+    // $ANTLR start "UnicodeStringRun"
     public void mUnicodeStringRun() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             // MacroScope\\MacroScope.g:958:18: ( (~ '\\'' )+ )
             // MacroScope\\MacroScope.g:959:2: (~ '\\'' )+
             {
@@ -3025,13 +3184,13 @@ public class MacroScopeLexer : Lexer
             	{
             	    int alt26 = 2;
             	    int LA26_0 = input.LA(1);
-            	    
+
             	    if ( ((LA26_0 >= '\u0000' && LA26_0 <= '&') || (LA26_0 >= '(' && LA26_0 <= '\uFFFE')) )
             	    {
             	        alt26 = 1;
             	    }
-            	    
-            	
+
+
             	    switch (alt26) 
             		{
             			case 1 :
@@ -3040,34 +3199,33 @@ public class MacroScopeLexer : Lexer
             			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&') || (input.LA(1) >= '(' && input.LA(1) <= '\uFFFE') ) 
             			    	{
             			    	    input.Consume();
-            			    	failed = false;
+            			    	state.failed = false;
             			    	}
             			    	else 
             			    	{
-            			    	    if ( backtracking > 0 ) {failed = true; return ;}
-            			    	    MismatchedSetException mse =
-            			    	        new MismatchedSetException(null,input);
-            			    	    Recover(mse);    throw mse;
-            			    	}
+            			    	    if ( state.backtracking > 0 ) {state.failed = true; return ;}
+            			    	    MismatchedSetException mse = new MismatchedSetException(null,input);
+            			    	    Recover(mse);
+            			    	    throw mse;}
 
-            			    
+
             			    }
             			    break;
-            	
+
             			default:
             			    if ( cnt26 >= 1 ) goto loop26;
-            			    if ( backtracking > 0 ) {failed = true; return ;}
+            			    if ( state.backtracking > 0 ) {state.failed = true; return ;}
             		            EarlyExitException eee =
             		                new EarlyExitException(26, input);
             		            throw eee;
             	    }
             	    cnt26++;
             	} while (true);
-            	
+
             	loop26:
             		;	// Stops C# compiler whinging that label 'loop26' has no statements
 
-            
+
             }
 
         }
@@ -3075,29 +3233,30 @@ public class MacroScopeLexer : Lexer
     	{
         }
     }
-    // $ANTLR end UnicodeStringRun
+    // $ANTLR end "UnicodeStringRun"
 
-    // $ANTLR start UnicodeStringLiteral 
+    // $ANTLR start "UnicodeStringLiteral"
     public void mUnicodeStringLiteral() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = UnicodeStringLiteral;
-            Token s = null;
-    
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
+            IToken s = null;
+
             // MacroScope\\MacroScope.g:962:22: ( 'n' '\\'' (s= UnicodeStringRun )? '\\'' ( '\\'' (s= UnicodeStringRun )? '\\'' )* )
             // MacroScope\\MacroScope.g:963:2: 'n' '\\'' (s= UnicodeStringRun )? '\\'' ( '\\'' (s= UnicodeStringRun )? '\\'' )*
             {
-            	Match('n'); if (failed) return ;
-            	Match('\''); if (failed) return ;
-            	if ( backtracking == 0 ) 
+            	Match('n'); if (state.failed) return ;
+            	Match('\''); if (state.failed) return ;
+            	if ( state.backtracking == 0 ) 
             	{
             	   Text = ""; 
             	}
             	// MacroScope\\MacroScope.g:964:2: (s= UnicodeStringRun )?
             	int alt27 = 2;
             	int LA27_0 = input.LA(1);
-            	
+
             	if ( ((LA27_0 >= '\u0000' && LA27_0 <= '&') || (LA27_0 >= '(' && LA27_0 <= '\uFFFE')) )
             	{
             	    alt27 = 1;
@@ -3107,48 +3266,48 @@ public class MacroScopeLexer : Lexer
             	    case 1 :
             	        // MacroScope\\MacroScope.g:964:4: s= UnicodeStringRun
             	        {
-            	        	int sStart1305 = CharIndex;
-            	        	mUnicodeStringRun(); if (failed) return ;
-            	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1305, CharIndex-1);
-            	        	if ( backtracking == 0 ) 
+            	        	int sStart1306 = CharIndex;
+            	        	mUnicodeStringRun(); if (state.failed) return ;
+            	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1306, CharIndex-1);
+            	        	if ( state.backtracking == 0 ) 
             	        	{
-            	        	   Text = s.Text; 
+            	        	   Text = ((s != null) ? s.Text : null); 
             	        	}
-            	        
+
             	        }
             	        break;
-            	
+
             	}
 
-            	Match('\''); if (failed) return ;
+            	Match('\''); if (state.failed) return ;
             	// MacroScope\\MacroScope.g:965:2: ( '\\'' (s= UnicodeStringRun )? '\\'' )*
             	do 
             	{
             	    int alt29 = 2;
             	    int LA29_0 = input.LA(1);
-            	    
+
             	    if ( (LA29_0 == '\'') )
             	    {
             	        alt29 = 1;
             	    }
-            	    
-            	
+
+
             	    switch (alt29) 
             		{
             			case 1 :
             			    // MacroScope\\MacroScope.g:965:4: '\\'' (s= UnicodeStringRun )? '\\''
             			    {
-            			    	Match('\''); if (failed) return ;
-            			    	if ( backtracking == 0 ) 
+            			    	Match('\''); if (state.failed) return ;
+            			    	if ( state.backtracking == 0 ) 
             			    	{
-            			    	  
+
             			    	  			Text = Text + "\'";
             			    	  		
             			    	}
             			    	// MacroScope\\MacroScope.g:967:5: (s= UnicodeStringRun )?
             			    	int alt28 = 2;
             			    	int LA28_0 = input.LA(1);
-            			    	
+
             			    	if ( ((LA28_0 >= '\u0000' && LA28_0 <= '&') || (LA28_0 >= '(' && LA28_0 <= '\uFFFE')) )
             			    	{
             			    	    alt28 = 1;
@@ -3158,48 +3317,49 @@ public class MacroScopeLexer : Lexer
             			    	    case 1 :
             			    	        // MacroScope\\MacroScope.g:967:7: s= UnicodeStringRun
             			    	        {
-            			    	        	int sStart1327 = CharIndex;
-            			    	        	mUnicodeStringRun(); if (failed) return ;
-            			    	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1327, CharIndex-1);
-            			    	        	if ( backtracking == 0 ) 
+            			    	        	int sStart1328 = CharIndex;
+            			    	        	mUnicodeStringRun(); if (state.failed) return ;
+            			    	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1328, CharIndex-1);
+            			    	        	if ( state.backtracking == 0 ) 
             			    	        	{
-            			    	        	   Text = Text + s.Text; 
+            			    	        	   Text = Text + ((s != null) ? s.Text : null); 
             			    	        	}
-            			    	        
+
             			    	        }
             			    	        break;
-            			    	
+
             			    	}
 
-            			    	Match('\''); if (failed) return ;
-            			    
+            			    	Match('\''); if (state.failed) return ;
+
             			    }
             			    break;
-            	
+
             			default:
             			    goto loop29;
             	    }
             	} while (true);
-            	
-            	loop29:
-            		;	// Stops C# compiler whinging that label 'loop29' has no statements
 
-            
+            	loop29:
+            		;	// Stops C# compiler whining that label 'loop29' has no statements
+
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end UnicodeStringLiteral
+    // $ANTLR end "UnicodeStringLiteral"
 
-    // $ANTLR start HexLiteral 
+    // $ANTLR start "HexLiteral"
     public void mHexLiteral() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             // MacroScope\\MacroScope.g:972:12: ()
             // MacroScope\\MacroScope.g:974:2: 
             {
@@ -3210,56 +3370,61 @@ public class MacroScopeLexer : Lexer
     	{
         }
     }
-    // $ANTLR end HexLiteral
+    // $ANTLR end "HexLiteral"
 
-    // $ANTLR start MINUS 
+    // $ANTLR start "MINUS"
     public void mMINUS() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = MINUS;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:976:7: ( '-' )
             // MacroScope\\MacroScope.g:976:9: '-'
             {
-            	Match('-'); if (failed) return ;
-            
+            	Match('-'); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end MINUS
+    // $ANTLR end "MINUS"
 
-    // $ANTLR start COLON 
+    // $ANTLR start "COLON"
     public void mCOLON() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = COLON;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:977:7: ( ':' )
             // MacroScope\\MacroScope.g:977:9: ':'
             {
-            	Match(':'); if (failed) return ;
-            
+            	Match(':'); if (state.failed) return ;
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end COLON
+    // $ANTLR end "COLON"
 
-    // $ANTLR start Whitespace 
+    // $ANTLR start "Whitespace"
     public void mWhitespace() // throws RecognitionException [2]
     {
-        try 
-    	{
+    		try
+    		{
             int _type = Whitespace;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
             // MacroScope\\MacroScope.g:979:12: ( ( '\\t' | ' ' | '\\r' | '\\n' )+ )
             // MacroScope\\MacroScope.g:979:14: ( '\\t' | ' ' | '\\r' | '\\n' )+
             {
@@ -3269,13 +3434,13 @@ public class MacroScopeLexer : Lexer
             	{
             	    int alt30 = 2;
             	    int LA30_0 = input.LA(1);
-            	    
+
             	    if ( ((LA30_0 >= '\t' && LA30_0 <= '\n') || LA30_0 == '\r' || LA30_0 == ' ') )
             	    {
             	        alt30 = 1;
             	    }
-            	    
-            	
+
+
             	    switch (alt30) 
             		{
             			case 1 :
@@ -3284,3004 +3449,664 @@ public class MacroScopeLexer : Lexer
             			    	if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n') || input.LA(1) == '\r' || input.LA(1) == ' ' ) 
             			    	{
             			    	    input.Consume();
-            			    	failed = false;
+            			    	state.failed = false;
             			    	}
             			    	else 
             			    	{
-            			    	    if ( backtracking > 0 ) {failed = true; return ;}
-            			    	    MismatchedSetException mse =
-            			    	        new MismatchedSetException(null,input);
-            			    	    Recover(mse);    throw mse;
-            			    	}
+            			    	    if ( state.backtracking > 0 ) {state.failed = true; return ;}
+            			    	    MismatchedSetException mse = new MismatchedSetException(null,input);
+            			    	    Recover(mse);
+            			    	    throw mse;}
 
-            			    
+
             			    }
             			    break;
-            	
+
             			default:
             			    if ( cnt30 >= 1 ) goto loop30;
-            			    if ( backtracking > 0 ) {failed = true; return ;}
+            			    if ( state.backtracking > 0 ) {state.failed = true; return ;}
             		            EarlyExitException eee =
             		                new EarlyExitException(30, input);
             		            throw eee;
             	    }
             	    cnt30++;
             	} while (true);
-            	
+
             	loop30:
             		;	// Stops C# compiler whinging that label 'loop30' has no statements
 
-            	if ( backtracking == 0 ) 
+            	if ( state.backtracking == 0 ) 
             	{
-            	   channel = HIDDEN; 
+            	   _channel = HIDDEN; 
             	}
-            
+
             }
-    
-            this.type = _type;
+
+            state.type = _type;
+            state.channel = _channel;
         }
         finally 
     	{
         }
     }
-    // $ANTLR end Whitespace
+    // $ANTLR end "Whitespace"
 
     override public void mTokens() // throws RecognitionException 
     {
         // MacroScope\\MacroScope.g:1:8: ( ALL | AND | ANY | AS | ASC | BETWEEN | BY | CASE | CAST | CROSS | DAY | DEFAULT | DELETE | DESC | DISTINCT | ELSE | END | ESCAPE | EXISTS | EXTRACT | FOR | FROM | FULL | GROUP | HAVING | HOUR | IN | INNER | INSERT | INTERVAL | INTO | IS | JOIN | LEFT | LIKE | MINUTE | MONTH | NOT | NULL | ON | OR | ORDER | OUTER | RIGHT | SECOND | SELECT | SET | SOME | SUBSTRING | THEN | TOP | UNION | UPDATE | VALUES | WHEN | WHERE | YEAR | DOT_STAR | DOT | COMMA | LPAREN | RPAREN | ASSIGNEQUAL | NOTEQUAL1 | NOTEQUAL2 | LESSTHANOREQUALTO1 | LESSTHAN | GREATERTHANOREQUALTO1 | GREATERTHAN | DIVIDE | PLUS | STAR | MOD | STRCONCAT | PLACEHOLDER | MAccessDateTime | Iso8601DateTime | Number | NonQuotedIdentifier | QuotedIdentifier | Variable | AsciiStringLiteral | UnicodeStringLiteral | MINUS | COLON | Whitespace )
         int alt31 = 86;
-        switch ( input.LA(1) ) 
-        {
-        case 'a':
-        	{
-            switch ( input.LA(2) ) 
-            {
-            case 'n':
-            	{
-                switch ( input.LA(3) ) 
-                {
-                case 'y':
-                	{
-                    int LA31_100 = input.LA(4);
-                    
-                    if ( ((LA31_100 >= '0' && LA31_100 <= '9') || LA31_100 == '_' || (LA31_100 >= 'a' && LA31_100 <= 'z')) )
-                    {
-                        alt31 = 79;
-                    }
-                    else 
-                    {
-                        alt31 = 3;}
-                    }
-                    break;
-                case 'd':
-                	{
-                    int LA31_101 = input.LA(4);
-                    
-                    if ( ((LA31_101 >= '0' && LA31_101 <= '9') || LA31_101 == '_' || (LA31_101 >= 'a' && LA31_101 <= 'z')) )
-                    {
-                        alt31 = 79;
-                    }
-                    else 
-                    {
-                        alt31 = 2;}
-                    }
-                    break;
-                	default:
-                    	alt31 = 79;
-                    	break;}
-            
-                }
-                break;
-            case 'l':
-            	{
-                int LA31_47 = input.LA(3);
-                
-                if ( (LA31_47 == 'l') )
-                {
-                    int LA31_102 = input.LA(4);
-                    
-                    if ( ((LA31_102 >= '0' && LA31_102 <= '9') || LA31_102 == '_' || (LA31_102 >= 'a' && LA31_102 <= 'z')) )
-                    {
-                        alt31 = 79;
-                    }
-                    else 
-                    {
-                        alt31 = 1;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            case 's':
-            	{
-                switch ( input.LA(3) ) 
-                {
-                case 'c':
-                	{
-                    int LA31_103 = input.LA(4);
-                    
-                    if ( ((LA31_103 >= '0' && LA31_103 <= '9') || LA31_103 == '_' || (LA31_103 >= 'a' && LA31_103 <= 'z')) )
-                    {
-                        alt31 = 79;
-                    }
-                    else 
-                    {
-                        alt31 = 5;}
-                    }
-                    break;
-                case '0':
-                case '1':
-                case '2':
-                case '3':
-                case '4':
-                case '5':
-                case '6':
-                case '7':
-                case '8':
-                case '9':
-                case '_':
-                case 'a':
-                case 'b':
-                case 'd':
-                case 'e':
-                case 'f':
-                case 'g':
-                case 'h':
-                case 'i':
-                case 'j':
-                case 'k':
-                case 'l':
-                case 'm':
-                case 'n':
-                case 'o':
-                case 'p':
-                case 'q':
-                case 'r':
-                case 's':
-                case 't':
-                case 'u':
-                case 'v':
-                case 'w':
-                case 'x':
-                case 'y':
-                case 'z':
-                	{
-                    alt31 = 79;
-                    }
-                    break;
-                	default:
-                    	alt31 = 4;
-                    	break;}
-            
-                }
-                break;
-            	default:
-                	alt31 = 79;
-                	break;}
-        
-            }
-            break;
-        case 'b':
-        	{
-            switch ( input.LA(2) ) 
-            {
-            case 'e':
-            	{
-                int LA31_49 = input.LA(3);
-                
-                if ( (LA31_49 == 't') )
-                {
-                    int LA31_105 = input.LA(4);
-                    
-                    if ( (LA31_105 == 'w') )
-                    {
-                        int LA31_159 = input.LA(5);
-                        
-                        if ( (LA31_159 == 'e') )
-                        {
-                            int LA31_207 = input.LA(6);
-                            
-                            if ( (LA31_207 == 'e') )
-                            {
-                                int LA31_249 = input.LA(7);
-                                
-                                if ( (LA31_249 == 'n') )
-                                {
-                                    int LA31_274 = input.LA(8);
-                                    
-                                    if ( ((LA31_274 >= '0' && LA31_274 <= '9') || LA31_274 == '_' || (LA31_274 >= 'a' && LA31_274 <= 'z')) )
-                                    {
-                                        alt31 = 79;
-                                    }
-                                    else 
-                                    {
-                                        alt31 = 6;}
-                                }
-                                else 
-                                {
-                                    alt31 = 79;}
-                            }
-                            else 
-                            {
-                                alt31 = 79;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            case 'y':
-            	{
-                int LA31_50 = input.LA(3);
-                
-                if ( ((LA31_50 >= '0' && LA31_50 <= '9') || LA31_50 == '_' || (LA31_50 >= 'a' && LA31_50 <= 'z')) )
-                {
-                    alt31 = 79;
-                }
-                else 
-                {
-                    alt31 = 7;}
-                }
-                break;
-            	default:
-                	alt31 = 79;
-                	break;}
-        
-            }
-            break;
-        case 'c':
-        	{
-            switch ( input.LA(2) ) 
-            {
-            case 'r':
-            	{
-                int LA31_51 = input.LA(3);
-                
-                if ( (LA31_51 == 'o') )
-                {
-                    int LA31_107 = input.LA(4);
-                    
-                    if ( (LA31_107 == 's') )
-                    {
-                        int LA31_160 = input.LA(5);
-                        
-                        if ( (LA31_160 == 's') )
-                        {
-                            int LA31_208 = input.LA(6);
-                            
-                            if ( ((LA31_208 >= '0' && LA31_208 <= '9') || LA31_208 == '_' || (LA31_208 >= 'a' && LA31_208 <= 'z')) )
-                            {
-                                alt31 = 79;
-                            }
-                            else 
-                            {
-                                alt31 = 10;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            case 'a':
-            	{
-                int LA31_52 = input.LA(3);
-                
-                if ( (LA31_52 == 's') )
-                {
-                    switch ( input.LA(4) ) 
-                    {
-                    case 'e':
-                    	{
-                        int LA31_161 = input.LA(5);
-                        
-                        if ( ((LA31_161 >= '0' && LA31_161 <= '9') || LA31_161 == '_' || (LA31_161 >= 'a' && LA31_161 <= 'z')) )
-                        {
-                            alt31 = 79;
-                        }
-                        else 
-                        {
-                            alt31 = 8;}
-                        }
-                        break;
-                    case 't':
-                    	{
-                        int LA31_162 = input.LA(5);
-                        
-                        if ( ((LA31_162 >= '0' && LA31_162 <= '9') || LA31_162 == '_' || (LA31_162 >= 'a' && LA31_162 <= 'z')) )
-                        {
-                            alt31 = 79;
-                        }
-                        else 
-                        {
-                            alt31 = 9;}
-                        }
-                        break;
-                    	default:
-                        	alt31 = 79;
-                        	break;}
-                
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            	default:
-                	alt31 = 79;
-                	break;}
-        
-            }
-            break;
-        case 'd':
-        	{
-            switch ( input.LA(2) ) 
-            {
-            case 'a':
-            	{
-                int LA31_53 = input.LA(3);
-                
-                if ( (LA31_53 == 'y') )
-                {
-                    int LA31_109 = input.LA(4);
-                    
-                    if ( ((LA31_109 >= '0' && LA31_109 <= '9') || LA31_109 == '_' || (LA31_109 >= 'a' && LA31_109 <= 'z')) )
-                    {
-                        alt31 = 79;
-                    }
-                    else 
-                    {
-                        alt31 = 11;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            case 'e':
-            	{
-                switch ( input.LA(3) ) 
-                {
-                case 'l':
-                	{
-                    int LA31_110 = input.LA(4);
-                    
-                    if ( (LA31_110 == 'e') )
-                    {
-                        int LA31_164 = input.LA(5);
-                        
-                        if ( (LA31_164 == 't') )
-                        {
-                            int LA31_211 = input.LA(6);
-                            
-                            if ( (LA31_211 == 'e') )
-                            {
-                                int LA31_251 = input.LA(7);
-                                
-                                if ( ((LA31_251 >= '0' && LA31_251 <= '9') || LA31_251 == '_' || (LA31_251 >= 'a' && LA31_251 <= 'z')) )
-                                {
-                                    alt31 = 79;
-                                }
-                                else 
-                                {
-                                    alt31 = 13;}
-                            }
-                            else 
-                            {
-                                alt31 = 79;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                    }
-                    break;
-                case 's':
-                	{
-                    int LA31_111 = input.LA(4);
-                    
-                    if ( (LA31_111 == 'c') )
-                    {
-                        int LA31_165 = input.LA(5);
-                        
-                        if ( ((LA31_165 >= '0' && LA31_165 <= '9') || LA31_165 == '_' || (LA31_165 >= 'a' && LA31_165 <= 'z')) )
-                        {
-                            alt31 = 79;
-                        }
-                        else 
-                        {
-                            alt31 = 14;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                    }
-                    break;
-                case 'f':
-                	{
-                    int LA31_112 = input.LA(4);
-                    
-                    if ( (LA31_112 == 'a') )
-                    {
-                        int LA31_166 = input.LA(5);
-                        
-                        if ( (LA31_166 == 'u') )
-                        {
-                            int LA31_213 = input.LA(6);
-                            
-                            if ( (LA31_213 == 'l') )
-                            {
-                                int LA31_252 = input.LA(7);
-                                
-                                if ( (LA31_252 == 't') )
-                                {
-                                    int LA31_276 = input.LA(8);
-                                    
-                                    if ( ((LA31_276 >= '0' && LA31_276 <= '9') || LA31_276 == '_' || (LA31_276 >= 'a' && LA31_276 <= 'z')) )
-                                    {
-                                        alt31 = 79;
-                                    }
-                                    else 
-                                    {
-                                        alt31 = 12;}
-                                }
-                                else 
-                                {
-                                    alt31 = 79;}
-                            }
-                            else 
-                            {
-                                alt31 = 79;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                    }
-                    break;
-                	default:
-                    	alt31 = 79;
-                    	break;}
-            
-                }
-                break;
-            case 'i':
-            	{
-                int LA31_55 = input.LA(3);
-                
-                if ( (LA31_55 == 's') )
-                {
-                    int LA31_113 = input.LA(4);
-                    
-                    if ( (LA31_113 == 't') )
-                    {
-                        int LA31_167 = input.LA(5);
-                        
-                        if ( (LA31_167 == 'i') )
-                        {
-                            int LA31_214 = input.LA(6);
-                            
-                            if ( (LA31_214 == 'n') )
-                            {
-                                int LA31_253 = input.LA(7);
-                                
-                                if ( (LA31_253 == 'c') )
-                                {
-                                    int LA31_277 = input.LA(8);
-                                    
-                                    if ( (LA31_277 == 't') )
-                                    {
-                                        int LA31_292 = input.LA(9);
-                                        
-                                        if ( ((LA31_292 >= '0' && LA31_292 <= '9') || LA31_292 == '_' || (LA31_292 >= 'a' && LA31_292 <= 'z')) )
-                                        {
-                                            alt31 = 79;
-                                        }
-                                        else 
-                                        {
-                                            alt31 = 15;}
-                                    }
-                                    else 
-                                    {
-                                        alt31 = 79;}
-                                }
-                                else 
-                                {
-                                    alt31 = 79;}
-                            }
-                            else 
-                            {
-                                alt31 = 79;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            	default:
-                	alt31 = 79;
-                	break;}
-        
-            }
-            break;
-        case 'e':
-        	{
-            switch ( input.LA(2) ) 
-            {
-            case 'x':
-            	{
-                switch ( input.LA(3) ) 
-                {
-                case 'i':
-                	{
-                    int LA31_114 = input.LA(4);
-                    
-                    if ( (LA31_114 == 's') )
-                    {
-                        int LA31_168 = input.LA(5);
-                        
-                        if ( (LA31_168 == 't') )
-                        {
-                            int LA31_215 = input.LA(6);
-                            
-                            if ( (LA31_215 == 's') )
-                            {
-                                int LA31_254 = input.LA(7);
-                                
-                                if ( ((LA31_254 >= '0' && LA31_254 <= '9') || LA31_254 == '_' || (LA31_254 >= 'a' && LA31_254 <= 'z')) )
-                                {
-                                    alt31 = 79;
-                                }
-                                else 
-                                {
-                                    alt31 = 19;}
-                            }
-                            else 
-                            {
-                                alt31 = 79;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                    }
-                    break;
-                case 't':
-                	{
-                    int LA31_115 = input.LA(4);
-                    
-                    if ( (LA31_115 == 'r') )
-                    {
-                        int LA31_169 = input.LA(5);
-                        
-                        if ( (LA31_169 == 'a') )
-                        {
-                            int LA31_216 = input.LA(6);
-                            
-                            if ( (LA31_216 == 'c') )
-                            {
-                                int LA31_255 = input.LA(7);
-                                
-                                if ( (LA31_255 == 't') )
-                                {
-                                    int LA31_279 = input.LA(8);
-                                    
-                                    if ( ((LA31_279 >= '0' && LA31_279 <= '9') || LA31_279 == '_' || (LA31_279 >= 'a' && LA31_279 <= 'z')) )
-                                    {
-                                        alt31 = 79;
-                                    }
-                                    else 
-                                    {
-                                        alt31 = 20;}
-                                }
-                                else 
-                                {
-                                    alt31 = 79;}
-                            }
-                            else 
-                            {
-                                alt31 = 79;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                    }
-                    break;
-                	default:
-                    	alt31 = 79;
-                    	break;}
-            
-                }
-                break;
-            case 's':
-            	{
-                int LA31_57 = input.LA(3);
-                
-                if ( (LA31_57 == 'c') )
-                {
-                    int LA31_116 = input.LA(4);
-                    
-                    if ( (LA31_116 == 'a') )
-                    {
-                        int LA31_170 = input.LA(5);
-                        
-                        if ( (LA31_170 == 'p') )
-                        {
-                            int LA31_217 = input.LA(6);
-                            
-                            if ( (LA31_217 == 'e') )
-                            {
-                                int LA31_256 = input.LA(7);
-                                
-                                if ( ((LA31_256 >= '0' && LA31_256 <= '9') || LA31_256 == '_' || (LA31_256 >= 'a' && LA31_256 <= 'z')) )
-                                {
-                                    alt31 = 79;
-                                }
-                                else 
-                                {
-                                    alt31 = 18;}
-                            }
-                            else 
-                            {
-                                alt31 = 79;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            case 'n':
-            	{
-                int LA31_58 = input.LA(3);
-                
-                if ( (LA31_58 == 'd') )
-                {
-                    int LA31_117 = input.LA(4);
-                    
-                    if ( ((LA31_117 >= '0' && LA31_117 <= '9') || LA31_117 == '_' || (LA31_117 >= 'a' && LA31_117 <= 'z')) )
-                    {
-                        alt31 = 79;
-                    }
-                    else 
-                    {
-                        alt31 = 17;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            case 'l':
-            	{
-                int LA31_59 = input.LA(3);
-                
-                if ( (LA31_59 == 's') )
-                {
-                    int LA31_118 = input.LA(4);
-                    
-                    if ( (LA31_118 == 'e') )
-                    {
-                        int LA31_172 = input.LA(5);
-                        
-                        if ( ((LA31_172 >= '0' && LA31_172 <= '9') || LA31_172 == '_' || (LA31_172 >= 'a' && LA31_172 <= 'z')) )
-                        {
-                            alt31 = 79;
-                        }
-                        else 
-                        {
-                            alt31 = 16;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            	default:
-                	alt31 = 79;
-                	break;}
-        
-            }
-            break;
-        case 'f':
-        	{
-            switch ( input.LA(2) ) 
-            {
-            case 'u':
-            	{
-                int LA31_60 = input.LA(3);
-                
-                if ( (LA31_60 == 'l') )
-                {
-                    int LA31_119 = input.LA(4);
-                    
-                    if ( (LA31_119 == 'l') )
-                    {
-                        int LA31_173 = input.LA(5);
-                        
-                        if ( ((LA31_173 >= '0' && LA31_173 <= '9') || LA31_173 == '_' || (LA31_173 >= 'a' && LA31_173 <= 'z')) )
-                        {
-                            alt31 = 79;
-                        }
-                        else 
-                        {
-                            alt31 = 23;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            case 'r':
-            	{
-                int LA31_61 = input.LA(3);
-                
-                if ( (LA31_61 == 'o') )
-                {
-                    int LA31_120 = input.LA(4);
-                    
-                    if ( (LA31_120 == 'm') )
-                    {
-                        int LA31_174 = input.LA(5);
-                        
-                        if ( ((LA31_174 >= '0' && LA31_174 <= '9') || LA31_174 == '_' || (LA31_174 >= 'a' && LA31_174 <= 'z')) )
-                        {
-                            alt31 = 79;
-                        }
-                        else 
-                        {
-                            alt31 = 22;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            case 'o':
-            	{
-                int LA31_62 = input.LA(3);
-                
-                if ( (LA31_62 == 'r') )
-                {
-                    int LA31_121 = input.LA(4);
-                    
-                    if ( ((LA31_121 >= '0' && LA31_121 <= '9') || LA31_121 == '_' || (LA31_121 >= 'a' && LA31_121 <= 'z')) )
-                    {
-                        alt31 = 79;
-                    }
-                    else 
-                    {
-                        alt31 = 21;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            	default:
-                	alt31 = 79;
-                	break;}
-        
-            }
-            break;
-        case 'g':
-        	{
-            int LA31_7 = input.LA(2);
-            
-            if ( (LA31_7 == 'r') )
-            {
-                int LA31_63 = input.LA(3);
-                
-                if ( (LA31_63 == 'o') )
-                {
-                    int LA31_122 = input.LA(4);
-                    
-                    if ( (LA31_122 == 'u') )
-                    {
-                        int LA31_176 = input.LA(5);
-                        
-                        if ( (LA31_176 == 'p') )
-                        {
-                            int LA31_221 = input.LA(6);
-                            
-                            if ( ((LA31_221 >= '0' && LA31_221 <= '9') || LA31_221 == '_' || (LA31_221 >= 'a' && LA31_221 <= 'z')) )
-                            {
-                                alt31 = 79;
-                            }
-                            else 
-                            {
-                                alt31 = 24;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-            }
-            else 
-            {
-                alt31 = 79;}
-            }
-            break;
-        case 'h':
-        	{
-            switch ( input.LA(2) ) 
-            {
-            case 'a':
-            	{
-                int LA31_64 = input.LA(3);
-                
-                if ( (LA31_64 == 'v') )
-                {
-                    int LA31_123 = input.LA(4);
-                    
-                    if ( (LA31_123 == 'i') )
-                    {
-                        int LA31_177 = input.LA(5);
-                        
-                        if ( (LA31_177 == 'n') )
-                        {
-                            int LA31_222 = input.LA(6);
-                            
-                            if ( (LA31_222 == 'g') )
-                            {
-                                int LA31_258 = input.LA(7);
-                                
-                                if ( ((LA31_258 >= '0' && LA31_258 <= '9') || LA31_258 == '_' || (LA31_258 >= 'a' && LA31_258 <= 'z')) )
-                                {
-                                    alt31 = 79;
-                                }
-                                else 
-                                {
-                                    alt31 = 25;}
-                            }
-                            else 
-                            {
-                                alt31 = 79;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            case 'o':
-            	{
-                int LA31_65 = input.LA(3);
-                
-                if ( (LA31_65 == 'u') )
-                {
-                    int LA31_124 = input.LA(4);
-                    
-                    if ( (LA31_124 == 'r') )
-                    {
-                        int LA31_178 = input.LA(5);
-                        
-                        if ( ((LA31_178 >= '0' && LA31_178 <= '9') || LA31_178 == '_' || (LA31_178 >= 'a' && LA31_178 <= 'z')) )
-                        {
-                            alt31 = 79;
-                        }
-                        else 
-                        {
-                            alt31 = 26;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            	default:
-                	alt31 = 79;
-                	break;}
-        
-            }
-            break;
-        case 'i':
-        	{
-            switch ( input.LA(2) ) 
-            {
-            case 'n':
-            	{
-                switch ( input.LA(3) ) 
-                {
-                case 's':
-                	{
-                    int LA31_125 = input.LA(4);
-                    
-                    if ( (LA31_125 == 'e') )
-                    {
-                        int LA31_179 = input.LA(5);
-                        
-                        if ( (LA31_179 == 'r') )
-                        {
-                            int LA31_224 = input.LA(6);
-                            
-                            if ( (LA31_224 == 't') )
-                            {
-                                int LA31_259 = input.LA(7);
-                                
-                                if ( ((LA31_259 >= '0' && LA31_259 <= '9') || LA31_259 == '_' || (LA31_259 >= 'a' && LA31_259 <= 'z')) )
-                                {
-                                    alt31 = 79;
-                                }
-                                else 
-                                {
-                                    alt31 = 29;}
-                            }
-                            else 
-                            {
-                                alt31 = 79;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                    }
-                    break;
-                case 't':
-                	{
-                    switch ( input.LA(4) ) 
-                    {
-                    case 'o':
-                    	{
-                        int LA31_180 = input.LA(5);
-                        
-                        if ( ((LA31_180 >= '0' && LA31_180 <= '9') || LA31_180 == '_' || (LA31_180 >= 'a' && LA31_180 <= 'z')) )
-                        {
-                            alt31 = 79;
-                        }
-                        else 
-                        {
-                            alt31 = 31;}
-                        }
-                        break;
-                    case 'e':
-                    	{
-                        int LA31_181 = input.LA(5);
-                        
-                        if ( (LA31_181 == 'r') )
-                        {
-                            int LA31_226 = input.LA(6);
-                            
-                            if ( (LA31_226 == 'v') )
-                            {
-                                int LA31_260 = input.LA(7);
-                                
-                                if ( (LA31_260 == 'a') )
-                                {
-                                    int LA31_283 = input.LA(8);
-                                    
-                                    if ( (LA31_283 == 'l') )
-                                    {
-                                        int LA31_294 = input.LA(9);
-                                        
-                                        if ( ((LA31_294 >= '0' && LA31_294 <= '9') || LA31_294 == '_' || (LA31_294 >= 'a' && LA31_294 <= 'z')) )
-                                        {
-                                            alt31 = 79;
-                                        }
-                                        else 
-                                        {
-                                            alt31 = 30;}
-                                    }
-                                    else 
-                                    {
-                                        alt31 = 79;}
-                                }
-                                else 
-                                {
-                                    alt31 = 79;}
-                            }
-                            else 
-                            {
-                                alt31 = 79;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                        }
-                        break;
-                    	default:
-                        	alt31 = 79;
-                        	break;}
-                
-                    }
-                    break;
-                case 'n':
-                	{
-                    int LA31_127 = input.LA(4);
-                    
-                    if ( (LA31_127 == 'e') )
-                    {
-                        int LA31_182 = input.LA(5);
-                        
-                        if ( (LA31_182 == 'r') )
-                        {
-                            int LA31_227 = input.LA(6);
-                            
-                            if ( ((LA31_227 >= '0' && LA31_227 <= '9') || LA31_227 == '_' || (LA31_227 >= 'a' && LA31_227 <= 'z')) )
-                            {
-                                alt31 = 79;
-                            }
-                            else 
-                            {
-                                alt31 = 28;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                    }
-                    break;
-                case '0':
-                case '1':
-                case '2':
-                case '3':
-                case '4':
-                case '5':
-                case '6':
-                case '7':
-                case '8':
-                case '9':
-                case '_':
-                case 'a':
-                case 'b':
-                case 'c':
-                case 'd':
-                case 'e':
-                case 'f':
-                case 'g':
-                case 'h':
-                case 'i':
-                case 'j':
-                case 'k':
-                case 'l':
-                case 'm':
-                case 'o':
-                case 'p':
-                case 'q':
-                case 'r':
-                case 'u':
-                case 'v':
-                case 'w':
-                case 'x':
-                case 'y':
-                case 'z':
-                	{
-                    alt31 = 79;
-                    }
-                    break;
-                	default:
-                    	alt31 = 27;
-                    	break;}
-            
-                }
-                break;
-            case 's':
-            	{
-                int LA31_67 = input.LA(3);
-                
-                if ( ((LA31_67 >= '0' && LA31_67 <= '9') || LA31_67 == '_' || (LA31_67 >= 'a' && LA31_67 <= 'z')) )
-                {
-                    alt31 = 79;
-                }
-                else 
-                {
-                    alt31 = 32;}
-                }
-                break;
-            	default:
-                	alt31 = 79;
-                	break;}
-        
-            }
-            break;
-        case 'j':
-        	{
-            int LA31_10 = input.LA(2);
-            
-            if ( (LA31_10 == 'o') )
-            {
-                int LA31_68 = input.LA(3);
-                
-                if ( (LA31_68 == 'i') )
-                {
-                    int LA31_130 = input.LA(4);
-                    
-                    if ( (LA31_130 == 'n') )
-                    {
-                        int LA31_183 = input.LA(5);
-                        
-                        if ( ((LA31_183 >= '0' && LA31_183 <= '9') || LA31_183 == '_' || (LA31_183 >= 'a' && LA31_183 <= 'z')) )
-                        {
-                            alt31 = 79;
-                        }
-                        else 
-                        {
-                            alt31 = 33;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-            }
-            else 
-            {
-                alt31 = 79;}
-            }
-            break;
-        case 'l':
-        	{
-            switch ( input.LA(2) ) 
-            {
-            case 'i':
-            	{
-                int LA31_69 = input.LA(3);
-                
-                if ( (LA31_69 == 'k') )
-                {
-                    int LA31_131 = input.LA(4);
-                    
-                    if ( (LA31_131 == 'e') )
-                    {
-                        int LA31_184 = input.LA(5);
-                        
-                        if ( ((LA31_184 >= '0' && LA31_184 <= '9') || LA31_184 == '_' || (LA31_184 >= 'a' && LA31_184 <= 'z')) )
-                        {
-                            alt31 = 79;
-                        }
-                        else 
-                        {
-                            alt31 = 35;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            case 'e':
-            	{
-                int LA31_70 = input.LA(3);
-                
-                if ( (LA31_70 == 'f') )
-                {
-                    int LA31_132 = input.LA(4);
-                    
-                    if ( (LA31_132 == 't') )
-                    {
-                        int LA31_185 = input.LA(5);
-                        
-                        if ( ((LA31_185 >= '0' && LA31_185 <= '9') || LA31_185 == '_' || (LA31_185 >= 'a' && LA31_185 <= 'z')) )
-                        {
-                            alt31 = 79;
-                        }
-                        else 
-                        {
-                            alt31 = 34;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            	default:
-                	alt31 = 79;
-                	break;}
-        
-            }
-            break;
-        case 'm':
-        	{
-            switch ( input.LA(2) ) 
-            {
-            case 'i':
-            	{
-                int LA31_71 = input.LA(3);
-                
-                if ( (LA31_71 == 'n') )
-                {
-                    int LA31_133 = input.LA(4);
-                    
-                    if ( (LA31_133 == 'u') )
-                    {
-                        int LA31_186 = input.LA(5);
-                        
-                        if ( (LA31_186 == 't') )
-                        {
-                            int LA31_231 = input.LA(6);
-                            
-                            if ( (LA31_231 == 'e') )
-                            {
-                                int LA31_262 = input.LA(7);
-                                
-                                if ( ((LA31_262 >= '0' && LA31_262 <= '9') || LA31_262 == '_' || (LA31_262 >= 'a' && LA31_262 <= 'z')) )
-                                {
-                                    alt31 = 79;
-                                }
-                                else 
-                                {
-                                    alt31 = 36;}
-                            }
-                            else 
-                            {
-                                alt31 = 79;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            case 'o':
-            	{
-                int LA31_72 = input.LA(3);
-                
-                if ( (LA31_72 == 'n') )
-                {
-                    int LA31_134 = input.LA(4);
-                    
-                    if ( (LA31_134 == 't') )
-                    {
-                        int LA31_187 = input.LA(5);
-                        
-                        if ( (LA31_187 == 'h') )
-                        {
-                            int LA31_232 = input.LA(6);
-                            
-                            if ( ((LA31_232 >= '0' && LA31_232 <= '9') || LA31_232 == '_' || (LA31_232 >= 'a' && LA31_232 <= 'z')) )
-                            {
-                                alt31 = 79;
-                            }
-                            else 
-                            {
-                                alt31 = 37;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            	default:
-                	alt31 = 79;
-                	break;}
-        
-            }
-            break;
-        case 'n':
-        	{
-            switch ( input.LA(2) ) 
-            {
-            case '\'':
-            	{
-                alt31 = 83;
-                }
-                break;
-            case 'o':
-            	{
-                int LA31_74 = input.LA(3);
-                
-                if ( (LA31_74 == 't') )
-                {
-                    int LA31_135 = input.LA(4);
-                    
-                    if ( ((LA31_135 >= '0' && LA31_135 <= '9') || LA31_135 == '_' || (LA31_135 >= 'a' && LA31_135 <= 'z')) )
-                    {
-                        alt31 = 79;
-                    }
-                    else 
-                    {
-                        alt31 = 38;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            case 'u':
-            	{
-                int LA31_75 = input.LA(3);
-                
-                if ( (LA31_75 == 'l') )
-                {
-                    int LA31_136 = input.LA(4);
-                    
-                    if ( (LA31_136 == 'l') )
-                    {
-                        int LA31_189 = input.LA(5);
-                        
-                        if ( ((LA31_189 >= '0' && LA31_189 <= '9') || LA31_189 == '_' || (LA31_189 >= 'a' && LA31_189 <= 'z')) )
-                        {
-                            alt31 = 79;
-                        }
-                        else 
-                        {
-                            alt31 = 39;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            	default:
-                	alt31 = 79;
-                	break;}
-        
-            }
-            break;
-        case 'o':
-        	{
-            switch ( input.LA(2) ) 
-            {
-            case 'r':
-            	{
-                switch ( input.LA(3) ) 
-                {
-                case 'd':
-                	{
-                    int LA31_137 = input.LA(4);
-                    
-                    if ( (LA31_137 == 'e') )
-                    {
-                        int LA31_190 = input.LA(5);
-                        
-                        if ( (LA31_190 == 'r') )
-                        {
-                            int LA31_234 = input.LA(6);
-                            
-                            if ( ((LA31_234 >= '0' && LA31_234 <= '9') || LA31_234 == '_' || (LA31_234 >= 'a' && LA31_234 <= 'z')) )
-                            {
-                                alt31 = 79;
-                            }
-                            else 
-                            {
-                                alt31 = 42;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                    }
-                    break;
-                case '0':
-                case '1':
-                case '2':
-                case '3':
-                case '4':
-                case '5':
-                case '6':
-                case '7':
-                case '8':
-                case '9':
-                case '_':
-                case 'a':
-                case 'b':
-                case 'c':
-                case 'e':
-                case 'f':
-                case 'g':
-                case 'h':
-                case 'i':
-                case 'j':
-                case 'k':
-                case 'l':
-                case 'm':
-                case 'n':
-                case 'o':
-                case 'p':
-                case 'q':
-                case 'r':
-                case 's':
-                case 't':
-                case 'u':
-                case 'v':
-                case 'w':
-                case 'x':
-                case 'y':
-                case 'z':
-                	{
-                    alt31 = 79;
-                    }
-                    break;
-                	default:
-                    	alt31 = 41;
-                    	break;}
-            
-                }
-                break;
-            case 'u':
-            	{
-                int LA31_77 = input.LA(3);
-                
-                if ( (LA31_77 == 't') )
-                {
-                    int LA31_139 = input.LA(4);
-                    
-                    if ( (LA31_139 == 'e') )
-                    {
-                        int LA31_191 = input.LA(5);
-                        
-                        if ( (LA31_191 == 'r') )
-                        {
-                            int LA31_235 = input.LA(6);
-                            
-                            if ( ((LA31_235 >= '0' && LA31_235 <= '9') || LA31_235 == '_' || (LA31_235 >= 'a' && LA31_235 <= 'z')) )
-                            {
-                                alt31 = 79;
-                            }
-                            else 
-                            {
-                                alt31 = 43;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            case 'n':
-            	{
-                int LA31_78 = input.LA(3);
-                
-                if ( ((LA31_78 >= '0' && LA31_78 <= '9') || LA31_78 == '_' || (LA31_78 >= 'a' && LA31_78 <= 'z')) )
-                {
-                    alt31 = 79;
-                }
-                else 
-                {
-                    alt31 = 40;}
-                }
-                break;
-            	default:
-                	alt31 = 79;
-                	break;}
-        
-            }
-            break;
-        case 'r':
-        	{
-            int LA31_15 = input.LA(2);
-            
-            if ( (LA31_15 == 'i') )
-            {
-                int LA31_79 = input.LA(3);
-                
-                if ( (LA31_79 == 'g') )
-                {
-                    int LA31_141 = input.LA(4);
-                    
-                    if ( (LA31_141 == 'h') )
-                    {
-                        int LA31_192 = input.LA(5);
-                        
-                        if ( (LA31_192 == 't') )
-                        {
-                            int LA31_236 = input.LA(6);
-                            
-                            if ( ((LA31_236 >= '0' && LA31_236 <= '9') || LA31_236 == '_' || (LA31_236 >= 'a' && LA31_236 <= 'z')) )
-                            {
-                                alt31 = 79;
-                            }
-                            else 
-                            {
-                                alt31 = 44;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-            }
-            else 
-            {
-                alt31 = 79;}
-            }
-            break;
-        case 's':
-        	{
-            switch ( input.LA(2) ) 
-            {
-            case 'e':
-            	{
-                switch ( input.LA(3) ) 
-                {
-                case 't':
-                	{
-                    int LA31_142 = input.LA(4);
-                    
-                    if ( ((LA31_142 >= '0' && LA31_142 <= '9') || LA31_142 == '_' || (LA31_142 >= 'a' && LA31_142 <= 'z')) )
-                    {
-                        alt31 = 79;
-                    }
-                    else 
-                    {
-                        alt31 = 47;}
-                    }
-                    break;
-                case 'l':
-                	{
-                    int LA31_143 = input.LA(4);
-                    
-                    if ( (LA31_143 == 'e') )
-                    {
-                        int LA31_194 = input.LA(5);
-                        
-                        if ( (LA31_194 == 'c') )
-                        {
-                            int LA31_237 = input.LA(6);
-                            
-                            if ( (LA31_237 == 't') )
-                            {
-                                int LA31_267 = input.LA(7);
-                                
-                                if ( ((LA31_267 >= '0' && LA31_267 <= '9') || LA31_267 == '_' || (LA31_267 >= 'a' && LA31_267 <= 'z')) )
-                                {
-                                    alt31 = 79;
-                                }
-                                else 
-                                {
-                                    alt31 = 46;}
-                            }
-                            else 
-                            {
-                                alt31 = 79;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                    }
-                    break;
-                case 'c':
-                	{
-                    int LA31_144 = input.LA(4);
-                    
-                    if ( (LA31_144 == 'o') )
-                    {
-                        int LA31_195 = input.LA(5);
-                        
-                        if ( (LA31_195 == 'n') )
-                        {
-                            int LA31_238 = input.LA(6);
-                            
-                            if ( (LA31_238 == 'd') )
-                            {
-                                int LA31_268 = input.LA(7);
-                                
-                                if ( ((LA31_268 >= '0' && LA31_268 <= '9') || LA31_268 == '_' || (LA31_268 >= 'a' && LA31_268 <= 'z')) )
-                                {
-                                    alt31 = 79;
-                                }
-                                else 
-                                {
-                                    alt31 = 45;}
-                            }
-                            else 
-                            {
-                                alt31 = 79;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                    }
-                    break;
-                	default:
-                    	alt31 = 79;
-                    	break;}
-            
-                }
-                break;
-            case 'u':
-            	{
-                int LA31_81 = input.LA(3);
-                
-                if ( (LA31_81 == 'b') )
-                {
-                    int LA31_145 = input.LA(4);
-                    
-                    if ( (LA31_145 == 's') )
-                    {
-                        int LA31_196 = input.LA(5);
-                        
-                        if ( (LA31_196 == 't') )
-                        {
-                            int LA31_239 = input.LA(6);
-                            
-                            if ( (LA31_239 == 'r') )
-                            {
-                                int LA31_269 = input.LA(7);
-                                
-                                if ( (LA31_269 == 'i') )
-                                {
-                                    int LA31_287 = input.LA(8);
-                                    
-                                    if ( (LA31_287 == 'n') )
-                                    {
-                                        int LA31_295 = input.LA(9);
-                                        
-                                        if ( (LA31_295 == 'g') )
-                                        {
-                                            int LA31_298 = input.LA(10);
-                                            
-                                            if ( ((LA31_298 >= '0' && LA31_298 <= '9') || LA31_298 == '_' || (LA31_298 >= 'a' && LA31_298 <= 'z')) )
-                                            {
-                                                alt31 = 79;
-                                            }
-                                            else 
-                                            {
-                                                alt31 = 49;}
-                                        }
-                                        else 
-                                        {
-                                            alt31 = 79;}
-                                    }
-                                    else 
-                                    {
-                                        alt31 = 79;}
-                                }
-                                else 
-                                {
-                                    alt31 = 79;}
-                            }
-                            else 
-                            {
-                                alt31 = 79;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            case 'o':
-            	{
-                int LA31_82 = input.LA(3);
-                
-                if ( (LA31_82 == 'm') )
-                {
-                    int LA31_146 = input.LA(4);
-                    
-                    if ( (LA31_146 == 'e') )
-                    {
-                        int LA31_197 = input.LA(5);
-                        
-                        if ( ((LA31_197 >= '0' && LA31_197 <= '9') || LA31_197 == '_' || (LA31_197 >= 'a' && LA31_197 <= 'z')) )
-                        {
-                            alt31 = 79;
-                        }
-                        else 
-                        {
-                            alt31 = 48;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            	default:
-                	alt31 = 79;
-                	break;}
-        
-            }
-            break;
-        case 't':
-        	{
-            switch ( input.LA(2) ) 
-            {
-            case 'h':
-            	{
-                int LA31_83 = input.LA(3);
-                
-                if ( (LA31_83 == 'e') )
-                {
-                    int LA31_147 = input.LA(4);
-                    
-                    if ( (LA31_147 == 'n') )
-                    {
-                        int LA31_198 = input.LA(5);
-                        
-                        if ( ((LA31_198 >= '0' && LA31_198 <= '9') || LA31_198 == '_' || (LA31_198 >= 'a' && LA31_198 <= 'z')) )
-                        {
-                            alt31 = 79;
-                        }
-                        else 
-                        {
-                            alt31 = 50;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            case 'o':
-            	{
-                int LA31_84 = input.LA(3);
-                
-                if ( (LA31_84 == 'p') )
-                {
-                    int LA31_148 = input.LA(4);
-                    
-                    if ( ((LA31_148 >= '0' && LA31_148 <= '9') || LA31_148 == '_' || (LA31_148 >= 'a' && LA31_148 <= 'z')) )
-                    {
-                        alt31 = 79;
-                    }
-                    else 
-                    {
-                        alt31 = 51;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            	default:
-                	alt31 = 79;
-                	break;}
-        
-            }
-            break;
-        case 'u':
-        	{
-            switch ( input.LA(2) ) 
-            {
-            case 'p':
-            	{
-                int LA31_85 = input.LA(3);
-                
-                if ( (LA31_85 == 'd') )
-                {
-                    int LA31_149 = input.LA(4);
-                    
-                    if ( (LA31_149 == 'a') )
-                    {
-                        int LA31_200 = input.LA(5);
-                        
-                        if ( (LA31_200 == 't') )
-                        {
-                            int LA31_242 = input.LA(6);
-                            
-                            if ( (LA31_242 == 'e') )
-                            {
-                                int LA31_270 = input.LA(7);
-                                
-                                if ( ((LA31_270 >= '0' && LA31_270 <= '9') || LA31_270 == '_' || (LA31_270 >= 'a' && LA31_270 <= 'z')) )
-                                {
-                                    alt31 = 79;
-                                }
-                                else 
-                                {
-                                    alt31 = 53;}
-                            }
-                            else 
-                            {
-                                alt31 = 79;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            case 'n':
-            	{
-                int LA31_86 = input.LA(3);
-                
-                if ( (LA31_86 == 'i') )
-                {
-                    int LA31_150 = input.LA(4);
-                    
-                    if ( (LA31_150 == 'o') )
-                    {
-                        int LA31_201 = input.LA(5);
-                        
-                        if ( (LA31_201 == 'n') )
-                        {
-                            int LA31_243 = input.LA(6);
-                            
-                            if ( ((LA31_243 >= '0' && LA31_243 <= '9') || LA31_243 == '_' || (LA31_243 >= 'a' && LA31_243 <= 'z')) )
-                            {
-                                alt31 = 79;
-                            }
-                            else 
-                            {
-                                alt31 = 52;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-                }
-                break;
-            	default:
-                	alt31 = 79;
-                	break;}
-        
-            }
-            break;
-        case 'v':
-        	{
-            int LA31_19 = input.LA(2);
-            
-            if ( (LA31_19 == 'a') )
-            {
-                int LA31_87 = input.LA(3);
-                
-                if ( (LA31_87 == 'l') )
-                {
-                    int LA31_151 = input.LA(4);
-                    
-                    if ( (LA31_151 == 'u') )
-                    {
-                        int LA31_202 = input.LA(5);
-                        
-                        if ( (LA31_202 == 'e') )
-                        {
-                            int LA31_244 = input.LA(6);
-                            
-                            if ( (LA31_244 == 's') )
-                            {
-                                int LA31_272 = input.LA(7);
-                                
-                                if ( ((LA31_272 >= '0' && LA31_272 <= '9') || LA31_272 == '_' || (LA31_272 >= 'a' && LA31_272 <= 'z')) )
-                                {
-                                    alt31 = 79;
-                                }
-                                else 
-                                {
-                                    alt31 = 54;}
-                            }
-                            else 
-                            {
-                                alt31 = 79;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-            }
-            else 
-            {
-                alt31 = 79;}
-            }
-            break;
-        case 'w':
-        	{
-            int LA31_20 = input.LA(2);
-            
-            if ( (LA31_20 == 'h') )
-            {
-                int LA31_88 = input.LA(3);
-                
-                if ( (LA31_88 == 'e') )
-                {
-                    switch ( input.LA(4) ) 
-                    {
-                    case 'n':
-                    	{
-                        int LA31_203 = input.LA(5);
-                        
-                        if ( ((LA31_203 >= '0' && LA31_203 <= '9') || LA31_203 == '_' || (LA31_203 >= 'a' && LA31_203 <= 'z')) )
-                        {
-                            alt31 = 79;
-                        }
-                        else 
-                        {
-                            alt31 = 55;}
-                        }
-                        break;
-                    case 'r':
-                    	{
-                        int LA31_204 = input.LA(5);
-                        
-                        if ( (LA31_204 == 'e') )
-                        {
-                            int LA31_246 = input.LA(6);
-                            
-                            if ( ((LA31_246 >= '0' && LA31_246 <= '9') || LA31_246 == '_' || (LA31_246 >= 'a' && LA31_246 <= 'z')) )
-                            {
-                                alt31 = 79;
-                            }
-                            else 
-                            {
-                                alt31 = 56;}
-                        }
-                        else 
-                        {
-                            alt31 = 79;}
-                        }
-                        break;
-                    	default:
-                        	alt31 = 79;
-                        	break;}
-                
-                }
-                else 
-                {
-                    alt31 = 79;}
-            }
-            else 
-            {
-                alt31 = 79;}
-            }
-            break;
-        case 'y':
-        	{
-            int LA31_21 = input.LA(2);
-            
-            if ( (LA31_21 == 'e') )
-            {
-                int LA31_89 = input.LA(3);
-                
-                if ( (LA31_89 == 'a') )
-                {
-                    int LA31_153 = input.LA(4);
-                    
-                    if ( (LA31_153 == 'r') )
-                    {
-                        int LA31_205 = input.LA(5);
-                        
-                        if ( ((LA31_205 >= '0' && LA31_205 <= '9') || LA31_205 == '_' || (LA31_205 >= 'a' && LA31_205 <= 'z')) )
-                        {
-                            alt31 = 79;
-                        }
-                        else 
-                        {
-                            alt31 = 57;}
-                    }
-                    else 
-                    {
-                        alt31 = 79;}
-                }
-                else 
-                {
-                    alt31 = 79;}
-            }
-            else 
-            {
-                alt31 = 79;}
-            }
-            break;
-        case '.':
-        	{
-            switch ( input.LA(2) ) 
-            {
-            case '*':
-            	{
-                alt31 = 58;
-                }
-                break;
-            case '0':
-            case '1':
-            case '2':
-            case '3':
-            case '4':
-            case '5':
-            case '6':
-            case '7':
-            case '8':
-            case '9':
-            	{
-                alt31 = 78;
-                }
-                break;
-            	default:
-                	alt31 = 59;
-                	break;}
-        
-            }
-            break;
-        case ',':
-        	{
-            alt31 = 60;
-            }
-            break;
-        case '(':
-        	{
-            alt31 = 61;
-            }
-            break;
-        case ')':
-        	{
-            alt31 = 62;
-            }
-            break;
-        case '=':
-        	{
-            alt31 = 63;
-            }
-            break;
-        case '<':
-        	{
-            switch ( input.LA(2) ) 
-            {
-            case '=':
-            	{
-                alt31 = 66;
-                }
-                break;
-            case '>':
-            	{
-                alt31 = 64;
-                }
-                break;
-            	default:
-                	alt31 = 67;
-                	break;}
-        
-            }
-            break;
-        case '!':
-        	{
-            alt31 = 65;
-            }
-            break;
-        case '>':
-        	{
-            int LA31_29 = input.LA(2);
-            
-            if ( (LA31_29 == '=') )
-            {
-                alt31 = 68;
-            }
-            else 
-            {
-                alt31 = 69;}
-            }
-            break;
-        case '/':
-        	{
-            alt31 = 70;
-            }
-            break;
-        case '+':
-        	{
-            alt31 = 71;
-            }
-            break;
-        case '*':
-        	{
-            alt31 = 72;
-            }
-            break;
-        case '%':
-        	{
-            alt31 = 73;
-            }
-            break;
-        case '|':
-        	{
-            alt31 = 74;
-            }
-            break;
-        case '?':
-        	{
-            alt31 = 75;
-            }
-            break;
-        case '#':
-        	{
-            alt31 = 76;
-            }
-            break;
-        case '0':
-        	{
-            int LA31_37 = input.LA(2);
-            
-            if ( ((LA31_37 >= '0' && LA31_37 <= '9')) )
-            {
-                int LA31_98 = input.LA(3);
-                
-                if ( ((LA31_98 >= '0' && LA31_98 <= '9')) )
-                {
-                    int LA31_154 = input.LA(4);
-                    
-                    if ( ((LA31_154 >= '0' && LA31_154 <= '9')) )
-                    {
-                        int LA31_206 = input.LA(5);
-                        
-                        if ( (LA31_206 == '-') )
-                        {
-                            alt31 = 77;
-                        }
-                        else 
-                        {
-                            alt31 = 78;}
-                    }
-                    else 
-                    {
-                        alt31 = 78;}
-                }
-                else 
-                {
-                    alt31 = 78;}
-            }
-            else 
-            {
-                alt31 = 78;}
-            }
-            break;
-        case '1':
-        case '2':
-        case '3':
-        case '4':
-        case '5':
-        case '6':
-        case '7':
-        case '8':
-        case '9':
-        	{
-            int LA31_38 = input.LA(2);
-            
-            if ( ((LA31_38 >= '0' && LA31_38 <= '9')) )
-            {
-                int LA31_98 = input.LA(3);
-                
-                if ( ((LA31_98 >= '0' && LA31_98 <= '9')) )
-                {
-                    int LA31_154 = input.LA(4);
-                    
-                    if ( ((LA31_154 >= '0' && LA31_154 <= '9')) )
-                    {
-                        int LA31_206 = input.LA(5);
-                        
-                        if ( (LA31_206 == '-') )
-                        {
-                            alt31 = 77;
-                        }
-                        else 
-                        {
-                            alt31 = 78;}
-                    }
-                    else 
-                    {
-                        alt31 = 78;}
-                }
-                else 
-                {
-                    alt31 = 78;}
-            }
-            else 
-            {
-                alt31 = 78;}
-            }
-            break;
-        case 'k':
-        case 'p':
-        case 'q':
-        case 'x':
-        case 'z':
-        	{
-            alt31 = 79;
-            }
-            break;
-        case '\"':
-        case '[':
-        case '`':
-        	{
-            alt31 = 80;
-            }
-            break;
-        case ':':
-        	{
-            int LA31_41 = input.LA(2);
-            
-            if ( ((LA31_41 >= 'a' && LA31_41 <= 'z')) )
-            {
-                alt31 = 81;
-            }
-            else 
-            {
-                alt31 = 85;}
-            }
-            break;
-        case '\'':
-        	{
-            alt31 = 82;
-            }
-            break;
-        case '-':
-        	{
-            alt31 = 84;
-            }
-            break;
-        case '@':
-        	{
-            alt31 = 81;
-            }
-            break;
-        case '\t':
-        case '\n':
-        case '\r':
-        case ' ':
-        	{
-            alt31 = 86;
-            }
-            break;
-        	default:
-        	    if ( backtracking > 0 ) {failed = true; return ;}
-        	    NoViableAltException nvae_d31s0 =
-        	        new NoViableAltException("1:1: Tokens : ( ALL | AND | ANY | AS | ASC | BETWEEN | BY | CASE | CAST | CROSS | DAY | DEFAULT | DELETE | DESC | DISTINCT | ELSE | END | ESCAPE | EXISTS | EXTRACT | FOR | FROM | FULL | GROUP | HAVING | HOUR | IN | INNER | INSERT | INTERVAL | INTO | IS | JOIN | LEFT | LIKE | MINUTE | MONTH | NOT | NULL | ON | OR | ORDER | OUTER | RIGHT | SECOND | SELECT | SET | SOME | SUBSTRING | THEN | TOP | UNION | UPDATE | VALUES | WHEN | WHERE | YEAR | DOT_STAR | DOT | COMMA | LPAREN | RPAREN | ASSIGNEQUAL | NOTEQUAL1 | NOTEQUAL2 | LESSTHANOREQUALTO1 | LESSTHAN | GREATERTHANOREQUALTO1 | GREATERTHAN | DIVIDE | PLUS | STAR | MOD | STRCONCAT | PLACEHOLDER | MAccessDateTime | Iso8601DateTime | Number | NonQuotedIdentifier | QuotedIdentifier | Variable | AsciiStringLiteral | UnicodeStringLiteral | MINUS | COLON | Whitespace );", 31, 0, input);
-        
-        	    throw nvae_d31s0;
-        }
-        
+        alt31 = dfa31.Predict(input);
         switch (alt31) 
         {
             case 1 :
                 // MacroScope\\MacroScope.g:1:10: ALL
                 {
-                	mALL(); if (failed) return ;
-                
+                	mALL(); if (state.failed) return ;
+
                 }
                 break;
             case 2 :
                 // MacroScope\\MacroScope.g:1:14: AND
                 {
-                	mAND(); if (failed) return ;
-                
+                	mAND(); if (state.failed) return ;
+
                 }
                 break;
             case 3 :
                 // MacroScope\\MacroScope.g:1:18: ANY
                 {
-                	mANY(); if (failed) return ;
-                
+                	mANY(); if (state.failed) return ;
+
                 }
                 break;
             case 4 :
                 // MacroScope\\MacroScope.g:1:22: AS
                 {
-                	mAS(); if (failed) return ;
-                
+                	mAS(); if (state.failed) return ;
+
                 }
                 break;
             case 5 :
                 // MacroScope\\MacroScope.g:1:25: ASC
                 {
-                	mASC(); if (failed) return ;
-                
+                	mASC(); if (state.failed) return ;
+
                 }
                 break;
             case 6 :
                 // MacroScope\\MacroScope.g:1:29: BETWEEN
                 {
-                	mBETWEEN(); if (failed) return ;
-                
+                	mBETWEEN(); if (state.failed) return ;
+
                 }
                 break;
             case 7 :
                 // MacroScope\\MacroScope.g:1:37: BY
                 {
-                	mBY(); if (failed) return ;
-                
+                	mBY(); if (state.failed) return ;
+
                 }
                 break;
             case 8 :
                 // MacroScope\\MacroScope.g:1:40: CASE
                 {
-                	mCASE(); if (failed) return ;
-                
+                	mCASE(); if (state.failed) return ;
+
                 }
                 break;
             case 9 :
                 // MacroScope\\MacroScope.g:1:45: CAST
                 {
-                	mCAST(); if (failed) return ;
-                
+                	mCAST(); if (state.failed) return ;
+
                 }
                 break;
             case 10 :
                 // MacroScope\\MacroScope.g:1:50: CROSS
                 {
-                	mCROSS(); if (failed) return ;
-                
+                	mCROSS(); if (state.failed) return ;
+
                 }
                 break;
             case 11 :
                 // MacroScope\\MacroScope.g:1:56: DAY
                 {
-                	mDAY(); if (failed) return ;
-                
+                	mDAY(); if (state.failed) return ;
+
                 }
                 break;
             case 12 :
                 // MacroScope\\MacroScope.g:1:60: DEFAULT
                 {
-                	mDEFAULT(); if (failed) return ;
-                
+                	mDEFAULT(); if (state.failed) return ;
+
                 }
                 break;
             case 13 :
                 // MacroScope\\MacroScope.g:1:68: DELETE
                 {
-                	mDELETE(); if (failed) return ;
-                
+                	mDELETE(); if (state.failed) return ;
+
                 }
                 break;
             case 14 :
                 // MacroScope\\MacroScope.g:1:75: DESC
                 {
-                	mDESC(); if (failed) return ;
-                
+                	mDESC(); if (state.failed) return ;
+
                 }
                 break;
             case 15 :
                 // MacroScope\\MacroScope.g:1:80: DISTINCT
                 {
-                	mDISTINCT(); if (failed) return ;
-                
+                	mDISTINCT(); if (state.failed) return ;
+
                 }
                 break;
             case 16 :
                 // MacroScope\\MacroScope.g:1:89: ELSE
                 {
-                	mELSE(); if (failed) return ;
-                
+                	mELSE(); if (state.failed) return ;
+
                 }
                 break;
             case 17 :
                 // MacroScope\\MacroScope.g:1:94: END
                 {
-                	mEND(); if (failed) return ;
-                
+                	mEND(); if (state.failed) return ;
+
                 }
                 break;
             case 18 :
                 // MacroScope\\MacroScope.g:1:98: ESCAPE
                 {
-                	mESCAPE(); if (failed) return ;
-                
+                	mESCAPE(); if (state.failed) return ;
+
                 }
                 break;
             case 19 :
                 // MacroScope\\MacroScope.g:1:105: EXISTS
                 {
-                	mEXISTS(); if (failed) return ;
-                
+                	mEXISTS(); if (state.failed) return ;
+
                 }
                 break;
             case 20 :
                 // MacroScope\\MacroScope.g:1:112: EXTRACT
                 {
-                	mEXTRACT(); if (failed) return ;
-                
+                	mEXTRACT(); if (state.failed) return ;
+
                 }
                 break;
             case 21 :
                 // MacroScope\\MacroScope.g:1:120: FOR
                 {
-                	mFOR(); if (failed) return ;
-                
+                	mFOR(); if (state.failed) return ;
+
                 }
                 break;
             case 22 :
                 // MacroScope\\MacroScope.g:1:124: FROM
                 {
-                	mFROM(); if (failed) return ;
-                
+                	mFROM(); if (state.failed) return ;
+
                 }
                 break;
             case 23 :
                 // MacroScope\\MacroScope.g:1:129: FULL
                 {
-                	mFULL(); if (failed) return ;
-                
+                	mFULL(); if (state.failed) return ;
+
                 }
                 break;
             case 24 :
                 // MacroScope\\MacroScope.g:1:134: GROUP
                 {
-                	mGROUP(); if (failed) return ;
-                
+                	mGROUP(); if (state.failed) return ;
+
                 }
                 break;
             case 25 :
                 // MacroScope\\MacroScope.g:1:140: HAVING
                 {
-                	mHAVING(); if (failed) return ;
-                
+                	mHAVING(); if (state.failed) return ;
+
                 }
                 break;
             case 26 :
                 // MacroScope\\MacroScope.g:1:147: HOUR
                 {
-                	mHOUR(); if (failed) return ;
-                
+                	mHOUR(); if (state.failed) return ;
+
                 }
                 break;
             case 27 :
                 // MacroScope\\MacroScope.g:1:152: IN
                 {
-                	mIN(); if (failed) return ;
-                
+                	mIN(); if (state.failed) return ;
+
                 }
                 break;
             case 28 :
                 // MacroScope\\MacroScope.g:1:155: INNER
                 {
-                	mINNER(); if (failed) return ;
-                
+                	mINNER(); if (state.failed) return ;
+
                 }
                 break;
             case 29 :
                 // MacroScope\\MacroScope.g:1:161: INSERT
                 {
-                	mINSERT(); if (failed) return ;
-                
+                	mINSERT(); if (state.failed) return ;
+
                 }
                 break;
             case 30 :
                 // MacroScope\\MacroScope.g:1:168: INTERVAL
                 {
-                	mINTERVAL(); if (failed) return ;
-                
+                	mINTERVAL(); if (state.failed) return ;
+
                 }
                 break;
             case 31 :
                 // MacroScope\\MacroScope.g:1:177: INTO
                 {
-                	mINTO(); if (failed) return ;
-                
+                	mINTO(); if (state.failed) return ;
+
                 }
                 break;
             case 32 :
                 // MacroScope\\MacroScope.g:1:182: IS
                 {
-                	mIS(); if (failed) return ;
-                
+                	mIS(); if (state.failed) return ;
+
                 }
                 break;
             case 33 :
                 // MacroScope\\MacroScope.g:1:185: JOIN
                 {
-                	mJOIN(); if (failed) return ;
-                
+                	mJOIN(); if (state.failed) return ;
+
                 }
                 break;
             case 34 :
                 // MacroScope\\MacroScope.g:1:190: LEFT
                 {
-                	mLEFT(); if (failed) return ;
-                
+                	mLEFT(); if (state.failed) return ;
+
                 }
                 break;
             case 35 :
                 // MacroScope\\MacroScope.g:1:195: LIKE
                 {
-                	mLIKE(); if (failed) return ;
-                
+                	mLIKE(); if (state.failed) return ;
+
                 }
                 break;
             case 36 :
                 // MacroScope\\MacroScope.g:1:200: MINUTE
                 {
-                	mMINUTE(); if (failed) return ;
-                
+                	mMINUTE(); if (state.failed) return ;
+
                 }
                 break;
             case 37 :
                 // MacroScope\\MacroScope.g:1:207: MONTH
                 {
-                	mMONTH(); if (failed) return ;
-                
+                	mMONTH(); if (state.failed) return ;
+
                 }
                 break;
             case 38 :
                 // MacroScope\\MacroScope.g:1:213: NOT
                 {
-                	mNOT(); if (failed) return ;
-                
+                	mNOT(); if (state.failed) return ;
+
                 }
                 break;
             case 39 :
                 // MacroScope\\MacroScope.g:1:217: NULL
                 {
-                	mNULL(); if (failed) return ;
-                
+                	mNULL(); if (state.failed) return ;
+
                 }
                 break;
             case 40 :
                 // MacroScope\\MacroScope.g:1:222: ON
                 {
-                	mON(); if (failed) return ;
-                
+                	mON(); if (state.failed) return ;
+
                 }
                 break;
             case 41 :
                 // MacroScope\\MacroScope.g:1:225: OR
                 {
-                	mOR(); if (failed) return ;
-                
+                	mOR(); if (state.failed) return ;
+
                 }
                 break;
             case 42 :
                 // MacroScope\\MacroScope.g:1:228: ORDER
                 {
-                	mORDER(); if (failed) return ;
-                
+                	mORDER(); if (state.failed) return ;
+
                 }
                 break;
             case 43 :
                 // MacroScope\\MacroScope.g:1:234: OUTER
                 {
-                	mOUTER(); if (failed) return ;
-                
+                	mOUTER(); if (state.failed) return ;
+
                 }
                 break;
             case 44 :
                 // MacroScope\\MacroScope.g:1:240: RIGHT
                 {
-                	mRIGHT(); if (failed) return ;
-                
+                	mRIGHT(); if (state.failed) return ;
+
                 }
                 break;
             case 45 :
                 // MacroScope\\MacroScope.g:1:246: SECOND
                 {
-                	mSECOND(); if (failed) return ;
-                
+                	mSECOND(); if (state.failed) return ;
+
                 }
                 break;
             case 46 :
                 // MacroScope\\MacroScope.g:1:253: SELECT
                 {
-                	mSELECT(); if (failed) return ;
-                
+                	mSELECT(); if (state.failed) return ;
+
                 }
                 break;
             case 47 :
                 // MacroScope\\MacroScope.g:1:260: SET
                 {
-                	mSET(); if (failed) return ;
-                
+                	mSET(); if (state.failed) return ;
+
                 }
                 break;
             case 48 :
                 // MacroScope\\MacroScope.g:1:264: SOME
                 {
-                	mSOME(); if (failed) return ;
-                
+                	mSOME(); if (state.failed) return ;
+
                 }
                 break;
             case 49 :
                 // MacroScope\\MacroScope.g:1:269: SUBSTRING
                 {
-                	mSUBSTRING(); if (failed) return ;
-                
+                	mSUBSTRING(); if (state.failed) return ;
+
                 }
                 break;
             case 50 :
                 // MacroScope\\MacroScope.g:1:279: THEN
                 {
-                	mTHEN(); if (failed) return ;
-                
+                	mTHEN(); if (state.failed) return ;
+
                 }
                 break;
             case 51 :
                 // MacroScope\\MacroScope.g:1:284: TOP
                 {
-                	mTOP(); if (failed) return ;
-                
+                	mTOP(); if (state.failed) return ;
+
                 }
                 break;
             case 52 :
                 // MacroScope\\MacroScope.g:1:288: UNION
                 {
-                	mUNION(); if (failed) return ;
-                
+                	mUNION(); if (state.failed) return ;
+
                 }
                 break;
             case 53 :
                 // MacroScope\\MacroScope.g:1:294: UPDATE
                 {
-                	mUPDATE(); if (failed) return ;
-                
+                	mUPDATE(); if (state.failed) return ;
+
                 }
                 break;
             case 54 :
                 // MacroScope\\MacroScope.g:1:301: VALUES
                 {
-                	mVALUES(); if (failed) return ;
-                
+                	mVALUES(); if (state.failed) return ;
+
                 }
                 break;
             case 55 :
                 // MacroScope\\MacroScope.g:1:308: WHEN
                 {
-                	mWHEN(); if (failed) return ;
-                
+                	mWHEN(); if (state.failed) return ;
+
                 }
                 break;
             case 56 :
                 // MacroScope\\MacroScope.g:1:313: WHERE
                 {
-                	mWHERE(); if (failed) return ;
-                
+                	mWHERE(); if (state.failed) return ;
+
                 }
                 break;
             case 57 :
                 // MacroScope\\MacroScope.g:1:319: YEAR
                 {
-                	mYEAR(); if (failed) return ;
-                
+                	mYEAR(); if (state.failed) return ;
+
                 }
                 break;
             case 58 :
                 // MacroScope\\MacroScope.g:1:324: DOT_STAR
                 {
-                	mDOT_STAR(); if (failed) return ;
-                
+                	mDOT_STAR(); if (state.failed) return ;
+
                 }
                 break;
             case 59 :
                 // MacroScope\\MacroScope.g:1:333: DOT
                 {
-                	mDOT(); if (failed) return ;
-                
+                	mDOT(); if (state.failed) return ;
+
                 }
                 break;
             case 60 :
                 // MacroScope\\MacroScope.g:1:337: COMMA
                 {
-                	mCOMMA(); if (failed) return ;
-                
+                	mCOMMA(); if (state.failed) return ;
+
                 }
                 break;
             case 61 :
                 // MacroScope\\MacroScope.g:1:343: LPAREN
                 {
-                	mLPAREN(); if (failed) return ;
-                
+                	mLPAREN(); if (state.failed) return ;
+
                 }
                 break;
             case 62 :
                 // MacroScope\\MacroScope.g:1:350: RPAREN
                 {
-                	mRPAREN(); if (failed) return ;
-                
+                	mRPAREN(); if (state.failed) return ;
+
                 }
                 break;
             case 63 :
                 // MacroScope\\MacroScope.g:1:357: ASSIGNEQUAL
                 {
-                	mASSIGNEQUAL(); if (failed) return ;
-                
+                	mASSIGNEQUAL(); if (state.failed) return ;
+
                 }
                 break;
             case 64 :
                 // MacroScope\\MacroScope.g:1:369: NOTEQUAL1
                 {
-                	mNOTEQUAL1(); if (failed) return ;
-                
+                	mNOTEQUAL1(); if (state.failed) return ;
+
                 }
                 break;
             case 65 :
                 // MacroScope\\MacroScope.g:1:379: NOTEQUAL2
                 {
-                	mNOTEQUAL2(); if (failed) return ;
-                
+                	mNOTEQUAL2(); if (state.failed) return ;
+
                 }
                 break;
             case 66 :
                 // MacroScope\\MacroScope.g:1:389: LESSTHANOREQUALTO1
                 {
-                	mLESSTHANOREQUALTO1(); if (failed) return ;
-                
+                	mLESSTHANOREQUALTO1(); if (state.failed) return ;
+
                 }
                 break;
             case 67 :
                 // MacroScope\\MacroScope.g:1:408: LESSTHAN
                 {
-                	mLESSTHAN(); if (failed) return ;
-                
+                	mLESSTHAN(); if (state.failed) return ;
+
                 }
                 break;
             case 68 :
                 // MacroScope\\MacroScope.g:1:417: GREATERTHANOREQUALTO1
                 {
-                	mGREATERTHANOREQUALTO1(); if (failed) return ;
-                
+                	mGREATERTHANOREQUALTO1(); if (state.failed) return ;
+
                 }
                 break;
             case 69 :
                 // MacroScope\\MacroScope.g:1:439: GREATERTHAN
                 {
-                	mGREATERTHAN(); if (failed) return ;
-                
+                	mGREATERTHAN(); if (state.failed) return ;
+
                 }
                 break;
             case 70 :
                 // MacroScope\\MacroScope.g:1:451: DIVIDE
                 {
-                	mDIVIDE(); if (failed) return ;
-                
+                	mDIVIDE(); if (state.failed) return ;
+
                 }
                 break;
             case 71 :
                 // MacroScope\\MacroScope.g:1:458: PLUS
                 {
-                	mPLUS(); if (failed) return ;
-                
+                	mPLUS(); if (state.failed) return ;
+
                 }
                 break;
             case 72 :
                 // MacroScope\\MacroScope.g:1:463: STAR
                 {
-                	mSTAR(); if (failed) return ;
-                
+                	mSTAR(); if (state.failed) return ;
+
                 }
                 break;
             case 73 :
                 // MacroScope\\MacroScope.g:1:468: MOD
                 {
-                	mMOD(); if (failed) return ;
-                
+                	mMOD(); if (state.failed) return ;
+
                 }
                 break;
             case 74 :
                 // MacroScope\\MacroScope.g:1:472: STRCONCAT
                 {
-                	mSTRCONCAT(); if (failed) return ;
-                
+                	mSTRCONCAT(); if (state.failed) return ;
+
                 }
                 break;
             case 75 :
                 // MacroScope\\MacroScope.g:1:482: PLACEHOLDER
                 {
-                	mPLACEHOLDER(); if (failed) return ;
-                
+                	mPLACEHOLDER(); if (state.failed) return ;
+
                 }
                 break;
             case 76 :
                 // MacroScope\\MacroScope.g:1:494: MAccessDateTime
                 {
-                	mMAccessDateTime(); if (failed) return ;
-                
+                	mMAccessDateTime(); if (state.failed) return ;
+
                 }
                 break;
             case 77 :
                 // MacroScope\\MacroScope.g:1:510: Iso8601DateTime
                 {
-                	mIso8601DateTime(); if (failed) return ;
-                
+                	mIso8601DateTime(); if (state.failed) return ;
+
                 }
                 break;
             case 78 :
                 // MacroScope\\MacroScope.g:1:526: Number
                 {
-                	mNumber(); if (failed) return ;
-                
+                	mNumber(); if (state.failed) return ;
+
                 }
                 break;
             case 79 :
                 // MacroScope\\MacroScope.g:1:533: NonQuotedIdentifier
                 {
-                	mNonQuotedIdentifier(); if (failed) return ;
-                
+                	mNonQuotedIdentifier(); if (state.failed) return ;
+
                 }
                 break;
             case 80 :
                 // MacroScope\\MacroScope.g:1:553: QuotedIdentifier
                 {
-                	mQuotedIdentifier(); if (failed) return ;
-                
+                	mQuotedIdentifier(); if (state.failed) return ;
+
                 }
                 break;
             case 81 :
                 // MacroScope\\MacroScope.g:1:570: Variable
                 {
-                	mVariable(); if (failed) return ;
-                
+                	mVariable(); if (state.failed) return ;
+
                 }
                 break;
             case 82 :
                 // MacroScope\\MacroScope.g:1:579: AsciiStringLiteral
                 {
-                	mAsciiStringLiteral(); if (failed) return ;
-                
+                	mAsciiStringLiteral(); if (state.failed) return ;
+
                 }
                 break;
             case 83 :
                 // MacroScope\\MacroScope.g:1:598: UnicodeStringLiteral
                 {
-                	mUnicodeStringLiteral(); if (failed) return ;
-                
+                	mUnicodeStringLiteral(); if (state.failed) return ;
+
                 }
                 break;
             case 84 :
                 // MacroScope\\MacroScope.g:1:619: MINUS
                 {
-                	mMINUS(); if (failed) return ;
-                
+                	mMINUS(); if (state.failed) return ;
+
                 }
                 break;
             case 85 :
                 // MacroScope\\MacroScope.g:1:625: COLON
                 {
-                	mCOLON(); if (failed) return ;
-                
+                	mCOLON(); if (state.failed) return ;
+
                 }
                 break;
             case 86 :
                 // MacroScope\\MacroScope.g:1:631: Whitespace
                 {
-                	mWhitespace(); if (failed) return ;
-                
+                	mWhitespace(); if (state.failed) return ;
+
                 }
                 break;
-        
+
         }
-    
+
     }
 
-    // $ANTLR start synpred1
-    public void synpred1_fragment() //throws RecognitionException
+    // $ANTLR start "synpred1_MacroScope"
+    public void synpred1_MacroScope_fragment() //throws RecognitionException
     {   
         // MacroScope\\MacroScope.g:912:2: ( ( Digit )+ ( '.' | 'e' ) )
         // MacroScope\\MacroScope.g:912:4: ( Digit )+ ( '.' | 'e' )
@@ -6292,133 +4117,118 @@ public class MacroScopeLexer : Lexer
         	{
         	    int alt32 = 2;
         	    int LA32_0 = input.LA(1);
-        	    
+
         	    if ( ((LA32_0 >= '0' && LA32_0 <= '9')) )
         	    {
         	        alt32 = 1;
         	    }
-        	    
-        	
+
+
         	    switch (alt32) 
         		{
         			case 1 :
         			    // MacroScope\\MacroScope.g:912:5: Digit
         			    {
-        			    	mDigit(); if (failed) return ;
-        			    
+        			    	mDigit(); if (state.failed) return ;
+
         			    }
         			    break;
-        	
+
         			default:
         			    if ( cnt32 >= 1 ) goto loop32;
-        			    if ( backtracking > 0 ) {failed = true; return ;}
+        			    if ( state.backtracking > 0 ) {state.failed = true; return ;}
         		            EarlyExitException eee =
         		                new EarlyExitException(32, input);
         		            throw eee;
         	    }
         	    cnt32++;
         	} while (true);
-        	
+
         	loop32:
         		;	// Stops C# compiler whinging that label 'loop32' has no statements
 
         	if ( input.LA(1) == '.' || input.LA(1) == 'e' ) 
         	{
         	    input.Consume();
-        	failed = false;
+        	state.failed = false;
         	}
         	else 
         	{
-        	    if ( backtracking > 0 ) {failed = true; return ;}
-        	    MismatchedSetException mse =
-        	        new MismatchedSetException(null,input);
-        	    Recover(mse);    throw mse;
-        	}
+        	    if ( state.backtracking > 0 ) {state.failed = true; return ;}
+        	    MismatchedSetException mse = new MismatchedSetException(null,input);
+        	    Recover(mse);
+        	    throw mse;}
 
-        
+
         }
     }
-    // $ANTLR end synpred1
+    // $ANTLR end "synpred1_MacroScope"
 
-   	public bool synpred1() 
+   	public bool synpred1_MacroScope() 
    	{
-   	    backtracking++;
+   	    state.backtracking++;
    	    int start = input.Mark();
    	    try 
    	    {
-   	        synpred1_fragment(); // can never throw exception
+   	        synpred1_MacroScope_fragment(); // can never throw exception
    	    }
    	    catch (RecognitionException re) 
    	    {
    	        Console.Error.WriteLine("impossible: "+re);
    	    }
-   	    bool success = !failed;
+   	    bool success = !state.failed;
    	    input.Rewind(start);
-   	    backtracking--;
-   	    failed = false;
+   	    state.backtracking--;
+   	    state.failed = false;
    	    return success;
    	}
 
 
     protected DFA12 dfa12;
+    protected DFA31 dfa31;
 	private void InitializeCyclicDFAs()
 	{
 	    this.dfa12 = new DFA12(this);
+	    this.dfa31 = new DFA31(this);
 	    this.dfa12.specialStateTransitionHandler = new DFA.SpecialStateTransitionHandler(DFA12_SpecialStateTransition);
+
 	}
 
-    static readonly short[] DFA12_eot = {
-        -1, 5, -1, 5, -1, -1, -1, -1
-        };
-    static readonly short[] DFA12_eof = {
-        -1, -1, -1, -1, -1, -1, -1, -1
-        };
-    static readonly int[] DFA12_min = {
-        46, 46, 0, 46, 0, 0, 0, 0
-        };
-    static readonly int[] DFA12_max = {
-        57, 120, 0, 101, 0, 0, 0, 0
-        };
-    static readonly short[] DFA12_accept = {
-        -1, -1, 2, -1, 4, 3, 1, 1
-        };
-    static readonly short[] DFA12_special = {
-        -1, 1, -1, 0, -1, -1, -1, -1
-        };
-    
-    static readonly short[] dfa12_transition_null = null;
+    const string DFA12_eotS =
+        "\x01\uffff\x01\x05\x01\uffff\x01\x05\x04\uffff";
+    const string DFA12_eofS =
+        "\x08\uffff";
+    const string DFA12_minS =
+        "\x02\x2e\x01\uffff\x01\x2e\x04\uffff";
+    const string DFA12_maxS =
+        "\x01\x39\x01\x78\x01\uffff\x01\x65\x04\uffff";
+    const string DFA12_acceptS =
+        "\x02\uffff\x01\x02\x01\uffff\x01\x04\x01\x03\x02\x01";
+    const string DFA12_specialS =
+        "\x01\uffff\x01\x01\x01\uffff\x01\x00\x04\uffff}>";
+    static readonly string[] DFA12_transitionS = {
+            "\x01\x02\x01\uffff\x01\x01\x09\x03",
+            "\x01\x06\x01\uffff\x0a\x03\x2b\uffff\x01\x07\x12\uffff\x01"+
+            "\x04",
+            "",
+            "\x01\x06\x01\uffff\x0a\x03\x2b\uffff\x01\x07",
+            "",
+            "",
+            "",
+            ""
+    };
 
-    static readonly short[] dfa12_transition0 = {
-    	2, -1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3
-    	};
-    static readonly short[] dfa12_transition1 = {
-    	6, -1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, -1, -1, -1, -1, -1, -1, -1, -1, 
-    	    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    	    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    	    -1, -1, -1, 7
-    	};
-    static readonly short[] dfa12_transition2 = {
-    	6, -1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, -1, -1, -1, -1, -1, -1, -1, -1, 
-    	    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    	    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    	    -1, -1, -1, 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
-    	    -1, -1, -1, -1, -1, -1, 4
-    	};
-    
-    static readonly short[][] DFA12_transition = {
-    	dfa12_transition0,
-    	dfa12_transition2,
-    	dfa12_transition_null,
-    	dfa12_transition1,
-    	dfa12_transition_null,
-    	dfa12_transition_null,
-    	dfa12_transition_null,
-    	dfa12_transition_null
-        };
-    
+    static readonly short[] DFA12_eot = DFA.UnpackEncodedString(DFA12_eotS);
+    static readonly short[] DFA12_eof = DFA.UnpackEncodedString(DFA12_eofS);
+    static readonly char[] DFA12_min = DFA.UnpackEncodedStringToUnsignedChars(DFA12_minS);
+    static readonly char[] DFA12_max = DFA.UnpackEncodedStringToUnsignedChars(DFA12_maxS);
+    static readonly short[] DFA12_accept = DFA.UnpackEncodedString(DFA12_acceptS);
+    static readonly short[] DFA12_special = DFA.UnpackEncodedString(DFA12_specialS);
+    static readonly short[][] DFA12_transition = DFA.UnpackEncodedStringArray(DFA12_transitionS);
+
     protected class DFA12 : DFA
     {
-        public DFA12(BaseRecognizer recognizer) 
+        public DFA12(BaseRecognizer recognizer)
         {
             this.recognizer = recognizer;
             this.decisionNumber = 12;
@@ -6426,48 +4236,48 @@ public class MacroScopeLexer : Lexer
             this.eof = DFA12_eof;
             this.min = DFA12_min;
             this.max = DFA12_max;
-            this.accept     = DFA12_accept;
-            this.special    = DFA12_special;
+            this.accept = DFA12_accept;
+            this.special = DFA12_special;
             this.transition = DFA12_transition;
+
         }
-    
+
         override public string Description
         {
             get { return "911:1: Number : ( ( ( Digit )+ ( '.' | 'e' ) )=> ( Digit )+ ( '.' ( Digit )* ( Exponent )? | Exponent ) | '.' ( ( Digit )+ ( Exponent )? )? | ( Digit )+ | '0x' ( 'a' .. 'f' | Digit )* );"; }
         }
-    
+
     }
-    
-    
-    protected internal int DFA12_SpecialStateTransition(DFA dfa, int s, IIntStream input) //throws NoViableAltException
+
+
+    protected internal int DFA12_SpecialStateTransition(DFA dfa, int s, IIntStream _input) //throws NoViableAltException
     {
+            IIntStream input = _input;
     	int _s = s;
         switch ( s )
         {
-
                	case 0 : 
                    	int LA12_3 = input.LA(1);
-                   	
+
                    	 
                    	int index12_3 = input.Index();
                    	input.Rewind();
                    	s = -1;
                    	if ( ((LA12_3 >= '0' && LA12_3 <= '9')) ) { s = 3; }
 
-                   	else if ( (LA12_3 == '.') && (synpred1()) ) { s = 6; }
+                   	else if ( (LA12_3 == '.') && (synpred1_MacroScope()) ) { s = 6; }
 
-                   	else if ( (LA12_3 == 'e') && (synpred1()) ) { s = 7; }
+                   	else if ( (LA12_3 == 'e') && (synpred1_MacroScope()) ) { s = 7; }
 
                    	else s = 5;
-                   	
+
                    	 
                    	input.Seek(index12_3);
                    	if ( s >= 0 ) return s;
                    	break;
-
                	case 1 : 
                    	int LA12_1 = input.LA(1);
-                   	
+
                    	 
                    	int index12_1 = input.Index();
                    	input.Rewind();
@@ -6476,23 +4286,479 @@ public class MacroScopeLexer : Lexer
 
                    	else if ( ((LA12_1 >= '0' && LA12_1 <= '9')) ) { s = 3; }
 
-                   	else if ( (LA12_1 == '.') && (synpred1()) ) { s = 6; }
+                   	else if ( (LA12_1 == '.') && (synpred1_MacroScope()) ) { s = 6; }
 
-                   	else if ( (LA12_1 == 'e') && (synpred1()) ) { s = 7; }
+                   	else if ( (LA12_1 == 'e') && (synpred1_MacroScope()) ) { s = 7; }
 
                    	else s = 5;
-                   	
+
                    	 
                    	input.Seek(index12_1);
                    	if ( s >= 0 ) return s;
                    	break;
         }
-        if (backtracking > 0) {failed = true; return -1;}
+        if (state.backtracking > 0) {state.failed = true; return -1;}
         NoViableAltException nvae =
             new NoViableAltException(dfa.Description, 12, _s, input);
         dfa.Error(nvae);
         throw nvae;
     }
+    const string DFA31_eotS =
+        "\x01\uffff\x15\x27\x01\x5c\x04\uffff\x01\x5f\x01\uffff\x01\x61"+
+        "\x07\uffff\x02\x5b\x02\uffff\x01\x63\x04\uffff\x02\x27\x01\x68\x01"+
+        "\x27\x01\x6a\x0f\x27\x01\u0080\x01\u0081\x07\x27\x01\uffff\x01\u0089"+
+        "\x01\u008b\x0c\x27\x08\uffff\x01\x5b\x01\uffff\x01\u009b\x01\u009c"+
+        "\x01\u009d\x01\u009e\x01\uffff\x01\x27\x01\uffff\x02\x27\x01\u00a3"+
+        "\x05\x27\x01\u00a9\x03\x27\x01\u00ad\x08\x27\x02\uffff\x05\x27\x01"+
+        "\u00bc\x01\x27\x01\uffff\x01\x27\x01\uffff\x04\x27\x01\u00c3\x03"+
+        "\x27\x01\u00c7\x05\x27\x01\x5b\x04\uffff\x01\x27\x01\u00d0\x01\u00d1"+
+        "\x01\x27\x01\uffff\x02\x27\x01\u00d5\x01\x27\x01\u00d7\x01\uffff"+
+        "\x03\x27\x01\uffff\x01\u00db\x01\u00dc\x02\x27\x01\u00df\x03\x27"+
+        "\x01\u00e3\x01\u00e4\x01\u00e5\x01\u00e6\x02\x27\x01\uffff\x01\u00e9"+
+        "\x05\x27\x01\uffff\x01\u00ef\x01\x27\x01\u00f1\x01\uffff\x03\x27"+
+        "\x01\u00f5\x01\x27\x01\u00f7\x01\x5b\x01\x27\x02\uffff\x01\u00fa"+
+        "\x02\x27\x01\uffff\x01\x27\x01\uffff\x03\x27\x02\uffff\x01\u0101"+
+        "\x01\x27\x01\uffff\x01\u0103\x02\x27\x04\uffff\x01\x27\x01\u0107"+
+        "\x01\uffff\x01\u0108\x01\u0109\x01\u010a\x02\x27\x01\uffff\x01\x27"+
+        "\x01\uffff\x01\u010e\x02\x27\x01\uffff\x01\u0111\x02\uffff\x01\x27"+
+        "\x01\uffff\x01\x27\x01\u0114\x01\x27\x01\u0116\x01\u0117\x01\x27"+
+        "\x01\uffff\x01\u0119\x01\uffff\x01\u011a\x01\x27\x01\u011c\x04\uffff"+
+        "\x01\u011d\x01\u011e\x01\x27\x01\uffff\x01\u0120\x01\u0121\x01\uffff"+
+        "\x01\u0122\x01\u0123\x01\uffff\x01\x27\x02\uffff\x01\u0125\x02\uffff"+
+        "\x01\x27\x03\uffff\x01\x27\x04\uffff\x01\u0128\x01\uffff\x01\u0129"+
+        "\x01\x27\x02\uffff\x01\u012b\x01\uffff";
+    const string DFA31_eofS =
+        "\u012c\uffff";
+    const string DFA31_minS =
+        "\x01\x09\x01\x6c\x01\x65\x02\x61\x01\x6c\x01\x6f\x01\x72\x01\x61"+
+        "\x01\x6e\x01\x6f\x01\x65\x01\x69\x01\x27\x01\x6e\x01\x69\x01\x65"+
+        "\x01\x68\x01\x6e\x01\x61\x01\x68\x01\x65\x01\x2a\x04\uffff\x01\x3d"+
+        "\x01\uffff\x01\x3d\x07\uffff\x02\x30\x02\uffff\x01\x61\x04\uffff"+
+        "\x01\x6c\x01\x64\x01\x30\x01\x74\x01\x30\x01\x73\x01\x6f\x01\x79"+
+        "\x01\x66\x02\x73\x01\x64\x01\x63\x01\x69\x01\x72\x01\x6f\x01\x6c"+
+        "\x01\x6f\x01\x76\x01\x75\x02\x30\x01\x69\x01\x66\x01\x6b\x02\x6e"+
+        "\x01\x74\x01\x6c\x01\uffff\x02\x30\x01\x74\x01\x67\x01\x63\x01\x6d"+
+        "\x01\x62\x01\x65\x01\x70\x01\x69\x01\x64\x01\x6c\x01\x65\x01\x61"+
+        "\x08\uffff\x01\x30\x01\uffff\x04\x30\x01\uffff\x01\x77\x01\uffff"+
+        "\x01\x65\x01\x73\x01\x30\x01\x61\x01\x65\x01\x63\x01\x74\x01\x65"+
+        "\x01\x30\x01\x61\x01\x73\x01\x72\x01\x30\x01\x6d\x01\x6c\x01\x75"+
+        "\x01\x69\x01\x72\x03\x65\x02\uffff\x01\x6e\x01\x74\x01\x65\x01\x75"+
+        "\x01\x74\x01\x30\x01\x6c\x01\uffff\x01\x65\x01\uffff\x01\x65\x01"+
+        "\x68\x01\x6f\x01\x65\x01\x30\x01\x65\x01\x73\x01\x6e\x01\x30\x01"+
+        "\x6f\x01\x61\x01\x75\x01\x6e\x01\x72\x01\x30\x04\uffff\x01\x65\x02"+
+        "\x30\x01\x73\x01\uffff\x01\x75\x01\x74\x01\x30\x01\x69\x01\x30\x01"+
+        "\uffff\x01\x70\x01\x74\x01\x61\x01\uffff\x02\x30\x01\x70\x01\x6e"+
+        "\x01\x30\x03\x72\x04\x30\x01\x74\x01\x68\x01\uffff\x01\x30\x02\x72"+
+        "\x01\x74\x01\x6e\x01\x63\x01\uffff\x01\x30\x01\x74\x01\x30\x01\uffff"+
+        "\x01\x6e\x01\x74\x01\x65\x01\x30\x01\x65\x01\x30\x01\x2d\x01\x65"+
+        "\x02\uffff\x01\x30\x01\x6c\x01\x65\x01\uffff\x01\x6e\x01\uffff\x01"+
+        "\x65\x01\x73\x01\x63\x02\uffff\x01\x30\x01\x67\x01\uffff\x01\x30"+
+        "\x01\x74\x01\x76\x04\uffff\x01\x65\x01\x30\x01\uffff\x03\x30\x01"+
+        "\x64\x01\x74\x01\uffff\x01\x72\x01\uffff\x01\x30\x01\x65\x01\x73"+
+        "\x01\uffff\x01\x30\x02\uffff\x01\x6e\x01\uffff\x01\x74\x01\x30\x01"+
+        "\x63\x02\x30\x01\x74\x01\uffff\x01\x30\x01\uffff\x01\x30\x01\x61"+
+        "\x01\x30\x04\uffff\x02\x30\x01\x69\x01\uffff\x02\x30\x01\uffff\x02"+
+        "\x30\x01\uffff\x01\x74\x02\uffff\x01\x30\x02\uffff\x01\x6c\x03\uffff"+
+        "\x01\x6e\x04\uffff\x01\x30\x01\uffff\x01\x30\x01\x67\x02\uffff\x01"+
+        "\x30\x01\uffff";
+    const string DFA31_maxS =
+        "\x01\x7c\x01\x73\x01\x79\x01\x72\x01\x69\x01\x78\x01\x75\x01\x72"+
+        "\x01\x6f\x01\x73\x01\x6f\x01\x69\x01\x6f\x02\x75\x01\x69\x01\x75"+
+        "\x01\x6f\x01\x70\x01\x61\x01\x68\x01\x65\x01\x39\x04\uffff\x01\x3e"+
+        "\x01\uffff\x01\x3d\x07\uffff\x02\x39\x02\uffff\x01\x7a\x04\uffff"+
+        "\x01\x6c\x01\x79\x01\x7a\x01\x74\x01\x7a\x01\x73\x01\x6f\x01\x79"+
+        "\x03\x73\x01\x64\x01\x63\x01\x74\x01\x72\x01\x6f\x01\x6c\x01\x6f"+
+        "\x01\x76\x01\x75\x02\x7a\x01\x69\x01\x66\x01\x6b\x02\x6e\x01\x74"+
+        "\x01\x6c\x01\uffff\x02\x7a\x01\x74\x01\x67\x01\x74\x01\x6d\x01\x62"+
+        "\x01\x65\x01\x70\x01\x69\x01\x64\x01\x6c\x01\x65\x01\x61\x08\uffff"+
+        "\x01\x39\x01\uffff\x04\x7a\x01\uffff\x01\x77\x01\uffff\x01\x74\x01"+
+        "\x73\x01\x7a\x01\x61\x01\x65\x01\x63\x01\x74\x01\x65\x01\x7a\x01"+
+        "\x61\x01\x73\x01\x72\x01\x7a\x01\x6d\x01\x6c\x01\x75\x01\x69\x01"+
+        "\x72\x02\x65\x01\x6f\x02\uffff\x01\x6e\x01\x74\x01\x65\x01\x75\x01"+
+        "\x74\x01\x7a\x01\x6c\x01\uffff\x01\x65\x01\uffff\x01\x65\x01\x68"+
+        "\x01\x6f\x01\x65\x01\x7a\x01\x65\x01\x73\x01\x6e\x01\x7a\x01\x6f"+
+        "\x01\x61\x01\x75\x02\x72\x01\x39\x04\uffff\x01\x65\x02\x7a\x01\x73"+
+        "\x01\uffff\x01\x75\x01\x74\x01\x7a\x01\x69\x01\x7a\x01\uffff\x01"+
+        "\x70\x01\x74\x01\x61\x01\uffff\x02\x7a\x01\x70\x01\x6e\x01\x7a\x03"+
+        "\x72\x04\x7a\x01\x74\x01\x68\x01\uffff\x01\x7a\x02\x72\x01\x74\x01"+
+        "\x6e\x01\x63\x01\uffff\x01\x7a\x01\x74\x01\x7a\x01\uffff\x01\x6e"+
+        "\x01\x74\x01\x65\x01\x7a\x01\x65\x01\x7a\x01\x2d\x01\x65\x02\uffff"+
+        "\x01\x7a\x01\x6c\x01\x65\x01\uffff\x01\x6e\x01\uffff\x01\x65\x01"+
+        "\x73\x01\x63\x02\uffff\x01\x7a\x01\x67\x01\uffff\x01\x7a\x01\x74"+
+        "\x01\x76\x04\uffff\x01\x65\x01\x7a\x01\uffff\x03\x7a\x01\x64\x01"+
+        "\x74\x01\uffff\x01\x72\x01\uffff\x01\x7a\x01\x65\x01\x73\x01\uffff"+
+        "\x01\x7a\x02\uffff\x01\x6e\x01\uffff\x01\x74\x01\x7a\x01\x63\x02"+
+        "\x7a\x01\x74\x01\uffff\x01\x7a\x01\uffff\x01\x7a\x01\x61\x01\x7a"+
+        "\x04\uffff\x02\x7a\x01\x69\x01\uffff\x02\x7a\x01\uffff\x02\x7a\x01"+
+        "\uffff\x01\x74\x02\uffff\x01\x7a\x02\uffff\x01\x6c\x03\uffff\x01"+
+        "\x6e\x04\uffff\x01\x7a\x01\uffff\x01\x7a\x01\x67\x02\uffff\x01\x7a"+
+        "\x01\uffff";
+    const string DFA31_acceptS =
+        "\x17\uffff\x01\x3c\x01\x3d\x01\x3e\x01\x3f\x01\uffff\x01\x41\x01"+
+        "\uffff\x01\x46\x01\x47\x01\x48\x01\x49\x01\x4a\x01\x4b\x01\x4c\x02"+
+        "\uffff\x01\x4f\x01\x50\x01\uffff\x01\x52\x01\x54\x01\x51\x01\x56"+
+        "\x1d\uffff\x01\x53\x0e\uffff\x01\x3a\x01\x4e\x01\x3b\x01\x40\x01"+
+        "\x42\x01\x43\x01\x44\x01\x45\x01\uffff\x01\x55\x04\uffff\x01\x04"+
+        "\x01\uffff\x01\x07\x15\uffff\x01\x1b\x01\x20\x07\uffff\x01\x28\x01"+
+        "\uffff\x01\x29\x0f\uffff\x01\x01\x01\x02\x01\x03\x01\x05\x04\uffff"+
+        "\x01\x0b\x05\uffff\x01\x11\x03\uffff\x01\x15\x0e\uffff\x01\x26\x06"+
+        "\uffff\x01\x2f\x03\uffff\x01\x33\x08\uffff\x01\x08\x01\x09\x03\uffff"+
+        "\x01\x0e\x01\uffff\x01\x10\x03\uffff\x01\x16\x01\x17\x02\uffff\x01"+
+        "\x1a\x03\uffff\x01\x1f\x01\x21\x01\x22\x01\x23\x02\uffff\x01\x27"+
+        "\x05\uffff\x01\x30\x01\uffff\x01\x32\x03\uffff\x01\x37\x01\uffff"+
+        "\x01\x39\x01\x4d\x01\uffff\x01\x0a\x06\uffff\x01\x18\x01\uffff\x01"+
+        "\x1c\x03\uffff\x01\x25\x01\x2a\x01\x2b\x01\x2c\x03\uffff\x01\x34"+
+        "\x02\uffff\x01\x38\x02\uffff\x01\x0d\x01\uffff\x01\x12\x01\x13\x01"+
+        "\uffff\x01\x19\x01\x1d\x01\uffff\x01\x24\x01\x2d\x01\x2e\x01\uffff"+
+        "\x01\x35\x01\x36\x01\x06\x01\x0c\x01\uffff\x01\x14\x02\uffff\x01"+
+        "\x0f\x01\x1e\x01\uffff\x01\x31";
+    const string DFA31_specialS =
+        "\u012c\uffff}>";
+    static readonly string[] DFA31_transitionS = {
+            "\x02\x2d\x02\uffff\x01\x2d\x12\uffff\x01\x2d\x01\x1c\x01\x28"+
+            "\x01\x24\x01\uffff\x01\x21\x01\uffff\x01\x2a\x01\x18\x01\x19"+
+            "\x01\x20\x01\x1f\x01\x17\x01\x2b\x01\x16\x01\x1e\x01\x25\x09"+
+            "\x26\x01\x29\x01\uffff\x01\x1b\x01\x1a\x01\x1d\x01\x23\x01\x2c"+
+            "\x1a\uffff\x01\x28\x04\uffff\x01\x28\x01\x01\x01\x02\x01\x03"+
+            "\x01\x04\x01\x05\x01\x06\x01\x07\x01\x08\x01\x09\x01\x0a\x01"+
+            "\x27\x01\x0b\x01\x0c\x01\x0d\x01\x0e\x02\x27\x01\x0f\x01\x10"+
+            "\x01\x11\x01\x12\x01\x13\x01\x14\x01\x27\x01\x15\x01\x27\x01"+
+            "\uffff\x01\x22",
+            "\x01\x2e\x01\uffff\x01\x2f\x04\uffff\x01\x30",
+            "\x01\x31\x13\uffff\x01\x32",
+            "\x01\x33\x10\uffff\x01\x34",
+            "\x01\x35\x03\uffff\x01\x36\x03\uffff\x01\x37",
+            "\x01\x38\x01\uffff\x01\x39\x04\uffff\x01\x3a\x04\uffff\x01"+
+            "\x3b",
+            "\x01\x3c\x02\uffff\x01\x3d\x02\uffff\x01\x3e",
+            "\x01\x3f",
+            "\x01\x40\x0d\uffff\x01\x41",
+            "\x01\x42\x04\uffff\x01\x43",
+            "\x01\x44",
+            "\x01\x45\x03\uffff\x01\x46",
+            "\x01\x47\x05\uffff\x01\x48",
+            "\x01\x4b\x47\uffff\x01\x49\x05\uffff\x01\x4a",
+            "\x01\x4c\x03\uffff\x01\x4d\x02\uffff\x01\x4e",
+            "\x01\x4f",
+            "\x01\x50\x09\uffff\x01\x51\x05\uffff\x01\x52",
+            "\x01\x53\x06\uffff\x01\x54",
+            "\x01\x55\x01\uffff\x01\x56",
+            "\x01\x57",
+            "\x01\x58",
+            "\x01\x59",
+            "\x01\x5a\x05\uffff\x0a\x5b",
+            "",
+            "",
+            "",
+            "",
+            "\x01\x5e\x01\x5d",
+            "",
+            "\x01\x60",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\x0a\x62",
+            "\x0a\x62",
+            "",
+            "",
+            "\x1a\x2c",
+            "",
+            "",
+            "",
+            "",
+            "\x01\x64",
+            "\x01\x65\x14\uffff\x01\x66",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x02\x27\x01\x67\x17\x27",
+            "\x01\x69",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\x6b",
+            "\x01\x6c",
+            "\x01\x6d",
+            "\x01\x6e\x05\uffff\x01\x6f\x06\uffff\x01\x70",
+            "\x01\x71",
+            "\x01\x72",
+            "\x01\x73",
+            "\x01\x74",
+            "\x01\x75\x0a\uffff\x01\x76",
+            "\x01\x77",
+            "\x01\x78",
+            "\x01\x79",
+            "\x01\x7a",
+            "\x01\x7b",
+            "\x01\x7c",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x0d\x27\x01\x7d\x04\x27"+
+            "\x01\x7e\x01\x7f\x06\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u0082",
+            "\x01\u0083",
+            "\x01\u0084",
+            "\x01\u0085",
+            "\x01\u0086",
+            "\x01\u0087",
+            "\x01\u0088",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x03\x27\x01\u008a\x16"+
+            "\x27",
+            "\x01\u008c",
+            "\x01\u008d",
+            "\x01\u008e\x08\uffff\x01\u008f\x07\uffff\x01\u0090",
+            "\x01\u0091",
+            "\x01\u0092",
+            "\x01\u0093",
+            "\x01\u0094",
+            "\x01\u0095",
+            "\x01\u0096",
+            "\x01\u0097",
+            "\x01\u0098",
+            "\x01\u0099",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\x0a\u009a",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "",
+            "\x01\u009f",
+            "",
+            "\x01\u00a0\x0e\uffff\x01\u00a1",
+            "\x01\u00a2",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00a4",
+            "\x01\u00a5",
+            "\x01\u00a6",
+            "\x01\u00a7",
+            "\x01\u00a8",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00aa",
+            "\x01\u00ab",
+            "\x01\u00ac",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00ae",
+            "\x01\u00af",
+            "\x01\u00b0",
+            "\x01\u00b1",
+            "\x01\u00b2",
+            "\x01\u00b3",
+            "\x01\u00b4",
+            "\x01\u00b5\x09\uffff\x01\u00b6",
+            "",
+            "",
+            "\x01\u00b7",
+            "\x01\u00b8",
+            "\x01\u00b9",
+            "\x01\u00ba",
+            "\x01\u00bb",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00bd",
+            "",
+            "\x01\u00be",
+            "",
+            "\x01\u00bf",
+            "\x01\u00c0",
+            "\x01\u00c1",
+            "\x01\u00c2",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00c4",
+            "\x01\u00c5",
+            "\x01\u00c6",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00c8",
+            "\x01\u00c9",
+            "\x01\u00ca",
+            "\x01\u00cb\x03\uffff\x01\u00cc",
+            "\x01\u00cd",
+            "\x0a\u00ce",
+            "",
+            "",
+            "",
+            "",
+            "\x01\u00cf",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00d2",
+            "",
+            "\x01\u00d3",
+            "\x01\u00d4",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00d6",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "",
+            "\x01\u00d8",
+            "\x01\u00d9",
+            "\x01\u00da",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00dd",
+            "\x01\u00de",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00e0",
+            "\x01\u00e1",
+            "\x01\u00e2",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00e7",
+            "\x01\u00e8",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00ea",
+            "\x01\u00eb",
+            "\x01\u00ec",
+            "\x01\u00ed",
+            "\x01\u00ee",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00f0",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "",
+            "\x01\u00f2",
+            "\x01\u00f3",
+            "\x01\u00f4",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00f6",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00f8",
+            "\x01\u00f9",
+            "",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00fb",
+            "\x01\u00fc",
+            "",
+            "\x01\u00fd",
+            "",
+            "\x01\u00fe",
+            "\x01\u00ff",
+            "\x01\u0100",
+            "",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u0102",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u0104",
+            "\x01\u0105",
+            "",
+            "",
+            "",
+            "",
+            "\x01\u0106",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u010b",
+            "\x01\u010c",
+            "",
+            "\x01\u010d",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u010f",
+            "\x01\u0110",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "",
+            "",
+            "\x01\u0112",
+            "",
+            "\x01\u0113",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u0115",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u0118",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u011b",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "",
+            "",
+            "",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u011f",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "",
+            "\x01\u0124",
+            "",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "",
+            "",
+            "\x01\u0126",
+            "",
+            "",
+            "",
+            "\x01\u0127",
+            "",
+            "",
+            "",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u012a",
+            "",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            ""
+    };
+
+    static readonly short[] DFA31_eot = DFA.UnpackEncodedString(DFA31_eotS);
+    static readonly short[] DFA31_eof = DFA.UnpackEncodedString(DFA31_eofS);
+    static readonly char[] DFA31_min = DFA.UnpackEncodedStringToUnsignedChars(DFA31_minS);
+    static readonly char[] DFA31_max = DFA.UnpackEncodedStringToUnsignedChars(DFA31_maxS);
+    static readonly short[] DFA31_accept = DFA.UnpackEncodedString(DFA31_acceptS);
+    static readonly short[] DFA31_special = DFA.UnpackEncodedString(DFA31_specialS);
+    static readonly short[][] DFA31_transition = DFA.UnpackEncodedStringArray(DFA31_transitionS);
+
+    protected class DFA31 : DFA
+    {
+        public DFA31(BaseRecognizer recognizer)
+        {
+            this.recognizer = recognizer;
+            this.decisionNumber = 31;
+            this.eot = DFA31_eot;
+            this.eof = DFA31_eof;
+            this.min = DFA31_min;
+            this.max = DFA31_max;
+            this.accept = DFA31_accept;
+            this.special = DFA31_special;
+            this.transition = DFA31_transition;
+
+        }
+
+        override public string Description
+        {
+            get { return "1:1: Tokens : ( ALL | AND | ANY | AS | ASC | BETWEEN | BY | CASE | CAST | CROSS | DAY | DEFAULT | DELETE | DESC | DISTINCT | ELSE | END | ESCAPE | EXISTS | EXTRACT | FOR | FROM | FULL | GROUP | HAVING | HOUR | IN | INNER | INSERT | INTERVAL | INTO | IS | JOIN | LEFT | LIKE | MINUTE | MONTH | NOT | NULL | ON | OR | ORDER | OUTER | RIGHT | SECOND | SELECT | SET | SOME | SUBSTRING | THEN | TOP | UNION | UPDATE | VALUES | WHEN | WHERE | YEAR | DOT_STAR | DOT | COMMA | LPAREN | RPAREN | ASSIGNEQUAL | NOTEQUAL1 | NOTEQUAL2 | LESSTHANOREQUALTO1 | LESSTHAN | GREATERTHANOREQUALTO1 | GREATERTHAN | DIVIDE | PLUS | STAR | MOD | STRCONCAT | PLACEHOLDER | MAccessDateTime | Iso8601DateTime | Number | NonQuotedIdentifier | QuotedIdentifier | Variable | AsciiStringLiteral | UnicodeStringLiteral | MINUS | COLON | Whitespace );"; }
+        }
+
+    }
+
  
     
 }

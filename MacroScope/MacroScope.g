@@ -4,7 +4,7 @@
 grammar MacroScope;
 
 options {
-	language=CSharp;
+	language=CSharp2;
 }
 
 @lexer::namespace {

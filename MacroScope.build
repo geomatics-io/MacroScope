@@ -36,32 +36,6 @@
 	</if>
     </target>
 
-    <target name="Detail_grammar">
-	<delete file="Detail\DetailLexer.cs"/>
-	<delete file="Detail\DetailParser.cs"/>
-
-	<exec program="java">
-	    <arg value="org.antlr.Tool" />
-	    <arg value="Detail\Detail.g" />
-	</exec>
-
-	<if test="${not file::exists('Detail\DetailLexer.cs') or not file::exists('Detail\DetailParser.cs')}">
-		<fail message="Antlr failed."/>
-	</if>
-    </target>
-
-    <target name="Detail" depends="Detail_grammar">
-	<style style="build\csproj2build.xsl"
-		in="Detail\Detail.csproj" out="Detail\Detail.build"/>
-	<nant buildfile="Detail\Detail.build"/>
-	<copy file="depend\Antlr3.Runtime.dll"
-		todir="Detail\bin\Debug"/>
-    </target>
-
-    <target name="try" depends="Detail">
-	<exec program="Detail\bin\Debug\Detail.exe"/>
-    </target>
-
     <target name="Glaze" depends="MacroScope">
 		todir="Glaze\bin\Debug"/>		
 	<copy file="depend\log4net.dll"

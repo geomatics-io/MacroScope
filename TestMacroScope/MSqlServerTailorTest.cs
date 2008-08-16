@@ -11,9 +11,9 @@ namespace TestMacroScope
         [Test]
         public void TestConcat()
         {
-            CheckSelect("select substr(t1.Major, 1,5) || t2.Minor from t2",
-                @"SELECT substr(t1.Major, 1, 5) + t2.Minor
-FROM t2");
+            CheckSelect("select substr(t1.Major, 1,5) || t1.Minor from t1",
+                @"SELECT substr(t1.Major, 1, 5) + t1.Minor
+FROM t1");
         }
 
         [Test]
