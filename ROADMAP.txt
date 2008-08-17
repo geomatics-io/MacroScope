@@ -46,6 +46,6 @@ Non-features, IMHO:
 
 Naturally, people will disagree which features are useful and should
 go in - if you want MacroScope to do something it doesn't, you should
-generally just go and implement it - even if the change isn't accepted
+generally just go and implement it. Even if the change isn't accepted
 to to the "official" project, nothing stops you from maintaining your
 own variant of MacroScope - that's what Open Source is for.
