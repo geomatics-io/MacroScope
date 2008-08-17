@@ -887,6 +887,7 @@ where number1a=2";
             CheckStringExpression(connection, "substring('a' || 'b' || 'c' from 1 for 5)", "abc");
 
             CheckStringFunctions(connection);
+            CheckCoalesce(connection);
 
             CheckCrossJoin(connection);
 	}
@@ -982,6 +983,25 @@ where number1a=2";
             }
 
             Assert.IsFalse(done);
+        }
+
+        void CheckCoalesce(DbConnection connection)
+        {
+            if (connection == null)
+            {
+                throw new ArgumentNullException("connection");
+            }
+
+            CheckStringExpression(connection, "COALESCE(NULL, NULL, 'third')", "third");
+            CheckIntExpression(connection, "coalesce(2-1, null)", 1);
+            CheckIntExpression(connection, "coalesce(null, 1+1)", 2);
+
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = "SELECT COALESCE(NULL, string1) FROM table1 WHERE string1 IS NULL";
+            object n = command.ExecuteScalar();
+            Assert.AreEqual(DBNull.Value, n);
+
+            CheckStringExpression(connection, "COALESCE(COALESCE('first', null), 'second', 'third')", "first");
         }
 
         void CheckStringFunctions(DbConnection connection)

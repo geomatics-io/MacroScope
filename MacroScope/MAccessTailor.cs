@@ -219,6 +219,10 @@ namespace MacroScope
             {
                 node.Name = TailorUtil.GetCapitalized(TailorUtil.NOW);
             }
+            else if (name.Equals(TailorUtil.COALESCE))
+            {
+                CoalesceToIif(node);
+            }
         }
 
         public override void PerformAfter(FunctionCall node)
@@ -560,6 +564,53 @@ namespace MacroScope
             }
 
             return top;
+        }
+
+        void CoalesceToIif(FunctionCall coalesce)
+        {
+            ExpressionItem args = coalesce.ExpressionArguments;
+            if (args == null)
+            {
+                throw new InvalidOperationException("COALESCE has no arguments.");
+            }
+
+            if (args.Next == null)
+            {
+                throw new InvalidOperationException("COALESCE has just one argument.");
+            }
+
+            FunctionCall iif = (FunctionCall)MakeIif(args);
+            coalesce.Name = iif.Name;
+            coalesce.ExpressionArguments = iif.ExpressionArguments;
+        }
+
+        INode MakeIif(ExpressionItem args)
+        {
+            if (args == null)
+            {
+                throw new ArgumentNullException("args");
+            }
+
+            ExpressionItem tail = args.Next;
+            if (tail == null)
+            {
+                return args.Expression;
+            }
+            else
+            {
+                INode current = args.Expression;
+
+                FunctionCall testArg = new FunctionCall("IsNull");
+                testArg.ExpressionArguments = new ExpressionItem(current.Clone());
+
+                FunctionCall outer = new FunctionCall("Iif");
+                outer.ExpressionArguments = new ExpressionItem(testArg);
+                outer.ExpressionArguments.Add(
+                    new ExpressionItem(MakeIif(tail)));
+                outer.ExpressionArguments.Add(new ExpressionItem(current));
+
+                return outer;
+            }
         }
 
         SwitchFunction MakeSwitch(CaseExpression caseExpr)

@@ -13,6 +13,11 @@ namespace MacroScope
         #region Well-known identifiers
 
         /// <summary>
+        /// A function defined in SQL 92, not known by MS Access.
+        /// </summary>
+        public static readonly string COALESCE = "coalesce";
+
+        /// <summary>
         /// A function with different semantics in MS SQL Server and Oracle,
         /// not known by MS Access.
         /// </summary>
