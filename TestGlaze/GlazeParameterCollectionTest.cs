@@ -13,12 +13,29 @@ namespace TestGlaze
         [Test]
         public void TestAdd()
         {
-            CheckAdd(Factory.MSQLProvider, "@name", "@name");
-            CheckAdd(Factory.MSQLProvider, ":Name", "@Name");
-            CheckAdd(Factory.OleDbProvider, "@name", "@name");
-            CheckAdd(Factory.OleDbProvider, ":NAME", "@NAME");
-            CheckAdd(Factory.OracleProvider, "@v2", ":v2");
-            CheckAdd(Factory.OracleProvider, ":V2", ":V2");
+            string[] providers = TestUtil.Providers;
+            for (int i = 0; i < providers.Length; ++i)
+            {
+                if (providers[i].Equals(Factory.MSQLProvider))
+                {
+                    CheckAdd(Factory.MSQLProvider, "@name", "@name");
+                    CheckAdd(Factory.MSQLProvider, ":Name", "@Name");
+                }
+                else if (providers[i].Equals(Factory.OleDbProvider))
+                {
+                    CheckAdd(Factory.OleDbProvider, "@name", "@name");
+                    CheckAdd(Factory.OleDbProvider, ":NAME", "@NAME");
+                }
+                else if (providers[i].Equals(Factory.OracleProvider))
+                {
+                    CheckAdd(Factory.OracleProvider, "@v2", ":v2");
+                    CheckAdd(Factory.OracleProvider, ":V2", ":V2");
+                }
+                else
+                {
+                    Assert.Fail(string.Format("Unknown provider {0}.", providers[i]));
+                }
+            }
         }
 
         void CheckAdd(string databaseProvider, string from, string to)
@@ -53,10 +70,12 @@ namespace TestGlaze
         [Test]
         public void TestGetParameter()
         {
-            CheckGetParameter(Factory.MSQLProvider, "@name");
-            CheckGetParameter(Factory.MSQLProvider, ":name");
-            CheckGetParameter(Factory.OracleProvider, "@name");
-            CheckGetParameter(Factory.OracleProvider, ":name");
+            string[] providers = TestUtil.Providers;
+            for (int i = 0; i < providers.Length; ++i)
+            {
+                CheckGetParameter(providers[i], "@name");
+                CheckGetParameter(providers[i], ":name");
+            }
         }
 
         void CheckGetParameter(string databaseProvider, string name)
