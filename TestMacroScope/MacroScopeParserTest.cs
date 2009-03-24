@@ -133,6 +133,7 @@ ELSE 'other' END", expected.ToString());
             CheckSelect("SELECT #2007-07-11 16:30:00#", "SELECT 2007-07-11T16:30:00");
             CheckSelect("SELECT 2007-07-11T16:30:00");
             CheckSelect("SELECT 2007-07-11 16:30:00", "SELECT 2007-07-11T16:30:00");
+            CheckSelect("SELECT TIMESTAMP '2007-07-11 16:30:00'");
             CheckSelect("select 42 as \"The Answer\"", "SELECT 42 AS \"The Answer\"");
             CheckSelect("SELECT [column name]");
             CheckSelect("SELECT sum(amount) AS \"bottom line\"\r\nFROM t");

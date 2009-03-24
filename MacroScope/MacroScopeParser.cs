@@ -1,4 +1,5 @@
-// $ANTLR 3.1 MacroScope\\MacroScope.g 2008-08-16 20:50:42
+// $ANTLR 3.1.2 MacroScope\\MacroScope.g 2009-03-24 12:55:00
+
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 168, 219
 // Unreachable code detected.
@@ -92,6 +93,7 @@ public partial class MacroScopeParser : Parser
 		"HexLiteral", 
 		"MAccessDateTime", 
 		"Iso8601DateTime", 
+		"TIMESTAMP", 
 		"INTERVAL", 
 		"PLUS", 
 		"MINUS", 
@@ -124,15 +126,15 @@ public partial class MacroScopeParser : Parser
 
     public const int CAST = 62;
     public const int STAR = 40;
-    public const int MOD = 76;
-    public const int GREATERTHANOREQUALTO1 = 81;
+    public const int MOD = 77;
+    public const int GREATERTHANOREQUALTO1 = 82;
     public const int DOT_STAR = 50;
     public const int CASE = 57;
-    public const int DAY = 86;
+    public const int DAY = 87;
     public const int NOT = 30;
     public const int ASSIGNEQUAL = 14;
     public const int EOF = -1;
-    public const int MONTH = 85;
+    public const int MONTH = 86;
     public const int RPAREN = 7;
     public const int FULL = 44;
     public const int Variable = 52;
@@ -141,10 +143,10 @@ public partial class MacroScopeParser : Parser
     public const int NonQuotedIdentifier = 56;
     public const int SELECT = 16;
     public const int INTO = 5;
-    public const int DIVIDE = 75;
+    public const int DIVIDE = 76;
     public const int PLACEHOLDER = 51;
-    public const int GREATERTHAN = 82;
-    public const int SECOND = 89;
+    public const int GREATERTHAN = 83;
+    public const int SECOND = 90;
     public const int ASC = 24;
     public const int UnicodeStringLiteral = 64;
     public const int NULL = 32;
@@ -154,66 +156,67 @@ public partial class MacroScopeParser : Parser
     public const int GROUP = 26;
     public const int MAccessDateTime = 69;
     public const int OR = 28;
-    public const int LESSTHANOREQUALTO1 = 79;
+    public const int LESSTHANOREQUALTO1 = 80;
     public const int FROM = 12;
     public const int END = 61;
     public const int DISTINCT = 18;
-    public const int Letter = 90;
+    public const int Letter = 91;
+    public const int TIMESTAMP = 71;
     public const int WHERE = 21;
-    public const int UnicodeStringRun = 96;
+    public const int UnicodeStringRun = 97;
     public const int INNER = 41;
-    public const int YEAR = 84;
+    public const int YEAR = 85;
     public const int ORDER = 22;
     public const int UPDATE = 9;
     public const int AsciiStringLiteral = 65;
-    public const int Exponent = 92;
+    public const int Exponent = 93;
     public const int FOR = 54;
     public const int AND = 29;
     public const int CROSS = 47;
-    public const int INTERVAL = 71;
+    public const int INTERVAL = 72;
     public const int LPAREN = 6;
     public const int AS = 49;
     public const int IN = 36;
     public const int THEN = 59;
-    public const int Number = 93;
+    public const int Number = 94;
     public const int COMMA = 13;
     public const int IS = 31;
     public const int LEFT = 42;
     public const int SOME = 38;
     public const int ALL = 17;
     public const int Real = 67;
-    public const int PLUS = 72;
+    public const int PLUS = 73;
     public const int EXISTS = 37;
     public const int EXTRACT = 55;
     public const int DOT = 63;
-    public const int Whitespace = 98;
+    public const int Whitespace = 99;
     public const int LIKE = 33;
     public const int OUTER = 45;
     public const int HexLiteral = 68;
     public const int BY = 23;
-    public const int LESSTHAN = 80;
-    public const int AsciiStringRun = 95;
+    public const int LESSTHAN = 81;
+    public const int AsciiStringRun = 96;
     public const int DEFAULT = 15;
     public const int VALUES = 8;
     public const int RIGHT = 43;
     public const int SET = 10;
     public const int HAVING = 27;
-    public const int MINUS = 73;
-    public const int HOUR = 87;
-    public const int Digit = 91;
+    public const int MINUS = 74;
+    public const int Digit = 92;
+    public const int HOUR = 88;
     public const int QuotedIdentifier = 66;
-    public const int WordTail = 94;
+    public const int WordTail = 95;
     public const int JOIN = 46;
-    public const int UNION = 83;
+    public const int UNION = 84;
     public const int SUBSTRING = 53;
-    public const int COLON = 97;
-    public const int STRCONCAT = 74;
+    public const int COLON = 98;
+    public const int STRCONCAT = 75;
     public const int ANY = 39;
     public const int WHEN = 58;
-    public const int NOTEQUAL1 = 77;
-    public const int NOTEQUAL2 = 78;
+    public const int NOTEQUAL1 = 78;
+    public const int NOTEQUAL2 = 79;
     public const int DESC = 25;
-    public const int MINUTE = 88;
+    public const int MINUTE = 89;
     public const int TOP = 19;
     public const int BETWEEN = 35;
     public const int Integer = 20;
@@ -230,7 +233,8 @@ public partial class MacroScopeParser : Parser
 
         public MacroScopeParser(ITokenStream input, RecognizerSharedState state)
     		: base(input, state) {
-    		InitializeCyclicDFAs();
+            InitializeCyclicDFAs();
+
              
         }
         
@@ -305,7 +309,7 @@ public partial class MacroScopeParser : Parser
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
                     	Match(input,EOF,FOLLOW_EOF_in_statement68); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  i; 
                     	}
@@ -320,7 +324,7 @@ public partial class MacroScopeParser : Parser
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
                     	Match(input,EOF,FOLLOW_EOF_in_statement81); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  s; 
                     	}
@@ -335,7 +339,7 @@ public partial class MacroScopeParser : Parser
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
                     	Match(input,EOF,FOLLOW_EOF_in_statement94); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  u; 
                     	}
@@ -350,7 +354,7 @@ public partial class MacroScopeParser : Parser
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
                     	Match(input,EOF,FOLLOW_EOF_in_statement107); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  d; 
                     	}
@@ -388,7 +392,7 @@ public partial class MacroScopeParser : Parser
             // MacroScope\\MacroScope.g:36:2: INSERT ( INTO )? o= dbObject LPAREN c= columnNameList RPAREN VALUES LPAREN e= columnValueList RPAREN
             {
             	Match(input,INSERT,FOLLOW_INSERT_in_insertStatement126); if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  new InsertStatement(); 
             	}
@@ -416,7 +420,7 @@ public partial class MacroScopeParser : Parser
             	o = dbObject();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
 
             	  			value.Table = o;
@@ -428,7 +432,7 @@ public partial class MacroScopeParser : Parser
             	state.followingStackPointer--;
             	if (state.failed) return value;
             	Match(input,RPAREN,FOLLOW_RPAREN_in_insertStatement163); if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
 
             	  			value.ColumnNames = c;
@@ -441,7 +445,7 @@ public partial class MacroScopeParser : Parser
             	state.followingStackPointer--;
             	if (state.failed) return value;
             	Match(input,RPAREN,FOLLOW_RPAREN_in_insertStatement179); if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
 
             	  			value.ColumnValues = e;
@@ -478,7 +482,7 @@ public partial class MacroScopeParser : Parser
             	q = queryExpression();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  new SelectStatement(q); 
             	}
@@ -514,7 +518,7 @@ public partial class MacroScopeParser : Parser
             // MacroScope\\MacroScope.g:58:2: UPDATE o= dbObject SET a= assignmentList (w= whereClause )?
             {
             	Match(input,UPDATE,FOLLOW_UPDATE_in_updateStatement225); if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  new UpdateStatement(); 
             	}
@@ -522,7 +526,7 @@ public partial class MacroScopeParser : Parser
             	o = dbObject();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value.Table = o; 
             	}
@@ -531,7 +535,7 @@ public partial class MacroScopeParser : Parser
             	a = assignmentList();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
 
             	  			value.Assignments = a;
@@ -554,7 +558,7 @@ public partial class MacroScopeParser : Parser
             	        	w = whereClause();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
             	        	   value.Where = w; 
             	        	}
@@ -594,7 +598,7 @@ public partial class MacroScopeParser : Parser
             // MacroScope\\MacroScope.g:72:2: DELETE ( FROM )? o= dbObject (w= whereClause )?
             {
             	Match(input,DELETE,FOLLOW_DELETE_in_deleteStatement293); if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  new DeleteStatement(); 
             	}
@@ -622,7 +626,7 @@ public partial class MacroScopeParser : Parser
             	o = dbObject();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value.Table = o; 
             	}
@@ -643,7 +647,7 @@ public partial class MacroScopeParser : Parser
             	        	w = whereClause();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
             	        	   value.Where = w; 
             	        	}
@@ -684,7 +688,7 @@ public partial class MacroScopeParser : Parser
             	a = assignment();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
 
             	  		value =  a;
@@ -712,7 +716,7 @@ public partial class MacroScopeParser : Parser
             			    	a = assignment();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return value;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
 
             			    	  			value.Add(a);
@@ -768,7 +772,7 @@ public partial class MacroScopeParser : Parser
             	v = columnValue();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
 
             	  		value =  new Assignment(c, v);
@@ -805,7 +809,7 @@ public partial class MacroScopeParser : Parser
             	c = column();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  new AliasedItem(c); 
             	}
@@ -831,7 +835,7 @@ public partial class MacroScopeParser : Parser
             			    	c = column();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return value;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
 
             			    	  			value.Add(new AliasedItem(c));
@@ -880,7 +884,7 @@ public partial class MacroScopeParser : Parser
             	v = columnValue();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
 
             	  		value =  new ExpressionItem(v);
@@ -908,7 +912,7 @@ public partial class MacroScopeParser : Parser
             			    	v = columnValue();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return value;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
 
             			    	  			value.Add(new ExpressionItem(v));
@@ -976,7 +980,7 @@ public partial class MacroScopeParser : Parser
                     // MacroScope\\MacroScope.g:110:2: DEFAULT
                     {
                     	Match(input,DEFAULT,FOLLOW_DEFAULT_in_columnValue491); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  DefaultValue.Value; 
                     	}
@@ -990,7 +994,7 @@ public partial class MacroScopeParser : Parser
                     	e = expression();
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  e; 
                     	}
@@ -1031,7 +1035,7 @@ public partial class MacroScopeParser : Parser
             	s = subQueryExpression();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  s; 
             	}
@@ -1060,7 +1064,7 @@ public partial class MacroScopeParser : Parser
             			    	s = subQueryExpression();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return value;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
 
             			    	  			s.All = u;
@@ -1096,7 +1100,7 @@ public partial class MacroScopeParser : Parser
             	        	o = orderByClause();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
             	        	   value.SetOrderBy(o); 
             	        	}
@@ -1159,7 +1163,7 @@ public partial class MacroScopeParser : Parser
                     	s = querySpecification();
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  s; 
                     	}
@@ -1175,7 +1179,7 @@ public partial class MacroScopeParser : Parser
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
                     	Match(input,RPAREN,FOLLOW_RPAREN_in_subQueryExpression598); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  s; 
                     	}
@@ -1220,7 +1224,7 @@ public partial class MacroScopeParser : Parser
             	s = selectClause();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  s; 
             	}
@@ -1241,7 +1245,7 @@ public partial class MacroScopeParser : Parser
             	        	f = fromClause();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
             	        	   value.From = f; 
             	        	}
@@ -1268,7 +1272,7 @@ public partial class MacroScopeParser : Parser
             	        	w = whereClause();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
             	        	   value.Where = w; 
             	        	}
@@ -1295,7 +1299,7 @@ public partial class MacroScopeParser : Parser
             	        	g = groupByClause();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
             	        	   value.GroupBy = g; 
             	        	}
@@ -1316,7 +1320,7 @@ public partial class MacroScopeParser : Parser
             	        	        	h = havingClause();
             	        	        	state.followingStackPointer--;
             	        	        	if (state.failed) return value;
-            	        	        	if ( state.backtracking == 0 ) 
+            	        	        	if ( (state.backtracking==0) )
             	        	        	{
             	        	        	   value.GroupBy.Having = h; 
             	        	        	}
@@ -1361,7 +1365,7 @@ public partial class MacroScopeParser : Parser
             // MacroScope\\MacroScope.g:140:2: SELECT ( ALL | DISTINCT )? ( TOP Integer )? s= selectList
             {
             	Match(input,SELECT,FOLLOW_SELECT_in_selectClause694); if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  new QueryExpression(); 
             	}
@@ -1390,7 +1394,7 @@ public partial class MacroScopeParser : Parser
             	        // MacroScope\\MacroScope.g:141:10: DISTINCT
             	        {
             	        	Match(input,DISTINCT,FOLLOW_DISTINCT_in_selectClause705); if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
             	        	   value.Distinct = true; 
             	        	}
@@ -1415,7 +1419,7 @@ public partial class MacroScopeParser : Parser
             	        {
             	        	Match(input,TOP,FOLLOW_TOP_in_selectClause714); if (state.failed) return value;
             	        	Integer1=(IToken)Match(input,Integer,FOLLOW_Integer_in_selectClause716); if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
             	        	   value.Top = int.Parse(((Integer1 != null) ? Integer1.Text : null)); 
             	        	}
@@ -1429,7 +1433,7 @@ public partial class MacroScopeParser : Parser
             	s = selectList();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value.SelectItems = s; 
             	}
@@ -1465,7 +1469,7 @@ public partial class MacroScopeParser : Parser
             	c = searchCondition();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  c; 
             	}
@@ -1502,7 +1506,7 @@ public partial class MacroScopeParser : Parser
             	e = orderExpression();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  e; 
             	}
@@ -1528,7 +1532,7 @@ public partial class MacroScopeParser : Parser
             			    	e = orderExpression();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return value;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
             			    	   value.Add(e); 
             			    	}
@@ -1575,7 +1579,7 @@ public partial class MacroScopeParser : Parser
             	e = expression();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  new OrderExpression(e); 
             	}
@@ -1604,7 +1608,7 @@ public partial class MacroScopeParser : Parser
             	        // MacroScope\\MacroScope.g:158:10: DESC
             	        {
             	        	Match(input,DESC,FOLLOW_DESC_in_orderExpression825); if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
             	        	   value.Asc = false; 
             	        	}
@@ -1643,7 +1647,7 @@ public partial class MacroScopeParser : Parser
             {
             	Match(input,GROUP,FOLLOW_GROUP_in_groupByClause845); if (state.failed) return value;
             	Match(input,BY,FOLLOW_BY_in_groupByClause847); if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  new GroupByClause(); 
             	}
@@ -1661,7 +1665,7 @@ public partial class MacroScopeParser : Parser
             	        // MacroScope\\MacroScope.g:163:5: ALL
             	        {
             	        	Match(input,ALL,FOLLOW_ALL_in_groupByClause855); if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
             	        	   value.All = true; 
             	        	}
@@ -1675,7 +1679,7 @@ public partial class MacroScopeParser : Parser
             	e = expression();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
 
             	  			value.Expression = new ExpressionItem(e);
@@ -1703,7 +1707,7 @@ public partial class MacroScopeParser : Parser
             			    	e = expression();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return value;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
 
             			    	  				value.Expression.Add(
@@ -1754,7 +1758,7 @@ public partial class MacroScopeParser : Parser
             	c = searchCondition();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  c; 
             	}
@@ -1791,7 +1795,7 @@ public partial class MacroScopeParser : Parser
             	e = additiveSubSearchCondition();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  e; 
             	}
@@ -1817,7 +1821,7 @@ public partial class MacroScopeParser : Parser
             			    	r = additiveSubSearchCondition();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return value;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
 
             			    	  			value =  new Expression(value,
@@ -1870,7 +1874,7 @@ public partial class MacroScopeParser : Parser
             	e = subSearchCondition();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  e; 
             	}
@@ -1896,7 +1900,7 @@ public partial class MacroScopeParser : Parser
             			    	r = subSearchCondition();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return value;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
 
             			    	  			value =  new Expression(value,
@@ -1949,7 +1953,7 @@ public partial class MacroScopeParser : Parser
             	state.followingStackPointer--;
             	if (state.failed) return value;
             	Match(input,RPAREN,FOLLOW_RPAREN_in_bracketedSearchCondition1011); if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
 
             	  		value =  e;
@@ -1999,7 +2003,7 @@ public partial class MacroScopeParser : Parser
             	        // MacroScope\\MacroScope.g:204:4: NOT
             	        {
             	        	Match(input,NOT,FOLLOW_NOT_in_subSearchCondition1035); if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
             	        	   negated = true; 
             	        	}
@@ -2021,7 +2025,7 @@ public partial class MacroScopeParser : Parser
             	        	e = bracketedSearchCondition();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  				if (!negated)
@@ -2048,7 +2052,7 @@ public partial class MacroScopeParser : Parser
             	        	p = predicate();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  			if (!negated)
@@ -2213,7 +2217,7 @@ public partial class MacroScopeParser : Parser
                     	        	        	r = expression();
                     	        	        	state.followingStackPointer--;
                     	        	        	if (state.failed) return value;
-                    	        	        	if ( state.backtracking == 0 ) 
+                    	        	        	if ( (state.backtracking==0) )
                     	        	        	{
 
                     	        	        	  				value =  new Expression(l,
@@ -2236,7 +2240,7 @@ public partial class MacroScopeParser : Parser
                     	        	        	state.followingStackPointer--;
                     	        	        	if (state.failed) return value;
                     	        	        	Match(input,RPAREN,FOLLOW_RPAREN_in_predicate1167); if (state.failed) return value;
-                    	        	        	if ( state.backtracking == 0 ) 
+                    	        	        	if ( (state.backtracking==0) )
                     	        	        	{
 
                     	        	        	  					BracketedExpression expr =
@@ -2261,7 +2265,7 @@ public partial class MacroScopeParser : Parser
                     	        // MacroScope\\MacroScope.g:258:5: IS ( NOT )? NULL
                     	        {
                     	        	Match(input,IS,FOLLOW_IS_in_predicate1188); if (state.failed) return value;
-                    	        	if ( state.backtracking == 0 ) 
+                    	        	if ( (state.backtracking==0) )
                     	        	{
 
                     	        	  			value =  new Expression();
@@ -2284,7 +2288,7 @@ public partial class MacroScopeParser : Parser
                     	        	        // MacroScope\\MacroScope.g:264:6: NOT
                     	        	        {
                     	        	        	Match(input,NOT,FOLLOW_NOT_in_predicate1198); if (state.failed) return value;
-                    	        	        	if ( state.backtracking == 0 ) 
+                    	        	        	if ( (state.backtracking==0) )
                     	        	        	{
 
                     	        	        	  				((Expression)value).Operator =
@@ -2318,7 +2322,7 @@ public partial class MacroScopeParser : Parser
                     	        	        // MacroScope\\MacroScope.g:269:7: NOT
                     	        	        {
                     	        	        	Match(input,NOT,FOLLOW_NOT_in_predicate1216); if (state.failed) return value;
-                    	        	        	if ( state.backtracking == 0 ) 
+                    	        	        	if ( (state.backtracking==0) )
                     	        	        	{
                     	        	        	   negated = true; 
                     	        	        	}
@@ -2365,7 +2369,7 @@ public partial class MacroScopeParser : Parser
                     	        	        	e = expression();
                     	        	        	state.followingStackPointer--;
                     	        	        	if (state.failed) return value;
-                    	        	        	if ( state.backtracking == 0 ) 
+                    	        	        	if ( (state.backtracking==0) )
                     	        	        	{
 
                     	        	        	  				value =  new PatternExpression(
@@ -2390,7 +2394,7 @@ public partial class MacroScopeParser : Parser
                     	        	        	        	f = expression();
                     	        	        	        	state.followingStackPointer--;
                     	        	        	        	if (state.failed) return value;
-                    	        	        	        	if ( state.backtracking == 0 ) 
+                    	        	        	        	if ( (state.backtracking==0) )
                     	        	        	        	{
 
                     	        	        	        	  					((PatternExpression)value).Escape =
@@ -2403,7 +2407,7 @@ public partial class MacroScopeParser : Parser
 
                     	        	        	}
 
-                    	        	        	if ( state.backtracking == 0 ) 
+                    	        	        	if ( (state.backtracking==0) )
                     	        	        	{
 
                     	        	        	  					if (!negated)
@@ -2432,7 +2436,7 @@ public partial class MacroScopeParser : Parser
                     	        	        	f = expression();
                     	        	        	state.followingStackPointer--;
                     	        	        	if (state.failed) return value;
-                    	        	        	if ( state.backtracking == 0 ) 
+                    	        	        	if ( (state.backtracking==0) )
                     	        	        	{
 
                     	        	        	  				Expression inner = new Expression(l,
@@ -2471,7 +2475,7 @@ public partial class MacroScopeParser : Parser
                     	        	        	        	s = selectStatement();
                     	        	        	        	state.followingStackPointer--;
                     	        	        	        	if (state.failed) return value;
-                    	        	        	        	if ( state.backtracking == 0 ) 
+                    	        	        	        	if ( (state.backtracking==0) )
                     	        	        	        	{
 
                     	        	        	        	  						value =  new Expression(l, negated ? ExpressionOperator.NotIn : ExpressionOperator.In, s);
@@ -2487,7 +2491,7 @@ public partial class MacroScopeParser : Parser
                     	        	        	        	e = expression();
                     	        	        	        	state.followingStackPointer--;
                     	        	        	        	if (state.failed) return value;
-                    	        	        	        	if ( state.backtracking == 0 ) 
+                    	        	        	        	if ( (state.backtracking==0) )
                     	        	        	        	{
 
                     	        	        	        	  					inSet = new ExpressionItem(e);
@@ -2515,7 +2519,7 @@ public partial class MacroScopeParser : Parser
                     	        	        	        			    	e = expression();
                     	        	        	        			    	state.followingStackPointer--;
                     	        	        	        			    	if (state.failed) return value;
-                    	        	        	        			    	if ( state.backtracking == 0 ) 
+                    	        	        	        			    	if ( (state.backtracking==0) )
                     	        	        	        			    	{
 
                     	        	        	        			    	  						inSet.Add(new ExpressionItem(
@@ -2541,7 +2545,7 @@ public partial class MacroScopeParser : Parser
                     	        	        	}
 
                     	        	        	Match(input,RPAREN,FOLLOW_RPAREN_in_predicate1367); if (state.failed) return value;
-                    	        	        	if ( state.backtracking == 0 ) 
+                    	        	        	if ( (state.backtracking==0) )
                     	        	        	{
 
                     	        	        	  					if (value == null)
@@ -2575,7 +2579,7 @@ public partial class MacroScopeParser : Parser
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
                     	Match(input,RPAREN,FOLLOW_RPAREN_in_predicate1392); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	  		value =  new Expression();
@@ -2639,7 +2643,7 @@ public partial class MacroScopeParser : Parser
                     // MacroScope\\MacroScope.g:333:2: ALL
                     {
                     	Match(input,ALL,FOLLOW_ALL_in_quantifierSpec1409); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  PredicateQuantifier.All; 
                     	}
@@ -2650,7 +2654,7 @@ public partial class MacroScopeParser : Parser
                     // MacroScope\\MacroScope.g:334:4: SOME
                     {
                     	Match(input,SOME,FOLLOW_SOME_in_quantifierSpec1416); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  PredicateQuantifier.Any; 
                     	}
@@ -2661,7 +2665,7 @@ public partial class MacroScopeParser : Parser
                     // MacroScope\\MacroScope.g:335:4: ANY
                     {
                     	Match(input,ANY,FOLLOW_ANY_in_quantifierSpec1423); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  PredicateQuantifier.Any; 
                     	}
@@ -2700,7 +2704,7 @@ public partial class MacroScopeParser : Parser
             	s = selectItem();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  s; 
             	}
@@ -2726,7 +2730,7 @@ public partial class MacroScopeParser : Parser
             			    	t = selectItem();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return value;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
             			    	   value.Add(t); 
             			    	}
@@ -2796,7 +2800,7 @@ public partial class MacroScopeParser : Parser
                     // MacroScope\\MacroScope.g:344:2: STAR
                     {
                     	Match(input,STAR,FOLLOW_STAR_in_selectItem1478); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	  		value =  new AliasedItem(Wildcard.Value);
@@ -2827,7 +2831,7 @@ public partial class MacroScopeParser : Parser
                     	        		e = expression();
                     	        		state.followingStackPointer--;
                     	        		if (state.failed) return value;
-                    	        		if ( state.backtracking == 0 ) 
+                    	        		if ( (state.backtracking==0) )
                     	        		{
 
                     	        		  				value =  new AliasedItem(e);
@@ -2847,7 +2851,7 @@ public partial class MacroScopeParser : Parser
                     	        	t = tableColumns();
                     	        	state.followingStackPointer--;
                     	        	if (state.failed) return value;
-                    	        	if ( state.backtracking == 0 ) 
+                    	        	if ( (state.backtracking==0) )
                     	        	{
 
                     	        	  			value =  new AliasedItem(t);
@@ -2863,7 +2867,7 @@ public partial class MacroScopeParser : Parser
                     	        	e = expression();
                     	        	state.followingStackPointer--;
                     	        	if (state.failed) return value;
-                    	        	if ( state.backtracking == 0 ) 
+                    	        	if ( (state.backtracking==0) )
                     	        	{
 
                     	        	  			value =  new AliasedItem(e);
@@ -2886,7 +2890,7 @@ public partial class MacroScopeParser : Parser
                     	        	        	a = alias1();
                     	        	        	state.followingStackPointer--;
                     	        	        	if (state.failed) return value;
-                    	        	        	if ( state.backtracking == 0 ) 
+                    	        	        	if ( (state.backtracking==0) )
                     	        	        	{
                     	        	        	   value.Alias = a; 
                     	        	        	}
@@ -2936,7 +2940,7 @@ public partial class MacroScopeParser : Parser
             	t = tableSource();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  new AliasedItem(t); 
             	}
@@ -2962,7 +2966,7 @@ public partial class MacroScopeParser : Parser
             			    	t = tableSource();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return value;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
 
             			    	  		value.Add(new AliasedItem(t));
@@ -3011,7 +3015,7 @@ public partial class MacroScopeParser : Parser
             	t = subTableSource();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  t; 
             	}
@@ -3036,7 +3040,7 @@ public partial class MacroScopeParser : Parser
             			    	t = joinedTable();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return value;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
             			    	   value.Add(t); 
             			    	}
@@ -3218,7 +3222,7 @@ public partial class MacroScopeParser : Parser
                     	        	state.followingStackPointer--;
                     	        	if (state.failed) return value;
                     	        	Match(input,RPAREN,FOLLOW_RPAREN_in_subTableSource1684); if (state.failed) return value;
-                    	        	if ( state.backtracking == 0 ) 
+                    	        	if ( (state.backtracking==0) )
                     	        	{
 
                     	        	  				value =  new Table(
@@ -3240,7 +3244,7 @@ public partial class MacroScopeParser : Parser
                     	        	a = alias1();
                     	        	state.followingStackPointer--;
                     	        	if (state.failed) return value;
-                    	        	if ( state.backtracking == 0 ) 
+                    	        	if ( (state.backtracking==0) )
                     	        	{
 
                     	        	  			BracketedExpression expr =
@@ -3266,7 +3270,7 @@ public partial class MacroScopeParser : Parser
                     	f = function();
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	  			value =  new Table(f);
@@ -3289,7 +3293,7 @@ public partial class MacroScopeParser : Parser
                     	        	a = alias1();
                     	        	state.followingStackPointer--;
                     	        	if (state.failed) return value;
-                    	        	if ( state.backtracking == 0 ) 
+                    	        	if ( (state.backtracking==0) )
                     	        	{
                     	        	   value.Alias = a; 
                     	        	}
@@ -3309,7 +3313,7 @@ public partial class MacroScopeParser : Parser
                     	o = dbObject();
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  new Table(o); 
                     	}
@@ -3330,7 +3334,7 @@ public partial class MacroScopeParser : Parser
                     	        	a = alias1();
                     	        	state.followingStackPointer--;
                     	        	if (state.failed) return value;
-                    	        	if ( state.backtracking == 0 ) 
+                    	        	if ( (state.backtracking==0) )
                     	        	{
                     	        	   value.Alias = a; 
                     	        	}
@@ -3423,7 +3427,7 @@ public partial class MacroScopeParser : Parser
             	        	        // MacroScope\\MacroScope.g:410:6: LEFT
             	        	        {
             	        	        	Match(input,LEFT,FOLLOW_LEFT_in_joinOn1810); if (state.failed) return value;
-            	        	        	if ( state.backtracking == 0 ) 
+            	        	        	if ( (state.backtracking==0) )
             	        	        	{
             	        	        	   value =  Join.Left; 
             	        	        	}
@@ -3434,7 +3438,7 @@ public partial class MacroScopeParser : Parser
             	        	        // MacroScope\\MacroScope.g:411:5: RIGHT
             	        	        {
             	        	        	Match(input,RIGHT,FOLLOW_RIGHT_in_joinOn1818); if (state.failed) return value;
-            	        	        	if ( state.backtracking == 0 ) 
+            	        	        	if ( (state.backtracking==0) )
             	        	        	{
             	        	        	   value =  Join.Right; 
             	        	        	}
@@ -3445,7 +3449,7 @@ public partial class MacroScopeParser : Parser
             	        	        // MacroScope\\MacroScope.g:412:5: FULL
             	        	        {
             	        	        	Match(input,FULL,FOLLOW_FULL_in_joinOn1826); if (state.failed) return value;
-            	        	        	if ( state.backtracking == 0 ) 
+            	        	        	if ( (state.backtracking==0) )
             	        	        	{
             	        	        	   value =  Join.Full; 
             	        	        	}
@@ -3541,7 +3545,7 @@ public partial class MacroScopeParser : Parser
                     	t = subTableSource();
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	  		value =  t;
@@ -3565,7 +3569,7 @@ public partial class MacroScopeParser : Parser
                     		t = tableSource();
                     		state.followingStackPointer--;
                     		if (state.failed) return value;
-                    		if ( state.backtracking == 0 ) 
+                    		if ( (state.backtracking==0) )
                     		{
 
                     		  				value =  t;
@@ -3579,7 +3583,7 @@ public partial class MacroScopeParser : Parser
                     		c = searchCondition();
                     		state.followingStackPointer--;
                     		if (state.failed) return value;
-                    		if ( state.backtracking == 0 ) 
+                    		if ( (state.backtracking==0) )
                     		{
 
                     		  				value.JoinCondition = c;
@@ -3621,7 +3625,7 @@ public partial class MacroScopeParser : Parser
             	t = subTableSource();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  t; 
             	}
@@ -3647,7 +3651,7 @@ public partial class MacroScopeParser : Parser
             			    	t = joinedTable();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return value;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
             			    	   value.Add(t); 
             			    	}
@@ -3658,9 +3662,9 @@ public partial class MacroScopeParser : Parser
             			default:
             			    if ( cnt51 >= 1 ) goto loop51;
             			    if ( state.backtracking > 0 ) {state.failed = true; return value;}
-            		            EarlyExitException eee =
+            		            EarlyExitException eee51 =
             		                new EarlyExitException(51, input);
-            		            throw eee;
+            		            throw eee51;
             	    }
             	    cnt51++;
             	} while (true);
@@ -3719,7 +3723,7 @@ public partial class MacroScopeParser : Parser
             	i = identifier();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  i; 
             	}
@@ -3754,7 +3758,7 @@ public partial class MacroScopeParser : Parser
             	i = identifier();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  i; 
             	}
@@ -3791,7 +3795,7 @@ public partial class MacroScopeParser : Parser
             	state.followingStackPointer--;
             	if (state.failed) return value;
             	Match(input,DOT_STAR,FOLLOW_DOT_STAR_in_tableColumns2022); if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  new TableWildcard(o); 
             	}
@@ -3848,7 +3852,7 @@ public partial class MacroScopeParser : Parser
                     	o = dbObject();
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  o; 
                     	}
@@ -3864,7 +3868,7 @@ public partial class MacroScopeParser : Parser
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
                     	Match(input,RPAREN,FOLLOW_RPAREN_in_column2061); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  o; 
                     	}
@@ -3905,7 +3909,7 @@ public partial class MacroScopeParser : Parser
             	e = additiveSubExpression();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  e; 
             	}
@@ -3934,7 +3938,7 @@ public partial class MacroScopeParser : Parser
             			    	r = additiveSubExpression();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return value;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
 
             			    	  		value =  new Expression(value, o,
@@ -3988,7 +3992,7 @@ public partial class MacroScopeParser : Parser
             	e = subExpression();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  e; 
             	}
@@ -4017,7 +4021,7 @@ public partial class MacroScopeParser : Parser
             			    	r = subExpression();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return value;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
 
             			    	  		value =  new Expression(value, o,
@@ -4079,7 +4083,7 @@ public partial class MacroScopeParser : Parser
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
             	        	Match(input,RPAREN,FOLLOW_RPAREN_in_bracketedTerm2181); if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  				value =  new BracketedExpression(s);
@@ -4097,7 +4101,7 @@ public partial class MacroScopeParser : Parser
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
             	        	Match(input,RPAREN,FOLLOW_RPAREN_in_bracketedTerm2195); if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  			value =  e;
@@ -4167,7 +4171,7 @@ public partial class MacroScopeParser : Parser
             	        	o = unaryOperator();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  		value =  new Expression();
@@ -4192,7 +4196,7 @@ public partial class MacroScopeParser : Parser
             	        	c = constant();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  			if (value == null)
@@ -4213,7 +4217,7 @@ public partial class MacroScopeParser : Parser
             	        	v = variableReference();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  			if (value == null)
@@ -4231,7 +4235,7 @@ public partial class MacroScopeParser : Parser
             	        // MacroScope\\MacroScope.g:511:5: PLACEHOLDER
             	        {
             	        	Match(input,PLACEHOLDER,FOLLOW_PLACEHOLDER_in_subExpression2255); if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  			if (value == null)
@@ -4252,7 +4256,7 @@ public partial class MacroScopeParser : Parser
             	        	f = function();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  				if (value == null)
@@ -4276,7 +4280,7 @@ public partial class MacroScopeParser : Parser
             	        	e = bracketedTerm();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  			if (value == null)
@@ -4299,7 +4303,7 @@ public partial class MacroScopeParser : Parser
             	        	d = dbObject();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  			if (value == null)
@@ -4320,7 +4324,7 @@ public partial class MacroScopeParser : Parser
             	        	p = caseFunction();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  				if (value == null)
@@ -4344,7 +4348,7 @@ public partial class MacroScopeParser : Parser
             	        	q = castFunction();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  				if (value == null)
@@ -4390,7 +4394,7 @@ public partial class MacroScopeParser : Parser
             // MacroScope\\MacroScope.g:576:2: Variable
             {
             	Variable2=(IToken)Match(input,Variable,FOLLOW_Variable_in_variableReference2377); if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  new Variable(((Variable2 != null) ? Variable2.Text : null)); 
             	}
@@ -4461,7 +4465,7 @@ public partial class MacroScopeParser : Parser
                     // MacroScope\\MacroScope.g:581:2: SUBSTRING LPAREN v= expression FROM s= expression ( FOR l= expression )? RPAREN
                     {
                     	Match(input,SUBSTRING,FOLLOW_SUBSTRING_in_function2395); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	  		value =  new FunctionCall(TailorUtil.SUBSTRING);
@@ -4472,7 +4476,7 @@ public partial class MacroScopeParser : Parser
                     	v = expression();
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	   			((FunctionCall)value).ExpressionArguments =
@@ -4484,7 +4488,7 @@ public partial class MacroScopeParser : Parser
                     	s = expression();
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	  			((FunctionCall)value).ExpressionArguments.Add(
@@ -4509,7 +4513,7 @@ public partial class MacroScopeParser : Parser
                     	        	l = expression();
                     	        	state.followingStackPointer--;
                     	        	if (state.failed) return value;
-                    	        	if ( state.backtracking == 0 ) 
+                    	        	if ( (state.backtracking==0) )
                     	        	{
 
                     	        	  				((FunctionCall)value).ExpressionArguments.Add(new ExpressionItem(l));
@@ -4539,7 +4543,7 @@ public partial class MacroScopeParser : Parser
                     	s = expression();
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	  			value =  new ExtractFunction(d, s);
@@ -4556,7 +4560,7 @@ public partial class MacroScopeParser : Parser
                     	f = genericFunction();
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	  		value =  f;
@@ -4625,7 +4629,7 @@ public partial class MacroScopeParser : Parser
             	        // MacroScope\\MacroScope.g:605:3: NonQuotedIdentifier
             	        {
             	        	NonQuotedIdentifier3=(IToken)Match(input,NonQuotedIdentifier,FOLLOW_NonQuotedIdentifier_in_genericFunction2497); if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  			value =  new FunctionCall(((NonQuotedIdentifier3 != null) ? NonQuotedIdentifier3.Text : null));
@@ -4638,7 +4642,7 @@ public partial class MacroScopeParser : Parser
             	        // MacroScope\\MacroScope.g:608:5: LEFT
             	        {
             	        	Match(input,LEFT,FOLLOW_LEFT_in_genericFunction2505); if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  			value =  new FunctionCall(
@@ -4652,7 +4656,7 @@ public partial class MacroScopeParser : Parser
             	        // MacroScope\\MacroScope.g:612:5: RIGHT
             	        {
             	        	Match(input,RIGHT,FOLLOW_RIGHT_in_genericFunction2513); if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  			value =  new FunctionCall(
@@ -4689,6 +4693,7 @@ public partial class MacroScopeParser : Parser
             	    case HexLiteral:
             	    case MAccessDateTime:
             	    case Iso8601DateTime:
+            	    case TIMESTAMP:
             	    case INTERVAL:
             	    case PLUS:
             	    case MINUS:
@@ -4724,7 +4729,7 @@ public partial class MacroScopeParser : Parser
             	        	e = functionArgument();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	   			value.ExpressionArguments =
@@ -4753,7 +4758,7 @@ public partial class MacroScopeParser : Parser
             	        			    	e = functionArgument();
             	        			    	state.followingStackPointer--;
             	        			    	if (state.failed) return value;
-            	        			    	if ( state.backtracking == 0 ) 
+            	        			    	if ( (state.backtracking==0) )
             	        			    	{
 
             	        			    	  				value.ExpressionArguments.Add(
@@ -4779,7 +4784,7 @@ public partial class MacroScopeParser : Parser
             	        // MacroScope\\MacroScope.g:627:5: STAR
             	        {
             	        	Match(input,STAR,FOLLOW_STAR_in_genericFunction2562); if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
             	        	   value.Star = Wildcard.Value; 
             	        	}
@@ -4822,7 +4827,7 @@ public partial class MacroScopeParser : Parser
             	        	        // MacroScope\\MacroScope.g:628:19: DISTINCT
             	        	        {
             	        	        	Match(input,DISTINCT,FOLLOW_DISTINCT_in_genericFunction2582); if (state.failed) return value;
-            	        	        	if ( state.backtracking == 0 ) 
+            	        	        	if ( (state.backtracking==0) )
             	        	        	{
             	        	        	   value.Distinct = true; 
             	        	        	}
@@ -4858,7 +4863,7 @@ public partial class MacroScopeParser : Parser
             	        	        // MacroScope\\MacroScope.g:629:4: STAR
             	        	        {
             	        	        	Match(input,STAR,FOLLOW_STAR_in_genericFunction2593); if (state.failed) return value;
-            	        	        	if ( state.backtracking == 0 ) 
+            	        	        	if ( (state.backtracking==0) )
             	        	        	{
             	        	        	   value.Star = Wildcard.Value;
             	        	        	  			
@@ -4873,7 +4878,7 @@ public partial class MacroScopeParser : Parser
             	        	        	e = expression();
             	        	        	state.followingStackPointer--;
             	        	        	if (state.failed) return value;
-            	        	        	if ( state.backtracking == 0 ) 
+            	        	        	if ( (state.backtracking==0) )
             	        	        	{
 
             	        	        	  	 			value.ExpressionArguments =
@@ -4948,7 +4953,7 @@ public partial class MacroScopeParser : Parser
                     	e = expression();
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	  		value =  e;
@@ -4964,7 +4969,7 @@ public partial class MacroScopeParser : Parser
                     	d = datetimeField();
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	  		value =  new Expression();
@@ -5003,7 +5008,7 @@ public partial class MacroScopeParser : Parser
             // MacroScope\\MacroScope.g:652:2: CASE (e= expression ( WHEN e= expression THEN f= expression )+ | ( WHEN e= searchCondition THEN f= expression )+ ) ( ELSE e= expression )? END ( CASE )?
             {
             	Match(input,CASE,FOLLOW_CASE_in_caseFunction2679); if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  new CaseExpression(); 
             	}
@@ -5036,7 +5041,7 @@ public partial class MacroScopeParser : Parser
             	        	e = expression();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
             	        	   value.Case = e; 
             	        	}
@@ -5068,7 +5073,7 @@ public partial class MacroScopeParser : Parser
             	        			    	f = expression();
             	        			    	state.followingStackPointer--;
             	        			    	if (state.failed) return value;
-            	        			    	if ( state.backtracking == 0 ) 
+            	        			    	if ( (state.backtracking==0) )
             	        			    	{
 
             	        			    	  				value.Add(new CaseAlternative(e,
@@ -5082,9 +5087,9 @@ public partial class MacroScopeParser : Parser
             	        			default:
             	        			    if ( cnt67 >= 1 ) goto loop67;
             	        			    if ( state.backtracking > 0 ) {state.failed = true; return value;}
-            	        		            EarlyExitException eee =
+            	        		            EarlyExitException eee67 =
             	        		                new EarlyExitException(67, input);
-            	        		            throw eee;
+            	        		            throw eee67;
             	        	    }
             	        	    cnt67++;
             	        	} while (true);
@@ -5126,7 +5131,7 @@ public partial class MacroScopeParser : Parser
             	        			    	f = expression();
             	        			    	state.followingStackPointer--;
             	        			    	if (state.failed) return value;
-            	        			    	if ( state.backtracking == 0 ) 
+            	        			    	if ( (state.backtracking==0) )
             	        			    	{
 
             	        			    	  			value.Add(new CaseAlternative(e,
@@ -5140,9 +5145,9 @@ public partial class MacroScopeParser : Parser
             	        			default:
             	        			    if ( cnt68 >= 1 ) goto loop68;
             	        			    if ( state.backtracking > 0 ) {state.failed = true; return value;}
-            	        		            EarlyExitException eee =
+            	        		            EarlyExitException eee68 =
             	        		                new EarlyExitException(68, input);
-            	        		            throw eee;
+            	        		            throw eee68;
             	        	    }
             	        	    cnt68++;
             	        	} while (true);
@@ -5174,7 +5179,7 @@ public partial class MacroScopeParser : Parser
             	        	e = expression();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  			value.Else = e;
@@ -5249,7 +5254,7 @@ public partial class MacroScopeParser : Parser
             	t = typeIdentifier();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
 
             	  		value =  new TypeCast(e, t);
@@ -5273,7 +5278,7 @@ public partial class MacroScopeParser : Parser
             	        	p = nonNegativeInteger();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  			value.Precision = p;
@@ -5297,7 +5302,7 @@ public partial class MacroScopeParser : Parser
             	        	        	p = nonNegativeInteger();
             	        	        	state.followingStackPointer--;
             	        	        	if (state.failed) return value;
-            	        	        	if ( state.backtracking == 0 ) 
+            	        	        	if ( (state.backtracking==0) )
             	        	        	{
 
             	        	        	  				value.SecondPrecision = p;
@@ -5348,7 +5353,7 @@ public partial class MacroScopeParser : Parser
             	i = identifier();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  new DbObject(i); 
             	}
@@ -5374,7 +5379,7 @@ public partial class MacroScopeParser : Parser
             			    	i = identifier();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return value;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
             			    	   value.Add(new DbObject(i)); 
             			    	}
@@ -5421,7 +5426,7 @@ public partial class MacroScopeParser : Parser
             	s = singleStringLiteral();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
 
             	  		value =  s;
@@ -5448,7 +5453,7 @@ public partial class MacroScopeParser : Parser
             			    	s = singleStringLiteral();
             			    	state.followingStackPointer--;
             			    	if (state.failed) return value;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
 
             			    	  		value.Append(s);
@@ -5516,7 +5521,7 @@ public partial class MacroScopeParser : Parser
                     // MacroScope\\MacroScope.g:697:2: UnicodeStringLiteral
                     {
                     	UnicodeStringLiteral4=(IToken)Match(input,UnicodeStringLiteral,FOLLOW_UnicodeStringLiteral_in_singleStringLiteral2950); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	  		value =  new StringValue(((UnicodeStringLiteral4 != null) ? UnicodeStringLiteral4.Text : null));
@@ -5530,7 +5535,7 @@ public partial class MacroScopeParser : Parser
                     // MacroScope\\MacroScope.g:701:4: AsciiStringLiteral
                     {
                     	AsciiStringLiteral5=(IToken)Match(input,AsciiStringLiteral,FOLLOW_AsciiStringLiteral_in_singleStringLiteral2957); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	  		value =  new StringValue(((AsciiStringLiteral5 != null) ? AsciiStringLiteral5.Text : null));
@@ -5588,7 +5593,7 @@ public partial class MacroScopeParser : Parser
                     // MacroScope\\MacroScope.g:707:2: NonQuotedIdentifier
                     {
                     	NonQuotedIdentifier6=(IToken)Match(input,NonQuotedIdentifier,FOLLOW_NonQuotedIdentifier_in_identifier2974); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	  		value =  new Identifier(((NonQuotedIdentifier6 != null) ? NonQuotedIdentifier6.Text : null));
@@ -5601,7 +5606,7 @@ public partial class MacroScopeParser : Parser
                     // MacroScope\\MacroScope.g:710:4: QuotedIdentifier
                     {
                     	QuotedIdentifier7=(IToken)Match(input,QuotedIdentifier,FOLLOW_QuotedIdentifier_in_identifier2981); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	  		value =  new Identifier(((QuotedIdentifier7 != null) ? QuotedIdentifier7.Text : null));
@@ -5636,7 +5641,7 @@ public partial class MacroScopeParser : Parser
             // MacroScope\\MacroScope.g:716:2: NonQuotedIdentifier
             {
             	NonQuotedIdentifier8=(IToken)Match(input,NonQuotedIdentifier,FOLLOW_NonQuotedIdentifier_in_typeIdentifier2998); if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   value =  ((NonQuotedIdentifier8 != null) ? NonQuotedIdentifier8.Text : null); 
             	}
@@ -5654,7 +5659,7 @@ public partial class MacroScopeParser : Parser
 
 
     // $ANTLR start "constant"
-    // MacroScope\\MacroScope.g:719:1: constant returns [ INode value ] : (i= nonNegativeInteger | Real | NULL | s= stringLiteral | j= intervalLiteral | HexLiteral | MAccessDateTime | Iso8601DateTime );
+    // MacroScope\\MacroScope.g:719:1: constant returns [ INode value ] : (i= nonNegativeInteger | Real | NULL | s= stringLiteral | j= intervalLiteral | HexLiteral | MAccessDateTime | Iso8601DateTime | TIMESTAMP s= stringLiteral );
     public INode constant() // throws RecognitionException [1]
     {   
         INode value = default(INode);
@@ -5672,8 +5677,8 @@ public partial class MacroScopeParser : Parser
 
         try 
     	{
-            // MacroScope\\MacroScope.g:719:34: (i= nonNegativeInteger | Real | NULL | s= stringLiteral | j= intervalLiteral | HexLiteral | MAccessDateTime | Iso8601DateTime )
-            int alt78 = 8;
+            // MacroScope\\MacroScope.g:719:34: (i= nonNegativeInteger | Real | NULL | s= stringLiteral | j= intervalLiteral | HexLiteral | MAccessDateTime | Iso8601DateTime | TIMESTAMP s= stringLiteral )
+            int alt78 = 9;
             switch ( input.LA(1) ) 
             {
             case Integer:
@@ -5717,6 +5722,11 @@ public partial class MacroScopeParser : Parser
                 alt78 = 8;
                 }
                 break;
+            case TIMESTAMP:
+            	{
+                alt78 = 9;
+                }
+                break;
             	default:
             	    if ( state.backtracking > 0 ) {state.failed = true; return value;}
             	    NoViableAltException nvae_d78s0 =
@@ -5734,7 +5744,7 @@ public partial class MacroScopeParser : Parser
                     	i = nonNegativeInteger();
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  new IntegerValue(i); 
                     	}
@@ -5745,7 +5755,7 @@ public partial class MacroScopeParser : Parser
                     // MacroScope\\MacroScope.g:721:4: Real
                     {
                     	Real9=(IToken)Match(input,Real,FOLLOW_Real_in_constant3026); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  new DoubleValue(DoubleValue.Parse(((Real9 != null) ? Real9.Text : null))); 
                     	}
@@ -5756,7 +5766,7 @@ public partial class MacroScopeParser : Parser
                     // MacroScope\\MacroScope.g:722:4: NULL
                     {
                     	Match(input,NULL,FOLLOW_NULL_in_constant3033); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  NullValue.Value; 
                     	}
@@ -5770,7 +5780,7 @@ public partial class MacroScopeParser : Parser
                     	s = stringLiteral();
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  s; 
                     	}
@@ -5784,7 +5794,7 @@ public partial class MacroScopeParser : Parser
                     	j = intervalLiteral();
                     	state.followingStackPointer--;
                     	if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  j; 
                     	}
@@ -5795,7 +5805,7 @@ public partial class MacroScopeParser : Parser
                     // MacroScope\\MacroScope.g:725:4: HexLiteral
                     {
                     	HexLiteral10=(IToken)Match(input,HexLiteral,FOLLOW_HexLiteral_in_constant3062); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	  		value =  new IntegerValue(
@@ -5809,7 +5819,7 @@ public partial class MacroScopeParser : Parser
                     // MacroScope\\MacroScope.g:730:4: MAccessDateTime
                     {
                     	MAccessDateTime11=(IToken)Match(input,MAccessDateTime,FOLLOW_MAccessDateTime_in_constant3071); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	  		value =  new LiteralDateTime(((MAccessDateTime11 != null) ? MAccessDateTime11.Text : null));
@@ -5822,10 +5832,27 @@ public partial class MacroScopeParser : Parser
                     // MacroScope\\MacroScope.g:734:4: Iso8601DateTime
                     {
                     	Iso8601DateTime12=(IToken)Match(input,Iso8601DateTime,FOLLOW_Iso8601DateTime_in_constant3080); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
 
                     	  		value =  new LiteralDateTime(((Iso8601DateTime12 != null) ? Iso8601DateTime12.Text : null));
+                    	  	
+                    	}
+
+                    }
+                    break;
+                case 9 :
+                    // MacroScope\\MacroScope.g:737:4: TIMESTAMP s= stringLiteral
+                    {
+                    	Match(input,TIMESTAMP,FOLLOW_TIMESTAMP_in_constant3087); if (state.failed) return value;
+                    	PushFollow(FOLLOW_stringLiteral_in_constant3093);
+                    	s = stringLiteral();
+                    	state.followingStackPointer--;
+                    	if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
+                    	{
+
+                    	  		value =  new LiteralDateTime(s);
                     	  	
                     	}
 
@@ -5844,7 +5871,7 @@ public partial class MacroScopeParser : Parser
 
 
     // $ANTLR start "intervalLiteral"
-    // MacroScope\\MacroScope.g:740:1: intervalLiteral returns [ Interval value ] : INTERVAL (u= unaryOperator )? AsciiStringLiteral d= datetimeField ( LPAREN Integer RPAREN )? ;
+    // MacroScope\\MacroScope.g:743:1: intervalLiteral returns [ Interval value ] : INTERVAL (u= unaryOperator )? AsciiStringLiteral d= datetimeField ( LPAREN Integer RPAREN )? ;
     public Interval intervalLiteral() // throws RecognitionException [1]
     {   
         Interval value = default(Interval);
@@ -5859,11 +5886,11 @@ public partial class MacroScopeParser : Parser
          bool positive = true; int intervalNumber = 0; 
         try 
     	{
-            // MacroScope\\MacroScope.g:741:57: ( INTERVAL (u= unaryOperator )? AsciiStringLiteral d= datetimeField ( LPAREN Integer RPAREN )? )
-            // MacroScope\\MacroScope.g:742:2: INTERVAL (u= unaryOperator )? AsciiStringLiteral d= datetimeField ( LPAREN Integer RPAREN )?
+            // MacroScope\\MacroScope.g:744:57: ( INTERVAL (u= unaryOperator )? AsciiStringLiteral d= datetimeField ( LPAREN Integer RPAREN )? )
+            // MacroScope\\MacroScope.g:745:2: INTERVAL (u= unaryOperator )? AsciiStringLiteral d= datetimeField ( LPAREN Integer RPAREN )?
             {
-            	Match(input,INTERVAL,FOLLOW_INTERVAL_in_intervalLiteral3104); if (state.failed) return value;
-            	// MacroScope\\MacroScope.g:742:11: (u= unaryOperator )?
+            	Match(input,INTERVAL,FOLLOW_INTERVAL_in_intervalLiteral3117); if (state.failed) return value;
+            	// MacroScope\\MacroScope.g:745:11: (u= unaryOperator )?
             	int alt79 = 2;
             	int LA79_0 = input.LA(1);
 
@@ -5874,13 +5901,13 @@ public partial class MacroScopeParser : Parser
             	switch (alt79) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:742:13: u= unaryOperator
+            	        // MacroScope\\MacroScope.g:745:13: u= unaryOperator
             	        {
-            	        	PushFollow(FOLLOW_unaryOperator_in_intervalLiteral3112);
+            	        	PushFollow(FOLLOW_unaryOperator_in_intervalLiteral3125);
             	        	u = unaryOperator();
             	        	state.followingStackPointer--;
             	        	if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	if ( (state.backtracking==0) )
             	        	{
             	        	   
             	        	  			positive = (u == ExpressionOperator.Plus);
@@ -5892,26 +5919,26 @@ public partial class MacroScopeParser : Parser
 
             	}
 
-            	AsciiStringLiteral13=(IToken)Match(input,AsciiStringLiteral,FOLLOW_AsciiStringLiteral_in_intervalLiteral3119); if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	AsciiStringLiteral13=(IToken)Match(input,AsciiStringLiteral,FOLLOW_AsciiStringLiteral_in_intervalLiteral3132); if (state.failed) return value;
+            	if ( (state.backtracking==0) )
             	{
 
             	  			intervalNumber = Interval.Parse(
             	  				((AsciiStringLiteral13 != null) ? AsciiStringLiteral13.Text : null));
             	  		
             	}
-            	PushFollow(FOLLOW_datetimeField_in_intervalLiteral3127);
+            	PushFollow(FOLLOW_datetimeField_in_intervalLiteral3140);
             	d = datetimeField();
             	state.followingStackPointer--;
             	if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
 
             	  			value =  new Interval(positive, intervalNumber,
             	  				d);
             	  		
             	}
-            	// MacroScope\\MacroScope.g:750:5: ( LPAREN Integer RPAREN )?
+            	// MacroScope\\MacroScope.g:753:5: ( LPAREN Integer RPAREN )?
             	int alt80 = 2;
             	int LA80_0 = input.LA(1);
 
@@ -5922,17 +5949,17 @@ public partial class MacroScopeParser : Parser
             	switch (alt80) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:750:7: LPAREN Integer RPAREN
+            	        // MacroScope\\MacroScope.g:753:7: LPAREN Integer RPAREN
             	        {
-            	        	Match(input,LPAREN,FOLLOW_LPAREN_in_intervalLiteral3133); if (state.failed) return value;
-            	        	Integer14=(IToken)Match(input,Integer,FOLLOW_Integer_in_intervalLiteral3135); if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	Match(input,LPAREN,FOLLOW_LPAREN_in_intervalLiteral3146); if (state.failed) return value;
+            	        	Integer14=(IToken)Match(input,Integer,FOLLOW_Integer_in_intervalLiteral3148); if (state.failed) return value;
+            	        	if ( (state.backtracking==0) )
             	        	{
 
             	        	  			value.Precision = int.Parse(((Integer14 != null) ? Integer14.Text : null));
             	        	  		
             	        	}
-            	        	Match(input,RPAREN,FOLLOW_RPAREN_in_intervalLiteral3139); if (state.failed) return value;
+            	        	Match(input,RPAREN,FOLLOW_RPAREN_in_intervalLiteral3152); if (state.failed) return value;
 
             	        }
             	        break;
@@ -5953,7 +5980,7 @@ public partial class MacroScopeParser : Parser
 
 
     // $ANTLR start "nonNegativeInteger"
-    // MacroScope\\MacroScope.g:755:1: nonNegativeInteger returns [ int value ] : Integer ;
+    // MacroScope\\MacroScope.g:758:1: nonNegativeInteger returns [ int value ] : Integer ;
     public int nonNegativeInteger() // throws RecognitionException [1]
     {   
         int value = default(int);
@@ -5962,11 +5989,11 @@ public partial class MacroScopeParser : Parser
 
         try 
     	{
-            // MacroScope\\MacroScope.g:755:42: ( Integer )
-            // MacroScope\\MacroScope.g:756:2: Integer
+            // MacroScope\\MacroScope.g:758:42: ( Integer )
+            // MacroScope\\MacroScope.g:759:2: Integer
             {
-            	Integer15=(IToken)Match(input,Integer,FOLLOW_Integer_in_nonNegativeInteger3157); if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	Integer15=(IToken)Match(input,Integer,FOLLOW_Integer_in_nonNegativeInteger3170); if (state.failed) return value;
+            	if ( (state.backtracking==0) )
             	{
             	   value =  int.Parse(((Integer15 != null) ? Integer15.Text : null)); 
             	}
@@ -5984,14 +6011,14 @@ public partial class MacroScopeParser : Parser
 
 
     // $ANTLR start "unaryOperator"
-    // MacroScope\\MacroScope.g:759:1: unaryOperator returns [ ExpressionOperator value ] : ( PLUS | MINUS );
+    // MacroScope\\MacroScope.g:762:1: unaryOperator returns [ ExpressionOperator value ] : ( PLUS | MINUS );
     public ExpressionOperator unaryOperator() // throws RecognitionException [1]
     {   
         ExpressionOperator value = default(ExpressionOperator);
 
         try 
     	{
-            // MacroScope\\MacroScope.g:759:52: ( PLUS | MINUS )
+            // MacroScope\\MacroScope.g:762:52: ( PLUS | MINUS )
             int alt81 = 2;
             int LA81_0 = input.LA(1);
 
@@ -6014,10 +6041,10 @@ public partial class MacroScopeParser : Parser
             switch (alt81) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:760:2: PLUS
+                    // MacroScope\\MacroScope.g:763:2: PLUS
                     {
-                    	Match(input,PLUS,FOLLOW_PLUS_in_unaryOperator3174); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,PLUS,FOLLOW_PLUS_in_unaryOperator3187); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  ExpressionOperator.Plus; 
                     	}
@@ -6025,10 +6052,10 @@ public partial class MacroScopeParser : Parser
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:761:4: MINUS
+                    // MacroScope\\MacroScope.g:764:4: MINUS
                     {
-                    	Match(input,MINUS,FOLLOW_MINUS_in_unaryOperator3181); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,MINUS,FOLLOW_MINUS_in_unaryOperator3194); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  ExpressionOperator.Minus; 
                     	}
@@ -6048,14 +6075,14 @@ public partial class MacroScopeParser : Parser
 
 
     // $ANTLR start "additiveOperator"
-    // MacroScope\\MacroScope.g:764:1: additiveOperator returns [ ExpressionOperator value ] : ( PLUS | MINUS | STRCONCAT );
+    // MacroScope\\MacroScope.g:767:1: additiveOperator returns [ ExpressionOperator value ] : ( PLUS | MINUS | STRCONCAT );
     public ExpressionOperator additiveOperator() // throws RecognitionException [1]
     {   
         ExpressionOperator value = default(ExpressionOperator);
 
         try 
     	{
-            // MacroScope\\MacroScope.g:764:55: ( PLUS | MINUS | STRCONCAT )
+            // MacroScope\\MacroScope.g:767:55: ( PLUS | MINUS | STRCONCAT )
             int alt82 = 3;
             switch ( input.LA(1) ) 
             {
@@ -6085,10 +6112,10 @@ public partial class MacroScopeParser : Parser
             switch (alt82) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:765:2: PLUS
+                    // MacroScope\\MacroScope.g:768:2: PLUS
                     {
-                    	Match(input,PLUS,FOLLOW_PLUS_in_additiveOperator3198); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,PLUS,FOLLOW_PLUS_in_additiveOperator3211); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  ExpressionOperator.Plus; 
                     	}
@@ -6096,10 +6123,10 @@ public partial class MacroScopeParser : Parser
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:766:4: MINUS
+                    // MacroScope\\MacroScope.g:769:4: MINUS
                     {
-                    	Match(input,MINUS,FOLLOW_MINUS_in_additiveOperator3205); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,MINUS,FOLLOW_MINUS_in_additiveOperator3218); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  ExpressionOperator.Minus; 
                     	}
@@ -6107,10 +6134,10 @@ public partial class MacroScopeParser : Parser
                     }
                     break;
                 case 3 :
-                    // MacroScope\\MacroScope.g:767:4: STRCONCAT
+                    // MacroScope\\MacroScope.g:770:4: STRCONCAT
                     {
-                    	Match(input,STRCONCAT,FOLLOW_STRCONCAT_in_additiveOperator3212); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,STRCONCAT,FOLLOW_STRCONCAT_in_additiveOperator3225); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  ExpressionOperator.StrConcat; 
                     	}
@@ -6130,14 +6157,14 @@ public partial class MacroScopeParser : Parser
 
 
     // $ANTLR start "multiplicativeArithmeticOperator"
-    // MacroScope\\MacroScope.g:770:1: multiplicativeArithmeticOperator returns [ ExpressionOperator value ] : ( STAR | DIVIDE | MOD );
+    // MacroScope\\MacroScope.g:773:1: multiplicativeArithmeticOperator returns [ ExpressionOperator value ] : ( STAR | DIVIDE | MOD );
     public ExpressionOperator multiplicativeArithmeticOperator() // throws RecognitionException [1]
     {   
         ExpressionOperator value = default(ExpressionOperator);
 
         try 
     	{
-            // MacroScope\\MacroScope.g:770:71: ( STAR | DIVIDE | MOD )
+            // MacroScope\\MacroScope.g:773:71: ( STAR | DIVIDE | MOD )
             int alt83 = 3;
             switch ( input.LA(1) ) 
             {
@@ -6167,10 +6194,10 @@ public partial class MacroScopeParser : Parser
             switch (alt83) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:771:2: STAR
+                    // MacroScope\\MacroScope.g:774:2: STAR
                     {
-                    	Match(input,STAR,FOLLOW_STAR_in_multiplicativeArithmeticOperator3233); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,STAR,FOLLOW_STAR_in_multiplicativeArithmeticOperator3246); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  ExpressionOperator.Mult; 
                     	}
@@ -6178,10 +6205,10 @@ public partial class MacroScopeParser : Parser
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:772:4: DIVIDE
+                    // MacroScope\\MacroScope.g:775:4: DIVIDE
                     {
-                    	Match(input,DIVIDE,FOLLOW_DIVIDE_in_multiplicativeArithmeticOperator3240); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,DIVIDE,FOLLOW_DIVIDE_in_multiplicativeArithmeticOperator3253); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  ExpressionOperator.Div; 
                     	}
@@ -6189,10 +6216,10 @@ public partial class MacroScopeParser : Parser
                     }
                     break;
                 case 3 :
-                    // MacroScope\\MacroScope.g:773:4: MOD
+                    // MacroScope\\MacroScope.g:776:4: MOD
                     {
-                    	Match(input,MOD,FOLLOW_MOD_in_multiplicativeArithmeticOperator3247); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,MOD,FOLLOW_MOD_in_multiplicativeArithmeticOperator3260); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  ExpressionOperator.Mod; 
                     	}
@@ -6212,14 +6239,14 @@ public partial class MacroScopeParser : Parser
 
 
     // $ANTLR start "comparisonOperator"
-    // MacroScope\\MacroScope.g:776:1: comparisonOperator returns [ ExpressionOperator value ] : ( ASSIGNEQUAL | NOTEQUAL1 | NOTEQUAL2 | LESSTHANOREQUALTO1 | LESSTHAN | GREATERTHANOREQUALTO1 | GREATERTHAN );
+    // MacroScope\\MacroScope.g:779:1: comparisonOperator returns [ ExpressionOperator value ] : ( ASSIGNEQUAL | NOTEQUAL1 | NOTEQUAL2 | LESSTHANOREQUALTO1 | LESSTHAN | GREATERTHANOREQUALTO1 | GREATERTHAN );
     public ExpressionOperator comparisonOperator() // throws RecognitionException [1]
     {   
         ExpressionOperator value = default(ExpressionOperator);
 
         try 
     	{
-            // MacroScope\\MacroScope.g:776:57: ( ASSIGNEQUAL | NOTEQUAL1 | NOTEQUAL2 | LESSTHANOREQUALTO1 | LESSTHAN | GREATERTHANOREQUALTO1 | GREATERTHAN )
+            // MacroScope\\MacroScope.g:779:57: ( ASSIGNEQUAL | NOTEQUAL1 | NOTEQUAL2 | LESSTHANOREQUALTO1 | LESSTHAN | GREATERTHANOREQUALTO1 | GREATERTHAN )
             int alt84 = 7;
             switch ( input.LA(1) ) 
             {
@@ -6269,10 +6296,10 @@ public partial class MacroScopeParser : Parser
             switch (alt84) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:777:2: ASSIGNEQUAL
+                    // MacroScope\\MacroScope.g:780:2: ASSIGNEQUAL
                     {
-                    	Match(input,ASSIGNEQUAL,FOLLOW_ASSIGNEQUAL_in_comparisonOperator3268); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,ASSIGNEQUAL,FOLLOW_ASSIGNEQUAL_in_comparisonOperator3281); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  ExpressionOperator.Equal; 
                     	}
@@ -6280,10 +6307,10 @@ public partial class MacroScopeParser : Parser
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:778:4: NOTEQUAL1
+                    // MacroScope\\MacroScope.g:781:4: NOTEQUAL1
                     {
-                    	Match(input,NOTEQUAL1,FOLLOW_NOTEQUAL1_in_comparisonOperator3275); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,NOTEQUAL1,FOLLOW_NOTEQUAL1_in_comparisonOperator3288); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  ExpressionOperator.NotEqual; 
                     	}
@@ -6291,10 +6318,10 @@ public partial class MacroScopeParser : Parser
                     }
                     break;
                 case 3 :
-                    // MacroScope\\MacroScope.g:779:4: NOTEQUAL2
+                    // MacroScope\\MacroScope.g:782:4: NOTEQUAL2
                     {
-                    	Match(input,NOTEQUAL2,FOLLOW_NOTEQUAL2_in_comparisonOperator3282); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,NOTEQUAL2,FOLLOW_NOTEQUAL2_in_comparisonOperator3295); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  ExpressionOperator.NotEqual; 
                     	}
@@ -6302,10 +6329,10 @@ public partial class MacroScopeParser : Parser
                     }
                     break;
                 case 4 :
-                    // MacroScope\\MacroScope.g:780:4: LESSTHANOREQUALTO1
+                    // MacroScope\\MacroScope.g:783:4: LESSTHANOREQUALTO1
                     {
-                    	Match(input,LESSTHANOREQUALTO1,FOLLOW_LESSTHANOREQUALTO1_in_comparisonOperator3289); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,LESSTHANOREQUALTO1,FOLLOW_LESSTHANOREQUALTO1_in_comparisonOperator3302); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  ExpressionOperator.LessOrEqual; 
                     	}
@@ -6313,10 +6340,10 @@ public partial class MacroScopeParser : Parser
                     }
                     break;
                 case 5 :
-                    // MacroScope\\MacroScope.g:781:4: LESSTHAN
+                    // MacroScope\\MacroScope.g:784:4: LESSTHAN
                     {
-                    	Match(input,LESSTHAN,FOLLOW_LESSTHAN_in_comparisonOperator3296); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,LESSTHAN,FOLLOW_LESSTHAN_in_comparisonOperator3309); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  ExpressionOperator.Less; 
                     	}
@@ -6324,10 +6351,10 @@ public partial class MacroScopeParser : Parser
                     }
                     break;
                 case 6 :
-                    // MacroScope\\MacroScope.g:782:4: GREATERTHANOREQUALTO1
+                    // MacroScope\\MacroScope.g:785:4: GREATERTHANOREQUALTO1
                     {
-                    	Match(input,GREATERTHANOREQUALTO1,FOLLOW_GREATERTHANOREQUALTO1_in_comparisonOperator3303); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,GREATERTHANOREQUALTO1,FOLLOW_GREATERTHANOREQUALTO1_in_comparisonOperator3316); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  ExpressionOperator.GreaterOrEqual; 
                     	}
@@ -6335,10 +6362,10 @@ public partial class MacroScopeParser : Parser
                     }
                     break;
                 case 7 :
-                    // MacroScope\\MacroScope.g:783:4: GREATERTHAN
+                    // MacroScope\\MacroScope.g:786:4: GREATERTHAN
                     {
-                    	Match(input,GREATERTHAN,FOLLOW_GREATERTHAN_in_comparisonOperator3310); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,GREATERTHAN,FOLLOW_GREATERTHAN_in_comparisonOperator3323); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  ExpressionOperator.Greater; 
                     	}
@@ -6358,22 +6385,22 @@ public partial class MacroScopeParser : Parser
 
 
     // $ANTLR start "unionOperator"
-    // MacroScope\\MacroScope.g:786:1: unionOperator returns [ bool value ] : UNION ( ALL )? ;
+    // MacroScope\\MacroScope.g:789:1: unionOperator returns [ bool value ] : UNION ( ALL )? ;
     public bool unionOperator() // throws RecognitionException [1]
     {   
         bool value = default(bool);
 
         try 
     	{
-            // MacroScope\\MacroScope.g:786:38: ( UNION ( ALL )? )
-            // MacroScope\\MacroScope.g:787:2: UNION ( ALL )?
+            // MacroScope\\MacroScope.g:789:38: ( UNION ( ALL )? )
+            // MacroScope\\MacroScope.g:790:2: UNION ( ALL )?
             {
-            	Match(input,UNION,FOLLOW_UNION_in_unionOperator3327); if (state.failed) return value;
-            	if ( state.backtracking == 0 ) 
+            	Match(input,UNION,FOLLOW_UNION_in_unionOperator3340); if (state.failed) return value;
+            	if ( (state.backtracking==0) )
             	{
             	   value =  false; 
             	}
-            	// MacroScope\\MacroScope.g:788:2: ( ALL )?
+            	// MacroScope\\MacroScope.g:791:2: ( ALL )?
             	int alt85 = 2;
             	int LA85_0 = input.LA(1);
 
@@ -6384,10 +6411,10 @@ public partial class MacroScopeParser : Parser
             	switch (alt85) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:788:4: ALL
+            	        // MacroScope\\MacroScope.g:791:4: ALL
             	        {
-            	        	Match(input,ALL,FOLLOW_ALL_in_unionOperator3334); if (state.failed) return value;
-            	        	if ( state.backtracking == 0 ) 
+            	        	Match(input,ALL,FOLLOW_ALL_in_unionOperator3347); if (state.failed) return value;
+            	        	if ( (state.backtracking==0) )
             	        	{
             	        	   value =  true; 
             	        	}
@@ -6411,14 +6438,14 @@ public partial class MacroScopeParser : Parser
 
 
     // $ANTLR start "datetimeField"
-    // MacroScope\\MacroScope.g:791:1: datetimeField returns [ DateTimeUnit value ] : ( YEAR | MONTH | DAY | HOUR | MINUTE | SECOND );
+    // MacroScope\\MacroScope.g:794:1: datetimeField returns [ DateTimeUnit value ] : ( YEAR | MONTH | DAY | HOUR | MINUTE | SECOND );
     public DateTimeUnit datetimeField() // throws RecognitionException [1]
     {   
         DateTimeUnit value = default(DateTimeUnit);
 
         try 
     	{
-            // MacroScope\\MacroScope.g:791:46: ( YEAR | MONTH | DAY | HOUR | MINUTE | SECOND )
+            // MacroScope\\MacroScope.g:794:46: ( YEAR | MONTH | DAY | HOUR | MINUTE | SECOND )
             int alt86 = 6;
             switch ( input.LA(1) ) 
             {
@@ -6463,10 +6490,10 @@ public partial class MacroScopeParser : Parser
             switch (alt86) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:792:2: YEAR
+                    // MacroScope\\MacroScope.g:795:2: YEAR
                     {
-                    	Match(input,YEAR,FOLLOW_YEAR_in_datetimeField3354); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,YEAR,FOLLOW_YEAR_in_datetimeField3367); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  DateTimeUnit.Year; 
                     	}
@@ -6474,10 +6501,10 @@ public partial class MacroScopeParser : Parser
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:793:4: MONTH
+                    // MacroScope\\MacroScope.g:796:4: MONTH
                     {
-                    	Match(input,MONTH,FOLLOW_MONTH_in_datetimeField3361); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,MONTH,FOLLOW_MONTH_in_datetimeField3374); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  DateTimeUnit.Month; 
                     	}
@@ -6485,10 +6512,10 @@ public partial class MacroScopeParser : Parser
                     }
                     break;
                 case 3 :
-                    // MacroScope\\MacroScope.g:794:4: DAY
+                    // MacroScope\\MacroScope.g:797:4: DAY
                     {
-                    	Match(input,DAY,FOLLOW_DAY_in_datetimeField3368); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,DAY,FOLLOW_DAY_in_datetimeField3381); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  DateTimeUnit.Day; 
                     	}
@@ -6496,10 +6523,10 @@ public partial class MacroScopeParser : Parser
                     }
                     break;
                 case 4 :
-                    // MacroScope\\MacroScope.g:795:4: HOUR
+                    // MacroScope\\MacroScope.g:798:4: HOUR
                     {
-                    	Match(input,HOUR,FOLLOW_HOUR_in_datetimeField3375); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,HOUR,FOLLOW_HOUR_in_datetimeField3388); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  DateTimeUnit.Hour; 
                     	}
@@ -6507,10 +6534,10 @@ public partial class MacroScopeParser : Parser
                     }
                     break;
                 case 5 :
-                    // MacroScope\\MacroScope.g:796:4: MINUTE
+                    // MacroScope\\MacroScope.g:799:4: MINUTE
                     {
-                    	Match(input,MINUTE,FOLLOW_MINUTE_in_datetimeField3382); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,MINUTE,FOLLOW_MINUTE_in_datetimeField3395); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  DateTimeUnit.Minute; 
                     	}
@@ -6518,10 +6545,10 @@ public partial class MacroScopeParser : Parser
                     }
                     break;
                 case 6 :
-                    // MacroScope\\MacroScope.g:797:4: SECOND
+                    // MacroScope\\MacroScope.g:800:4: SECOND
                     {
-                    	Match(input,SECOND,FOLLOW_SECOND_in_datetimeField3389); if (state.failed) return value;
-                    	if ( state.backtracking == 0 ) 
+                    	Match(input,SECOND,FOLLOW_SECOND_in_datetimeField3402); if (state.failed) return value;
+                    	if ( (state.backtracking==0) )
                     	{
                     	   value =  DateTimeUnit.Second; 
                     	}
@@ -6540,8 +6567,7 @@ public partial class MacroScopeParser : Parser
     // $ANTLR end "datetimeField"
 
     // $ANTLR start "synpred1_MacroScope"
-    public void synpred1_MacroScope_fragment() //throws RecognitionException
-    {   
+    public void synpred1_MacroScope_fragment() {
         // MacroScope\\MacroScope.g:205:3: ( bracketedSearchCondition )
         // MacroScope\\MacroScope.g:205:4: bracketedSearchCondition
         {
@@ -6555,8 +6581,7 @@ public partial class MacroScopeParser : Parser
     // $ANTLR end "synpred1_MacroScope"
 
     // $ANTLR start "synpred2_MacroScope"
-    public void synpred2_MacroScope_fragment() //throws RecognitionException
-    {   
+    public void synpred2_MacroScope_fragment() {
         // MacroScope\\MacroScope.g:306:5: ( selectStatement )
         // MacroScope\\MacroScope.g:306:7: selectStatement
         {
@@ -6570,8 +6595,7 @@ public partial class MacroScopeParser : Parser
     // $ANTLR end "synpred2_MacroScope"
 
     // $ANTLR start "synpred3_MacroScope"
-    public void synpred3_MacroScope_fragment() //throws RecognitionException
-    {   
+    public void synpred3_MacroScope_fragment() {
         // MacroScope\\MacroScope.g:349:3: ( alias2 )
         // MacroScope\\MacroScope.g:349:4: alias2
         {
@@ -6585,8 +6609,7 @@ public partial class MacroScopeParser : Parser
     // $ANTLR end "synpred3_MacroScope"
 
     // $ANTLR start "synpred4_MacroScope"
-    public void synpred4_MacroScope_fragment() //throws RecognitionException
-    {   
+    public void synpred4_MacroScope_fragment() {
         // MacroScope\\MacroScope.g:357:5: ( tableColumns )
         // MacroScope\\MacroScope.g:357:6: tableColumns
         {
@@ -6600,8 +6623,7 @@ public partial class MacroScopeParser : Parser
     // $ANTLR end "synpred4_MacroScope"
 
     // $ANTLR start "synpred5_MacroScope"
-    public void synpred5_MacroScope_fragment() //throws RecognitionException
-    {   
+    public void synpred5_MacroScope_fragment() {
         // MacroScope\\MacroScope.g:382:3: ( joinedTables )
         // MacroScope\\MacroScope.g:382:4: joinedTables
         {
@@ -6615,8 +6637,7 @@ public partial class MacroScopeParser : Parser
     // $ANTLR end "synpred5_MacroScope"
 
     // $ANTLR start "synpred6_MacroScope"
-    public void synpred6_MacroScope_fragment() //throws RecognitionException
-    {   
+    public void synpred6_MacroScope_fragment() {
         // MacroScope\\MacroScope.g:399:4: ( function )
         // MacroScope\\MacroScope.g:399:5: function
         {
@@ -6630,8 +6651,7 @@ public partial class MacroScopeParser : Parser
     // $ANTLR end "synpred6_MacroScope"
 
     // $ANTLR start "synpred7_MacroScope"
-    public void synpred7_MacroScope_fragment() //throws RecognitionException
-    {   
+    public void synpred7_MacroScope_fragment() {
         // MacroScope\\MacroScope.g:480:11: ( selectStatement )
         // MacroScope\\MacroScope.g:480:12: selectStatement
         {
@@ -6645,8 +6665,7 @@ public partial class MacroScopeParser : Parser
     // $ANTLR end "synpred7_MacroScope"
 
     // $ANTLR start "synpred8_MacroScope"
-    public void synpred8_MacroScope_fragment() //throws RecognitionException
-    {   
+    public void synpred8_MacroScope_fragment() {
         // MacroScope\\MacroScope.g:519:5: ( function )
         // MacroScope\\MacroScope.g:519:6: function
         {
@@ -6827,22 +6846,23 @@ public partial class MacroScopeParser : Parser
 	}
 
     const string DFA26_eotS =
-        "\x19\uffff";
+        "\x1a\uffff";
     const string DFA26_eofS =
-        "\x19\uffff";
+        "\x1a\uffff";
     const string DFA26_minS =
-        "\x01\x06\x01\x00\x17\uffff";
+        "\x01\x06\x01\x00\x18\uffff";
     const string DFA26_maxS =
-        "\x01\x49\x01\x00\x17\uffff";
+        "\x01\x4a\x01\x00\x18\uffff";
     const string DFA26_acceptS =
-        "\x02\uffff\x01\x02\x15\uffff\x01\x01";
+        "\x02\uffff\x01\x02\x16\uffff\x01\x01";
     const string DFA26_specialS =
-        "\x01\uffff\x01\x00\x17\uffff}>";
+        "\x01\uffff\x01\x00\x18\uffff}>";
     static readonly string[] DFA26_transitionS = {
             "\x01\x01\x0d\uffff\x01\x02\x0b\uffff\x01\x02\x04\uffff\x01"+
             "\x02\x04\uffff\x02\x02\x07\uffff\x03\x02\x01\uffff\x03\x02\x04"+
-            "\uffff\x01\x02\x01\uffff\x0a\x02",
+            "\uffff\x01\x02\x01\uffff\x0b\x02",
             "\x01\uffff",
+            "",
             "",
             "",
             "",
@@ -6913,7 +6933,7 @@ public partial class MacroScopeParser : Parser
                    	int index26_1 = input.Index();
                    	input.Rewind();
                    	s = -1;
-                   	if ( (synpred1_MacroScope()) ) { s = 24; }
+                   	if ( (synpred1_MacroScope()) ) { s = 25; }
 
                    	else if ( (true) ) { s = 2; }
 
@@ -6923,29 +6943,30 @@ public partial class MacroScopeParser : Parser
                    	break;
         }
         if (state.backtracking > 0) {state.failed = true; return -1;}
-        NoViableAltException nvae =
+        NoViableAltException nvae26 =
             new NoViableAltException(dfa.Description, 26, _s, input);
-        dfa.Error(nvae);
-        throw nvae;
+        dfa.Error(nvae26);
+        throw nvae26;
     }
     const string DFA32_eotS =
-        "\x18\uffff";
+        "\x19\uffff";
     const string DFA32_eofS =
-        "\x18\uffff";
+        "\x19\uffff";
     const string DFA32_minS =
-        "\x01\x06\x01\uffff\x01\x00\x15\uffff";
+        "\x01\x06\x01\uffff\x01\x00\x16\uffff";
     const string DFA32_maxS =
-        "\x01\x49\x01\uffff\x01\x00\x15\uffff";
+        "\x01\x4a\x01\uffff\x01\x00\x16\uffff";
     const string DFA32_acceptS =
-        "\x01\uffff\x01\x01\x01\uffff\x01\x02\x14\uffff";
+        "\x01\uffff\x01\x01\x01\uffff\x01\x02\x15\uffff";
     const string DFA32_specialS =
-        "\x01\x00\x01\uffff\x01\x01\x15\uffff}>";
+        "\x01\x00\x01\uffff\x01\x01\x16\uffff}>";
     static readonly string[] DFA32_transitionS = {
             "\x01\x02\x09\uffff\x01\x01\x03\uffff\x01\x03\x0b\uffff\x01"+
             "\x03\x09\uffff\x02\x03\x07\uffff\x03\x03\x01\uffff\x03\x03\x04"+
-            "\uffff\x01\x03\x01\uffff\x0a\x03",
+            "\uffff\x01\x03\x01\uffff\x0b\x03",
             "",
             "\x01\uffff",
+            "",
             "",
             "",
             "",
@@ -7041,10 +7062,10 @@ public partial class MacroScopeParser : Parser
                    	break;
         }
         if (state.backtracking > 0) {state.failed = true; return -1;}
-        NoViableAltException nvae =
+        NoViableAltException nvae32 =
             new NoViableAltException(dfa.Description, 32, _s, input);
-        dfa.Error(nvae);
-        throw nvae;
+        dfa.Error(nvae32);
+        throw nvae32;
     }
     const string DFA39_eotS =
         "\x09\uffff";
@@ -7053,22 +7074,22 @@ public partial class MacroScopeParser : Parser
     const string DFA39_minS =
         "\x02\x06\x01\x07\x02\uffff\x01\x38\x01\uffff\x02\x07";
     const string DFA39_maxS =
-        "\x01\x49\x02\x53\x02\uffff\x01\x42\x01\uffff\x02\x53";
+        "\x01\x4a\x02\x54\x02\uffff\x01\x42\x01\uffff\x02\x54";
     const string DFA39_acceptS =
         "\x03\uffff\x01\x03\x01\x01\x01\uffff\x01\x02\x02\uffff";
     const string DFA39_specialS =
-        "\x01\uffff\x01\x02\x01\x03\x04\uffff\x01\x01\x01\x00}>";
+        "\x01\uffff\x01\x00\x01\x03\x04\uffff\x01\x01\x01\x02}>";
     static readonly string[] DFA39_transitionS = {
             "\x01\x03\x0d\uffff\x01\x03\x0b\uffff\x01\x03\x09\uffff\x02"+
             "\x03\x07\uffff\x03\x03\x01\uffff\x01\x03\x01\x01\x01\x03\x04"+
-            "\uffff\x01\x03\x01\uffff\x02\x03\x01\x02\x07\x03",
+            "\uffff\x01\x03\x01\uffff\x02\x03\x01\x02\x08\x03",
             "\x02\x03\x04\uffff\x02\x03\x01\x04\x06\uffff\x02\x03\x03\uffff"+
             "\x01\x03\x0d\uffff\x01\x03\x08\uffff\x01\x03\x01\x06\x05\uffff"+
-            "\x01\x03\x06\uffff\x01\x05\x02\uffff\x01\x03\x05\uffff\x05\x03"+
+            "\x01\x03\x06\uffff\x01\x05\x02\uffff\x01\x03\x06\uffff\x05\x03"+
             "\x06\uffff\x01\x03",
             "\x01\x03\x04\uffff\x02\x03\x01\x04\x06\uffff\x02\x03\x03\uffff"+
             "\x01\x03\x0d\uffff\x01\x03\x08\uffff\x01\x03\x01\x06\x05\uffff"+
-            "\x01\x03\x06\uffff\x01\x05\x02\uffff\x01\x03\x05\uffff\x05\x03"+
+            "\x01\x03\x06\uffff\x01\x05\x02\uffff\x01\x03\x06\uffff\x05\x03"+
             "\x06\uffff\x01\x03",
             "",
             "",
@@ -7076,11 +7097,11 @@ public partial class MacroScopeParser : Parser
             "",
             "\x01\x03\x04\uffff\x02\x03\x07\uffff\x02\x03\x03\uffff\x01"+
             "\x03\x0d\uffff\x01\x03\x08\uffff\x01\x03\x01\x06\x05\uffff\x01"+
-            "\x03\x06\uffff\x01\x05\x02\uffff\x01\x03\x05\uffff\x05\x03\x06"+
+            "\x03\x06\uffff\x01\x05\x02\uffff\x01\x03\x06\uffff\x05\x03\x06"+
             "\uffff\x01\x03",
             "\x01\x03\x04\uffff\x02\x03\x07\uffff\x02\x03\x03\uffff\x01"+
             "\x03\x0d\uffff\x01\x03\x08\uffff\x01\x03\x01\x06\x05\uffff\x01"+
-            "\x03\x06\uffff\x01\x05\x02\uffff\x01\x03\x05\uffff\x05\x03\x06"+
+            "\x03\x06\uffff\x01\x05\x02\uffff\x01\x03\x06\uffff\x05\x03\x06"+
             "\uffff\x01\x03"
     };
 
@@ -7123,20 +7144,22 @@ public partial class MacroScopeParser : Parser
         switch ( s )
         {
                	case 0 : 
-                   	int LA39_8 = input.LA(1);
+                   	int LA39_1 = input.LA(1);
 
                    	 
-                   	int index39_8 = input.Index();
+                   	int index39_1 = input.Index();
                    	input.Rewind();
                    	s = -1;
-                   	if ( (LA39_8 == EOF || LA39_8 == RPAREN || (LA39_8 >= FROM && LA39_8 <= COMMA) || (LA39_8 >= WHERE && LA39_8 <= ORDER) || LA39_8 == GROUP || LA39_8 == STAR || LA39_8 == AS || LA39_8 == NonQuotedIdentifier || LA39_8 == QuotedIdentifier || (LA39_8 >= PLUS && LA39_8 <= MOD) || LA39_8 == UNION) ) { s = 3; }
+                   	if ( (LA39_1 == ASSIGNEQUAL) && (synpred3_MacroScope()) ) { s = 4; }
 
-                   	else if ( (LA39_8 == DOT) ) { s = 5; }
+                   	else if ( (LA39_1 == EOF || (LA39_1 >= LPAREN && LA39_1 <= RPAREN) || (LA39_1 >= FROM && LA39_1 <= COMMA) || (LA39_1 >= WHERE && LA39_1 <= ORDER) || LA39_1 == GROUP || LA39_1 == STAR || LA39_1 == AS || LA39_1 == NonQuotedIdentifier || LA39_1 == QuotedIdentifier || (LA39_1 >= PLUS && LA39_1 <= MOD) || LA39_1 == UNION) ) { s = 3; }
 
-                   	else if ( (LA39_8 == DOT_STAR) && (synpred4_MacroScope()) ) { s = 6; }
+                   	else if ( (LA39_1 == DOT) ) { s = 5; }
+
+                   	else if ( (LA39_1 == DOT_STAR) && (synpred4_MacroScope()) ) { s = 6; }
 
                    	 
-                   	input.Seek(index39_8);
+                   	input.Seek(index39_1);
                    	if ( s >= 0 ) return s;
                    	break;
                	case 1 : 
@@ -7157,22 +7180,20 @@ public partial class MacroScopeParser : Parser
                    	if ( s >= 0 ) return s;
                    	break;
                	case 2 : 
-                   	int LA39_1 = input.LA(1);
+                   	int LA39_8 = input.LA(1);
 
                    	 
-                   	int index39_1 = input.Index();
+                   	int index39_8 = input.Index();
                    	input.Rewind();
                    	s = -1;
-                   	if ( (LA39_1 == ASSIGNEQUAL) && (synpred3_MacroScope()) ) { s = 4; }
+                   	if ( (LA39_8 == EOF || LA39_8 == RPAREN || (LA39_8 >= FROM && LA39_8 <= COMMA) || (LA39_8 >= WHERE && LA39_8 <= ORDER) || LA39_8 == GROUP || LA39_8 == STAR || LA39_8 == AS || LA39_8 == NonQuotedIdentifier || LA39_8 == QuotedIdentifier || (LA39_8 >= PLUS && LA39_8 <= MOD) || LA39_8 == UNION) ) { s = 3; }
 
-                   	else if ( (LA39_1 == EOF || (LA39_1 >= LPAREN && LA39_1 <= RPAREN) || (LA39_1 >= FROM && LA39_1 <= COMMA) || (LA39_1 >= WHERE && LA39_1 <= ORDER) || LA39_1 == GROUP || LA39_1 == STAR || LA39_1 == AS || LA39_1 == NonQuotedIdentifier || LA39_1 == QuotedIdentifier || (LA39_1 >= PLUS && LA39_1 <= MOD) || LA39_1 == UNION) ) { s = 3; }
+                   	else if ( (LA39_8 == DOT) ) { s = 5; }
 
-                   	else if ( (LA39_1 == DOT) ) { s = 5; }
-
-                   	else if ( (LA39_1 == DOT_STAR) && (synpred4_MacroScope()) ) { s = 6; }
+                   	else if ( (LA39_8 == DOT_STAR) && (synpred4_MacroScope()) ) { s = 6; }
 
                    	 
-                   	input.Seek(index39_1);
+                   	input.Seek(index39_8);
                    	if ( s >= 0 ) return s;
                    	break;
                	case 3 : 
@@ -7196,29 +7217,30 @@ public partial class MacroScopeParser : Parser
                    	break;
         }
         if (state.backtracking > 0) {state.failed = true; return -1;}
-        NoViableAltException nvae =
+        NoViableAltException nvae39 =
             new NoViableAltException(dfa.Description, 39, _s, input);
-        dfa.Error(nvae);
-        throw nvae;
+        dfa.Error(nvae39);
+        throw nvae39;
     }
     const string DFA56_eotS =
-        "\x18\uffff";
+        "\x19\uffff";
     const string DFA56_eofS =
-        "\x18\uffff";
+        "\x19\uffff";
     const string DFA56_minS =
-        "\x01\x06\x01\uffff\x01\x00\x15\uffff";
+        "\x01\x06\x01\uffff\x01\x00\x16\uffff";
     const string DFA56_maxS =
-        "\x01\x49\x01\uffff\x01\x00\x15\uffff";
+        "\x01\x4a\x01\uffff\x01\x00\x16\uffff";
     const string DFA56_acceptS =
-        "\x01\uffff\x01\x01\x01\uffff\x01\x02\x14\uffff";
+        "\x01\uffff\x01\x01\x01\uffff\x01\x02\x15\uffff";
     const string DFA56_specialS =
-        "\x01\x00\x01\uffff\x01\x01\x15\uffff}>";
+        "\x01\x00\x01\uffff\x01\x01\x16\uffff}>";
     static readonly string[] DFA56_transitionS = {
             "\x01\x02\x09\uffff\x01\x01\x03\uffff\x01\x03\x0b\uffff\x01"+
             "\x03\x09\uffff\x02\x03\x07\uffff\x03\x03\x01\uffff\x03\x03\x04"+
-            "\uffff\x01\x03\x01\uffff\x0a\x03",
+            "\uffff\x01\x03\x01\uffff\x0b\x03",
             "",
             "\x01\uffff",
+            "",
             "",
             "",
             "",
@@ -7314,10 +7336,10 @@ public partial class MacroScopeParser : Parser
                    	break;
         }
         if (state.backtracking > 0) {state.failed = true; return -1;}
-        NoViableAltException nvae =
+        NoViableAltException nvae56 =
             new NoViableAltException(dfa.Description, 56, _s, input);
-        dfa.Error(nvae);
-        throw nvae;
+        dfa.Error(nvae56);
+        throw nvae56;
     }
     const string DFA58_eotS =
         "\x0e\uffff";
@@ -7326,7 +7348,7 @@ public partial class MacroScopeParser : Parser
     const string DFA58_minS =
         "\x01\x06\x05\uffff\x01\x06\x07\uffff";
     const string DFA58_maxS =
-        "\x01\x47\x05\uffff\x01\x53\x07\uffff";
+        "\x01\x48\x05\uffff\x01\x54\x07\uffff";
     const string DFA58_acceptS =
         "\x01\uffff\x01\x01\x01\x02\x01\x03\x02\x04\x01\uffff\x02\x04\x01"+
         "\x05\x01\x06\x01\x07\x01\x08\x01\x04";
@@ -7336,7 +7358,7 @@ public partial class MacroScopeParser : Parser
             "\x01\x09\x0d\uffff\x01\x01\x0b\uffff\x01\x01\x09\uffff\x01"+
             "\x07\x01\x08\x07\uffff\x01\x03\x01\x02\x01\x04\x01\uffff\x01"+
             "\x05\x01\x06\x01\x0b\x04\uffff\x01\x0c\x01\uffff\x02\x01\x01"+
-            "\x0a\x05\x01",
+            "\x0a\x06\x01",
             "",
             "",
             "",
@@ -7345,7 +7367,7 @@ public partial class MacroScopeParser : Parser
             "\x01\x0d\x01\x0a\x04\uffff\x03\x0a\x06\uffff\x02\x0a\x01\uffff"+
             "\x08\x0a\x01\uffff\x04\x0a\x03\uffff\x05\x0a\x01\uffff\x04\x0a"+
             "\x04\uffff\x01\x0a\x01\uffff\x01\x0a\x01\uffff\x04\x0a\x01\uffff"+
-            "\x01\x0a\x02\uffff\x01\x0a\x05\uffff\x0c\x0a",
+            "\x01\x0a\x02\uffff\x01\x0a\x06\uffff\x0c\x0a",
             "",
             "",
             "",
@@ -7445,10 +7467,10 @@ public partial class MacroScopeParser : Parser
                    	break;
         }
         if (state.backtracking > 0) {state.failed = true; return -1;}
-        NoViableAltException nvae =
+        NoViableAltException nvae58 =
             new NoViableAltException(dfa.Description, 58, _s, input);
-        dfa.Error(nvae);
-        throw nvae;
+        dfa.Error(nvae58);
+        throw nvae58;
     }
  
 
@@ -7467,7 +7489,7 @@ public partial class MacroScopeParser : Parser
     public static readonly BitSet FOLLOW_columnNameList_in_insertStatement161 = new BitSet(new ulong[]{0x0000000000000080UL});
     public static readonly BitSet FOLLOW_RPAREN_in_insertStatement163 = new BitSet(new ulong[]{0x0000000000000100UL});
     public static readonly BitSet FOLLOW_VALUES_in_insertStatement169 = new BitSet(new ulong[]{0x0000000000000040UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_insertStatement171 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_LPAREN_in_insertStatement171 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_columnValueList_in_insertStatement177 = new BitSet(new ulong[]{0x0000000000000080UL});
     public static readonly BitSet FOLLOW_RPAREN_in_insertStatement179 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_queryExpression_in_selectStatement206 = new BitSet(new ulong[]{0x0000000000000002UL});
@@ -7477,26 +7499,26 @@ public partial class MacroScopeParser : Parser
     public static readonly BitSet FOLLOW_assignmentList_in_updateStatement247 = new BitSet(new ulong[]{0x0000000000200002UL});
     public static readonly BitSet FOLLOW_whereClause_in_updateStatement266 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_DELETE_in_deleteStatement293 = new BitSet(new ulong[]{0x0100000000001020UL,0x0000000000000004UL});
-    public static readonly BitSet FOLLOW_FROM_in_deleteStatement299 = new BitSet(new ulong[]{0x0100000000001020UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_FROM_in_deleteStatement299 = new BitSet(new ulong[]{0x0100000000000020UL,0x0000000000000004UL});
     public static readonly BitSet FOLLOW_dbObject_in_deleteStatement310 = new BitSet(new ulong[]{0x0000000000200002UL});
     public static readonly BitSet FOLLOW_whereClause_in_deleteStatement326 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_assignment_in_assignmentList356 = new BitSet(new ulong[]{0x0000000000002002UL});
     public static readonly BitSet FOLLOW_COMMA_in_assignmentList362 = new BitSet(new ulong[]{0x0100000000000060UL,0x0000000000000004UL});
     public static readonly BitSet FOLLOW_assignment_in_assignmentList368 = new BitSet(new ulong[]{0x0000000000002002UL});
     public static readonly BitSet FOLLOW_column_in_assignment392 = new BitSet(new ulong[]{0x0000000000004000UL});
-    public static readonly BitSet FOLLOW_ASSIGNEQUAL_in_assignment394 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_ASSIGNEQUAL_in_assignment394 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_columnValue_in_assignment400 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_column_in_columnNameList421 = new BitSet(new ulong[]{0x0000000000002002UL});
     public static readonly BitSet FOLLOW_COMMA_in_columnNameList429 = new BitSet(new ulong[]{0x0100000000000060UL,0x0000000000000004UL});
     public static readonly BitSet FOLLOW_column_in_columnNameList435 = new BitSet(new ulong[]{0x0000000000002002UL});
     public static readonly BitSet FOLLOW_columnValue_in_columnValueList459 = new BitSet(new ulong[]{0x0000000000002002UL});
-    public static readonly BitSet FOLLOW_COMMA_in_columnValueList465 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_COMMA_in_columnValueList465 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_columnValue_in_columnValueList471 = new BitSet(new ulong[]{0x0000000000002002UL});
     public static readonly BitSet FOLLOW_DEFAULT_in_columnValue491 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_expression_in_columnValue502 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_subQueryExpression_in_queryExpression523 = new BitSet(new ulong[]{0x0000000000400002UL,0x0000000000080000UL});
+    public static readonly BitSet FOLLOW_subQueryExpression_in_queryExpression523 = new BitSet(new ulong[]{0x0000000000400002UL,0x0000000000100000UL});
     public static readonly BitSet FOLLOW_unionOperator_in_queryExpression535 = new BitSet(new ulong[]{0x0000000000010040UL});
-    public static readonly BitSet FOLLOW_subQueryExpression_in_queryExpression543 = new BitSet(new ulong[]{0x0000000000400002UL,0x0000000000080000UL});
+    public static readonly BitSet FOLLOW_subQueryExpression_in_queryExpression543 = new BitSet(new ulong[]{0x0000000000400002UL,0x0000000000100000UL});
     public static readonly BitSet FOLLOW_orderByClause_in_queryExpression558 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_querySpecification_in_subQueryExpression582 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_LPAREN_in_subQueryExpression590 = new BitSet(new ulong[]{0x0000000000010040UL});
@@ -7507,44 +7529,44 @@ public partial class MacroScopeParser : Parser
     public static readonly BitSet FOLLOW_whereClause_in_querySpecification644 = new BitSet(new ulong[]{0x0000000004000002UL});
     public static readonly BitSet FOLLOW_groupByClause_in_querySpecification658 = new BitSet(new ulong[]{0x0000000008000002UL});
     public static readonly BitSet FOLLOW_havingClause_in_querySpecification670 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_SELECT_in_selectClause694 = new BitSet(new ulong[]{0x43B80D01001E9060UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_ALL_in_selectClause701 = new BitSet(new ulong[]{0x43B80D01001E9060UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_DISTINCT_in_selectClause705 = new BitSet(new ulong[]{0x43B80D01001E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_SELECT_in_selectClause694 = new BitSet(new ulong[]{0x43B80D01001E8060UL,0x00000000000007FFUL});
+    public static readonly BitSet FOLLOW_ALL_in_selectClause701 = new BitSet(new ulong[]{0x43B80D01001E8060UL,0x00000000000007FFUL});
+    public static readonly BitSet FOLLOW_DISTINCT_in_selectClause705 = new BitSet(new ulong[]{0x43B80D01001E8060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_TOP_in_selectClause714 = new BitSet(new ulong[]{0x0000000000100000UL});
-    public static readonly BitSet FOLLOW_Integer_in_selectClause716 = new BitSet(new ulong[]{0x43B80D01001E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_Integer_in_selectClause716 = new BitSet(new ulong[]{0x43B80D01001E8060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_selectList_in_selectClause728 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_WHERE_in_whereClause745 = new BitSet(new ulong[]{0x43B80D21401E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_WHERE_in_whereClause745 = new BitSet(new ulong[]{0x43B80C2140108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_searchCondition_in_whereClause751 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_ORDER_in_orderByClause768 = new BitSet(new ulong[]{0x0000000000800000UL});
-    public static readonly BitSet FOLLOW_BY_in_orderByClause770 = new BitSet(new ulong[]{0x43B80D01001E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_BY_in_orderByClause770 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_orderExpression_in_orderByClause777 = new BitSet(new ulong[]{0x0000000000002002UL});
-    public static readonly BitSet FOLLOW_COMMA_in_orderByClause784 = new BitSet(new ulong[]{0x43B80D01001E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_COMMA_in_orderByClause784 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_orderExpression_in_orderByClause790 = new BitSet(new ulong[]{0x0000000000002002UL});
     public static readonly BitSet FOLLOW_expression_in_orderExpression814 = new BitSet(new ulong[]{0x0000000003000002UL});
     public static readonly BitSet FOLLOW_ASC_in_orderExpression821 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_DESC_in_orderExpression825 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_GROUP_in_groupByClause845 = new BitSet(new ulong[]{0x0000000000800000UL});
-    public static readonly BitSet FOLLOW_BY_in_groupByClause847 = new BitSet(new ulong[]{0x43B80D01001E9060UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_ALL_in_groupByClause855 = new BitSet(new ulong[]{0x43B80D01001E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_BY_in_groupByClause847 = new BitSet(new ulong[]{0x43B80C0100128060UL,0x00000000000007FFUL});
+    public static readonly BitSet FOLLOW_ALL_in_groupByClause855 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_groupByClause868 = new BitSet(new ulong[]{0x0000000000002002UL});
-    public static readonly BitSet FOLLOW_COMMA_in_groupByClause874 = new BitSet(new ulong[]{0x43B80D01001E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_COMMA_in_groupByClause874 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_groupByClause880 = new BitSet(new ulong[]{0x0000000000002002UL});
-    public static readonly BitSet FOLLOW_HAVING_in_havingClause900 = new BitSet(new ulong[]{0x43B80D21401E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_HAVING_in_havingClause900 = new BitSet(new ulong[]{0x43B80C2140108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_searchCondition_in_havingClause906 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_additiveSubSearchCondition_in_searchCondition927 = new BitSet(new ulong[]{0x0000000010000002UL});
-    public static readonly BitSet FOLLOW_OR_in_searchCondition935 = new BitSet(new ulong[]{0x43B80D21401E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_OR_in_searchCondition935 = new BitSet(new ulong[]{0x43B80C2140108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_additiveSubSearchCondition_in_searchCondition941 = new BitSet(new ulong[]{0x0000000010000002UL});
     public static readonly BitSet FOLLOW_subSearchCondition_in_additiveSubSearchCondition967 = new BitSet(new ulong[]{0x0000000020000002UL});
-    public static readonly BitSet FOLLOW_AND_in_additiveSubSearchCondition975 = new BitSet(new ulong[]{0x43B80D21401E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_AND_in_additiveSubSearchCondition975 = new BitSet(new ulong[]{0x43B80C2140108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_subSearchCondition_in_additiveSubSearchCondition981 = new BitSet(new ulong[]{0x0000000020000002UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_bracketedSearchCondition1003 = new BitSet(new ulong[]{0x43B80D21401E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_LPAREN_in_bracketedSearchCondition1003 = new BitSet(new ulong[]{0x43B80C2140108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_searchCondition_in_bracketedSearchCondition1009 = new BitSet(new ulong[]{0x0000000000000080UL});
     public static readonly BitSet FOLLOW_RPAREN_in_bracketedSearchCondition1011 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_NOT_in_subSearchCondition1035 = new BitSet(new ulong[]{0x43B80D21401E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_NOT_in_subSearchCondition1035 = new BitSet(new ulong[]{0x43B80C2140108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_bracketedSearchCondition_in_subSearchCondition1059 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_predicate_in_subSearchCondition1071 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_expression_in_predicate1101 = new BitSet(new ulong[]{0x0000001AC0004000UL,0x000000000007E000UL});
-    public static readonly BitSet FOLLOW_comparisonOperator_in_predicate1118 = new BitSet(new ulong[]{0x43B80DC1001E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_expression_in_predicate1101 = new BitSet(new ulong[]{0x0000001AC0004000UL,0x00000000000FC000UL});
+    public static readonly BitSet FOLLOW_comparisonOperator_in_predicate1118 = new BitSet(new ulong[]{0x43B80CC100128060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_predicate1140 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_quantifierSpec_in_predicate1153 = new BitSet(new ulong[]{0x0000000000000040UL});
     public static readonly BitSet FOLLOW_LPAREN_in_predicate1159 = new BitSet(new ulong[]{0x0000000000010040UL});
@@ -7554,19 +7576,19 @@ public partial class MacroScopeParser : Parser
     public static readonly BitSet FOLLOW_NOT_in_predicate1198 = new BitSet(new ulong[]{0x0000000100000000UL});
     public static readonly BitSet FOLLOW_NULL_in_predicate1208 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_NOT_in_predicate1216 = new BitSet(new ulong[]{0x0000001A00000000UL});
-    public static readonly BitSet FOLLOW_LIKE_in_predicate1228 = new BitSet(new ulong[]{0x43B80D01001E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_LIKE_in_predicate1228 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_predicate1234 = new BitSet(new ulong[]{0x0000000400000002UL});
-    public static readonly BitSet FOLLOW_ESCAPE_in_predicate1249 = new BitSet(new ulong[]{0x43B80D01001E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_ESCAPE_in_predicate1249 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_predicate1255 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_BETWEEN_in_predicate1273 = new BitSet(new ulong[]{0x43B80D01001E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_BETWEEN_in_predicate1273 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_predicate1279 = new BitSet(new ulong[]{0x0000000020000000UL});
-    public static readonly BitSet FOLLOW_AND_in_predicate1281 = new BitSet(new ulong[]{0x43B80D01001E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_AND_in_predicate1281 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_predicate1287 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_IN_in_predicate1296 = new BitSet(new ulong[]{0x0000000000000040UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_predicate1298 = new BitSet(new ulong[]{0x43B80D01001F9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_LPAREN_in_predicate1298 = new BitSet(new ulong[]{0x43B80C0100118060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_selectStatement_in_predicate1323 = new BitSet(new ulong[]{0x0000000000000080UL});
     public static readonly BitSet FOLLOW_expression_in_predicate1337 = new BitSet(new ulong[]{0x0000000000002080UL});
-    public static readonly BitSet FOLLOW_COMMA_in_predicate1348 = new BitSet(new ulong[]{0x43B80D01001F9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_COMMA_in_predicate1348 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_predicate1354 = new BitSet(new ulong[]{0x0000000000002080UL});
     public static readonly BitSet FOLLOW_RPAREN_in_predicate1367 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_EXISTS_in_predicate1382 = new BitSet(new ulong[]{0x0000000000000040UL});
@@ -7577,29 +7599,29 @@ public partial class MacroScopeParser : Parser
     public static readonly BitSet FOLLOW_SOME_in_quantifierSpec1416 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_ANY_in_quantifierSpec1423 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_selectItem_in_selectList1444 = new BitSet(new ulong[]{0x0000000000002002UL});
-    public static readonly BitSet FOLLOW_COMMA_in_selectList1452 = new BitSet(new ulong[]{0x43B80D01001F9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_COMMA_in_selectList1452 = new BitSet(new ulong[]{0x43B80D01001E8060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_selectItem_in_selectList1458 = new BitSet(new ulong[]{0x0000000000002002UL});
     public static readonly BitSet FOLLOW_STAR_in_selectItem1478 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_alias2_in_selectItem1508 = new BitSet(new ulong[]{0x43B80D01001F9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_alias2_in_selectItem1508 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_selectItem1514 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_tableColumns_in_selectItem1540 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_expression_in_selectItem1553 = new BitSet(new ulong[]{0x0102000000001022UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_expression_in_selectItem1553 = new BitSet(new ulong[]{0x0102000000000022UL,0x0000000000000004UL});
     public static readonly BitSet FOLLOW_alias1_in_selectItem1566 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_FROM_in_fromClause1589 = new BitSet(new ulong[]{0x01A20C0000001060UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_FROM_in_fromClause1589 = new BitSet(new ulong[]{0x01A00C0000000060UL,0x0000000000000004UL});
     public static readonly BitSet FOLLOW_tableSource_in_fromClause1595 = new BitSet(new ulong[]{0x0000000000002002UL});
-    public static readonly BitSet FOLLOW_COMMA_in_fromClause1602 = new BitSet(new ulong[]{0x01A20C0000001060UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_COMMA_in_fromClause1602 = new BitSet(new ulong[]{0x01A00C0000000060UL,0x0000000000000004UL});
     public static readonly BitSet FOLLOW_tableSource_in_fromClause1608 = new BitSet(new ulong[]{0x0000000000002002UL});
     public static readonly BitSet FOLLOW_subTableSource_in_tableSource1632 = new BitSet(new ulong[]{0x0000DE0000000002UL});
     public static readonly BitSet FOLLOW_joinedTable_in_tableSource1643 = new BitSet(new ulong[]{0x0000DE0000000002UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_subTableSource1663 = new BitSet(new ulong[]{0x01A20C0000011060UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_LPAREN_in_subTableSource1663 = new BitSet(new ulong[]{0x01A00C0000010060UL,0x0000000000000004UL});
     public static readonly BitSet FOLLOW_joinedTables_in_subTableSource1682 = new BitSet(new ulong[]{0x0000000000000080UL});
     public static readonly BitSet FOLLOW_RPAREN_in_subTableSource1684 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_queryExpression_in_subTableSource1699 = new BitSet(new ulong[]{0x0000000000000080UL});
-    public static readonly BitSet FOLLOW_RPAREN_in_subTableSource1701 = new BitSet(new ulong[]{0x01A20C0000001060UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_RPAREN_in_subTableSource1701 = new BitSet(new ulong[]{0x0102000000000020UL,0x0000000000000004UL});
     public static readonly BitSet FOLLOW_alias1_in_subTableSource1707 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_function_in_subTableSource1742 = new BitSet(new ulong[]{0x01A20C0000001062UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_function_in_subTableSource1742 = new BitSet(new ulong[]{0x0102000000000022UL,0x0000000000000004UL});
     public static readonly BitSet FOLLOW_alias1_in_subTableSource1755 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_dbObject_in_subTableSource1769 = new BitSet(new ulong[]{0x01A20C0000001062UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_dbObject_in_subTableSource1769 = new BitSet(new ulong[]{0x0102000000000022UL,0x0000000000000004UL});
     public static readonly BitSet FOLLOW_alias1_in_subTableSource1781 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_INNER_in_joinOn1803 = new BitSet(new ulong[]{0x0000400000000000UL});
     public static readonly BitSet FOLLOW_LEFT_in_joinOn1810 = new BitSet(new ulong[]{0x0000600000000000UL});
@@ -7608,15 +7630,15 @@ public partial class MacroScopeParser : Parser
     public static readonly BitSet FOLLOW_OUTER_in_joinOn1836 = new BitSet(new ulong[]{0x0000400000000000UL});
     public static readonly BitSet FOLLOW_JOIN_in_joinOn1846 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_CROSS_in_joinedTable1861 = new BitSet(new ulong[]{0x0000400000000000UL});
-    public static readonly BitSet FOLLOW_JOIN_in_joinedTable1863 = new BitSet(new ulong[]{0x01A20C0000001060UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_JOIN_in_joinedTable1863 = new BitSet(new ulong[]{0x01A00C0000000060UL,0x0000000000000004UL});
     public static readonly BitSet FOLLOW_subTableSource_in_joinedTable1869 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_joinOn_in_joinedTable1884 = new BitSet(new ulong[]{0x01A20C0000001060UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_joinOn_in_joinedTable1884 = new BitSet(new ulong[]{0x01A00C0000000060UL,0x0000000000000004UL});
     public static readonly BitSet FOLLOW_tableSource_in_joinedTable1893 = new BitSet(new ulong[]{0x0001000000000000UL});
-    public static readonly BitSet FOLLOW_ON_in_joinedTable1900 = new BitSet(new ulong[]{0x43B80D21401E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_ON_in_joinedTable1900 = new BitSet(new ulong[]{0x43B80C2140108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_searchCondition_in_joinedTable1906 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_subTableSource_in_joinedTables1931 = new BitSet(new ulong[]{0x0000DE0000000000UL});
     public static readonly BitSet FOLLOW_joinedTable_in_joinedTables1943 = new BitSet(new ulong[]{0x0000DE0000000002UL});
-    public static readonly BitSet FOLLOW_AS_in_alias11966 = new BitSet(new ulong[]{0x01A20C0000001060UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_AS_in_alias11966 = new BitSet(new ulong[]{0x0100000000000020UL,0x0000000000000004UL});
     public static readonly BitSet FOLLOW_identifier_in_alias11974 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_identifier_in_alias21995 = new BitSet(new ulong[]{0x0000000000004000UL});
     public static readonly BitSet FOLLOW_ASSIGNEQUAL_in_alias22001 = new BitSet(new ulong[]{0x0000000000000002UL});
@@ -7626,18 +7648,18 @@ public partial class MacroScopeParser : Parser
     public static readonly BitSet FOLLOW_LPAREN_in_column2053 = new BitSet(new ulong[]{0x0100000000000060UL,0x0000000000000004UL});
     public static readonly BitSet FOLLOW_column_in_column2059 = new BitSet(new ulong[]{0x0000000000000080UL});
     public static readonly BitSet FOLLOW_RPAREN_in_column2061 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_additiveSubExpression_in_expression2082 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000700UL});
-    public static readonly BitSet FOLLOW_additiveOperator_in_expression2093 = new BitSet(new ulong[]{0x43B80D01001F9060UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_additiveSubExpression_in_expression2099 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000700UL});
-    public static readonly BitSet FOLLOW_subExpression_in_additiveSubExpression2124 = new BitSet(new ulong[]{0x0000010000000002UL,0x0000000000001800UL});
-    public static readonly BitSet FOLLOW_multiplicativeArithmeticOperator_in_additiveSubExpression2135 = new BitSet(new ulong[]{0x43B80D01001F9060UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_subExpression_in_additiveSubExpression2141 = new BitSet(new ulong[]{0x0000010000000002UL,0x0000000000001800UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_bracketedTerm2161 = new BitSet(new ulong[]{0x43BA0D01001F9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_additiveSubExpression_in_expression2082 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000E00UL});
+    public static readonly BitSet FOLLOW_additiveOperator_in_expression2093 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
+    public static readonly BitSet FOLLOW_additiveSubExpression_in_expression2099 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000E00UL});
+    public static readonly BitSet FOLLOW_subExpression_in_additiveSubExpression2124 = new BitSet(new ulong[]{0x0000010000000002UL,0x0000000000003000UL});
+    public static readonly BitSet FOLLOW_multiplicativeArithmeticOperator_in_additiveSubExpression2135 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
+    public static readonly BitSet FOLLOW_subExpression_in_additiveSubExpression2141 = new BitSet(new ulong[]{0x0000010000000002UL,0x0000000000003000UL});
+    public static readonly BitSet FOLLOW_LPAREN_in_bracketedTerm2161 = new BitSet(new ulong[]{0x43B80C0100118060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_selectStatement_in_bracketedTerm2179 = new BitSet(new ulong[]{0x0000000000000080UL});
     public static readonly BitSet FOLLOW_RPAREN_in_bracketedTerm2181 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_expression_in_bracketedTerm2193 = new BitSet(new ulong[]{0x0000000000000080UL});
     public static readonly BitSet FOLLOW_RPAREN_in_bracketedTerm2195 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_unaryOperator_in_subExpression2220 = new BitSet(new ulong[]{0x43BA0D01001F9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_unaryOperator_in_subExpression2220 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_constant_in_subExpression2235 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_variableReference_in_subExpression2247 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_PLACEHOLDER_in_subExpression2255 = new BitSet(new ulong[]{0x0000000000000002UL});
@@ -7648,51 +7670,51 @@ public partial class MacroScopeParser : Parser
     public static readonly BitSet FOLLOW_castFunction_in_subExpression2358 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_Variable_in_variableReference2377 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_SUBSTRING_in_function2395 = new BitSet(new ulong[]{0x0000000000000040UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_function2399 = new BitSet(new ulong[]{0x43BA0D01001F9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_LPAREN_in_function2399 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_function2405 = new BitSet(new ulong[]{0x0000000000001000UL});
-    public static readonly BitSet FOLLOW_FROM_in_function2409 = new BitSet(new ulong[]{0x43BA0D01001F9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_FROM_in_function2409 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_function2415 = new BitSet(new ulong[]{0x0040000000000080UL});
-    public static readonly BitSet FOLLOW_FOR_in_function2421 = new BitSet(new ulong[]{0x43BA0D01001F9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_FOR_in_function2421 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_function2427 = new BitSet(new ulong[]{0x0000000000000080UL});
     public static readonly BitSet FOLLOW_RPAREN_in_function2434 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_EXTRACT_in_function2439 = new BitSet(new ulong[]{0x0000000000000040UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_function2441 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000003F00000UL});
+    public static readonly BitSet FOLLOW_LPAREN_in_function2441 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000007E00000UL});
     public static readonly BitSet FOLLOW_datetimeField_in_function2447 = new BitSet(new ulong[]{0x0000000000001000UL});
-    public static readonly BitSet FOLLOW_FROM_in_function2449 = new BitSet(new ulong[]{0x43BA0D01001F9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_FROM_in_function2449 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_function2455 = new BitSet(new ulong[]{0x0000000000000080UL});
     public static readonly BitSet FOLLOW_RPAREN_in_function2459 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_genericFunction_in_function2468 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_NonQuotedIdentifier_in_genericFunction2497 = new BitSet(new ulong[]{0x0000000000000040UL});
     public static readonly BitSet FOLLOW_LEFT_in_genericFunction2505 = new BitSet(new ulong[]{0x0000000000000040UL});
     public static readonly BitSet FOLLOW_RIGHT_in_genericFunction2513 = new BitSet(new ulong[]{0x0000000000000040UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_genericFunction2520 = new BitSet(new ulong[]{0x43BA0D01001F90E0UL,0x0000000003F003FFUL});
+    public static readonly BitSet FOLLOW_LPAREN_in_genericFunction2520 = new BitSet(new ulong[]{0x43B80D01001680E0UL,0x0000000007E007FFUL});
     public static readonly BitSet FOLLOW_functionArgument_in_genericFunction2530 = new BitSet(new ulong[]{0x0000000000002080UL});
-    public static readonly BitSet FOLLOW_COMMA_in_genericFunction2539 = new BitSet(new ulong[]{0x43BA0D01001F9060UL,0x0000000003F003FFUL});
+    public static readonly BitSet FOLLOW_COMMA_in_genericFunction2539 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x0000000007E007FFUL});
     public static readonly BitSet FOLLOW_functionArgument_in_genericFunction2545 = new BitSet(new ulong[]{0x0000000000002080UL});
     public static readonly BitSet FOLLOW_STAR_in_genericFunction2562 = new BitSet(new ulong[]{0x0000000000000080UL});
-    public static readonly BitSet FOLLOW_ALL_in_genericFunction2578 = new BitSet(new ulong[]{0x43BA0D01001F9060UL,0x00000000000003FFUL});
-    public static readonly BitSet FOLLOW_DISTINCT_in_genericFunction2582 = new BitSet(new ulong[]{0x43BA0D01001F9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_ALL_in_genericFunction2578 = new BitSet(new ulong[]{0x43B80D0100108060UL,0x00000000000007FFUL});
+    public static readonly BitSet FOLLOW_DISTINCT_in_genericFunction2582 = new BitSet(new ulong[]{0x43B80D0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_STAR_in_genericFunction2593 = new BitSet(new ulong[]{0x0000000000000080UL});
     public static readonly BitSet FOLLOW_expression_in_genericFunction2610 = new BitSet(new ulong[]{0x0000000000000080UL});
     public static readonly BitSet FOLLOW_RPAREN_in_genericFunction2632 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_expression_in_functionArgument2651 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_datetimeField_in_functionArgument2662 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_CASE_in_caseFunction2679 = new BitSet(new ulong[]{0x47BA0D01001F9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_CASE_in_caseFunction2679 = new BitSet(new ulong[]{0x47B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_caseFunction2691 = new BitSet(new ulong[]{0x0400000000000000UL});
-    public static readonly BitSet FOLLOW_WHEN_in_caseFunction2700 = new BitSet(new ulong[]{0x43BA0D01001F9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_WHEN_in_caseFunction2700 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_caseFunction2706 = new BitSet(new ulong[]{0x0800000000000000UL});
-    public static readonly BitSet FOLLOW_THEN_in_caseFunction2708 = new BitSet(new ulong[]{0x43BA0D01001F9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_THEN_in_caseFunction2708 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_caseFunction2714 = new BitSet(new ulong[]{0x3400000000000000UL});
-    public static readonly BitSet FOLLOW_WHEN_in_caseFunction2735 = new BitSet(new ulong[]{0x43B80D21401E9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_WHEN_in_caseFunction2735 = new BitSet(new ulong[]{0x43B80C2140108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_searchCondition_in_caseFunction2741 = new BitSet(new ulong[]{0x0800000000000000UL});
-    public static readonly BitSet FOLLOW_THEN_in_caseFunction2743 = new BitSet(new ulong[]{0x43BA0D01001F9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_THEN_in_caseFunction2743 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_caseFunction2749 = new BitSet(new ulong[]{0x3400000000000000UL});
-    public static readonly BitSet FOLLOW_ELSE_in_caseFunction2770 = new BitSet(new ulong[]{0x43BA0D01001F9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_ELSE_in_caseFunction2770 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_caseFunction2776 = new BitSet(new ulong[]{0x2000000000000000UL});
     public static readonly BitSet FOLLOW_END_in_caseFunction2783 = new BitSet(new ulong[]{0x0200000000000002UL});
     public static readonly BitSet FOLLOW_CASE_in_caseFunction2787 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_CAST_in_castFunction2806 = new BitSet(new ulong[]{0x0000000000000040UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_castFunction2808 = new BitSet(new ulong[]{0x43BA0D01001F9060UL,0x00000000000003FFUL});
+    public static readonly BitSet FOLLOW_LPAREN_in_castFunction2808 = new BitSet(new ulong[]{0x43B80C0100108060UL,0x00000000000007FFUL});
     public static readonly BitSet FOLLOW_expression_in_castFunction2814 = new BitSet(new ulong[]{0x0002000000000000UL});
     public static readonly BitSet FOLLOW_AS_in_castFunction2816 = new BitSet(new ulong[]{0x0100000000000000UL});
     public static readonly BitSet FOLLOW_typeIdentifier_in_castFunction2822 = new BitSet(new ulong[]{0x00000000000000C0UL});
@@ -7703,7 +7725,7 @@ public partial class MacroScopeParser : Parser
     public static readonly BitSet FOLLOW_RPAREN_in_castFunction2855 = new BitSet(new ulong[]{0x0000000000000080UL});
     public static readonly BitSet FOLLOW_RPAREN_in_castFunction2860 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_identifier_in_dbObject2879 = new BitSet(new ulong[]{0x8000000000000002UL});
-    public static readonly BitSet FOLLOW_DOT_in_dbObject2886 = new BitSet(new ulong[]{0x01A20C0000001060UL,0x0000000000000004UL});
+    public static readonly BitSet FOLLOW_DOT_in_dbObject2886 = new BitSet(new ulong[]{0x0100000000000020UL,0x0000000000000004UL});
     public static readonly BitSet FOLLOW_identifier_in_dbObject2892 = new BitSet(new ulong[]{0x8000000000000002UL});
     public static readonly BitSet FOLLOW_singleStringLiteral_in_stringLiteral2920 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000003UL});
     public static readonly BitSet FOLLOW_singleStringLiteral_in_stringLiteral2930 = new BitSet(new ulong[]{0x0000000000000002UL,0x0000000000000003UL});
@@ -7720,37 +7742,39 @@ public partial class MacroScopeParser : Parser
     public static readonly BitSet FOLLOW_HexLiteral_in_constant3062 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_MAccessDateTime_in_constant3071 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_Iso8601DateTime_in_constant3080 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_INTERVAL_in_intervalLiteral3104 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000000000302UL});
-    public static readonly BitSet FOLLOW_unaryOperator_in_intervalLiteral3112 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_AsciiStringLiteral_in_intervalLiteral3119 = new BitSet(new ulong[]{0x43BA0D01001F9060UL,0x0000000003F003FFUL});
-    public static readonly BitSet FOLLOW_datetimeField_in_intervalLiteral3127 = new BitSet(new ulong[]{0x0000000000000042UL});
-    public static readonly BitSet FOLLOW_LPAREN_in_intervalLiteral3133 = new BitSet(new ulong[]{0x0000000000100000UL});
-    public static readonly BitSet FOLLOW_Integer_in_intervalLiteral3135 = new BitSet(new ulong[]{0x0000000000000080UL});
-    public static readonly BitSet FOLLOW_RPAREN_in_intervalLiteral3139 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_Integer_in_nonNegativeInteger3157 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_PLUS_in_unaryOperator3174 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_MINUS_in_unaryOperator3181 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_PLUS_in_additiveOperator3198 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_MINUS_in_additiveOperator3205 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_STRCONCAT_in_additiveOperator3212 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_STAR_in_multiplicativeArithmeticOperator3233 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_DIVIDE_in_multiplicativeArithmeticOperator3240 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_MOD_in_multiplicativeArithmeticOperator3247 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_ASSIGNEQUAL_in_comparisonOperator3268 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_NOTEQUAL1_in_comparisonOperator3275 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_NOTEQUAL2_in_comparisonOperator3282 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_LESSTHANOREQUALTO1_in_comparisonOperator3289 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_LESSTHAN_in_comparisonOperator3296 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_GREATERTHANOREQUALTO1_in_comparisonOperator3303 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_GREATERTHAN_in_comparisonOperator3310 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_UNION_in_unionOperator3327 = new BitSet(new ulong[]{0x0000000000020002UL});
-    public static readonly BitSet FOLLOW_ALL_in_unionOperator3334 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_YEAR_in_datetimeField3354 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_MONTH_in_datetimeField3361 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_DAY_in_datetimeField3368 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_HOUR_in_datetimeField3375 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_MINUTE_in_datetimeField3382 = new BitSet(new ulong[]{0x0000000000000002UL});
-    public static readonly BitSet FOLLOW_SECOND_in_datetimeField3389 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_TIMESTAMP_in_constant3087 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000000000003UL});
+    public static readonly BitSet FOLLOW_stringLiteral_in_constant3093 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_INTERVAL_in_intervalLiteral3117 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000000000602UL});
+    public static readonly BitSet FOLLOW_unaryOperator_in_intervalLiteral3125 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_AsciiStringLiteral_in_intervalLiteral3132 = new BitSet(new ulong[]{0x0000000000000000UL,0x0000000007E00000UL});
+    public static readonly BitSet FOLLOW_datetimeField_in_intervalLiteral3140 = new BitSet(new ulong[]{0x0000000000000042UL});
+    public static readonly BitSet FOLLOW_LPAREN_in_intervalLiteral3146 = new BitSet(new ulong[]{0x0000000000100000UL});
+    public static readonly BitSet FOLLOW_Integer_in_intervalLiteral3148 = new BitSet(new ulong[]{0x0000000000000080UL});
+    public static readonly BitSet FOLLOW_RPAREN_in_intervalLiteral3152 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_Integer_in_nonNegativeInteger3170 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_PLUS_in_unaryOperator3187 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_MINUS_in_unaryOperator3194 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_PLUS_in_additiveOperator3211 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_MINUS_in_additiveOperator3218 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_STRCONCAT_in_additiveOperator3225 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_STAR_in_multiplicativeArithmeticOperator3246 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_DIVIDE_in_multiplicativeArithmeticOperator3253 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_MOD_in_multiplicativeArithmeticOperator3260 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_ASSIGNEQUAL_in_comparisonOperator3281 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_NOTEQUAL1_in_comparisonOperator3288 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_NOTEQUAL2_in_comparisonOperator3295 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_LESSTHANOREQUALTO1_in_comparisonOperator3302 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_LESSTHAN_in_comparisonOperator3309 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_GREATERTHANOREQUALTO1_in_comparisonOperator3316 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_GREATERTHAN_in_comparisonOperator3323 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_UNION_in_unionOperator3340 = new BitSet(new ulong[]{0x0000000000020002UL});
+    public static readonly BitSet FOLLOW_ALL_in_unionOperator3347 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_YEAR_in_datetimeField3367 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_MONTH_in_datetimeField3374 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_DAY_in_datetimeField3381 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_HOUR_in_datetimeField3388 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_MINUTE_in_datetimeField3395 = new BitSet(new ulong[]{0x0000000000000002UL});
+    public static readonly BitSet FOLLOW_SECOND_in_datetimeField3402 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_bracketedSearchCondition_in_synpred1_MacroScope1047 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_selectStatement_in_synpred2_MacroScope1308 = new BitSet(new ulong[]{0x0000000000000002UL});
     public static readonly BitSet FOLLOW_alias2_in_synpred3_MacroScope1494 = new BitSet(new ulong[]{0x0000000000000002UL});

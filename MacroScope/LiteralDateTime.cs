@@ -33,27 +33,10 @@ namespace MacroScope
         /// </param>
         public LiteralDateTime(string literal)
         {
-            if (literal == null)
-            {
-                throw new ArgumentNullException("quotedLiteral");
-            }
-
-            if (literal.Length < 18)
-            {
-                string message = string.Format("Literal datetime {0} too short.",
-                    literal);
-                throw new ArgumentException(message);
-            }
+            Validate(literal);
 
             if (literal[0] == '#')
             {
-                if (literal[literal.Length - 1] != '#')
-                {
-                    string message = string.Format("Literal date {0} is not quoted.",
-                        literal);
-                    throw new ArgumentException(message);
-                }
-
                 m_bareLiteral = literal.Substring(1, literal.Length - 2);
             }
             else
@@ -65,10 +48,36 @@ namespace MacroScope
             m_delimiter = 'T';
         }
 
+        /// <summary>
+        /// Constructs a new instance from .NET timestamp.
+        /// </summary>
+        /// <param name="dateTime">
+        /// The timestamp the new instance represents.
+        /// </param>
         public LiteralDateTime(DateTime dateTime)
         {
             m_bareLiteral = dateTime.ToString("yyyy-MM-dd HH:mm:ss");
             m_delimiter = 'T';
+        }
+
+        /// <summary>
+        /// Constructs a new instance from an SQL string.
+        /// </summary>
+        /// <param name="stringValue">
+        /// The string literal.
+        /// </param>
+        public LiteralDateTime(StringValue stringValue)
+        {
+            if (stringValue == null)
+            {
+                throw new ArgumentNullException("stringValue");
+            }
+
+            Validate(stringValue.Value);
+
+            m_bareLiteral = Regex.Replace(stringValue.Value, "T", " ",
+                RegexOptions.IgnoreCase);
+            m_delimiter = '\'';
         }
 
         #endregion
@@ -77,7 +86,8 @@ namespace MacroScope
 
         /// <summary>
         /// Valid values are '#' for MS Access formatting, or
-        /// ' ', 't' or 'T' (the default) for ISO8601 .
+        /// ' ', 't' or 'T' (the default) for ISO8601, or
+        /// '\'' for SQL TIMESTAMP.
         /// </summary>
         public char Delimiter
         {
@@ -89,7 +99,7 @@ namespace MacroScope
             set
             {
                 if ((value != '#') && (value != ' ') && (value != 't') &&
-                    (value != 'T'))
+                    (value != 'T') && (value != '\''))
                 {
                     string message = string.Format("Invalid date delimiter {0}.",
                         value);
@@ -111,6 +121,11 @@ namespace MacroScope
                 else if (m_delimiter == ' ')
                 {
                     return m_bareLiteral;
+                }
+                else if (m_delimiter == '\'')
+                {
+                    return string.Format("{0} '{1}'", TailorUtil.TIMESTAMP.ToUpperInvariant(),
+                        m_bareLiteral);
                 }
                 else
                 {
@@ -146,6 +161,50 @@ namespace MacroScope
             }
 
             visitor.Perform(this);
+        }
+
+        #endregion
+
+        #region Validation
+
+        private static void Validate(string literal)
+        {
+            if (literal == null)
+            {
+                throw new ArgumentNullException("literal");
+            }
+
+            if (literal.Length < 18)
+            {
+                string message = string.Format("Literal datetime {0} too short.",
+                    literal);
+                throw new ArgumentException(message);
+            }
+
+            string inner;
+            if (literal[0] == '#')
+            {
+                if (literal[literal.Length - 1] != '#')
+                {
+                    string message = string.Format("Literal date {0} is not quoted.",
+                        literal);
+                    throw new ArgumentException(message);
+                }
+
+                inner = literal.Substring(1, literal.Length - 2);
+            }
+            else
+            {
+                inner = literal;
+            }
+
+            if (!Regex.IsMatch(inner, "^\\d\\d\\d\\d-\\d\\d-\\d\\d[ t]\\d\\d:\\d\\d:\\d\\d$",
+                RegexOptions.IgnoreCase))
+            {
+                string message = string.Format("Literal datetime {0} has unknown format.",
+                    literal);
+                throw new ArgumentException(message);
+            }
         }
 
         #endregion

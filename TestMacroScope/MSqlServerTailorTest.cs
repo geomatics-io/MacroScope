@@ -151,6 +151,8 @@ and (ROWNUM <= 10)", expected.ToString());
         {
             CheckSelect("SELECT #2007-07-11 16:30:00#",
                 "SELECT CONVERT(datetime, '2007-07-11 16:30:00', 120)");
+            CheckSelect("select timestamp '2007-07-11 16:30:00'",
+                "SELECT CONVERT(datetime, '2007-07-11 16:30:00', 120)");
 
             CheckSelect("SELECT GETDATE()", "SELECT GETDATE()");
             CheckSelect("SELECT Now()", "SELECT GETDATE()");

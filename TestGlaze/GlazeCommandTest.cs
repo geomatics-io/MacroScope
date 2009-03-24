@@ -1270,7 +1270,7 @@ VALUES('Counted', 2008-01-29T09:35:24)";
                 "select 2007-07-18T16:30:00 - interval '1' second",
                 baseDate - new TimeSpan(0, 0, 1));
             CheckDateTimeInterval(connection,
-                "select 2007-07-18T16:30:00 - interval '120' second",
+                "select TIMESTAMP '2007-07-18T16:30:00' - interval '120' second",
                 baseDate - new TimeSpan(0, 2, 0));
             CheckDateTimeInterval(connection,
                 "select interval '45' minute + 2007-07-18T16:30:00",

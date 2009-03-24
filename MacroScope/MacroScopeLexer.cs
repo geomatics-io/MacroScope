@@ -1,4 +1,5 @@
-// $ANTLR 3.1 MacroScope\\MacroScope.g 2008-08-16 20:50:43
+// $ANTLR 3.1.2 MacroScope\\MacroScope.g 2009-03-24 12:55:01
+
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 168, 219
 // Unreachable code detected.
@@ -20,15 +21,15 @@ using Hashtable 	= System.Collections.Hashtable;
 public partial class MacroScopeLexer : Lexer {
     public const int CAST = 62;
     public const int STAR = 40;
-    public const int MOD = 76;
-    public const int GREATERTHANOREQUALTO1 = 81;
+    public const int MOD = 77;
+    public const int GREATERTHANOREQUALTO1 = 82;
     public const int DOT_STAR = 50;
     public const int CASE = 57;
-    public const int DAY = 86;
+    public const int DAY = 87;
     public const int NOT = 30;
     public const int ASSIGNEQUAL = 14;
     public const int EOF = -1;
-    public const int MONTH = 85;
+    public const int MONTH = 86;
     public const int RPAREN = 7;
     public const int FULL = 44;
     public const int Variable = 52;
@@ -37,10 +38,10 @@ public partial class MacroScopeLexer : Lexer {
     public const int NonQuotedIdentifier = 56;
     public const int SELECT = 16;
     public const int INTO = 5;
-    public const int DIVIDE = 75;
+    public const int DIVIDE = 76;
     public const int PLACEHOLDER = 51;
-    public const int GREATERTHAN = 82;
-    public const int SECOND = 89;
+    public const int GREATERTHAN = 83;
+    public const int SECOND = 90;
     public const int ASC = 24;
     public const int UnicodeStringLiteral = 64;
     public const int NULL = 32;
@@ -50,66 +51,67 @@ public partial class MacroScopeLexer : Lexer {
     public const int GROUP = 26;
     public const int MAccessDateTime = 69;
     public const int OR = 28;
-    public const int LESSTHANOREQUALTO1 = 79;
+    public const int LESSTHANOREQUALTO1 = 80;
     public const int END = 61;
     public const int FROM = 12;
     public const int DISTINCT = 18;
-    public const int Letter = 90;
+    public const int Letter = 91;
+    public const int TIMESTAMP = 71;
     public const int WHERE = 21;
-    public const int UnicodeStringRun = 96;
+    public const int UnicodeStringRun = 97;
     public const int INNER = 41;
-    public const int YEAR = 84;
+    public const int YEAR = 85;
     public const int ORDER = 22;
     public const int UPDATE = 9;
     public const int AsciiStringLiteral = 65;
-    public const int Exponent = 92;
+    public const int Exponent = 93;
     public const int FOR = 54;
     public const int AND = 29;
     public const int CROSS = 47;
-    public const int INTERVAL = 71;
+    public const int INTERVAL = 72;
     public const int LPAREN = 6;
     public const int AS = 49;
     public const int IN = 36;
     public const int THEN = 59;
-    public const int Number = 93;
+    public const int Number = 94;
     public const int COMMA = 13;
     public const int IS = 31;
     public const int LEFT = 42;
     public const int SOME = 38;
     public const int ALL = 17;
     public const int Real = 67;
-    public const int PLUS = 72;
+    public const int PLUS = 73;
     public const int EXISTS = 37;
     public const int EXTRACT = 55;
     public const int DOT = 63;
-    public const int Whitespace = 98;
+    public const int Whitespace = 99;
     public const int LIKE = 33;
     public const int OUTER = 45;
     public const int HexLiteral = 68;
     public const int BY = 23;
-    public const int LESSTHAN = 80;
-    public const int AsciiStringRun = 95;
+    public const int LESSTHAN = 81;
+    public const int AsciiStringRun = 96;
     public const int DEFAULT = 15;
     public const int VALUES = 8;
     public const int RIGHT = 43;
     public const int SET = 10;
     public const int HAVING = 27;
-    public const int MINUS = 73;
-    public const int HOUR = 87;
-    public const int Digit = 91;
+    public const int MINUS = 74;
+    public const int Digit = 92;
+    public const int HOUR = 88;
     public const int QuotedIdentifier = 66;
-    public const int WordTail = 94;
+    public const int WordTail = 95;
     public const int JOIN = 46;
-    public const int UNION = 83;
+    public const int UNION = 84;
     public const int SUBSTRING = 53;
-    public const int COLON = 97;
-    public const int STRCONCAT = 74;
+    public const int COLON = 98;
+    public const int STRCONCAT = 75;
     public const int ANY = 39;
     public const int WHEN = 58;
-    public const int NOTEQUAL1 = 77;
-    public const int NOTEQUAL2 = 78;
+    public const int NOTEQUAL1 = 78;
+    public const int NOTEQUAL2 = 79;
     public const int DESC = 25;
-    public const int MINUTE = 88;
+    public const int MINUTE = 89;
     public const int TOP = 19;
     public const int BETWEEN = 35;
     public const int Integer = 20;
@@ -148,8 +150,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = ALL;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:800:5: ( 'all' )
-            // MacroScope\\MacroScope.g:800:7: 'all'
+            // MacroScope\\MacroScope.g:803:5: ( 'all' )
+            // MacroScope\\MacroScope.g:803:7: 'all'
             {
             	Match("all"); if (state.failed) return ;
 
@@ -172,8 +174,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = AND;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:801:5: ( 'and' )
-            // MacroScope\\MacroScope.g:801:7: 'and'
+            // MacroScope\\MacroScope.g:804:5: ( 'and' )
+            // MacroScope\\MacroScope.g:804:7: 'and'
             {
             	Match("and"); if (state.failed) return ;
 
@@ -196,8 +198,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = ANY;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:802:5: ( 'any' )
-            // MacroScope\\MacroScope.g:802:7: 'any'
+            // MacroScope\\MacroScope.g:805:5: ( 'any' )
+            // MacroScope\\MacroScope.g:805:7: 'any'
             {
             	Match("any"); if (state.failed) return ;
 
@@ -220,8 +222,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = AS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:803:4: ( 'as' )
-            // MacroScope\\MacroScope.g:803:6: 'as'
+            // MacroScope\\MacroScope.g:806:4: ( 'as' )
+            // MacroScope\\MacroScope.g:806:6: 'as'
             {
             	Match("as"); if (state.failed) return ;
 
@@ -244,8 +246,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = ASC;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:804:5: ( 'asc' )
-            // MacroScope\\MacroScope.g:804:7: 'asc'
+            // MacroScope\\MacroScope.g:807:5: ( 'asc' )
+            // MacroScope\\MacroScope.g:807:7: 'asc'
             {
             	Match("asc"); if (state.failed) return ;
 
@@ -268,8 +270,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = BETWEEN;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:805:9: ( 'between' )
-            // MacroScope\\MacroScope.g:805:11: 'between'
+            // MacroScope\\MacroScope.g:808:9: ( 'between' )
+            // MacroScope\\MacroScope.g:808:11: 'between'
             {
             	Match("between"); if (state.failed) return ;
 
@@ -292,8 +294,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = BY;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:806:4: ( 'by' )
-            // MacroScope\\MacroScope.g:806:6: 'by'
+            // MacroScope\\MacroScope.g:809:4: ( 'by' )
+            // MacroScope\\MacroScope.g:809:6: 'by'
             {
             	Match("by"); if (state.failed) return ;
 
@@ -316,8 +318,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = CASE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:807:6: ( 'case' )
-            // MacroScope\\MacroScope.g:807:8: 'case'
+            // MacroScope\\MacroScope.g:810:6: ( 'case' )
+            // MacroScope\\MacroScope.g:810:8: 'case'
             {
             	Match("case"); if (state.failed) return ;
 
@@ -340,8 +342,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = CAST;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:808:6: ( 'cast' )
-            // MacroScope\\MacroScope.g:808:8: 'cast'
+            // MacroScope\\MacroScope.g:811:6: ( 'cast' )
+            // MacroScope\\MacroScope.g:811:8: 'cast'
             {
             	Match("cast"); if (state.failed) return ;
 
@@ -364,8 +366,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = CROSS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:809:7: ( 'cross' )
-            // MacroScope\\MacroScope.g:809:9: 'cross'
+            // MacroScope\\MacroScope.g:812:7: ( 'cross' )
+            // MacroScope\\MacroScope.g:812:9: 'cross'
             {
             	Match("cross"); if (state.failed) return ;
 
@@ -388,8 +390,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = DAY;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:810:5: ( 'day' )
-            // MacroScope\\MacroScope.g:810:7: 'day'
+            // MacroScope\\MacroScope.g:813:5: ( 'day' )
+            // MacroScope\\MacroScope.g:813:7: 'day'
             {
             	Match("day"); if (state.failed) return ;
 
@@ -412,8 +414,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = DEFAULT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:811:9: ( 'default' )
-            // MacroScope\\MacroScope.g:811:11: 'default'
+            // MacroScope\\MacroScope.g:814:9: ( 'default' )
+            // MacroScope\\MacroScope.g:814:11: 'default'
             {
             	Match("default"); if (state.failed) return ;
 
@@ -436,8 +438,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = DELETE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:812:8: ( 'delete' )
-            // MacroScope\\MacroScope.g:812:10: 'delete'
+            // MacroScope\\MacroScope.g:815:8: ( 'delete' )
+            // MacroScope\\MacroScope.g:815:10: 'delete'
             {
             	Match("delete"); if (state.failed) return ;
 
@@ -460,8 +462,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = DESC;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:813:6: ( 'desc' )
-            // MacroScope\\MacroScope.g:813:8: 'desc'
+            // MacroScope\\MacroScope.g:816:6: ( 'desc' )
+            // MacroScope\\MacroScope.g:816:8: 'desc'
             {
             	Match("desc"); if (state.failed) return ;
 
@@ -484,8 +486,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = DISTINCT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:814:10: ( 'distinct' )
-            // MacroScope\\MacroScope.g:814:12: 'distinct'
+            // MacroScope\\MacroScope.g:817:10: ( 'distinct' )
+            // MacroScope\\MacroScope.g:817:12: 'distinct'
             {
             	Match("distinct"); if (state.failed) return ;
 
@@ -508,8 +510,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = ELSE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:815:6: ( 'else' )
-            // MacroScope\\MacroScope.g:815:8: 'else'
+            // MacroScope\\MacroScope.g:818:6: ( 'else' )
+            // MacroScope\\MacroScope.g:818:8: 'else'
             {
             	Match("else"); if (state.failed) return ;
 
@@ -532,8 +534,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = END;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:816:5: ( 'end' )
-            // MacroScope\\MacroScope.g:816:7: 'end'
+            // MacroScope\\MacroScope.g:819:5: ( 'end' )
+            // MacroScope\\MacroScope.g:819:7: 'end'
             {
             	Match("end"); if (state.failed) return ;
 
@@ -556,8 +558,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = ESCAPE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:817:8: ( 'escape' )
-            // MacroScope\\MacroScope.g:817:10: 'escape'
+            // MacroScope\\MacroScope.g:820:8: ( 'escape' )
+            // MacroScope\\MacroScope.g:820:10: 'escape'
             {
             	Match("escape"); if (state.failed) return ;
 
@@ -580,8 +582,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = EXISTS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:818:8: ( 'exists' )
-            // MacroScope\\MacroScope.g:818:10: 'exists'
+            // MacroScope\\MacroScope.g:821:8: ( 'exists' )
+            // MacroScope\\MacroScope.g:821:10: 'exists'
             {
             	Match("exists"); if (state.failed) return ;
 
@@ -604,8 +606,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = EXTRACT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:819:9: ( 'extract' )
-            // MacroScope\\MacroScope.g:819:11: 'extract'
+            // MacroScope\\MacroScope.g:822:9: ( 'extract' )
+            // MacroScope\\MacroScope.g:822:11: 'extract'
             {
             	Match("extract"); if (state.failed) return ;
 
@@ -628,8 +630,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = FOR;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:820:5: ( 'for' )
-            // MacroScope\\MacroScope.g:820:7: 'for'
+            // MacroScope\\MacroScope.g:823:5: ( 'for' )
+            // MacroScope\\MacroScope.g:823:7: 'for'
             {
             	Match("for"); if (state.failed) return ;
 
@@ -652,8 +654,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = FROM;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:821:6: ( 'from' )
-            // MacroScope\\MacroScope.g:821:8: 'from'
+            // MacroScope\\MacroScope.g:824:6: ( 'from' )
+            // MacroScope\\MacroScope.g:824:8: 'from'
             {
             	Match("from"); if (state.failed) return ;
 
@@ -676,8 +678,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = FULL;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:822:6: ( 'full' )
-            // MacroScope\\MacroScope.g:822:8: 'full'
+            // MacroScope\\MacroScope.g:825:6: ( 'full' )
+            // MacroScope\\MacroScope.g:825:8: 'full'
             {
             	Match("full"); if (state.failed) return ;
 
@@ -700,8 +702,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = GROUP;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:823:7: ( 'group' )
-            // MacroScope\\MacroScope.g:823:9: 'group'
+            // MacroScope\\MacroScope.g:826:7: ( 'group' )
+            // MacroScope\\MacroScope.g:826:9: 'group'
             {
             	Match("group"); if (state.failed) return ;
 
@@ -724,8 +726,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = HAVING;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:824:8: ( 'having' )
-            // MacroScope\\MacroScope.g:824:10: 'having'
+            // MacroScope\\MacroScope.g:827:8: ( 'having' )
+            // MacroScope\\MacroScope.g:827:10: 'having'
             {
             	Match("having"); if (state.failed) return ;
 
@@ -748,8 +750,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = HOUR;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:825:6: ( 'hour' )
-            // MacroScope\\MacroScope.g:825:8: 'hour'
+            // MacroScope\\MacroScope.g:828:6: ( 'hour' )
+            // MacroScope\\MacroScope.g:828:8: 'hour'
             {
             	Match("hour"); if (state.failed) return ;
 
@@ -772,8 +774,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = IN;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:826:4: ( 'in' )
-            // MacroScope\\MacroScope.g:826:6: 'in'
+            // MacroScope\\MacroScope.g:829:4: ( 'in' )
+            // MacroScope\\MacroScope.g:829:6: 'in'
             {
             	Match("in"); if (state.failed) return ;
 
@@ -796,8 +798,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = INNER;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:827:7: ( 'inner' )
-            // MacroScope\\MacroScope.g:827:9: 'inner'
+            // MacroScope\\MacroScope.g:830:7: ( 'inner' )
+            // MacroScope\\MacroScope.g:830:9: 'inner'
             {
             	Match("inner"); if (state.failed) return ;
 
@@ -820,8 +822,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = INSERT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:828:8: ( 'insert' )
-            // MacroScope\\MacroScope.g:828:10: 'insert'
+            // MacroScope\\MacroScope.g:831:8: ( 'insert' )
+            // MacroScope\\MacroScope.g:831:10: 'insert'
             {
             	Match("insert"); if (state.failed) return ;
 
@@ -844,8 +846,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = INTERVAL;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:829:10: ( 'interval' )
-            // MacroScope\\MacroScope.g:829:12: 'interval'
+            // MacroScope\\MacroScope.g:832:10: ( 'interval' )
+            // MacroScope\\MacroScope.g:832:12: 'interval'
             {
             	Match("interval"); if (state.failed) return ;
 
@@ -868,8 +870,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = INTO;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:830:6: ( 'into' )
-            // MacroScope\\MacroScope.g:830:8: 'into'
+            // MacroScope\\MacroScope.g:833:6: ( 'into' )
+            // MacroScope\\MacroScope.g:833:8: 'into'
             {
             	Match("into"); if (state.failed) return ;
 
@@ -892,8 +894,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = IS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:831:4: ( 'is' )
-            // MacroScope\\MacroScope.g:831:6: 'is'
+            // MacroScope\\MacroScope.g:834:4: ( 'is' )
+            // MacroScope\\MacroScope.g:834:6: 'is'
             {
             	Match("is"); if (state.failed) return ;
 
@@ -916,8 +918,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = JOIN;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:832:6: ( 'join' )
-            // MacroScope\\MacroScope.g:832:8: 'join'
+            // MacroScope\\MacroScope.g:835:6: ( 'join' )
+            // MacroScope\\MacroScope.g:835:8: 'join'
             {
             	Match("join"); if (state.failed) return ;
 
@@ -940,8 +942,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = LEFT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:833:6: ( 'left' )
-            // MacroScope\\MacroScope.g:833:8: 'left'
+            // MacroScope\\MacroScope.g:836:6: ( 'left' )
+            // MacroScope\\MacroScope.g:836:8: 'left'
             {
             	Match("left"); if (state.failed) return ;
 
@@ -964,8 +966,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = LIKE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:834:6: ( 'like' )
-            // MacroScope\\MacroScope.g:834:8: 'like'
+            // MacroScope\\MacroScope.g:837:6: ( 'like' )
+            // MacroScope\\MacroScope.g:837:8: 'like'
             {
             	Match("like"); if (state.failed) return ;
 
@@ -988,8 +990,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = MINUTE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:835:8: ( 'minute' )
-            // MacroScope\\MacroScope.g:835:10: 'minute'
+            // MacroScope\\MacroScope.g:838:8: ( 'minute' )
+            // MacroScope\\MacroScope.g:838:10: 'minute'
             {
             	Match("minute"); if (state.failed) return ;
 
@@ -1012,8 +1014,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = MONTH;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:836:7: ( 'month' )
-            // MacroScope\\MacroScope.g:836:9: 'month'
+            // MacroScope\\MacroScope.g:839:7: ( 'month' )
+            // MacroScope\\MacroScope.g:839:9: 'month'
             {
             	Match("month"); if (state.failed) return ;
 
@@ -1036,8 +1038,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = NOT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:837:5: ( 'not' )
-            // MacroScope\\MacroScope.g:837:7: 'not'
+            // MacroScope\\MacroScope.g:840:5: ( 'not' )
+            // MacroScope\\MacroScope.g:840:7: 'not'
             {
             	Match("not"); if (state.failed) return ;
 
@@ -1060,8 +1062,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = NULL;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:838:6: ( 'null' )
-            // MacroScope\\MacroScope.g:838:8: 'null'
+            // MacroScope\\MacroScope.g:841:6: ( 'null' )
+            // MacroScope\\MacroScope.g:841:8: 'null'
             {
             	Match("null"); if (state.failed) return ;
 
@@ -1084,8 +1086,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = ON;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:839:4: ( 'on' )
-            // MacroScope\\MacroScope.g:839:6: 'on'
+            // MacroScope\\MacroScope.g:842:4: ( 'on' )
+            // MacroScope\\MacroScope.g:842:6: 'on'
             {
             	Match("on"); if (state.failed) return ;
 
@@ -1108,8 +1110,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = OR;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:840:4: ( 'or' )
-            // MacroScope\\MacroScope.g:840:6: 'or'
+            // MacroScope\\MacroScope.g:843:4: ( 'or' )
+            // MacroScope\\MacroScope.g:843:6: 'or'
             {
             	Match("or"); if (state.failed) return ;
 
@@ -1132,8 +1134,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = ORDER;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:841:7: ( 'order' )
-            // MacroScope\\MacroScope.g:841:9: 'order'
+            // MacroScope\\MacroScope.g:844:7: ( 'order' )
+            // MacroScope\\MacroScope.g:844:9: 'order'
             {
             	Match("order"); if (state.failed) return ;
 
@@ -1156,8 +1158,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = OUTER;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:842:7: ( 'outer' )
-            // MacroScope\\MacroScope.g:842:9: 'outer'
+            // MacroScope\\MacroScope.g:845:7: ( 'outer' )
+            // MacroScope\\MacroScope.g:845:9: 'outer'
             {
             	Match("outer"); if (state.failed) return ;
 
@@ -1180,8 +1182,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = RIGHT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:843:7: ( 'right' )
-            // MacroScope\\MacroScope.g:843:9: 'right'
+            // MacroScope\\MacroScope.g:846:7: ( 'right' )
+            // MacroScope\\MacroScope.g:846:9: 'right'
             {
             	Match("right"); if (state.failed) return ;
 
@@ -1204,8 +1206,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = SECOND;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:844:8: ( 'second' )
-            // MacroScope\\MacroScope.g:844:10: 'second'
+            // MacroScope\\MacroScope.g:847:8: ( 'second' )
+            // MacroScope\\MacroScope.g:847:10: 'second'
             {
             	Match("second"); if (state.failed) return ;
 
@@ -1228,8 +1230,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = SELECT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:845:8: ( 'select' )
-            // MacroScope\\MacroScope.g:845:10: 'select'
+            // MacroScope\\MacroScope.g:848:8: ( 'select' )
+            // MacroScope\\MacroScope.g:848:10: 'select'
             {
             	Match("select"); if (state.failed) return ;
 
@@ -1252,8 +1254,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = SET;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:846:5: ( 'set' )
-            // MacroScope\\MacroScope.g:846:7: 'set'
+            // MacroScope\\MacroScope.g:849:5: ( 'set' )
+            // MacroScope\\MacroScope.g:849:7: 'set'
             {
             	Match("set"); if (state.failed) return ;
 
@@ -1276,8 +1278,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = SOME;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:847:6: ( 'some' )
-            // MacroScope\\MacroScope.g:847:8: 'some'
+            // MacroScope\\MacroScope.g:850:6: ( 'some' )
+            // MacroScope\\MacroScope.g:850:8: 'some'
             {
             	Match("some"); if (state.failed) return ;
 
@@ -1300,8 +1302,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = SUBSTRING;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:848:11: ( 'substring' )
-            // MacroScope\\MacroScope.g:848:13: 'substring'
+            // MacroScope\\MacroScope.g:851:11: ( 'substring' )
+            // MacroScope\\MacroScope.g:851:13: 'substring'
             {
             	Match("substring"); if (state.failed) return ;
 
@@ -1324,8 +1326,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = THEN;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:849:6: ( 'then' )
-            // MacroScope\\MacroScope.g:849:8: 'then'
+            // MacroScope\\MacroScope.g:852:6: ( 'then' )
+            // MacroScope\\MacroScope.g:852:8: 'then'
             {
             	Match("then"); if (state.failed) return ;
 
@@ -1341,6 +1343,30 @@ public partial class MacroScopeLexer : Lexer {
     }
     // $ANTLR end "THEN"
 
+    // $ANTLR start "TIMESTAMP"
+    public void mTIMESTAMP() // throws RecognitionException [2]
+    {
+    		try
+    		{
+            int _type = TIMESTAMP;
+    	int _channel = DEFAULT_TOKEN_CHANNEL;
+            // MacroScope\\MacroScope.g:853:10: ( 'timestamp' )
+            // MacroScope\\MacroScope.g:853:12: 'timestamp'
+            {
+            	Match("timestamp"); if (state.failed) return ;
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally 
+    	{
+        }
+    }
+    // $ANTLR end "TIMESTAMP"
+
     // $ANTLR start "TOP"
     public void mTOP() // throws RecognitionException [2]
     {
@@ -1348,8 +1374,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = TOP;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:850:5: ( 'top' )
-            // MacroScope\\MacroScope.g:850:7: 'top'
+            // MacroScope\\MacroScope.g:854:5: ( 'top' )
+            // MacroScope\\MacroScope.g:854:7: 'top'
             {
             	Match("top"); if (state.failed) return ;
 
@@ -1372,8 +1398,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = UNION;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:851:7: ( 'union' )
-            // MacroScope\\MacroScope.g:851:9: 'union'
+            // MacroScope\\MacroScope.g:855:7: ( 'union' )
+            // MacroScope\\MacroScope.g:855:9: 'union'
             {
             	Match("union"); if (state.failed) return ;
 
@@ -1396,8 +1422,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = UPDATE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:852:8: ( 'update' )
-            // MacroScope\\MacroScope.g:852:10: 'update'
+            // MacroScope\\MacroScope.g:856:8: ( 'update' )
+            // MacroScope\\MacroScope.g:856:10: 'update'
             {
             	Match("update"); if (state.failed) return ;
 
@@ -1420,8 +1446,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = VALUES;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:853:8: ( 'values' )
-            // MacroScope\\MacroScope.g:853:10: 'values'
+            // MacroScope\\MacroScope.g:857:8: ( 'values' )
+            // MacroScope\\MacroScope.g:857:10: 'values'
             {
             	Match("values"); if (state.failed) return ;
 
@@ -1444,8 +1470,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = WHEN;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:854:6: ( 'when' )
-            // MacroScope\\MacroScope.g:854:8: 'when'
+            // MacroScope\\MacroScope.g:858:6: ( 'when' )
+            // MacroScope\\MacroScope.g:858:8: 'when'
             {
             	Match("when"); if (state.failed) return ;
 
@@ -1468,8 +1494,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = WHERE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:855:7: ( 'where' )
-            // MacroScope\\MacroScope.g:855:9: 'where'
+            // MacroScope\\MacroScope.g:859:7: ( 'where' )
+            // MacroScope\\MacroScope.g:859:9: 'where'
             {
             	Match("where"); if (state.failed) return ;
 
@@ -1492,8 +1518,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = YEAR;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:856:6: ( 'year' )
-            // MacroScope\\MacroScope.g:856:8: 'year'
+            // MacroScope\\MacroScope.g:860:6: ( 'year' )
+            // MacroScope\\MacroScope.g:860:8: 'year'
             {
             	Match("year"); if (state.failed) return ;
 
@@ -1516,8 +1542,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = DOT_STAR;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:858:9: ( '.*' )
-            // MacroScope\\MacroScope.g:858:11: '.*'
+            // MacroScope\\MacroScope.g:862:9: ( '.*' )
+            // MacroScope\\MacroScope.g:862:11: '.*'
             {
             	Match(".*"); if (state.failed) return ;
 
@@ -1540,8 +1566,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = DOT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:859:5: ( '.' )
-            // MacroScope\\MacroScope.g:859:7: '.'
+            // MacroScope\\MacroScope.g:863:5: ( '.' )
+            // MacroScope\\MacroScope.g:863:7: '.'
             {
             	Match('.'); if (state.failed) return ;
 
@@ -1563,8 +1589,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = COMMA;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:860:7: ( ',' )
-            // MacroScope\\MacroScope.g:860:9: ','
+            // MacroScope\\MacroScope.g:864:7: ( ',' )
+            // MacroScope\\MacroScope.g:864:9: ','
             {
             	Match(','); if (state.failed) return ;
 
@@ -1586,8 +1612,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = LPAREN;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:861:8: ( '(' )
-            // MacroScope\\MacroScope.g:861:10: '('
+            // MacroScope\\MacroScope.g:865:8: ( '(' )
+            // MacroScope\\MacroScope.g:865:10: '('
             {
             	Match('('); if (state.failed) return ;
 
@@ -1609,8 +1635,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = RPAREN;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:862:8: ( ')' )
-            // MacroScope\\MacroScope.g:862:10: ')'
+            // MacroScope\\MacroScope.g:866:8: ( ')' )
+            // MacroScope\\MacroScope.g:866:10: ')'
             {
             	Match(')'); if (state.failed) return ;
 
@@ -1632,8 +1658,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = ASSIGNEQUAL;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:864:13: ( '=' )
-            // MacroScope\\MacroScope.g:864:15: '='
+            // MacroScope\\MacroScope.g:868:13: ( '=' )
+            // MacroScope\\MacroScope.g:868:15: '='
             {
             	Match('='); if (state.failed) return ;
 
@@ -1655,8 +1681,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = NOTEQUAL1;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:865:11: ( '<>' )
-            // MacroScope\\MacroScope.g:865:13: '<>'
+            // MacroScope\\MacroScope.g:869:11: ( '<>' )
+            // MacroScope\\MacroScope.g:869:13: '<>'
             {
             	Match("<>"); if (state.failed) return ;
 
@@ -1679,8 +1705,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = NOTEQUAL2;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:866:11: ( '!=' )
-            // MacroScope\\MacroScope.g:866:13: '!='
+            // MacroScope\\MacroScope.g:870:11: ( '!=' )
+            // MacroScope\\MacroScope.g:870:13: '!='
             {
             	Match("!="); if (state.failed) return ;
 
@@ -1703,8 +1729,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = LESSTHANOREQUALTO1;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:867:20: ( '<=' )
-            // MacroScope\\MacroScope.g:867:22: '<='
+            // MacroScope\\MacroScope.g:871:20: ( '<=' )
+            // MacroScope\\MacroScope.g:871:22: '<='
             {
             	Match("<="); if (state.failed) return ;
 
@@ -1727,8 +1753,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = LESSTHAN;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:868:10: ( '<' )
-            // MacroScope\\MacroScope.g:868:12: '<'
+            // MacroScope\\MacroScope.g:872:10: ( '<' )
+            // MacroScope\\MacroScope.g:872:12: '<'
             {
             	Match('<'); if (state.failed) return ;
 
@@ -1750,8 +1776,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = GREATERTHANOREQUALTO1;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:869:23: ( '>=' )
-            // MacroScope\\MacroScope.g:869:25: '>='
+            // MacroScope\\MacroScope.g:873:23: ( '>=' )
+            // MacroScope\\MacroScope.g:873:25: '>='
             {
             	Match(">="); if (state.failed) return ;
 
@@ -1774,8 +1800,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = GREATERTHAN;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:870:13: ( '>' )
-            // MacroScope\\MacroScope.g:870:15: '>'
+            // MacroScope\\MacroScope.g:874:13: ( '>' )
+            // MacroScope\\MacroScope.g:874:15: '>'
             {
             	Match('>'); if (state.failed) return ;
 
@@ -1797,8 +1823,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = DIVIDE;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:872:8: ( '/' )
-            // MacroScope\\MacroScope.g:872:10: '/'
+            // MacroScope\\MacroScope.g:876:8: ( '/' )
+            // MacroScope\\MacroScope.g:876:10: '/'
             {
             	Match('/'); if (state.failed) return ;
 
@@ -1820,8 +1846,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = PLUS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:873:6: ( '+' )
-            // MacroScope\\MacroScope.g:873:8: '+'
+            // MacroScope\\MacroScope.g:877:6: ( '+' )
+            // MacroScope\\MacroScope.g:877:8: '+'
             {
             	Match('+'); if (state.failed) return ;
 
@@ -1843,8 +1869,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = STAR;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:874:6: ( '*' )
-            // MacroScope\\MacroScope.g:874:8: '*'
+            // MacroScope\\MacroScope.g:878:6: ( '*' )
+            // MacroScope\\MacroScope.g:878:8: '*'
             {
             	Match('*'); if (state.failed) return ;
 
@@ -1866,8 +1892,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = MOD;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:875:5: ( '%' )
-            // MacroScope\\MacroScope.g:875:7: '%'
+            // MacroScope\\MacroScope.g:879:5: ( '%' )
+            // MacroScope\\MacroScope.g:879:7: '%'
             {
             	Match('%'); if (state.failed) return ;
 
@@ -1889,8 +1915,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = STRCONCAT;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:877:11: ( '||' )
-            // MacroScope\\MacroScope.g:877:13: '||'
+            // MacroScope\\MacroScope.g:881:11: ( '||' )
+            // MacroScope\\MacroScope.g:881:13: '||'
             {
             	Match("||"); if (state.failed) return ;
 
@@ -1913,8 +1939,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = PLACEHOLDER;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:879:12: ( '?' )
-            // MacroScope\\MacroScope.g:879:14: '?'
+            // MacroScope\\MacroScope.g:883:12: ( '?' )
+            // MacroScope\\MacroScope.g:883:14: '?'
             {
             	Match('?'); if (state.failed) return ;
 
@@ -1934,8 +1960,8 @@ public partial class MacroScopeLexer : Lexer {
     {
     		try
     		{
-            // MacroScope\\MacroScope.g:882:8: ( 'a' .. 'z' )
-            // MacroScope\\MacroScope.g:882:10: 'a' .. 'z'
+            // MacroScope\\MacroScope.g:886:8: ( 'a' .. 'z' )
+            // MacroScope\\MacroScope.g:886:10: 'a' .. 'z'
             {
             	MatchRange('a','z'); if (state.failed) return ;
 
@@ -1953,8 +1979,8 @@ public partial class MacroScopeLexer : Lexer {
     {
     		try
     		{
-            // MacroScope\\MacroScope.g:885:7: ( '0' .. '9' )
-            // MacroScope\\MacroScope.g:885:9: '0' .. '9'
+            // MacroScope\\MacroScope.g:889:7: ( '0' .. '9' )
+            // MacroScope\\MacroScope.g:889:9: '0' .. '9'
             {
             	MatchRange('0','9'); if (state.failed) return ;
 
@@ -1972,8 +1998,8 @@ public partial class MacroScopeLexer : Lexer {
     {
     		try
     		{
-            // MacroScope\\MacroScope.g:888:9: ()
-            // MacroScope\\MacroScope.g:888:10: 
+            // MacroScope\\MacroScope.g:892:9: ()
+            // MacroScope\\MacroScope.g:892:10: 
             {
             }
 
@@ -1989,8 +2015,8 @@ public partial class MacroScopeLexer : Lexer {
     {
     		try
     		{
-            // MacroScope\\MacroScope.g:891:6: ()
-            // MacroScope\\MacroScope.g:891:7: 
+            // MacroScope\\MacroScope.g:895:6: ()
+            // MacroScope\\MacroScope.g:895:7: 
             {
             }
 
@@ -2006,11 +2032,11 @@ public partial class MacroScopeLexer : Lexer {
     {
     		try
     		{
-            // MacroScope\\MacroScope.g:894:10: ( 'e' ( '+' | '-' )? ( Digit )+ )
-            // MacroScope\\MacroScope.g:895:2: 'e' ( '+' | '-' )? ( Digit )+
+            // MacroScope\\MacroScope.g:898:10: ( 'e' ( '+' | '-' )? ( Digit )+ )
+            // MacroScope\\MacroScope.g:899:2: 'e' ( '+' | '-' )? ( Digit )+
             {
             	Match('e'); if (state.failed) return ;
-            	// MacroScope\\MacroScope.g:895:6: ( '+' | '-' )?
+            	// MacroScope\\MacroScope.g:899:6: ( '+' | '-' )?
             	int alt1 = 2;
             	int LA1_0 = input.LA(1);
 
@@ -2041,7 +2067,7 @@ public partial class MacroScopeLexer : Lexer {
 
             	}
 
-            	// MacroScope\\MacroScope.g:895:21: ( Digit )+
+            	// MacroScope\\MacroScope.g:899:21: ( Digit )+
             	int cnt2 = 0;
             	do 
             	{
@@ -2057,7 +2083,7 @@ public partial class MacroScopeLexer : Lexer {
             	    switch (alt2) 
             		{
             			case 1 :
-            			    // MacroScope\\MacroScope.g:895:22: Digit
+            			    // MacroScope\\MacroScope.g:899:22: Digit
             			    {
             			    	mDigit(); if (state.failed) return ;
 
@@ -2067,9 +2093,9 @@ public partial class MacroScopeLexer : Lexer {
             			default:
             			    if ( cnt2 >= 1 ) goto loop2;
             			    if ( state.backtracking > 0 ) {state.failed = true; return ;}
-            		            EarlyExitException eee =
+            		            EarlyExitException eee2 =
             		                new EarlyExitException(2, input);
-            		            throw eee;
+            		            throw eee2;
             	    }
             	    cnt2++;
             	} while (true);
@@ -2094,8 +2120,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = MAccessDateTime;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:898:17: ( '#' Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ' ' Digit Digit ':' Digit Digit ':' Digit Digit '#' )
-            // MacroScope\\MacroScope.g:899:2: '#' Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ' ' Digit Digit ':' Digit Digit ':' Digit Digit '#'
+            // MacroScope\\MacroScope.g:902:17: ( '#' Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ' ' Digit Digit ':' Digit Digit ':' Digit Digit '#' )
+            // MacroScope\\MacroScope.g:903:2: '#' Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ' ' Digit Digit ':' Digit Digit ':' Digit Digit '#'
             {
             	Match('#'); if (state.failed) return ;
             	mDigit(); if (state.failed) return ;
@@ -2137,8 +2163,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = Iso8601DateTime;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:905:17: ( Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ( 't' | ' ' ) Digit Digit ':' Digit Digit ':' Digit Digit )
-            // MacroScope\\MacroScope.g:906:2: Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ( 't' | ' ' ) Digit Digit ':' Digit Digit ':' Digit Digit
+            // MacroScope\\MacroScope.g:909:17: ( Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ( 't' | ' ' ) Digit Digit ':' Digit Digit ':' Digit Digit )
+            // MacroScope\\MacroScope.g:910:2: Digit Digit Digit Digit '-' Digit Digit '-' Digit Digit ( 't' | ' ' ) Digit Digit ':' Digit Digit ':' Digit Digit
             {
             	mDigit(); if (state.failed) return ;
             	mDigit(); if (state.failed) return ;
@@ -2189,15 +2215,15 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = Number;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:911:8: ( ( ( Digit )+ ( '.' | 'e' ) )=> ( Digit )+ ( '.' ( Digit )* ( Exponent )? | Exponent ) | '.' ( ( Digit )+ ( Exponent )? )? | ( Digit )+ | '0x' ( 'a' .. 'f' | Digit )* )
+            // MacroScope\\MacroScope.g:915:8: ( ( ( Digit )+ ( '.' | 'e' ) )=> ( Digit )+ ( '.' ( Digit )* ( Exponent )? | Exponent ) | '.' ( ( Digit )+ ( Exponent )? )? | ( Digit )+ | '0x' ( 'a' .. 'f' | Digit )* )
             int alt12 = 4;
             alt12 = dfa12.Predict(input);
             switch (alt12) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:912:2: ( ( Digit )+ ( '.' | 'e' ) )=> ( Digit )+ ( '.' ( Digit )* ( Exponent )? | Exponent )
+                    // MacroScope\\MacroScope.g:916:2: ( ( Digit )+ ( '.' | 'e' ) )=> ( Digit )+ ( '.' ( Digit )* ( Exponent )? | Exponent )
                     {
-                    	// MacroScope\\MacroScope.g:912:30: ( Digit )+
+                    	// MacroScope\\MacroScope.g:916:30: ( Digit )+
                     	int cnt3 = 0;
                     	do 
                     	{
@@ -2213,7 +2239,7 @@ public partial class MacroScopeLexer : Lexer {
                     	    switch (alt3) 
                     		{
                     			case 1 :
-                    			    // MacroScope\\MacroScope.g:912:31: Digit
+                    			    // MacroScope\\MacroScope.g:916:31: Digit
                     			    {
                     			    	mDigit(); if (state.failed) return ;
 
@@ -2223,9 +2249,9 @@ public partial class MacroScopeLexer : Lexer {
                     			default:
                     			    if ( cnt3 >= 1 ) goto loop3;
                     			    if ( state.backtracking > 0 ) {state.failed = true; return ;}
-                    		            EarlyExitException eee =
+                    		            EarlyExitException eee3 =
                     		                new EarlyExitException(3, input);
-                    		            throw eee;
+                    		            throw eee3;
                     	    }
                     	    cnt3++;
                     	} while (true);
@@ -2233,7 +2259,7 @@ public partial class MacroScopeLexer : Lexer {
                     	loop3:
                     		;	// Stops C# compiler whinging that label 'loop3' has no statements
 
-                    	// MacroScope\\MacroScope.g:912:39: ( '.' ( Digit )* ( Exponent )? | Exponent )
+                    	// MacroScope\\MacroScope.g:916:39: ( '.' ( Digit )* ( Exponent )? | Exponent )
                     	int alt6 = 2;
                     	int LA6_0 = input.LA(1);
 
@@ -2256,10 +2282,10 @@ public partial class MacroScopeLexer : Lexer {
                     	switch (alt6) 
                     	{
                     	    case 1 :
-                    	        // MacroScope\\MacroScope.g:912:41: '.' ( Digit )* ( Exponent )?
+                    	        // MacroScope\\MacroScope.g:916:41: '.' ( Digit )* ( Exponent )?
                     	        {
                     	        	Match('.'); if (state.failed) return ;
-                    	        	// MacroScope\\MacroScope.g:912:45: ( Digit )*
+                    	        	// MacroScope\\MacroScope.g:916:45: ( Digit )*
                     	        	do 
                     	        	{
                     	        	    int alt4 = 2;
@@ -2274,7 +2300,7 @@ public partial class MacroScopeLexer : Lexer {
                     	        	    switch (alt4) 
                     	        		{
                     	        			case 1 :
-                    	        			    // MacroScope\\MacroScope.g:912:46: Digit
+                    	        			    // MacroScope\\MacroScope.g:916:46: Digit
                     	        			    {
                     	        			    	mDigit(); if (state.failed) return ;
 
@@ -2289,7 +2315,7 @@ public partial class MacroScopeLexer : Lexer {
                     	        	loop4:
                     	        		;	// Stops C# compiler whining that label 'loop4' has no statements
 
-                    	        	// MacroScope\\MacroScope.g:912:54: ( Exponent )?
+                    	        	// MacroScope\\MacroScope.g:916:54: ( Exponent )?
                     	        	int alt5 = 2;
                     	        	int LA5_0 = input.LA(1);
 
@@ -2300,7 +2326,7 @@ public partial class MacroScopeLexer : Lexer {
                     	        	switch (alt5) 
                     	        	{
                     	        	    case 1 :
-                    	        	        // MacroScope\\MacroScope.g:912:55: Exponent
+                    	        	        // MacroScope\\MacroScope.g:916:55: Exponent
                     	        	        {
                     	        	        	mExponent(); if (state.failed) return ;
 
@@ -2313,7 +2339,7 @@ public partial class MacroScopeLexer : Lexer {
                     	        }
                     	        break;
                     	    case 2 :
-                    	        // MacroScope\\MacroScope.g:912:68: Exponent
+                    	        // MacroScope\\MacroScope.g:916:68: Exponent
                     	        {
                     	        	mExponent(); if (state.failed) return ;
 
@@ -2322,7 +2348,7 @@ public partial class MacroScopeLexer : Lexer {
 
                     	}
 
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   _type = Real; 
                     	}
@@ -2330,14 +2356,14 @@ public partial class MacroScopeLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:913:4: '.' ( ( Digit )+ ( Exponent )? )?
+                    // MacroScope\\MacroScope.g:917:4: '.' ( ( Digit )+ ( Exponent )? )?
                     {
                     	Match('.'); if (state.failed) return ;
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   _type = DOT; 
                     	}
-                    	// MacroScope\\MacroScope.g:913:25: ( ( Digit )+ ( Exponent )? )?
+                    	// MacroScope\\MacroScope.g:917:25: ( ( Digit )+ ( Exponent )? )?
                     	int alt9 = 2;
                     	int LA9_0 = input.LA(1);
 
@@ -2348,9 +2374,9 @@ public partial class MacroScopeLexer : Lexer {
                     	switch (alt9) 
                     	{
                     	    case 1 :
-                    	        // MacroScope\\MacroScope.g:913:27: ( Digit )+ ( Exponent )?
+                    	        // MacroScope\\MacroScope.g:917:27: ( Digit )+ ( Exponent )?
                     	        {
-                    	        	// MacroScope\\MacroScope.g:913:27: ( Digit )+
+                    	        	// MacroScope\\MacroScope.g:917:27: ( Digit )+
                     	        	int cnt7 = 0;
                     	        	do 
                     	        	{
@@ -2366,7 +2392,7 @@ public partial class MacroScopeLexer : Lexer {
                     	        	    switch (alt7) 
                     	        		{
                     	        			case 1 :
-                    	        			    // MacroScope\\MacroScope.g:913:28: Digit
+                    	        			    // MacroScope\\MacroScope.g:917:28: Digit
                     	        			    {
                     	        			    	mDigit(); if (state.failed) return ;
 
@@ -2376,9 +2402,9 @@ public partial class MacroScopeLexer : Lexer {
                     	        			default:
                     	        			    if ( cnt7 >= 1 ) goto loop7;
                     	        			    if ( state.backtracking > 0 ) {state.failed = true; return ;}
-                    	        		            EarlyExitException eee =
+                    	        		            EarlyExitException eee7 =
                     	        		                new EarlyExitException(7, input);
-                    	        		            throw eee;
+                    	        		            throw eee7;
                     	        	    }
                     	        	    cnt7++;
                     	        	} while (true);
@@ -2386,7 +2412,7 @@ public partial class MacroScopeLexer : Lexer {
                     	        	loop7:
                     	        		;	// Stops C# compiler whinging that label 'loop7' has no statements
 
-                    	        	// MacroScope\\MacroScope.g:913:36: ( Exponent )?
+                    	        	// MacroScope\\MacroScope.g:917:36: ( Exponent )?
                     	        	int alt8 = 2;
                     	        	int LA8_0 = input.LA(1);
 
@@ -2397,7 +2423,7 @@ public partial class MacroScopeLexer : Lexer {
                     	        	switch (alt8) 
                     	        	{
                     	        	    case 1 :
-                    	        	        // MacroScope\\MacroScope.g:913:37: Exponent
+                    	        	        // MacroScope\\MacroScope.g:917:37: Exponent
                     	        	        {
                     	        	        	mExponent(); if (state.failed) return ;
 
@@ -2406,7 +2432,7 @@ public partial class MacroScopeLexer : Lexer {
 
                     	        	}
 
-                    	        	if ( state.backtracking == 0 ) 
+                    	        	if ( (state.backtracking==0) )
                     	        	{
                     	        	   _type = Real; 
                     	        	}
@@ -2420,9 +2446,9 @@ public partial class MacroScopeLexer : Lexer {
                     }
                     break;
                 case 3 :
-                    // MacroScope\\MacroScope.g:914:4: ( Digit )+
+                    // MacroScope\\MacroScope.g:918:4: ( Digit )+
                     {
-                    	// MacroScope\\MacroScope.g:914:4: ( Digit )+
+                    	// MacroScope\\MacroScope.g:918:4: ( Digit )+
                     	int cnt10 = 0;
                     	do 
                     	{
@@ -2438,7 +2464,7 @@ public partial class MacroScopeLexer : Lexer {
                     	    switch (alt10) 
                     		{
                     			case 1 :
-                    			    // MacroScope\\MacroScope.g:914:5: Digit
+                    			    // MacroScope\\MacroScope.g:918:5: Digit
                     			    {
                     			    	mDigit(); if (state.failed) return ;
 
@@ -2448,9 +2474,9 @@ public partial class MacroScopeLexer : Lexer {
                     			default:
                     			    if ( cnt10 >= 1 ) goto loop10;
                     			    if ( state.backtracking > 0 ) {state.failed = true; return ;}
-                    		            EarlyExitException eee =
+                    		            EarlyExitException eee10 =
                     		                new EarlyExitException(10, input);
-                    		            throw eee;
+                    		            throw eee10;
                     	    }
                     	    cnt10++;
                     	} while (true);
@@ -2458,7 +2484,7 @@ public partial class MacroScopeLexer : Lexer {
                     	loop10:
                     		;	// Stops C# compiler whinging that label 'loop10' has no statements
 
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   _type = Integer; 
                     	}
@@ -2466,11 +2492,11 @@ public partial class MacroScopeLexer : Lexer {
                     }
                     break;
                 case 4 :
-                    // MacroScope\\MacroScope.g:915:4: '0x' ( 'a' .. 'f' | Digit )*
+                    // MacroScope\\MacroScope.g:919:4: '0x' ( 'a' .. 'f' | Digit )*
                     {
                     	Match("0x"); if (state.failed) return ;
 
-                    	// MacroScope\\MacroScope.g:915:9: ( 'a' .. 'f' | Digit )*
+                    	// MacroScope\\MacroScope.g:919:9: ( 'a' .. 'f' | Digit )*
                     	do 
                     	{
                     	    int alt11 = 2;
@@ -2511,7 +2537,7 @@ public partial class MacroScopeLexer : Lexer {
                     	loop11:
                     		;	// Stops C# compiler whining that label 'loop11' has no statements
 
-                    	if ( state.backtracking == 0 ) 
+                    	if ( (state.backtracking==0) )
                     	{
                     	   _type = HexLiteral; 
                     	}
@@ -2534,10 +2560,10 @@ public partial class MacroScopeLexer : Lexer {
     {
     		try
     		{
-            // MacroScope\\MacroScope.g:919:10: ( ( Letter | Digit | '_' )* )
-            // MacroScope\\MacroScope.g:920:2: ( Letter | Digit | '_' )*
+            // MacroScope\\MacroScope.g:923:10: ( ( Letter | Digit | '_' )* )
+            // MacroScope\\MacroScope.g:924:2: ( Letter | Digit | '_' )*
             {
-            	// MacroScope\\MacroScope.g:920:2: ( Letter | Digit | '_' )*
+            	// MacroScope\\MacroScope.g:924:2: ( Letter | Digit | '_' )*
             	do 
             	{
             	    int alt13 = 2;
@@ -2595,8 +2621,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = NonQuotedIdentifier;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:923:21: ( Letter WordTail )
-            // MacroScope\\MacroScope.g:923:23: Letter WordTail
+            // MacroScope\\MacroScope.g:927:21: ( Letter WordTail )
+            // MacroScope\\MacroScope.g:927:23: Letter WordTail
             {
             	mLetter(); if (state.failed) return ;
             	mWordTail(); if (state.failed) return ;
@@ -2619,7 +2645,7 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = QuotedIdentifier;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:925:18: ( '[' (~ ']' )* ']' ( ']' (~ ']' )* ']' )* | '\"' (~ '\"' )* '\"' ( '\"' (~ '\"' )* '\"' )* | '`' (~ '`' )* '`' )
+            // MacroScope\\MacroScope.g:929:18: ( '[' (~ ']' )* ']' ( ']' (~ ']' )* ']' )* | '\"' (~ '\"' )* '\"' ( '\"' (~ '\"' )* '\"' )* | '`' (~ '`' )* '`' )
             int alt21 = 3;
             switch ( input.LA(1) ) 
             {
@@ -2649,16 +2675,16 @@ public partial class MacroScopeLexer : Lexer {
             switch (alt21) 
             {
                 case 1 :
-                    // MacroScope\\MacroScope.g:926:2: '[' (~ ']' )* ']' ( ']' (~ ']' )* ']' )*
+                    // MacroScope\\MacroScope.g:930:2: '[' (~ ']' )* ']' ( ']' (~ ']' )* ']' )*
                     {
                     	Match('['); if (state.failed) return ;
-                    	// MacroScope\\MacroScope.g:926:6: (~ ']' )*
+                    	// MacroScope\\MacroScope.g:930:6: (~ ']' )*
                     	do 
                     	{
                     	    int alt14 = 2;
                     	    int LA14_0 = input.LA(1);
 
-                    	    if ( ((LA14_0 >= '\u0000' && LA14_0 <= '\\') || (LA14_0 >= '^' && LA14_0 <= '\uFFFE')) )
+                    	    if ( ((LA14_0 >= '\u0000' && LA14_0 <= '\\') || (LA14_0 >= '^' && LA14_0 <= '\uFFFF')) )
                     	    {
                     	        alt14 = 1;
                     	    }
@@ -2667,9 +2693,9 @@ public partial class MacroScopeLexer : Lexer {
                     	    switch (alt14) 
                     		{
                     			case 1 :
-                    			    // MacroScope\\MacroScope.g:926:7: ~ ']'
+                    			    // MacroScope\\MacroScope.g:930:7: ~ ']'
                     			    {
-                    			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\\') || (input.LA(1) >= '^' && input.LA(1) <= '\uFFFE') ) 
+                    			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\\') || (input.LA(1) >= '^' && input.LA(1) <= '\uFFFF') ) 
                     			    	{
                     			    	    input.Consume();
                     			    	state.failed = false;
@@ -2694,7 +2720,7 @@ public partial class MacroScopeLexer : Lexer {
                     		;	// Stops C# compiler whining that label 'loop14' has no statements
 
                     	Match(']'); if (state.failed) return ;
-                    	// MacroScope\\MacroScope.g:926:18: ( ']' (~ ']' )* ']' )*
+                    	// MacroScope\\MacroScope.g:930:18: ( ']' (~ ']' )* ']' )*
                     	do 
                     	{
                     	    int alt16 = 2;
@@ -2709,16 +2735,16 @@ public partial class MacroScopeLexer : Lexer {
                     	    switch (alt16) 
                     		{
                     			case 1 :
-                    			    // MacroScope\\MacroScope.g:926:19: ']' (~ ']' )* ']'
+                    			    // MacroScope\\MacroScope.g:930:19: ']' (~ ']' )* ']'
                     			    {
                     			    	Match(']'); if (state.failed) return ;
-                    			    	// MacroScope\\MacroScope.g:926:23: (~ ']' )*
+                    			    	// MacroScope\\MacroScope.g:930:23: (~ ']' )*
                     			    	do 
                     			    	{
                     			    	    int alt15 = 2;
                     			    	    int LA15_0 = input.LA(1);
 
-                    			    	    if ( ((LA15_0 >= '\u0000' && LA15_0 <= '\\') || (LA15_0 >= '^' && LA15_0 <= '\uFFFE')) )
+                    			    	    if ( ((LA15_0 >= '\u0000' && LA15_0 <= '\\') || (LA15_0 >= '^' && LA15_0 <= '\uFFFF')) )
                     			    	    {
                     			    	        alt15 = 1;
                     			    	    }
@@ -2727,9 +2753,9 @@ public partial class MacroScopeLexer : Lexer {
                     			    	    switch (alt15) 
                     			    		{
                     			    			case 1 :
-                    			    			    // MacroScope\\MacroScope.g:926:24: ~ ']'
+                    			    			    // MacroScope\\MacroScope.g:930:24: ~ ']'
                     			    			    {
-                    			    			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\\') || (input.LA(1) >= '^' && input.LA(1) <= '\uFFFE') ) 
+                    			    			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\\') || (input.LA(1) >= '^' && input.LA(1) <= '\uFFFF') ) 
                     			    			    	{
                     			    			    	    input.Consume();
                     			    			    	state.failed = false;
@@ -2770,16 +2796,16 @@ public partial class MacroScopeLexer : Lexer {
                     }
                     break;
                 case 2 :
-                    // MacroScope\\MacroScope.g:927:4: '\"' (~ '\"' )* '\"' ( '\"' (~ '\"' )* '\"' )*
+                    // MacroScope\\MacroScope.g:931:4: '\"' (~ '\"' )* '\"' ( '\"' (~ '\"' )* '\"' )*
                     {
                     	Match('\"'); if (state.failed) return ;
-                    	// MacroScope\\MacroScope.g:927:8: (~ '\"' )*
+                    	// MacroScope\\MacroScope.g:931:8: (~ '\"' )*
                     	do 
                     	{
                     	    int alt17 = 2;
                     	    int LA17_0 = input.LA(1);
 
-                    	    if ( ((LA17_0 >= '\u0000' && LA17_0 <= '!') || (LA17_0 >= '#' && LA17_0 <= '\uFFFE')) )
+                    	    if ( ((LA17_0 >= '\u0000' && LA17_0 <= '!') || (LA17_0 >= '#' && LA17_0 <= '\uFFFF')) )
                     	    {
                     	        alt17 = 1;
                     	    }
@@ -2788,9 +2814,9 @@ public partial class MacroScopeLexer : Lexer {
                     	    switch (alt17) 
                     		{
                     			case 1 :
-                    			    // MacroScope\\MacroScope.g:927:9: ~ '\"'
+                    			    // MacroScope\\MacroScope.g:931:9: ~ '\"'
                     			    {
-                    			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!') || (input.LA(1) >= '#' && input.LA(1) <= '\uFFFE') ) 
+                    			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!') || (input.LA(1) >= '#' && input.LA(1) <= '\uFFFF') ) 
                     			    	{
                     			    	    input.Consume();
                     			    	state.failed = false;
@@ -2815,7 +2841,7 @@ public partial class MacroScopeLexer : Lexer {
                     		;	// Stops C# compiler whining that label 'loop17' has no statements
 
                     	Match('\"'); if (state.failed) return ;
-                    	// MacroScope\\MacroScope.g:927:20: ( '\"' (~ '\"' )* '\"' )*
+                    	// MacroScope\\MacroScope.g:931:20: ( '\"' (~ '\"' )* '\"' )*
                     	do 
                     	{
                     	    int alt19 = 2;
@@ -2830,16 +2856,16 @@ public partial class MacroScopeLexer : Lexer {
                     	    switch (alt19) 
                     		{
                     			case 1 :
-                    			    // MacroScope\\MacroScope.g:927:21: '\"' (~ '\"' )* '\"'
+                    			    // MacroScope\\MacroScope.g:931:21: '\"' (~ '\"' )* '\"'
                     			    {
                     			    	Match('\"'); if (state.failed) return ;
-                    			    	// MacroScope\\MacroScope.g:927:25: (~ '\"' )*
+                    			    	// MacroScope\\MacroScope.g:931:25: (~ '\"' )*
                     			    	do 
                     			    	{
                     			    	    int alt18 = 2;
                     			    	    int LA18_0 = input.LA(1);
 
-                    			    	    if ( ((LA18_0 >= '\u0000' && LA18_0 <= '!') || (LA18_0 >= '#' && LA18_0 <= '\uFFFE')) )
+                    			    	    if ( ((LA18_0 >= '\u0000' && LA18_0 <= '!') || (LA18_0 >= '#' && LA18_0 <= '\uFFFF')) )
                     			    	    {
                     			    	        alt18 = 1;
                     			    	    }
@@ -2848,9 +2874,9 @@ public partial class MacroScopeLexer : Lexer {
                     			    	    switch (alt18) 
                     			    		{
                     			    			case 1 :
-                    			    			    // MacroScope\\MacroScope.g:927:26: ~ '\"'
+                    			    			    // MacroScope\\MacroScope.g:931:26: ~ '\"'
                     			    			    {
-                    			    			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!') || (input.LA(1) >= '#' && input.LA(1) <= '\uFFFE') ) 
+                    			    			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!') || (input.LA(1) >= '#' && input.LA(1) <= '\uFFFF') ) 
                     			    			    	{
                     			    			    	    input.Consume();
                     			    			    	state.failed = false;
@@ -2891,16 +2917,16 @@ public partial class MacroScopeLexer : Lexer {
                     }
                     break;
                 case 3 :
-                    // MacroScope\\MacroScope.g:928:4: '`' (~ '`' )* '`'
+                    // MacroScope\\MacroScope.g:932:4: '`' (~ '`' )* '`'
                     {
                     	Match('`'); if (state.failed) return ;
-                    	// MacroScope\\MacroScope.g:928:8: (~ '`' )*
+                    	// MacroScope\\MacroScope.g:932:8: (~ '`' )*
                     	do 
                     	{
                     	    int alt20 = 2;
                     	    int LA20_0 = input.LA(1);
 
-                    	    if ( ((LA20_0 >= '\u0000' && LA20_0 <= '_') || (LA20_0 >= 'a' && LA20_0 <= '\uFFFE')) )
+                    	    if ( ((LA20_0 >= '\u0000' && LA20_0 <= '_') || (LA20_0 >= 'a' && LA20_0 <= '\uFFFF')) )
                     	    {
                     	        alt20 = 1;
                     	    }
@@ -2909,9 +2935,9 @@ public partial class MacroScopeLexer : Lexer {
                     	    switch (alt20) 
                     		{
                     			case 1 :
-                    			    // MacroScope\\MacroScope.g:928:9: ~ '`'
+                    			    // MacroScope\\MacroScope.g:932:9: ~ '`'
                     			    {
-                    			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '_') || (input.LA(1) >= 'a' && input.LA(1) <= '\uFFFE') ) 
+                    			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '_') || (input.LA(1) >= 'a' && input.LA(1) <= '\uFFFF') ) 
                     			    	{
                     			    	    input.Consume();
                     			    	state.failed = false;
@@ -2957,8 +2983,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = Variable;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:938:10: ( ( '@' | ':' ) Letter WordTail )
-            // MacroScope\\MacroScope.g:939:2: ( '@' | ':' ) Letter WordTail
+            // MacroScope\\MacroScope.g:942:10: ( ( '@' | ':' ) Letter WordTail )
+            // MacroScope\\MacroScope.g:943:2: ( '@' | ':' ) Letter WordTail
             {
             	if ( input.LA(1) == ':' || input.LA(1) == '@' ) 
             	{
@@ -2991,10 +3017,10 @@ public partial class MacroScopeLexer : Lexer {
     {
     		try
     		{
-            // MacroScope\\MacroScope.g:943:16: ( ( '\\t' | ' ' .. '&' | '(' .. '~' )+ )
-            // MacroScope\\MacroScope.g:945:2: ( '\\t' | ' ' .. '&' | '(' .. '~' )+
+            // MacroScope\\MacroScope.g:947:16: ( ( '\\t' | ' ' .. '&' | '(' .. '~' )+ )
+            // MacroScope\\MacroScope.g:949:2: ( '\\t' | ' ' .. '&' | '(' .. '~' )+
             {
-            	// MacroScope\\MacroScope.g:945:2: ( '\\t' | ' ' .. '&' | '(' .. '~' )+
+            	// MacroScope\\MacroScope.g:949:2: ( '\\t' | ' ' .. '&' | '(' .. '~' )+
             	int cnt22 = 0;
             	do 
             	{
@@ -3031,9 +3057,9 @@ public partial class MacroScopeLexer : Lexer {
             			default:
             			    if ( cnt22 >= 1 ) goto loop22;
             			    if ( state.backtracking > 0 ) {state.failed = true; return ;}
-            		            EarlyExitException eee =
+            		            EarlyExitException eee22 =
             		                new EarlyExitException(22, input);
-            		            throw eee;
+            		            throw eee22;
             	    }
             	    cnt22++;
             	} while (true);
@@ -3060,15 +3086,15 @@ public partial class MacroScopeLexer : Lexer {
     	int _channel = DEFAULT_TOKEN_CHANNEL;
             IToken s = null;
 
-            // MacroScope\\MacroScope.g:948:20: ( '\\'' (s= AsciiStringRun )? '\\'' ( '\\'' (s= AsciiStringRun )? '\\'' )* )
-            // MacroScope\\MacroScope.g:949:2: '\\'' (s= AsciiStringRun )? '\\'' ( '\\'' (s= AsciiStringRun )? '\\'' )*
+            // MacroScope\\MacroScope.g:952:20: ( '\\'' (s= AsciiStringRun )? '\\'' ( '\\'' (s= AsciiStringRun )? '\\'' )* )
+            // MacroScope\\MacroScope.g:953:2: '\\'' (s= AsciiStringRun )? '\\'' ( '\\'' (s= AsciiStringRun )? '\\'' )*
             {
             	Match('\''); if (state.failed) return ;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   Text = ""; 
             	}
-            	// MacroScope\\MacroScope.g:950:2: (s= AsciiStringRun )?
+            	// MacroScope\\MacroScope.g:954:2: (s= AsciiStringRun )?
             	int alt23 = 2;
             	int LA23_0 = input.LA(1);
 
@@ -3079,12 +3105,12 @@ public partial class MacroScopeLexer : Lexer {
             	switch (alt23) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:950:4: s= AsciiStringRun
+            	        // MacroScope\\MacroScope.g:954:4: s= AsciiStringRun
             	        {
-            	        	int sStart1228 = CharIndex;
+            	        	int sStart1235 = CharIndex;
             	        	mAsciiStringRun(); if (state.failed) return ;
-            	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1228, CharIndex-1);
-            	        	if ( state.backtracking == 0 ) 
+            	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1235, CharIndex-1);
+            	        	if ( (state.backtracking==0) )
             	        	{
             	        	   Text = ((s != null) ? s.Text : null); 
             	        	}
@@ -3095,7 +3121,7 @@ public partial class MacroScopeLexer : Lexer {
             	}
 
             	Match('\''); if (state.failed) return ;
-            	// MacroScope\\MacroScope.g:951:2: ( '\\'' (s= AsciiStringRun )? '\\'' )*
+            	// MacroScope\\MacroScope.g:955:2: ( '\\'' (s= AsciiStringRun )? '\\'' )*
             	do 
             	{
             	    int alt25 = 2;
@@ -3110,16 +3136,16 @@ public partial class MacroScopeLexer : Lexer {
             	    switch (alt25) 
             		{
             			case 1 :
-            			    // MacroScope\\MacroScope.g:951:4: '\\'' (s= AsciiStringRun )? '\\''
+            			    // MacroScope\\MacroScope.g:955:4: '\\'' (s= AsciiStringRun )? '\\''
             			    {
             			    	Match('\''); if (state.failed) return ;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
 
             			    	  			Text = Text + "\'";
             			    	  		
             			    	}
-            			    	// MacroScope\\MacroScope.g:953:5: (s= AsciiStringRun )?
+            			    	// MacroScope\\MacroScope.g:957:5: (s= AsciiStringRun )?
             			    	int alt24 = 2;
             			    	int LA24_0 = input.LA(1);
 
@@ -3130,12 +3156,12 @@ public partial class MacroScopeLexer : Lexer {
             			    	switch (alt24) 
             			    	{
             			    	    case 1 :
-            			    	        // MacroScope\\MacroScope.g:953:7: s= AsciiStringRun
+            			    	        // MacroScope\\MacroScope.g:957:7: s= AsciiStringRun
             			    	        {
-            			    	        	int sStart1250 = CharIndex;
+            			    	        	int sStart1257 = CharIndex;
             			    	        	mAsciiStringRun(); if (state.failed) return ;
-            			    	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1250, CharIndex-1);
-            			    	        	if ( state.backtracking == 0 ) 
+            			    	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1257, CharIndex-1);
+            			    	        	if ( (state.backtracking==0) )
             			    	        	{
             			    	        	   Text = Text + ((s != null) ? s.Text : null); 
             			    	        	}
@@ -3175,17 +3201,17 @@ public partial class MacroScopeLexer : Lexer {
     {
     		try
     		{
-            // MacroScope\\MacroScope.g:958:18: ( (~ '\\'' )+ )
-            // MacroScope\\MacroScope.g:959:2: (~ '\\'' )+
+            // MacroScope\\MacroScope.g:962:18: ( (~ '\\'' )+ )
+            // MacroScope\\MacroScope.g:963:2: (~ '\\'' )+
             {
-            	// MacroScope\\MacroScope.g:959:2: (~ '\\'' )+
+            	// MacroScope\\MacroScope.g:963:2: (~ '\\'' )+
             	int cnt26 = 0;
             	do 
             	{
             	    int alt26 = 2;
             	    int LA26_0 = input.LA(1);
 
-            	    if ( ((LA26_0 >= '\u0000' && LA26_0 <= '&') || (LA26_0 >= '(' && LA26_0 <= '\uFFFE')) )
+            	    if ( ((LA26_0 >= '\u0000' && LA26_0 <= '&') || (LA26_0 >= '(' && LA26_0 <= '\uFFFF')) )
             	    {
             	        alt26 = 1;
             	    }
@@ -3194,9 +3220,9 @@ public partial class MacroScopeLexer : Lexer {
             	    switch (alt26) 
             		{
             			case 1 :
-            			    // MacroScope\\MacroScope.g:959:3: ~ '\\''
+            			    // MacroScope\\MacroScope.g:963:3: ~ '\\''
             			    {
-            			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&') || (input.LA(1) >= '(' && input.LA(1) <= '\uFFFE') ) 
+            			    	if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&') || (input.LA(1) >= '(' && input.LA(1) <= '\uFFFF') ) 
             			    	{
             			    	    input.Consume();
             			    	state.failed = false;
@@ -3215,9 +3241,9 @@ public partial class MacroScopeLexer : Lexer {
             			default:
             			    if ( cnt26 >= 1 ) goto loop26;
             			    if ( state.backtracking > 0 ) {state.failed = true; return ;}
-            		            EarlyExitException eee =
+            		            EarlyExitException eee26 =
             		                new EarlyExitException(26, input);
-            		            throw eee;
+            		            throw eee26;
             	    }
             	    cnt26++;
             	} while (true);
@@ -3244,32 +3270,32 @@ public partial class MacroScopeLexer : Lexer {
     	int _channel = DEFAULT_TOKEN_CHANNEL;
             IToken s = null;
 
-            // MacroScope\\MacroScope.g:962:22: ( 'n' '\\'' (s= UnicodeStringRun )? '\\'' ( '\\'' (s= UnicodeStringRun )? '\\'' )* )
-            // MacroScope\\MacroScope.g:963:2: 'n' '\\'' (s= UnicodeStringRun )? '\\'' ( '\\'' (s= UnicodeStringRun )? '\\'' )*
+            // MacroScope\\MacroScope.g:966:22: ( 'n' '\\'' (s= UnicodeStringRun )? '\\'' ( '\\'' (s= UnicodeStringRun )? '\\'' )* )
+            // MacroScope\\MacroScope.g:967:2: 'n' '\\'' (s= UnicodeStringRun )? '\\'' ( '\\'' (s= UnicodeStringRun )? '\\'' )*
             {
             	Match('n'); if (state.failed) return ;
             	Match('\''); if (state.failed) return ;
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   Text = ""; 
             	}
-            	// MacroScope\\MacroScope.g:964:2: (s= UnicodeStringRun )?
+            	// MacroScope\\MacroScope.g:968:2: (s= UnicodeStringRun )?
             	int alt27 = 2;
             	int LA27_0 = input.LA(1);
 
-            	if ( ((LA27_0 >= '\u0000' && LA27_0 <= '&') || (LA27_0 >= '(' && LA27_0 <= '\uFFFE')) )
+            	if ( ((LA27_0 >= '\u0000' && LA27_0 <= '&') || (LA27_0 >= '(' && LA27_0 <= '\uFFFF')) )
             	{
             	    alt27 = 1;
             	}
             	switch (alt27) 
             	{
             	    case 1 :
-            	        // MacroScope\\MacroScope.g:964:4: s= UnicodeStringRun
+            	        // MacroScope\\MacroScope.g:968:4: s= UnicodeStringRun
             	        {
-            	        	int sStart1306 = CharIndex;
+            	        	int sStart1313 = CharIndex;
             	        	mUnicodeStringRun(); if (state.failed) return ;
-            	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1306, CharIndex-1);
-            	        	if ( state.backtracking == 0 ) 
+            	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1313, CharIndex-1);
+            	        	if ( (state.backtracking==0) )
             	        	{
             	        	   Text = ((s != null) ? s.Text : null); 
             	        	}
@@ -3280,7 +3306,7 @@ public partial class MacroScopeLexer : Lexer {
             	}
 
             	Match('\''); if (state.failed) return ;
-            	// MacroScope\\MacroScope.g:965:2: ( '\\'' (s= UnicodeStringRun )? '\\'' )*
+            	// MacroScope\\MacroScope.g:969:2: ( '\\'' (s= UnicodeStringRun )? '\\'' )*
             	do 
             	{
             	    int alt29 = 2;
@@ -3295,32 +3321,32 @@ public partial class MacroScopeLexer : Lexer {
             	    switch (alt29) 
             		{
             			case 1 :
-            			    // MacroScope\\MacroScope.g:965:4: '\\'' (s= UnicodeStringRun )? '\\''
+            			    // MacroScope\\MacroScope.g:969:4: '\\'' (s= UnicodeStringRun )? '\\''
             			    {
             			    	Match('\''); if (state.failed) return ;
-            			    	if ( state.backtracking == 0 ) 
+            			    	if ( (state.backtracking==0) )
             			    	{
 
             			    	  			Text = Text + "\'";
             			    	  		
             			    	}
-            			    	// MacroScope\\MacroScope.g:967:5: (s= UnicodeStringRun )?
+            			    	// MacroScope\\MacroScope.g:971:5: (s= UnicodeStringRun )?
             			    	int alt28 = 2;
             			    	int LA28_0 = input.LA(1);
 
-            			    	if ( ((LA28_0 >= '\u0000' && LA28_0 <= '&') || (LA28_0 >= '(' && LA28_0 <= '\uFFFE')) )
+            			    	if ( ((LA28_0 >= '\u0000' && LA28_0 <= '&') || (LA28_0 >= '(' && LA28_0 <= '\uFFFF')) )
             			    	{
             			    	    alt28 = 1;
             			    	}
             			    	switch (alt28) 
             			    	{
             			    	    case 1 :
-            			    	        // MacroScope\\MacroScope.g:967:7: s= UnicodeStringRun
+            			    	        // MacroScope\\MacroScope.g:971:7: s= UnicodeStringRun
             			    	        {
-            			    	        	int sStart1328 = CharIndex;
+            			    	        	int sStart1335 = CharIndex;
             			    	        	mUnicodeStringRun(); if (state.failed) return ;
-            			    	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1328, CharIndex-1);
-            			    	        	if ( state.backtracking == 0 ) 
+            			    	        	s = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, sStart1335, CharIndex-1);
+            			    	        	if ( (state.backtracking==0) )
             			    	        	{
             			    	        	   Text = Text + ((s != null) ? s.Text : null); 
             			    	        	}
@@ -3360,8 +3386,8 @@ public partial class MacroScopeLexer : Lexer {
     {
     		try
     		{
-            // MacroScope\\MacroScope.g:972:12: ()
-            // MacroScope\\MacroScope.g:974:2: 
+            // MacroScope\\MacroScope.g:976:12: ()
+            // MacroScope\\MacroScope.g:978:2: 
             {
             }
 
@@ -3379,8 +3405,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = MINUS;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:976:7: ( '-' )
-            // MacroScope\\MacroScope.g:976:9: '-'
+            // MacroScope\\MacroScope.g:980:7: ( '-' )
+            // MacroScope\\MacroScope.g:980:9: '-'
             {
             	Match('-'); if (state.failed) return ;
 
@@ -3402,8 +3428,8 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = COLON;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:977:7: ( ':' )
-            // MacroScope\\MacroScope.g:977:9: ':'
+            // MacroScope\\MacroScope.g:981:7: ( ':' )
+            // MacroScope\\MacroScope.g:981:9: ':'
             {
             	Match(':'); if (state.failed) return ;
 
@@ -3425,10 +3451,10 @@ public partial class MacroScopeLexer : Lexer {
     		{
             int _type = Whitespace;
     	int _channel = DEFAULT_TOKEN_CHANNEL;
-            // MacroScope\\MacroScope.g:979:12: ( ( '\\t' | ' ' | '\\r' | '\\n' )+ )
-            // MacroScope\\MacroScope.g:979:14: ( '\\t' | ' ' | '\\r' | '\\n' )+
+            // MacroScope\\MacroScope.g:983:12: ( ( '\\t' | ' ' | '\\r' | '\\n' )+ )
+            // MacroScope\\MacroScope.g:983:14: ( '\\t' | ' ' | '\\r' | '\\n' )+
             {
-            	// MacroScope\\MacroScope.g:979:14: ( '\\t' | ' ' | '\\r' | '\\n' )+
+            	// MacroScope\\MacroScope.g:983:14: ( '\\t' | ' ' | '\\r' | '\\n' )+
             	int cnt30 = 0;
             	do 
             	{
@@ -3465,9 +3491,9 @@ public partial class MacroScopeLexer : Lexer {
             			default:
             			    if ( cnt30 >= 1 ) goto loop30;
             			    if ( state.backtracking > 0 ) {state.failed = true; return ;}
-            		            EarlyExitException eee =
+            		            EarlyExitException eee30 =
             		                new EarlyExitException(30, input);
-            		            throw eee;
+            		            throw eee30;
             	    }
             	    cnt30++;
             	} while (true);
@@ -3475,7 +3501,7 @@ public partial class MacroScopeLexer : Lexer {
             	loop30:
             		;	// Stops C# compiler whinging that label 'loop30' has no statements
 
-            	if ( state.backtracking == 0 ) 
+            	if ( (state.backtracking==0) )
             	{
             	   _channel = HIDDEN; 
             	}
@@ -3493,8 +3519,8 @@ public partial class MacroScopeLexer : Lexer {
 
     override public void mTokens() // throws RecognitionException 
     {
-        // MacroScope\\MacroScope.g:1:8: ( ALL | AND | ANY | AS | ASC | BETWEEN | BY | CASE | CAST | CROSS | DAY | DEFAULT | DELETE | DESC | DISTINCT | ELSE | END | ESCAPE | EXISTS | EXTRACT | FOR | FROM | FULL | GROUP | HAVING | HOUR | IN | INNER | INSERT | INTERVAL | INTO | IS | JOIN | LEFT | LIKE | MINUTE | MONTH | NOT | NULL | ON | OR | ORDER | OUTER | RIGHT | SECOND | SELECT | SET | SOME | SUBSTRING | THEN | TOP | UNION | UPDATE | VALUES | WHEN | WHERE | YEAR | DOT_STAR | DOT | COMMA | LPAREN | RPAREN | ASSIGNEQUAL | NOTEQUAL1 | NOTEQUAL2 | LESSTHANOREQUALTO1 | LESSTHAN | GREATERTHANOREQUALTO1 | GREATERTHAN | DIVIDE | PLUS | STAR | MOD | STRCONCAT | PLACEHOLDER | MAccessDateTime | Iso8601DateTime | Number | NonQuotedIdentifier | QuotedIdentifier | Variable | AsciiStringLiteral | UnicodeStringLiteral | MINUS | COLON | Whitespace )
-        int alt31 = 86;
+        // MacroScope\\MacroScope.g:1:8: ( ALL | AND | ANY | AS | ASC | BETWEEN | BY | CASE | CAST | CROSS | DAY | DEFAULT | DELETE | DESC | DISTINCT | ELSE | END | ESCAPE | EXISTS | EXTRACT | FOR | FROM | FULL | GROUP | HAVING | HOUR | IN | INNER | INSERT | INTERVAL | INTO | IS | JOIN | LEFT | LIKE | MINUTE | MONTH | NOT | NULL | ON | OR | ORDER | OUTER | RIGHT | SECOND | SELECT | SET | SOME | SUBSTRING | THEN | TIMESTAMP | TOP | UNION | UPDATE | VALUES | WHEN | WHERE | YEAR | DOT_STAR | DOT | COMMA | LPAREN | RPAREN | ASSIGNEQUAL | NOTEQUAL1 | NOTEQUAL2 | LESSTHANOREQUALTO1 | LESSTHAN | GREATERTHANOREQUALTO1 | GREATERTHAN | DIVIDE | PLUS | STAR | MOD | STRCONCAT | PLACEHOLDER | MAccessDateTime | Iso8601DateTime | Number | NonQuotedIdentifier | QuotedIdentifier | Variable | AsciiStringLiteral | UnicodeStringLiteral | MINUS | COLON | Whitespace )
+        int alt31 = 87;
         alt31 = dfa31.Predict(input);
         switch (alt31) 
         {
@@ -3849,252 +3875,259 @@ public partial class MacroScopeLexer : Lexer {
                 }
                 break;
             case 51 :
-                // MacroScope\\MacroScope.g:1:284: TOP
+                // MacroScope\\MacroScope.g:1:284: TIMESTAMP
+                {
+                	mTIMESTAMP(); if (state.failed) return ;
+
+                }
+                break;
+            case 52 :
+                // MacroScope\\MacroScope.g:1:294: TOP
                 {
                 	mTOP(); if (state.failed) return ;
 
                 }
                 break;
-            case 52 :
-                // MacroScope\\MacroScope.g:1:288: UNION
+            case 53 :
+                // MacroScope\\MacroScope.g:1:298: UNION
                 {
                 	mUNION(); if (state.failed) return ;
 
                 }
                 break;
-            case 53 :
-                // MacroScope\\MacroScope.g:1:294: UPDATE
+            case 54 :
+                // MacroScope\\MacroScope.g:1:304: UPDATE
                 {
                 	mUPDATE(); if (state.failed) return ;
 
                 }
                 break;
-            case 54 :
-                // MacroScope\\MacroScope.g:1:301: VALUES
+            case 55 :
+                // MacroScope\\MacroScope.g:1:311: VALUES
                 {
                 	mVALUES(); if (state.failed) return ;
 
                 }
                 break;
-            case 55 :
-                // MacroScope\\MacroScope.g:1:308: WHEN
+            case 56 :
+                // MacroScope\\MacroScope.g:1:318: WHEN
                 {
                 	mWHEN(); if (state.failed) return ;
 
                 }
                 break;
-            case 56 :
-                // MacroScope\\MacroScope.g:1:313: WHERE
+            case 57 :
+                // MacroScope\\MacroScope.g:1:323: WHERE
                 {
                 	mWHERE(); if (state.failed) return ;
 
                 }
                 break;
-            case 57 :
-                // MacroScope\\MacroScope.g:1:319: YEAR
+            case 58 :
+                // MacroScope\\MacroScope.g:1:329: YEAR
                 {
                 	mYEAR(); if (state.failed) return ;
 
                 }
                 break;
-            case 58 :
-                // MacroScope\\MacroScope.g:1:324: DOT_STAR
+            case 59 :
+                // MacroScope\\MacroScope.g:1:334: DOT_STAR
                 {
                 	mDOT_STAR(); if (state.failed) return ;
 
                 }
                 break;
-            case 59 :
-                // MacroScope\\MacroScope.g:1:333: DOT
+            case 60 :
+                // MacroScope\\MacroScope.g:1:343: DOT
                 {
                 	mDOT(); if (state.failed) return ;
 
                 }
                 break;
-            case 60 :
-                // MacroScope\\MacroScope.g:1:337: COMMA
+            case 61 :
+                // MacroScope\\MacroScope.g:1:347: COMMA
                 {
                 	mCOMMA(); if (state.failed) return ;
 
                 }
                 break;
-            case 61 :
-                // MacroScope\\MacroScope.g:1:343: LPAREN
+            case 62 :
+                // MacroScope\\MacroScope.g:1:353: LPAREN
                 {
                 	mLPAREN(); if (state.failed) return ;
 
                 }
                 break;
-            case 62 :
-                // MacroScope\\MacroScope.g:1:350: RPAREN
+            case 63 :
+                // MacroScope\\MacroScope.g:1:360: RPAREN
                 {
                 	mRPAREN(); if (state.failed) return ;
 
                 }
                 break;
-            case 63 :
-                // MacroScope\\MacroScope.g:1:357: ASSIGNEQUAL
+            case 64 :
+                // MacroScope\\MacroScope.g:1:367: ASSIGNEQUAL
                 {
                 	mASSIGNEQUAL(); if (state.failed) return ;
 
                 }
                 break;
-            case 64 :
-                // MacroScope\\MacroScope.g:1:369: NOTEQUAL1
+            case 65 :
+                // MacroScope\\MacroScope.g:1:379: NOTEQUAL1
                 {
                 	mNOTEQUAL1(); if (state.failed) return ;
 
                 }
                 break;
-            case 65 :
-                // MacroScope\\MacroScope.g:1:379: NOTEQUAL2
+            case 66 :
+                // MacroScope\\MacroScope.g:1:389: NOTEQUAL2
                 {
                 	mNOTEQUAL2(); if (state.failed) return ;
 
                 }
                 break;
-            case 66 :
-                // MacroScope\\MacroScope.g:1:389: LESSTHANOREQUALTO1
+            case 67 :
+                // MacroScope\\MacroScope.g:1:399: LESSTHANOREQUALTO1
                 {
                 	mLESSTHANOREQUALTO1(); if (state.failed) return ;
 
                 }
                 break;
-            case 67 :
-                // MacroScope\\MacroScope.g:1:408: LESSTHAN
+            case 68 :
+                // MacroScope\\MacroScope.g:1:418: LESSTHAN
                 {
                 	mLESSTHAN(); if (state.failed) return ;
 
                 }
                 break;
-            case 68 :
-                // MacroScope\\MacroScope.g:1:417: GREATERTHANOREQUALTO1
+            case 69 :
+                // MacroScope\\MacroScope.g:1:427: GREATERTHANOREQUALTO1
                 {
                 	mGREATERTHANOREQUALTO1(); if (state.failed) return ;
 
                 }
                 break;
-            case 69 :
-                // MacroScope\\MacroScope.g:1:439: GREATERTHAN
+            case 70 :
+                // MacroScope\\MacroScope.g:1:449: GREATERTHAN
                 {
                 	mGREATERTHAN(); if (state.failed) return ;
 
                 }
                 break;
-            case 70 :
-                // MacroScope\\MacroScope.g:1:451: DIVIDE
+            case 71 :
+                // MacroScope\\MacroScope.g:1:461: DIVIDE
                 {
                 	mDIVIDE(); if (state.failed) return ;
 
                 }
                 break;
-            case 71 :
-                // MacroScope\\MacroScope.g:1:458: PLUS
+            case 72 :
+                // MacroScope\\MacroScope.g:1:468: PLUS
                 {
                 	mPLUS(); if (state.failed) return ;
 
                 }
                 break;
-            case 72 :
-                // MacroScope\\MacroScope.g:1:463: STAR
+            case 73 :
+                // MacroScope\\MacroScope.g:1:473: STAR
                 {
                 	mSTAR(); if (state.failed) return ;
 
                 }
                 break;
-            case 73 :
-                // MacroScope\\MacroScope.g:1:468: MOD
+            case 74 :
+                // MacroScope\\MacroScope.g:1:478: MOD
                 {
                 	mMOD(); if (state.failed) return ;
 
                 }
                 break;
-            case 74 :
-                // MacroScope\\MacroScope.g:1:472: STRCONCAT
+            case 75 :
+                // MacroScope\\MacroScope.g:1:482: STRCONCAT
                 {
                 	mSTRCONCAT(); if (state.failed) return ;
 
                 }
                 break;
-            case 75 :
-                // MacroScope\\MacroScope.g:1:482: PLACEHOLDER
+            case 76 :
+                // MacroScope\\MacroScope.g:1:492: PLACEHOLDER
                 {
                 	mPLACEHOLDER(); if (state.failed) return ;
 
                 }
                 break;
-            case 76 :
-                // MacroScope\\MacroScope.g:1:494: MAccessDateTime
+            case 77 :
+                // MacroScope\\MacroScope.g:1:504: MAccessDateTime
                 {
                 	mMAccessDateTime(); if (state.failed) return ;
 
                 }
                 break;
-            case 77 :
-                // MacroScope\\MacroScope.g:1:510: Iso8601DateTime
+            case 78 :
+                // MacroScope\\MacroScope.g:1:520: Iso8601DateTime
                 {
                 	mIso8601DateTime(); if (state.failed) return ;
 
                 }
                 break;
-            case 78 :
-                // MacroScope\\MacroScope.g:1:526: Number
+            case 79 :
+                // MacroScope\\MacroScope.g:1:536: Number
                 {
                 	mNumber(); if (state.failed) return ;
 
                 }
                 break;
-            case 79 :
-                // MacroScope\\MacroScope.g:1:533: NonQuotedIdentifier
+            case 80 :
+                // MacroScope\\MacroScope.g:1:543: NonQuotedIdentifier
                 {
                 	mNonQuotedIdentifier(); if (state.failed) return ;
 
                 }
                 break;
-            case 80 :
-                // MacroScope\\MacroScope.g:1:553: QuotedIdentifier
+            case 81 :
+                // MacroScope\\MacroScope.g:1:563: QuotedIdentifier
                 {
                 	mQuotedIdentifier(); if (state.failed) return ;
 
                 }
                 break;
-            case 81 :
-                // MacroScope\\MacroScope.g:1:570: Variable
+            case 82 :
+                // MacroScope\\MacroScope.g:1:580: Variable
                 {
                 	mVariable(); if (state.failed) return ;
 
                 }
                 break;
-            case 82 :
-                // MacroScope\\MacroScope.g:1:579: AsciiStringLiteral
+            case 83 :
+                // MacroScope\\MacroScope.g:1:589: AsciiStringLiteral
                 {
                 	mAsciiStringLiteral(); if (state.failed) return ;
 
                 }
                 break;
-            case 83 :
-                // MacroScope\\MacroScope.g:1:598: UnicodeStringLiteral
+            case 84 :
+                // MacroScope\\MacroScope.g:1:608: UnicodeStringLiteral
                 {
                 	mUnicodeStringLiteral(); if (state.failed) return ;
 
                 }
                 break;
-            case 84 :
-                // MacroScope\\MacroScope.g:1:619: MINUS
+            case 85 :
+                // MacroScope\\MacroScope.g:1:629: MINUS
                 {
                 	mMINUS(); if (state.failed) return ;
 
                 }
                 break;
-            case 85 :
-                // MacroScope\\MacroScope.g:1:625: COLON
+            case 86 :
+                // MacroScope\\MacroScope.g:1:635: COLON
                 {
                 	mCOLON(); if (state.failed) return ;
 
                 }
                 break;
-            case 86 :
-                // MacroScope\\MacroScope.g:1:631: Whitespace
+            case 87 :
+                // MacroScope\\MacroScope.g:1:641: Whitespace
                 {
                 	mWhitespace(); if (state.failed) return ;
 
@@ -4106,12 +4139,11 @@ public partial class MacroScopeLexer : Lexer {
     }
 
     // $ANTLR start "synpred1_MacroScope"
-    public void synpred1_MacroScope_fragment() //throws RecognitionException
-    {   
-        // MacroScope\\MacroScope.g:912:2: ( ( Digit )+ ( '.' | 'e' ) )
-        // MacroScope\\MacroScope.g:912:4: ( Digit )+ ( '.' | 'e' )
+    public void synpred1_MacroScope_fragment() {
+        // MacroScope\\MacroScope.g:916:2: ( ( Digit )+ ( '.' | 'e' ) )
+        // MacroScope\\MacroScope.g:916:4: ( Digit )+ ( '.' | 'e' )
         {
-        	// MacroScope\\MacroScope.g:912:4: ( Digit )+
+        	// MacroScope\\MacroScope.g:916:4: ( Digit )+
         	int cnt32 = 0;
         	do 
         	{
@@ -4127,7 +4159,7 @@ public partial class MacroScopeLexer : Lexer {
         	    switch (alt32) 
         		{
         			case 1 :
-        			    // MacroScope\\MacroScope.g:912:5: Digit
+        			    // MacroScope\\MacroScope.g:916:5: Digit
         			    {
         			    	mDigit(); if (state.failed) return ;
 
@@ -4137,9 +4169,9 @@ public partial class MacroScopeLexer : Lexer {
         			default:
         			    if ( cnt32 >= 1 ) goto loop32;
         			    if ( state.backtracking > 0 ) {state.failed = true; return ;}
-        		            EarlyExitException eee =
+        		            EarlyExitException eee32 =
         		                new EarlyExitException(32, input);
-        		            throw eee;
+        		            throw eee32;
         	    }
         	    cnt32++;
         	} while (true);
@@ -4205,7 +4237,7 @@ public partial class MacroScopeLexer : Lexer {
     const string DFA12_acceptS =
         "\x02\uffff\x01\x02\x01\uffff\x01\x04\x01\x03\x02\x01";
     const string DFA12_specialS =
-        "\x01\uffff\x01\x01\x01\uffff\x01\x00\x04\uffff}>";
+        "\x01\uffff\x01\x00\x01\uffff\x01\x01\x04\uffff}>";
     static readonly string[] DFA12_transitionS = {
             "\x01\x02\x01\uffff\x01\x01\x09\x03",
             "\x01\x06\x01\uffff\x0a\x03\x2b\uffff\x01\x07\x12\uffff\x01"+
@@ -4244,7 +4276,7 @@ public partial class MacroScopeLexer : Lexer {
 
         override public string Description
         {
-            get { return "911:1: Number : ( ( ( Digit )+ ( '.' | 'e' ) )=> ( Digit )+ ( '.' ( Digit )* ( Exponent )? | Exponent ) | '.' ( ( Digit )+ ( Exponent )? )? | ( Digit )+ | '0x' ( 'a' .. 'f' | Digit )* );"; }
+            get { return "915:1: Number : ( ( ( Digit )+ ( '.' | 'e' ) )=> ( Digit )+ ( '.' ( Digit )* ( Exponent )? | Exponent ) | '.' ( ( Digit )+ ( Exponent )? )? | ( Digit )+ | '0x' ( 'a' .. 'f' | Digit )* );"; }
         }
 
     }
@@ -4257,25 +4289,6 @@ public partial class MacroScopeLexer : Lexer {
         switch ( s )
         {
                	case 0 : 
-                   	int LA12_3 = input.LA(1);
-
-                   	 
-                   	int index12_3 = input.Index();
-                   	input.Rewind();
-                   	s = -1;
-                   	if ( ((LA12_3 >= '0' && LA12_3 <= '9')) ) { s = 3; }
-
-                   	else if ( (LA12_3 == '.') && (synpred1_MacroScope()) ) { s = 6; }
-
-                   	else if ( (LA12_3 == 'e') && (synpred1_MacroScope()) ) { s = 7; }
-
-                   	else s = 5;
-
-                   	 
-                   	input.Seek(index12_3);
-                   	if ( s >= 0 ) return s;
-                   	break;
-               	case 1 : 
                    	int LA12_1 = input.LA(1);
 
                    	 
@@ -4284,11 +4297,11 @@ public partial class MacroScopeLexer : Lexer {
                    	s = -1;
                    	if ( (LA12_1 == 'x') ) { s = 4; }
 
-                   	else if ( ((LA12_1 >= '0' && LA12_1 <= '9')) ) { s = 3; }
-
                    	else if ( (LA12_1 == '.') && (synpred1_MacroScope()) ) { s = 6; }
 
                    	else if ( (LA12_1 == 'e') && (synpred1_MacroScope()) ) { s = 7; }
+
+                   	else if ( ((LA12_1 >= '0' && LA12_1 <= '9')) ) { s = 3; }
 
                    	else s = 5;
 
@@ -4296,39 +4309,58 @@ public partial class MacroScopeLexer : Lexer {
                    	input.Seek(index12_1);
                    	if ( s >= 0 ) return s;
                    	break;
+               	case 1 : 
+                   	int LA12_3 = input.LA(1);
+
+                   	 
+                   	int index12_3 = input.Index();
+                   	input.Rewind();
+                   	s = -1;
+                   	if ( (LA12_3 == '.') && (synpred1_MacroScope()) ) { s = 6; }
+
+                   	else if ( (LA12_3 == 'e') && (synpred1_MacroScope()) ) { s = 7; }
+
+                   	else if ( ((LA12_3 >= '0' && LA12_3 <= '9')) ) { s = 3; }
+
+                   	else s = 5;
+
+                   	 
+                   	input.Seek(index12_3);
+                   	if ( s >= 0 ) return s;
+                   	break;
         }
         if (state.backtracking > 0) {state.failed = true; return -1;}
-        NoViableAltException nvae =
+        NoViableAltException nvae12 =
             new NoViableAltException(dfa.Description, 12, _s, input);
-        dfa.Error(nvae);
-        throw nvae;
+        dfa.Error(nvae12);
+        throw nvae12;
     }
     const string DFA31_eotS =
-        "\x01\uffff\x15\x27\x01\x5c\x04\uffff\x01\x5f\x01\uffff\x01\x61"+
-        "\x07\uffff\x02\x5b\x02\uffff\x01\x63\x04\uffff\x02\x27\x01\x68\x01"+
-        "\x27\x01\x6a\x0f\x27\x01\u0080\x01\u0081\x07\x27\x01\uffff\x01\u0089"+
-        "\x01\u008b\x0c\x27\x08\uffff\x01\x5b\x01\uffff\x01\u009b\x01\u009c"+
-        "\x01\u009d\x01\u009e\x01\uffff\x01\x27\x01\uffff\x02\x27\x01\u00a3"+
-        "\x05\x27\x01\u00a9\x03\x27\x01\u00ad\x08\x27\x02\uffff\x05\x27\x01"+
-        "\u00bc\x01\x27\x01\uffff\x01\x27\x01\uffff\x04\x27\x01\u00c3\x03"+
-        "\x27\x01\u00c7\x05\x27\x01\x5b\x04\uffff\x01\x27\x01\u00d0\x01\u00d1"+
-        "\x01\x27\x01\uffff\x02\x27\x01\u00d5\x01\x27\x01\u00d7\x01\uffff"+
-        "\x03\x27\x01\uffff\x01\u00db\x01\u00dc\x02\x27\x01\u00df\x03\x27"+
-        "\x01\u00e3\x01\u00e4\x01\u00e5\x01\u00e6\x02\x27\x01\uffff\x01\u00e9"+
-        "\x05\x27\x01\uffff\x01\u00ef\x01\x27\x01\u00f1\x01\uffff\x03\x27"+
-        "\x01\u00f5\x01\x27\x01\u00f7\x01\x5b\x01\x27\x02\uffff\x01\u00fa"+
-        "\x02\x27\x01\uffff\x01\x27\x01\uffff\x03\x27\x02\uffff\x01\u0101"+
-        "\x01\x27\x01\uffff\x01\u0103\x02\x27\x04\uffff\x01\x27\x01\u0107"+
-        "\x01\uffff\x01\u0108\x01\u0109\x01\u010a\x02\x27\x01\uffff\x01\x27"+
-        "\x01\uffff\x01\u010e\x02\x27\x01\uffff\x01\u0111\x02\uffff\x01\x27"+
-        "\x01\uffff\x01\x27\x01\u0114\x01\x27\x01\u0116\x01\u0117\x01\x27"+
-        "\x01\uffff\x01\u0119\x01\uffff\x01\u011a\x01\x27\x01\u011c\x04\uffff"+
-        "\x01\u011d\x01\u011e\x01\x27\x01\uffff\x01\u0120\x01\u0121\x01\uffff"+
-        "\x01\u0122\x01\u0123\x01\uffff\x01\x27\x02\uffff\x01\u0125\x02\uffff"+
-        "\x01\x27\x03\uffff\x01\x27\x04\uffff\x01\u0128\x01\uffff\x01\u0129"+
-        "\x01\x27\x02\uffff\x01\u012b\x01\uffff";
+        "\x01\uffff\x15\x27\x01\x5c\x04\uffff\x01\x60\x01\uffff\x01\x62"+
+        "\x07\uffff\x02\x5d\x02\uffff\x01\x64\x04\uffff\x02\x27\x01\x69\x01"+
+        "\x27\x01\x6b\x0f\x27\x01\u0081\x01\u0082\x07\x27\x01\uffff\x01\u008a"+
+        "\x01\u008c\x0d\x27\x08\uffff\x01\x5d\x01\uffff\x01\u009d\x01\u009e"+
+        "\x01\u009f\x01\u00a0\x01\uffff\x01\x27\x01\uffff\x02\x27\x01\u00a5"+
+        "\x05\x27\x01\u00ab\x03\x27\x01\u00af\x08\x27\x02\uffff\x05\x27\x01"+
+        "\u00be\x01\x27\x01\uffff\x01\x27\x01\uffff\x04\x27\x01\u00c5\x04"+
+        "\x27\x01\u00ca\x05\x27\x01\x5d\x04\uffff\x01\x27\x01\u00d3\x01\u00d4"+
+        "\x01\x27\x01\uffff\x02\x27\x01\u00d8\x01\x27\x01\u00da\x01\uffff"+
+        "\x03\x27\x01\uffff\x01\u00de\x01\u00df\x02\x27\x01\u00e2\x03\x27"+
+        "\x01\u00e6\x01\u00e7\x01\u00e8\x01\u00e9\x02\x27\x01\uffff\x01\u00ec"+
+        "\x05\x27\x01\uffff\x01\u00f2\x01\x27\x01\u00f4\x01\x27\x01\uffff"+
+        "\x03\x27\x01\u00f9\x01\x27\x01\u00fb\x01\x5d\x01\x27\x02\uffff\x01"+
+        "\u00fe\x02\x27\x01\uffff\x01\x27\x01\uffff\x03\x27\x02\uffff\x01"+
+        "\u0105\x01\x27\x01\uffff\x01\u0107\x02\x27\x04\uffff\x01\x27\x01"+
+        "\u010b\x01\uffff\x01\u010c\x01\u010d\x01\u010e\x02\x27\x01\uffff"+
+        "\x01\x27\x01\uffff\x01\x27\x01\u0113\x02\x27\x01\uffff\x01\u0116"+
+        "\x02\uffff\x01\x27\x01\uffff\x01\x27\x01\u0119\x01\x27\x01\u011b"+
+        "\x01\u011c\x01\x27\x01\uffff\x01\u011e\x01\uffff\x01\u011f\x01\x27"+
+        "\x01\u0121\x04\uffff\x01\u0122\x01\u0123\x02\x27\x01\uffff\x01\u0126"+
+        "\x01\u0127\x01\uffff\x01\u0128\x01\u0129\x01\uffff\x01\x27\x02\uffff"+
+        "\x01\u012b\x02\uffff\x01\x27\x03\uffff\x02\x27\x04\uffff\x01\u012f"+
+        "\x01\uffff\x01\u0130\x02\x27\x02\uffff\x01\u0133\x01\u0134\x02\uffff";
     const string DFA31_eofS =
-        "\u012c\uffff";
+        "\u0135\uffff";
     const string DFA31_minS =
         "\x01\x09\x01\x6c\x01\x65\x02\x61\x01\x6c\x01\x6f\x01\x72\x01\x61"+
         "\x01\x6e\x01\x6f\x01\x65\x01\x69\x01\x27\x01\x6e\x01\x69\x01\x65"+
@@ -4338,29 +4370,30 @@ public partial class MacroScopeLexer : Lexer {
         "\x01\x66\x02\x73\x01\x64\x01\x63\x01\x69\x01\x72\x01\x6f\x01\x6c"+
         "\x01\x6f\x01\x76\x01\x75\x02\x30\x01\x69\x01\x66\x01\x6b\x02\x6e"+
         "\x01\x74\x01\x6c\x01\uffff\x02\x30\x01\x74\x01\x67\x01\x63\x01\x6d"+
-        "\x01\x62\x01\x65\x01\x70\x01\x69\x01\x64\x01\x6c\x01\x65\x01\x61"+
-        "\x08\uffff\x01\x30\x01\uffff\x04\x30\x01\uffff\x01\x77\x01\uffff"+
-        "\x01\x65\x01\x73\x01\x30\x01\x61\x01\x65\x01\x63\x01\x74\x01\x65"+
-        "\x01\x30\x01\x61\x01\x73\x01\x72\x01\x30\x01\x6d\x01\x6c\x01\x75"+
-        "\x01\x69\x01\x72\x03\x65\x02\uffff\x01\x6e\x01\x74\x01\x65\x01\x75"+
-        "\x01\x74\x01\x30\x01\x6c\x01\uffff\x01\x65\x01\uffff\x01\x65\x01"+
-        "\x68\x01\x6f\x01\x65\x01\x30\x01\x65\x01\x73\x01\x6e\x01\x30\x01"+
-        "\x6f\x01\x61\x01\x75\x01\x6e\x01\x72\x01\x30\x04\uffff\x01\x65\x02"+
-        "\x30\x01\x73\x01\uffff\x01\x75\x01\x74\x01\x30\x01\x69\x01\x30\x01"+
-        "\uffff\x01\x70\x01\x74\x01\x61\x01\uffff\x02\x30\x01\x70\x01\x6e"+
-        "\x01\x30\x03\x72\x04\x30\x01\x74\x01\x68\x01\uffff\x01\x30\x02\x72"+
-        "\x01\x74\x01\x6e\x01\x63\x01\uffff\x01\x30\x01\x74\x01\x30\x01\uffff"+
-        "\x01\x6e\x01\x74\x01\x65\x01\x30\x01\x65\x01\x30\x01\x2d\x01\x65"+
-        "\x02\uffff\x01\x30\x01\x6c\x01\x65\x01\uffff\x01\x6e\x01\uffff\x01"+
-        "\x65\x01\x73\x01\x63\x02\uffff\x01\x30\x01\x67\x01\uffff\x01\x30"+
-        "\x01\x74\x01\x76\x04\uffff\x01\x65\x01\x30\x01\uffff\x03\x30\x01"+
-        "\x64\x01\x74\x01\uffff\x01\x72\x01\uffff\x01\x30\x01\x65\x01\x73"+
-        "\x01\uffff\x01\x30\x02\uffff\x01\x6e\x01\uffff\x01\x74\x01\x30\x01"+
-        "\x63\x02\x30\x01\x74\x01\uffff\x01\x30\x01\uffff\x01\x30\x01\x61"+
-        "\x01\x30\x04\uffff\x02\x30\x01\x69\x01\uffff\x02\x30\x01\uffff\x02"+
-        "\x30\x01\uffff\x01\x74\x02\uffff\x01\x30\x02\uffff\x01\x6c\x03\uffff"+
-        "\x01\x6e\x04\uffff\x01\x30\x01\uffff\x01\x30\x01\x67\x02\uffff\x01"+
-        "\x30\x01\uffff";
+        "\x01\x62\x01\x65\x01\x6d\x01\x70\x01\x69\x01\x64\x01\x6c\x01\x65"+
+        "\x01\x61\x08\uffff\x01\x30\x01\uffff\x04\x30\x01\uffff\x01\x77\x01"+
+        "\uffff\x01\x65\x01\x73\x01\x30\x01\x61\x01\x65\x01\x63\x01\x74\x01"+
+        "\x65\x01\x30\x01\x61\x01\x73\x01\x72\x01\x30\x01\x6d\x01\x6c\x01"+
+        "\x75\x01\x69\x01\x72\x03\x65\x02\uffff\x01\x6e\x01\x74\x01\x65\x01"+
+        "\x75\x01\x74\x01\x30\x01\x6c\x01\uffff\x01\x65\x01\uffff\x01\x65"+
+        "\x01\x68\x01\x6f\x01\x65\x01\x30\x01\x65\x01\x73\x01\x6e\x01\x65"+
+        "\x01\x30\x01\x6f\x01\x61\x01\x75\x01\x6e\x01\x72\x01\x30\x04\uffff"+
+        "\x01\x65\x02\x30\x01\x73\x01\uffff\x01\x75\x01\x74\x01\x30\x01\x69"+
+        "\x01\x30\x01\uffff\x01\x70\x01\x74\x01\x61\x01\uffff\x02\x30\x01"+
+        "\x70\x01\x6e\x01\x30\x03\x72\x04\x30\x01\x74\x01\x68\x01\uffff\x01"+
+        "\x30\x02\x72\x01\x74\x01\x6e\x01\x63\x01\uffff\x01\x30\x01\x74\x01"+
+        "\x30\x01\x73\x01\uffff\x01\x6e\x01\x74\x01\x65\x01\x30\x01\x65\x01"+
+        "\x30\x01\x2d\x01\x65\x02\uffff\x01\x30\x01\x6c\x01\x65\x01\uffff"+
+        "\x01\x6e\x01\uffff\x01\x65\x01\x73\x01\x63\x02\uffff\x01\x30\x01"+
+        "\x67\x01\uffff\x01\x30\x01\x74\x01\x76\x04\uffff\x01\x65\x01\x30"+
+        "\x01\uffff\x03\x30\x01\x64\x01\x74\x01\uffff\x01\x72\x01\uffff\x01"+
+        "\x74\x01\x30\x01\x65\x01\x73\x01\uffff\x01\x30\x02\uffff\x01\x6e"+
+        "\x01\uffff\x01\x74\x01\x30\x01\x63\x02\x30\x01\x74\x01\uffff\x01"+
+        "\x30\x01\uffff\x01\x30\x01\x61\x01\x30\x04\uffff\x02\x30\x01\x69"+
+        "\x01\x61\x01\uffff\x02\x30\x01\uffff\x02\x30\x01\uffff\x01\x74\x02"+
+        "\uffff\x01\x30\x02\uffff\x01\x6c\x03\uffff\x01\x6e\x01\x6d\x04\uffff"+
+        "\x01\x30\x01\uffff\x01\x30\x01\x67\x01\x70\x02\uffff\x02\x30\x02"+
+        "\uffff";
     const string DFA31_maxS =
         "\x01\x7c\x01\x73\x01\x79\x01\x72\x01\x69\x01\x78\x01\x75\x01\x72"+
         "\x01\x6f\x01\x73\x01\x6f\x01\x69\x01\x6f\x02\x75\x01\x69\x01\x75"+
@@ -4370,50 +4403,50 @@ public partial class MacroScopeLexer : Lexer {
         "\x03\x73\x01\x64\x01\x63\x01\x74\x01\x72\x01\x6f\x01\x6c\x01\x6f"+
         "\x01\x76\x01\x75\x02\x7a\x01\x69\x01\x66\x01\x6b\x02\x6e\x01\x74"+
         "\x01\x6c\x01\uffff\x02\x7a\x01\x74\x01\x67\x01\x74\x01\x6d\x01\x62"+
-        "\x01\x65\x01\x70\x01\x69\x01\x64\x01\x6c\x01\x65\x01\x61\x08\uffff"+
-        "\x01\x39\x01\uffff\x04\x7a\x01\uffff\x01\x77\x01\uffff\x01\x74\x01"+
-        "\x73\x01\x7a\x01\x61\x01\x65\x01\x63\x01\x74\x01\x65\x01\x7a\x01"+
-        "\x61\x01\x73\x01\x72\x01\x7a\x01\x6d\x01\x6c\x01\x75\x01\x69\x01"+
-        "\x72\x02\x65\x01\x6f\x02\uffff\x01\x6e\x01\x74\x01\x65\x01\x75\x01"+
-        "\x74\x01\x7a\x01\x6c\x01\uffff\x01\x65\x01\uffff\x01\x65\x01\x68"+
-        "\x01\x6f\x01\x65\x01\x7a\x01\x65\x01\x73\x01\x6e\x01\x7a\x01\x6f"+
-        "\x01\x61\x01\x75\x02\x72\x01\x39\x04\uffff\x01\x65\x02\x7a\x01\x73"+
-        "\x01\uffff\x01\x75\x01\x74\x01\x7a\x01\x69\x01\x7a\x01\uffff\x01"+
-        "\x70\x01\x74\x01\x61\x01\uffff\x02\x7a\x01\x70\x01\x6e\x01\x7a\x03"+
-        "\x72\x04\x7a\x01\x74\x01\x68\x01\uffff\x01\x7a\x02\x72\x01\x74\x01"+
-        "\x6e\x01\x63\x01\uffff\x01\x7a\x01\x74\x01\x7a\x01\uffff\x01\x6e"+
-        "\x01\x74\x01\x65\x01\x7a\x01\x65\x01\x7a\x01\x2d\x01\x65\x02\uffff"+
-        "\x01\x7a\x01\x6c\x01\x65\x01\uffff\x01\x6e\x01\uffff\x01\x65\x01"+
-        "\x73\x01\x63\x02\uffff\x01\x7a\x01\x67\x01\uffff\x01\x7a\x01\x74"+
-        "\x01\x76\x04\uffff\x01\x65\x01\x7a\x01\uffff\x03\x7a\x01\x64\x01"+
-        "\x74\x01\uffff\x01\x72\x01\uffff\x01\x7a\x01\x65\x01\x73\x01\uffff"+
-        "\x01\x7a\x02\uffff\x01\x6e\x01\uffff\x01\x74\x01\x7a\x01\x63\x02"+
-        "\x7a\x01\x74\x01\uffff\x01\x7a\x01\uffff\x01\x7a\x01\x61\x01\x7a"+
-        "\x04\uffff\x02\x7a\x01\x69\x01\uffff\x02\x7a\x01\uffff\x02\x7a\x01"+
-        "\uffff\x01\x74\x02\uffff\x01\x7a\x02\uffff\x01\x6c\x03\uffff\x01"+
-        "\x6e\x04\uffff\x01\x7a\x01\uffff\x01\x7a\x01\x67\x02\uffff\x01\x7a"+
-        "\x01\uffff";
+        "\x01\x65\x01\x6d\x01\x70\x01\x69\x01\x64\x01\x6c\x01\x65\x01\x61"+
+        "\x08\uffff\x01\x39\x01\uffff\x04\x7a\x01\uffff\x01\x77\x01\uffff"+
+        "\x01\x74\x01\x73\x01\x7a\x01\x61\x01\x65\x01\x63\x01\x74\x01\x65"+
+        "\x01\x7a\x01\x61\x01\x73\x01\x72\x01\x7a\x01\x6d\x01\x6c\x01\x75"+
+        "\x01\x69\x01\x72\x02\x65\x01\x6f\x02\uffff\x01\x6e\x01\x74\x01\x65"+
+        "\x01\x75\x01\x74\x01\x7a\x01\x6c\x01\uffff\x01\x65\x01\uffff\x01"+
+        "\x65\x01\x68\x01\x6f\x01\x65\x01\x7a\x01\x65\x01\x73\x01\x6e\x01"+
+        "\x65\x01\x7a\x01\x6f\x01\x61\x01\x75\x02\x72\x01\x39\x04\uffff\x01"+
+        "\x65\x02\x7a\x01\x73\x01\uffff\x01\x75\x01\x74\x01\x7a\x01\x69\x01"+
+        "\x7a\x01\uffff\x01\x70\x01\x74\x01\x61\x01\uffff\x02\x7a\x01\x70"+
+        "\x01\x6e\x01\x7a\x03\x72\x04\x7a\x01\x74\x01\x68\x01\uffff\x01\x7a"+
+        "\x02\x72\x01\x74\x01\x6e\x01\x63\x01\uffff\x01\x7a\x01\x74\x01\x7a"+
+        "\x01\x73\x01\uffff\x01\x6e\x01\x74\x01\x65\x01\x7a\x01\x65\x01\x7a"+
+        "\x01\x2d\x01\x65\x02\uffff\x01\x7a\x01\x6c\x01\x65\x01\uffff\x01"+
+        "\x6e\x01\uffff\x01\x65\x01\x73\x01\x63\x02\uffff\x01\x7a\x01\x67"+
+        "\x01\uffff\x01\x7a\x01\x74\x01\x76\x04\uffff\x01\x65\x01\x7a\x01"+
+        "\uffff\x03\x7a\x01\x64\x01\x74\x01\uffff\x01\x72\x01\uffff\x01\x74"+
+        "\x01\x7a\x01\x65\x01\x73\x01\uffff\x01\x7a\x02\uffff\x01\x6e\x01"+
+        "\uffff\x01\x74\x01\x7a\x01\x63\x02\x7a\x01\x74\x01\uffff\x01\x7a"+
+        "\x01\uffff\x01\x7a\x01\x61\x01\x7a\x04\uffff\x02\x7a\x01\x69\x01"+
+        "\x61\x01\uffff\x02\x7a\x01\uffff\x02\x7a\x01\uffff\x01\x74\x02\uffff"+
+        "\x01\x7a\x02\uffff\x01\x6c\x03\uffff\x01\x6e\x01\x6d\x04\uffff\x01"+
+        "\x7a\x01\uffff\x01\x7a\x01\x67\x01\x70\x02\uffff\x02\x7a\x02\uffff";
     const string DFA31_acceptS =
-        "\x17\uffff\x01\x3c\x01\x3d\x01\x3e\x01\x3f\x01\uffff\x01\x41\x01"+
-        "\uffff\x01\x46\x01\x47\x01\x48\x01\x49\x01\x4a\x01\x4b\x01\x4c\x02"+
-        "\uffff\x01\x4f\x01\x50\x01\uffff\x01\x52\x01\x54\x01\x51\x01\x56"+
-        "\x1d\uffff\x01\x53\x0e\uffff\x01\x3a\x01\x4e\x01\x3b\x01\x40\x01"+
-        "\x42\x01\x43\x01\x44\x01\x45\x01\uffff\x01\x55\x04\uffff\x01\x04"+
+        "\x17\uffff\x01\x3d\x01\x3e\x01\x3f\x01\x40\x01\uffff\x01\x42\x01"+
+        "\uffff\x01\x47\x01\x48\x01\x49\x01\x4a\x01\x4b\x01\x4c\x01\x4d\x02"+
+        "\uffff\x01\x50\x01\x51\x01\uffff\x01\x53\x01\x55\x01\x52\x01\x57"+
+        "\x1d\uffff\x01\x54\x0f\uffff\x01\x3b\x01\x3c\x01\x4f\x01\x41\x01"+
+        "\x43\x01\x44\x01\x45\x01\x46\x01\uffff\x01\x56\x04\uffff\x01\x04"+
         "\x01\uffff\x01\x07\x15\uffff\x01\x1b\x01\x20\x07\uffff\x01\x28\x01"+
-        "\uffff\x01\x29\x0f\uffff\x01\x01\x01\x02\x01\x03\x01\x05\x04\uffff"+
+        "\uffff\x01\x29\x10\uffff\x01\x01\x01\x02\x01\x03\x01\x05\x04\uffff"+
         "\x01\x0b\x05\uffff\x01\x11\x03\uffff\x01\x15\x0e\uffff\x01\x26\x06"+
-        "\uffff\x01\x2f\x03\uffff\x01\x33\x08\uffff\x01\x08\x01\x09\x03\uffff"+
+        "\uffff\x01\x2f\x04\uffff\x01\x34\x08\uffff\x01\x08\x01\x09\x03\uffff"+
         "\x01\x0e\x01\uffff\x01\x10\x03\uffff\x01\x16\x01\x17\x02\uffff\x01"+
         "\x1a\x03\uffff\x01\x1f\x01\x21\x01\x22\x01\x23\x02\uffff\x01\x27"+
-        "\x05\uffff\x01\x30\x01\uffff\x01\x32\x03\uffff\x01\x37\x01\uffff"+
-        "\x01\x39\x01\x4d\x01\uffff\x01\x0a\x06\uffff\x01\x18\x01\uffff\x01"+
-        "\x1c\x03\uffff\x01\x25\x01\x2a\x01\x2b\x01\x2c\x03\uffff\x01\x34"+
-        "\x02\uffff\x01\x38\x02\uffff\x01\x0d\x01\uffff\x01\x12\x01\x13\x01"+
-        "\uffff\x01\x19\x01\x1d\x01\uffff\x01\x24\x01\x2d\x01\x2e\x01\uffff"+
-        "\x01\x35\x01\x36\x01\x06\x01\x0c\x01\uffff\x01\x14\x02\uffff\x01"+
-        "\x0f\x01\x1e\x01\uffff\x01\x31";
+        "\x05\uffff\x01\x30\x01\uffff\x01\x32\x04\uffff\x01\x38\x01\uffff"+
+        "\x01\x3a\x01\x4e\x01\uffff\x01\x0a\x06\uffff\x01\x18\x01\uffff\x01"+
+        "\x1c\x03\uffff\x01\x25\x01\x2a\x01\x2b\x01\x2c\x04\uffff\x01\x35"+
+        "\x02\uffff\x01\x39\x02\uffff\x01\x0d\x01\uffff\x01\x12\x01\x13\x01"+
+        "\uffff\x01\x19\x01\x1d\x01\uffff\x01\x24\x01\x2d\x01\x2e\x02\uffff"+
+        "\x01\x36\x01\x37\x01\x06\x01\x0c\x01\uffff\x01\x14\x03\uffff\x01"+
+        "\x0f\x01\x1e\x02\uffff\x01\x31\x01\x33";
     const string DFA31_specialS =
-        "\u012c\uffff}>";
+        "\u0135\uffff}>";
     static readonly string[] DFA31_transitionS = {
             "\x02\x2d\x02\uffff\x01\x2d\x12\uffff\x01\x2d\x01\x1c\x01\x28"+
             "\x01\x24\x01\uffff\x01\x21\x01\uffff\x01\x2a\x01\x18\x01\x19"+
@@ -4441,28 +4474,28 @@ public partial class MacroScopeLexer : Lexer {
             "\x01\x4c\x03\uffff\x01\x4d\x02\uffff\x01\x4e",
             "\x01\x4f",
             "\x01\x50\x09\uffff\x01\x51\x05\uffff\x01\x52",
-            "\x01\x53\x06\uffff\x01\x54",
-            "\x01\x55\x01\uffff\x01\x56",
-            "\x01\x57",
+            "\x01\x53\x01\x54\x05\uffff\x01\x55",
+            "\x01\x56\x01\uffff\x01\x57",
             "\x01\x58",
             "\x01\x59",
-            "\x01\x5a\x05\uffff\x0a\x5b",
+            "\x01\x5a",
+            "\x01\x5b\x05\uffff\x0a\x5d",
             "",
             "",
             "",
             "",
-            "\x01\x5e\x01\x5d",
+            "\x01\x5f\x01\x5e",
             "",
-            "\x01\x60",
-            "",
-            "",
+            "\x01\x61",
             "",
             "",
             "",
             "",
             "",
-            "\x0a\x62",
-            "\x0a\x62",
+            "",
+            "",
+            "\x0a\x63",
+            "\x0a\x63",
             "",
             "",
             "\x1a\x2c",
@@ -4470,44 +4503,43 @@ public partial class MacroScopeLexer : Lexer {
             "",
             "",
             "",
-            "\x01\x64",
-            "\x01\x65\x14\uffff\x01\x66",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x02\x27\x01\x67\x17\x27",
-            "\x01\x69",
+            "\x01\x65",
+            "\x01\x66\x14\uffff\x01\x67",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x02\x27\x01\x68\x17\x27",
+            "\x01\x6a",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "\x01\x6b",
             "\x01\x6c",
             "\x01\x6d",
-            "\x01\x6e\x05\uffff\x01\x6f\x06\uffff\x01\x70",
-            "\x01\x71",
+            "\x01\x6e",
+            "\x01\x6f\x05\uffff\x01\x70\x06\uffff\x01\x71",
             "\x01\x72",
             "\x01\x73",
             "\x01\x74",
-            "\x01\x75\x0a\uffff\x01\x76",
-            "\x01\x77",
+            "\x01\x75",
+            "\x01\x76\x0a\uffff\x01\x77",
             "\x01\x78",
             "\x01\x79",
             "\x01\x7a",
             "\x01\x7b",
             "\x01\x7c",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x0d\x27\x01\x7d\x04\x27"+
-            "\x01\x7e\x01\x7f\x06\x27",
+            "\x01\x7d",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x0d\x27\x01\x7e\x04\x27"+
+            "\x01\x7f\x01\u0080\x06\x27",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "\x01\u0082",
             "\x01\u0083",
             "\x01\u0084",
             "\x01\u0085",
             "\x01\u0086",
             "\x01\u0087",
             "\x01\u0088",
+            "\x01\u0089",
             "",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x03\x27\x01\u008a\x16"+
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x03\x27\x01\u008b\x16"+
             "\x27",
-            "\x01\u008c",
             "\x01\u008d",
-            "\x01\u008e\x08\uffff\x01\u008f\x07\uffff\x01\u0090",
-            "\x01\u0091",
+            "\x01\u008e",
+            "\x01\u008f\x08\uffff\x01\u0090\x07\uffff\x01\u0091",
             "\x01\u0092",
             "\x01\u0093",
             "\x01\u0094",
@@ -4516,6 +4548,8 @@ public partial class MacroScopeLexer : Lexer {
             "\x01\u0097",
             "\x01\u0098",
             "\x01\u0099",
+            "\x01\u009a",
+            "\x01\u009b",
             "",
             "",
             "",
@@ -4524,170 +4558,173 @@ public partial class MacroScopeLexer : Lexer {
             "",
             "",
             "",
-            "\x0a\u009a",
+            "\x0a\u009c",
             "",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "",
-            "\x01\u009f",
+            "\x01\u00a1",
             "",
-            "\x01\u00a0\x0e\uffff\x01\u00a1",
-            "\x01\u00a2",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00a2\x0e\uffff\x01\u00a3",
             "\x01\u00a4",
-            "\x01\u00a5",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x01\u00a6",
             "\x01\u00a7",
             "\x01\u00a8",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00a9",
             "\x01\u00aa",
-            "\x01\u00ab",
-            "\x01\u00ac",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00ac",
+            "\x01\u00ad",
             "\x01\u00ae",
-            "\x01\u00af",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x01\u00b0",
             "\x01\u00b1",
             "\x01\u00b2",
             "\x01\u00b3",
             "\x01\u00b4",
-            "\x01\u00b5\x09\uffff\x01\u00b6",
+            "\x01\u00b5",
+            "\x01\u00b6",
+            "\x01\u00b7\x09\uffff\x01\u00b8",
             "",
             "",
-            "\x01\u00b7",
-            "\x01\u00b8",
             "\x01\u00b9",
             "\x01\u00ba",
             "\x01\u00bb",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00bc",
             "\x01\u00bd",
-            "",
-            "\x01\u00be",
-            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x01\u00bf",
+            "",
             "\x01\u00c0",
+            "",
             "\x01\u00c1",
             "\x01\u00c2",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00c3",
             "\x01\u00c4",
-            "\x01\u00c5",
-            "\x01\u00c6",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00c6",
+            "\x01\u00c7",
             "\x01\u00c8",
             "\x01\u00c9",
-            "\x01\u00ca",
-            "\x01\u00cb\x03\uffff\x01\u00cc",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00cb",
+            "\x01\u00cc",
             "\x01\u00cd",
-            "\x0a\u00ce",
+            "\x01\u00ce\x03\uffff\x01\u00cf",
+            "\x01\u00d0",
+            "\x0a\u00d1",
             "",
             "",
             "",
             "",
-            "\x01\u00cf",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x01\u00d2",
-            "",
-            "\x01\u00d3",
-            "\x01\u00d4",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00d5",
+            "",
             "\x01\u00d6",
+            "\x01\u00d7",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "",
-            "\x01\u00d8",
             "\x01\u00d9",
-            "\x01\u00da",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "",
+            "\x01\u00db",
+            "\x01\u00dc",
+            "\x01\u00dd",
             "",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "\x01\u00dd",
-            "\x01\u00de",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x01\u00e0",
             "\x01\u00e1",
-            "\x01\u00e2",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00e3",
+            "\x01\u00e4",
+            "\x01\u00e5",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "\x01\u00e7",
-            "\x01\u00e8",
-            "",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x01\u00ea",
             "\x01\u00eb",
-            "\x01\u00ec",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x01\u00ed",
             "\x01\u00ee",
-            "",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00ef",
             "\x01\u00f0",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00f1",
             "",
-            "\x01\u00f2",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x01\u00f3",
-            "\x01\u00f4",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00f5",
+            "",
             "\x01\u00f6",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u00f7",
             "\x01\u00f8",
-            "\x01\u00f9",
-            "",
-            "",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "\x01\u00fb",
+            "\x01\u00fa",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x01\u00fc",
-            "",
             "\x01\u00fd",
             "",
-            "\x01\u00fe",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x01\u00ff",
             "\x01\u0100",
             "",
+            "\x01\u0101",
             "",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x01\u0102",
-            "",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u0103",
             "\x01\u0104",
-            "\x01\u0105",
             "",
             "",
-            "",
-            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x01\u0106",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u0108",
+            "\x01\u0109",
+            "",
+            "",
+            "",
+            "",
+            "\x01\u010a",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "\x01\u010b",
-            "\x01\u010c",
-            "",
-            "\x01\u010d",
-            "",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x01\u010f",
             "\x01\u0110",
             "",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "",
+            "\x01\u0111",
             "",
             "\x01\u0112",
-            "",
-            "\x01\u0113",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u0114",
             "\x01\u0115",
+            "",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "",
+            "",
+            "\x01\u0117",
+            "",
             "\x01\u0118",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u011a",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u011d",
             "",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "\x01\u011b",
+            "\x01\u0120",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "",
             "",
@@ -4695,36 +4732,41 @@ public partial class MacroScopeLexer : Lexer {
             "",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "\x01\u011f",
-            "",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "",
             "\x01\u0124",
-            "",
+            "\x01\u0125",
             "",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
-            "",
-            "",
-            "\x01\u0126",
-            "",
-            "",
-            "",
-            "\x01\u0127",
-            "",
-            "",
-            "",
-            "",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
             "",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "",
             "\x01\u012a",
             "",
             "",
             "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "",
+            "",
+            "\x01\u012c",
+            "",
+            "",
+            "",
+            "\x01\u012d",
+            "\x01\u012e",
+            "",
+            "",
+            "",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x01\u0131",
+            "\x01\u0132",
+            "",
+            "",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "\x0a\x27\x25\uffff\x01\x27\x01\uffff\x1a\x27",
+            "",
             ""
     };
 
@@ -4754,7 +4796,7 @@ public partial class MacroScopeLexer : Lexer {
 
         override public string Description
         {
-            get { return "1:1: Tokens : ( ALL | AND | ANY | AS | ASC | BETWEEN | BY | CASE | CAST | CROSS | DAY | DEFAULT | DELETE | DESC | DISTINCT | ELSE | END | ESCAPE | EXISTS | EXTRACT | FOR | FROM | FULL | GROUP | HAVING | HOUR | IN | INNER | INSERT | INTERVAL | INTO | IS | JOIN | LEFT | LIKE | MINUTE | MONTH | NOT | NULL | ON | OR | ORDER | OUTER | RIGHT | SECOND | SELECT | SET | SOME | SUBSTRING | THEN | TOP | UNION | UPDATE | VALUES | WHEN | WHERE | YEAR | DOT_STAR | DOT | COMMA | LPAREN | RPAREN | ASSIGNEQUAL | NOTEQUAL1 | NOTEQUAL2 | LESSTHANOREQUALTO1 | LESSTHAN | GREATERTHANOREQUALTO1 | GREATERTHAN | DIVIDE | PLUS | STAR | MOD | STRCONCAT | PLACEHOLDER | MAccessDateTime | Iso8601DateTime | Number | NonQuotedIdentifier | QuotedIdentifier | Variable | AsciiStringLiteral | UnicodeStringLiteral | MINUS | COLON | Whitespace );"; }
+            get { return "1:1: Tokens : ( ALL | AND | ANY | AS | ASC | BETWEEN | BY | CASE | CAST | CROSS | DAY | DEFAULT | DELETE | DESC | DISTINCT | ELSE | END | ESCAPE | EXISTS | EXTRACT | FOR | FROM | FULL | GROUP | HAVING | HOUR | IN | INNER | INSERT | INTERVAL | INTO | IS | JOIN | LEFT | LIKE | MINUTE | MONTH | NOT | NULL | ON | OR | ORDER | OUTER | RIGHT | SECOND | SELECT | SET | SOME | SUBSTRING | THEN | TIMESTAMP | TOP | UNION | UPDATE | VALUES | WHEN | WHERE | YEAR | DOT_STAR | DOT | COMMA | LPAREN | RPAREN | ASSIGNEQUAL | NOTEQUAL1 | NOTEQUAL2 | LESSTHANOREQUALTO1 | LESSTHAN | GREATERTHANOREQUALTO1 | GREATERTHAN | DIVIDE | PLUS | STAR | MOD | STRCONCAT | PLACEHOLDER | MAccessDateTime | Iso8601DateTime | Number | NonQuotedIdentifier | QuotedIdentifier | Variable | AsciiStringLiteral | UnicodeStringLiteral | MINUS | COLON | Whitespace );"; }
         }
 
     }

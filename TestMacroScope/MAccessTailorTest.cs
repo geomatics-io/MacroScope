@@ -170,6 +170,8 @@ FROM address CROSS JOIN building CROSS JOIN settlement CROSS JOIN village",
         public void TestDateTime()
         {
             CheckSelect("SELECT #2007-07-11 16:30:00#");
+            CheckSelect("SELECT TIMESTAMP '2007-07-11 16:30:00'",
+                "SELECT #2007-07-11 16:30:00#");
 
             IStatement statement = Factory.CreateStatement(
                 "select * from inventory where (article=@x) and (modate>@last)");

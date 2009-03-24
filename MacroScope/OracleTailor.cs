@@ -176,7 +176,7 @@ namespace MacroScope
 
             base.Perform(node);
 
-            ReplaceTerm(node, MakeToDate(node));
+            node.Delimiter = '\'';
         }
 
         public override void Perform(Placeholder node)
@@ -334,25 +334,6 @@ namespace MacroScope
             }
 
             node.Top = null;
-        }
-
-        static FunctionCall MakeToDate(LiteralDateTime literalDateTime)
-        {
-            if (literalDateTime == null)
-            {
-                throw new ArgumentNullException("literalDateTime");
-            }
-
-            DateTime dateTime = literalDateTime.DateTime;
-            string literal = dateTime.ToString("dd.MM.yyyy HH:mm:ss");
-
-            FunctionCall functionCall = new FunctionCall(
-                TailorUtil.TO_TIMESTAMP.ToUpperInvariant());
-            functionCall.ExpressionArguments = TailorUtil.MakeLiteralString(literal);
-            functionCall.ExpressionArguments.Add(
-                TailorUtil.MakeLiteralString("dd.mm.yyyy HH24:mi:ss"));
-
-            return functionCall;
         }
 
         #endregion

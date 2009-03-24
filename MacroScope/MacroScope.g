@@ -734,6 +734,9 @@ constant returns [ INode value ] :
 	| Iso8601DateTime {
 		$value = new LiteralDateTime($Iso8601DateTime.text);
 	}
+	| TIMESTAMP s = stringLiteral {
+		$value = new LiteralDateTime($s.value);
+	}
 	// currency & system variables not supported
 	;
 
@@ -847,6 +850,7 @@ SET : 'set' ;
 SOME : 'some' ;
 SUBSTRING : 'substring' ;
 THEN : 'then' ;
+TIMESTAMP: 'timestamp';
 TOP : 'top' ;
 UNION : 'union' ;
 UPDATE : 'update' ;

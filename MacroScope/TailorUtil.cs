@@ -96,10 +96,9 @@ namespace MacroScope
         public static readonly string SUBSTRING = "substring";
 
         /// <summary>
-        /// An Oracle function for converting string values
-        /// to dates.
+        /// Standard keyword defining a data type, not known by MS engines.
         /// </summary>
-        public static readonly string TO_TIMESTAMP = "to_timestamp";
+        public static readonly string TIMESTAMP = "timestamp";
 
         #endregion
 

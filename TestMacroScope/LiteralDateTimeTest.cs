@@ -54,6 +54,13 @@ namespace TestMacroScope
             ldt = new LiteralDateTime("2007-07-11 16:30:00");
             ldt.Delimiter = 't';
             Assert.AreEqual("2007-07-11t16:30:00", ldt.Literal);
+
+            ldt = new LiteralDateTime(new StringValue("2007-07-11 16:30:00"));
+            Assert.AreEqual("TIMESTAMP '2007-07-11 16:30:00'", ldt.Literal);
+
+            ldt = new LiteralDateTime(new StringValue("2007-07-11 16:30:00"));
+            ldt.Delimiter = 't';
+            Assert.AreEqual("2007-07-11t16:30:00", ldt.Literal);
         }
     }
 }

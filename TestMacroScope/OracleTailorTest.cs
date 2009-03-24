@@ -32,8 +32,8 @@ where registration_date > some_date - interval -'1' day",
                  expected.ToString());
 
             expected = new StringBuilder();
-            expected.Append("SELECT TO_TIMESTAMP('31.07.2003 00:00:00', ");
-            expected.Append("'dd.mm.yyyy HH24:mi:ss') - INTERVAL '100' DAY(3)\r\n");
+            expected.Append("SELECT TIMESTAMP '2003-07-31 00:00:00' - ");
+            expected.Append("INTERVAL '100' DAY(3)\r\n");
             expected.Append("FROM dual");
             CheckSelect("SELECT 2003-07-31 00:00:00 - INTERVAL '100' DAY",
                 expected.ToString());
@@ -44,7 +44,7 @@ where registration_date > some_date - interval -'1' day",
         {
             StringBuilder expected = new StringBuilder();
             expected.Append("INSERT INTO history(libname, modate) VALUES(:libname, ");
-            expected.Append("TO_TIMESTAMP('31.12.2006 23:59:58', 'dd.mm.yyyy HH24:mi:ss'))");
+            expected.Append("TIMESTAMP '2006-12-31 23:59:58')");
             CheckInsert(@"INSERT INTO history(libname, modate)
 VALUES(@libname, 2006-12-31T23:59:58)", expected.ToString());
         }
@@ -85,6 +85,11 @@ VALUES(@libname, 2006-12-31T23:59:58)", expected.ToString());
         [Test]
         public void TestDateTime()
         {
+            CheckSelect("SELECT TIMESTAMP '2007-07-11 16:30:00'",
+                "SELECT TIMESTAMP '2007-07-11 16:30:00'\r\nFROM dual");
+            CheckSelect("SELECT #2007-07-11 16:30:00#",
+                "SELECT TIMESTAMP '2007-07-11 16:30:00'\r\nFROM dual");
+
             CheckSelect("SELECT GETDATE()", "SELECT SYSDATE\r\nFROM dual");
             CheckSelect("SELECT Now()", "SELECT SYSDATE\r\nFROM dual");
             CheckSelect("SELECT SYSDATE", "SELECT SYSDATE\r\nFROM dual");
@@ -161,8 +166,8 @@ FROM address", expected.ToString());
         public void TestDatetimeExtract()
         {
             StringBuilder expected = new StringBuilder();
-            expected.Append("SELECT EXTRACT(MONTH FROM TO_TIMESTAMP('18.07.2007 16:30:00',");
-            expected.Append(" 'dd.mm.yyyy HH24:mi:ss'))\r\nFROM dual");
+            expected.Append("SELECT EXTRACT(MONTH FROM TIMESTAMP '2007-07-18 16:30:00')\r\n");
+            expected.Append("FROM dual");
             CheckSelect("SELECT EXTRACT(month FROM 2007-07-18T16:30:00)",
                 expected.ToString());
         }
