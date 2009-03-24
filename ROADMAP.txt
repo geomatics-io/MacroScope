@@ -4,14 +4,10 @@ desirability for the overall project.
 
 Features I might implement myself:
 
- - Parsed SQL tree should include pointers to parents. In retrospect,
- leaving them out was a mistake, making tree transformations both
- harder to implement and less efficient.
-
-Features I'd especially like to see patches for:
-
  - More database backends. The current implementation doesn't support
  _any_ Open Source database, which is just sad.
+
+Features I'd especially like to see patches for:
 
  - Handling more standard SQL (that is, SQL 92) constructs.
 
