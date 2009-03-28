@@ -1,34 +1,20 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System;
 
 namespace MacroScope
 {
     /// <summary>
-    /// Common transformations for <see cref="MSqlServerTailor"/>
-    /// and <see cref="MAccessTailor"/>.
+    /// SQL for MySQL.
     /// </summary>
-    public abstract class MTailor : TracingVisitor
+    /// <remarks>
+    /// MySQL sometimes doesn't report errors the standard requires (i.e. on division by zero,
+    /// or invalid date arithmetic). When using this tailor, some queries which should
+    /// have failed may instead return null.
+    /// </remarks>
+    public class MySqlTailor : TracingVisitor
     {
         #region Fields
 
         private Namer m_namer;
-
-        private readonly ExpressionOperator m_modOp;
-
-        #endregion
-
-        #region Constructor
-
-        public MTailor(ExpressionOperator modOp)
-        {
-            if (modOp == null)
-            {
-                throw new ArgumentNullException("modOp");
-            }
-
-            m_modOp = modOp;
-        }
 
         #endregion
 
@@ -61,29 +47,65 @@ namespace MacroScope
 
         #region IVisitor Members
 
-        public override void PerformAfter(FunctionCall node)
+        public override void PerformBefore(DbObject node)
         {
             if (node == null)
             {
                 throw new ArgumentNullException("node");
             }
 
-            base.PerformAfter(node);
-
-            if (TailorUtil.MOD.Equals(node.Name.ToLowerInvariant()))
+            if (!node.HasNext && TailorUtil.IsSysdate(node.Identifier))
             {
-                ReplaceTerm(node, MakeModCall(node));
+                ReplaceTerm(node, new DbObject(new Identifier(
+                    TailorUtil.CURRENT_TIMESTAMP.ToUpperInvariant())));
+            }
+
+            base.PerformBefore(node);
+        }
+
+        public override void Perform(ExpressionOperator node)
+        {
+            if (node == null)
+            {
+                throw new ArgumentNullException("node");
+            }
+
+            base.Perform(node);
+
+            if (node == ExpressionOperator.StrConcat)
+            {
+                Expression parent = Parent as Expression;
+                if ((parent != null) && (parent.Left != null) && (parent.Right != null))
+                {
+                    FunctionCall concat = new FunctionCall(TailorUtil.CONCAT.ToUpperInvariant());
+                    concat.ExpressionArguments = new ExpressionItem(parent.Left);
+                    concat.ExpressionArguments.Add(new ExpressionItem(parent.Right));
+
+                    parent.Operator = null;
+                    parent.Left = concat;
+                    parent.Right = null;
+                }
+                else
+                {
+                    throw new InvalidOperationException(
+                        "String concatenation operator is not in expression.");
+                }
             }
         }
 
-        public override void PerformBefore(Interval node)
+        public override void PerformBefore(FunctionCall node)
         {
             if (node == null)
             {
                 throw new ArgumentNullException("node");
             }
 
-            ReplaceIntervals(null);
+            string name = node.Name.ToLowerInvariant();
+            if (name.Equals(TailorUtil.GETDATE))
+            {
+                ReplaceTerm(node, new DbObject(new Identifier(
+                    TailorUtil.CURRENT_TIMESTAMP.ToUpperInvariant())));
+            }
 
             base.PerformBefore(node);
         }
@@ -158,6 +180,32 @@ namespace MacroScope
                         "MS engines do not have ROWNUM.");
                 }
             }
+
+            node.NormalizeQuotes('`');
+        }
+
+        public override void PerformBefore(Interval node)
+        {
+            if (node == null)
+            {
+                throw new ArgumentNullException("node");
+            }
+
+            CoalesceIntervals(null);
+
+            base.PerformBefore(node);
+        }
+
+        public override void Perform(LiteralDateTime node)
+        {
+            if (node == null)
+            {
+                throw new ArgumentNullException("node");
+            }
+
+            base.Perform(node);
+
+            node.Delimiter = '\'';
         }
 
         public override void Perform(Placeholder node)
@@ -190,7 +238,7 @@ namespace MacroScope
                     if ((singleTable != null) && (singleTable.Alias == null) &&
                         (singleTable.JoinCondition == null) &&
                         (singleTable.JoinType == null) && !singleTable.HasNext)
-                    {                        
+                    {
                         DbObject singleName = TailorUtil.GetTerm(
                             singleTable.Source) as DbObject;
                         if ((singleName != null) && !singleName.HasNext)
@@ -207,6 +255,11 @@ namespace MacroScope
                         }
                     }
                 }
+            }
+
+            if (node.LimitFormat != ' ')
+            {
+                node.LimitFormat = 'L';
             }
         }
 
@@ -226,9 +279,6 @@ namespace MacroScope
 
         #region Transformations
 
-        protected abstract FunctionCall GetDateaddCall(DateTimeUnit unit,
-            INode number, INode date);
-
         static void SetTop(QueryExpression query, int limit)
         {
             if (query == null)
@@ -246,10 +296,10 @@ namespace MacroScope
                 limit = Math.Min(query.RowLimit, limit);
             }
 
-            query.SetLimit('T', limit);
+            query.SetLimit('L', limit);
         }
 
-        void ReplaceIntervals(Expression done)
+        void CoalesceIntervals(Expression done)
         {
             Expression node = GetExpressionParent(done);
             if (node == null)
@@ -260,24 +310,13 @@ namespace MacroScope
             Interval leftInterval = TailorUtil.GetInterval(node.Left);
             Interval rightInterval = TailorUtil.GetInterval(node.Right);
 
-            if (leftInterval != null)
+            if ((leftInterval != null) && (rightInterval != null))
             {
-                if (rightInterval != null)
-                {
-                    ReplaceBothIntervals(node, leftInterval, rightInterval);
-                }
-                else
-                {
-                    ReplaceLeftInterval(node, leftInterval);
-                }
-            }
-            else if (rightInterval != null)
-            {
-                ReplaceRightInterval(node, rightInterval);
+                    ReplaceIntervalOp(node, leftInterval, rightInterval);
             }
         }
 
-        void ReplaceBothIntervals(Expression node, Interval leftInterval,
+        void ReplaceIntervalOp(Expression node, Interval leftInterval,
             Interval rightInterval)
         {
             if (leftInterval.DateTimeUnit != rightInterval.DateTimeUnit)
@@ -288,164 +327,25 @@ namespace MacroScope
                 // needed that yet
             }
 
-            if ((node.Operator != ExpressionOperator.Plus) &&
-                (node.Operator != ExpressionOperator.Minus))
+            decimal v;
+            if (node.Operator == ExpressionOperator.Plus)
+            {
+                v = leftInterval.GetIntegerValue() + rightInterval.GetIntegerValue();
+            }
+            else if (node.Operator != ExpressionOperator.Minus)
+            {
+                v = leftInterval.GetIntegerValue() - rightInterval.GetIntegerValue();
+            }
+            else
             {
                 throw new InvalidOperationException("Can't multiply intervals.");
             }
 
-            node.Left = new Interval(
-                new Expression(leftInterval.GetSignedValue(),
-                    node.Operator,
-                    rightInterval.GetSignedValue()),
-                leftInterval.DateTimeUnit);
+            node.Left = new Interval(true, v, leftInterval.DateTimeUnit);
             node.Operator = null;
             node.Right = null;
 
-            ReplaceIntervals(node);
-        }
-
-        void ReplaceLeftInterval(Expression node, Interval leftInterval)
-        {
-            if (node.Operator == ExpressionOperator.Plus)
-            {
-                // base date hasn't been tailored yet - keep it in the future
-                // of this traversal
-                node.Right = GetDateaddCall(leftInterval.DateTimeUnit,
-                    leftInterval.GetSignedValue(),
-                    node.Right);
-                node.Operator = null;
-                node.Left = null;
-            }
-            else if ((node.Operator == ExpressionOperator.Mult) ||
-                (node.Operator == ExpressionOperator.Div))
-            {
-                // base date hasn't been tailored yet - keep it in the future
-                // of this traversal
-                node.Right = new Interval(
-                    GetMultipliedInterval(leftInterval,
-                        node.Right,
-                        node.Operator),
-                    leftInterval.DateTimeUnit);
-                node.Operator = null;
-                node.Left = null;
-
-                ReplaceIntervals(node);
-            }
-            else
-            {
-                throw new InvalidOperationException(
-                    "Subtraction from interval not supported.");
-            }
-        }
-
-        void ReplaceRightInterval(Expression node, Interval rightInterval)
-        {
-            if (node.Operator == ExpressionOperator.Plus)
-            {
-                // base date hasn't been tailored yet - keep it in the future
-                // of this traversal
-                node.Right = GetDateaddCall(rightInterval.DateTimeUnit,
-                    rightInterval.GetSignedValue(),
-                    node.Left);
-                node.Operator = null;
-                node.Left = null;
-            }
-            else if (node.Operator == ExpressionOperator.Minus)
-            {
-                Interval negativeInterval = (Interval)(rightInterval.Clone());
-                negativeInterval.Positive = !negativeInterval.Positive;
-
-                // base date hasn't been tailored yet - keep it in the future
-                // of this traversal
-                node.Right = GetDateaddCall(negativeInterval.DateTimeUnit,
-                    negativeInterval.GetSignedValue(),
-                    node.Left);
-                node.Operator = null;
-                node.Left = null;
-            }
-            else if (node.Operator == ExpressionOperator.Mult)
-            {
-                // base date hasn't been tailored yet - keep it in the future
-                // of this traversal
-                node.Right = new Interval(
-                    GetMultipliedInterval(rightInterval,
-                        node.Left,
-                        ExpressionOperator.Mult),
-                    rightInterval.DateTimeUnit);
-                node.Operator = null;
-                node.Left = null;
-
-                ReplaceIntervals(node);
-            }
-            else
-            {
-                throw new InvalidOperationException(
-                    "Division by interval not supported.");
-            }
-        }
-
-        static INode GetMultipliedInterval(Interval interval,
-            INode multiplier, ExpressionOperator op)
-        {
-            if (interval == null)
-            {
-                throw new ArgumentNullException("interval");
-            }
-
-            if (multiplier == null)
-            {
-                throw new ArgumentNullException("multiplier");
-            }
-
-            if (op == null)
-            {
-                throw new ArgumentNullException("op");
-            }
-
-            INode inner = interval.GetSignedValue();
-            IntegerValue integerValue = inner as IntegerValue;
-            INode newValue;
-            if ((integerValue != null) &&
-                (integerValue.Value == 1))
-            {
-                newValue = multiplier;
-            }
-            else
-            {
-                newValue = new Expression(inner, op, multiplier);
-            }
-
-            return newValue;
-        }
-
-        Expression MakeModCall(FunctionCall functionCall)
-        {
-            if (functionCall == null)
-            {
-                throw new ArgumentNullException("functionCall");
-            }
-
-            ExpressionItem head = functionCall.ExpressionArguments;
-            if (head == null)
-            {
-                throw new InvalidOperationException("MOD has no arguments.");
-            }
-
-            ExpressionItem next = head.Next;
-            if (next == null)
-            {
-                throw new InvalidOperationException("MOD has only one argument.");
-            }
-
-            if (next.Next != null)
-            {
-                throw new InvalidOperationException("MOD has too many arguments.");
-            }
-
-            return new Expression(head.Expression,
-                m_modOp,
-                next.Expression);
+            CoalesceIntervals(node);
         }
 
         #endregion

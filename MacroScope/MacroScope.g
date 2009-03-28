@@ -139,7 +139,7 @@ querySpecification returns [ QueryExpression value ] :
 selectClause returns [ QueryExpression value ] :
 	SELECT { $value = new QueryExpression(); }
 	( ALL | DISTINCT { $value.Distinct = true; } )?
-	(TOP Integer { $value.Top = int.Parse($Integer.text); } )?
+	(TOP Integer { $value.SetLimit('T', int.Parse($Integer.text)); } )?
 	s = selectList { $value.SelectItems = $s.value; }
 	;
 

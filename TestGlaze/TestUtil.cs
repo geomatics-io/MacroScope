@@ -16,7 +16,7 @@ namespace TestGlaze
                 {
                     if ((key != null) &&
                         (key.Equals(Factory.MSQLProvider) || key.Equals(Factory.OleDbProvider) ||
-                            key.Equals(Factory.OracleProvider)))
+                            key.Equals(Factory.OracleProvider) || key.Equals(Factory.MySqlProvider)))
                     {
                         p.Add(key);
                     }

@@ -17,7 +17,7 @@ which is otherwise hard to document precisely - it's a subset of SQL
 non-standard constructions taken from the supported backends. Negative
 consequences of a code generator include build complications and a run
 time dependency on an ANTLR DLL. The ANTLR project, including
-especially the ANTLR C# target and runtime, is currently undergoing
+especially the ANTLR C# target and runtime, has been undergoing
 radical changes, so when building MacroScope, it's important to use
 compatible versions. This release has been tested with ANTLR 3.1; it
 is incompatible with earlier versions of ANTLR and later ANTLR
@@ -69,9 +69,10 @@ keys for backends you don't have from appSettings and change the
 remaining values to the connection strings correct for your
 setup. Databases specified by these connection strings must also be
 created manually, with the tables described in files in the schema
-directory - more-or-less machine-readable scripts for MS SQL Server
-and Oracle, with the MS SQL Server commands doubling as instructions
-for how to create a MS Access test database by point-and-click.
+directory - more-or-less machine-readable scripts for MySQL, MS SQL
+Server and Oracle, with the MS SQL Server commands doubling as
+instructions for how to create a MS Access test database by
+point-and-click.
 
 Glaze has some logging statements, implemented using log4net
 (http://logging.apache.org/log4net/), so applications that depend on

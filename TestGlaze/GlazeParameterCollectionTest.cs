@@ -31,6 +31,11 @@ namespace TestGlaze
                     CheckAdd(Factory.OracleProvider, "@v2", ":v2");
                     CheckAdd(Factory.OracleProvider, ":V2", ":V2");
                 }
+                else if (providers[i].Equals(Factory.MySqlProvider))
+                {
+                    CheckAdd(Factory.MySqlProvider, "@name", "@name");
+                    CheckAdd(Factory.MySqlProvider, ":Name", "@Name");
+                }
                 else
                 {
                     Assert.Fail(string.Format("Unknown provider {0}.", providers[i]));

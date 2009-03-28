@@ -95,8 +95,14 @@ namespace TestGlaze
 
             CreateCountedRows(connection);
 
-            int etalon = CheckParameters(connection, true);
-            int alternative = CheckParameters(connection, false);
+            int etalon = CheckParameters(connection, '@', true);
+            int alternative = CheckParameters(connection, '@', false);
+            Assert.AreEqual(etalon, alternative);
+
+            alternative = CheckParameters(connection, ':', true);
+            Assert.AreEqual(etalon, alternative);
+
+            alternative = CheckParameters(connection, ':', false);
             Assert.AreEqual(etalon, alternative);
 
             alternative = CheckUnnamedParameters(connection);
@@ -289,26 +295,29 @@ WHERE ? <= key1 and key1 < ?";
             }
         }
 
-        int CheckParameters(DbConnection connection, bool inOrder)
+        int CheckParameters(DbConnection connection, char prefix, bool inOrder)
         {
             if (connection == null)
             {
                 throw new ArgumentNullException("connection");
             }
 
+            string minName = string.Format("{0}min", prefix);
+            string maxName = string.Format("{0}max", prefix);
+
             DbCommand command = connection.CreateCommand();
-            command.CommandText = @"SELECT key1 FROM table1
-WHERE @min<=key1 and key1<@max";
+            command.CommandText = string.Format("SELECT key1 FROM table1 WHERE {0}<=key1 and key1<{1}",
+                minName, maxName);
 
             if (inOrder)
             {
-                AddParameter(command, "@min", MIN_VALUE);
-                AddParameter(command, "@max", MULTIPLIER * MIN_VALUE);
+                AddParameter(command, minName, MIN_VALUE);
+                AddParameter(command, maxName, MULTIPLIER * MIN_VALUE);
             }
             else
             {
-                AddParameter(command, "@max", MULTIPLIER * MIN_VALUE);
-                AddParameter(command, "@min", MIN_VALUE);
+                AddParameter(command, maxName, MULTIPLIER * MIN_VALUE);
+                AddParameter(command, minName, MIN_VALUE);
             }
 
             DbDataReader reader = command.ExecuteReader();
@@ -852,9 +861,16 @@ where number1a=2";
             CheckDoubleExpression(connection, "1.2E2", 120);
             CheckDoubleExpression(connection, "0E-10", 0);
 
-            CheckFailingExpression(connection, "select 0/0");
-            CheckFailingExpression(connection,
-                "select 2003-07-31T00:00:00 - interval '1' month");
+            if (!glazeFactory.DatabaseProvider.Equals(Factory.MySqlProvider))
+            {
+                // MySQL just returns NULL on division by zero, and there doesn't seem
+                // to be a way to make it fail...
+                CheckFailingExpression(connection, "select 0/0");
+
+                // ditto for invalid date operations
+                CheckFailingExpression(connection,
+                    "select 2003-07-31T00:00:00 - interval '1' month");
+            }
 
             CheckDateTime(glazeFactory, connection);
             CheckDateTimeInterval(connection);
@@ -1215,7 +1231,7 @@ VALUES('Counted', 2008-01-29T09:35:24)";
             object c = command.ExecuteScalar();
             Assert.IsNotNull(c);
 
-            DateTime dt = (DateTime)c;
+            DateTime dt = ResultToDate(c);
             Assert.AreEqual(2007, dt.Year);
             Assert.AreEqual(7, dt.Month);
             Assert.AreEqual(18, dt.Day);
@@ -1308,7 +1324,7 @@ interval '30' minute",
             object c = command.ExecuteScalar();
             Assert.IsNotNull(c);
 
-            DateTime dt = (DateTime)c;
+            DateTime dt = ResultToDate(c);
             Assert.AreEqual(expected.Year, dt.Year);
             Assert.AreEqual(expected.Month, dt.Month);
             Assert.AreEqual(expected.Day, dt.Day);
@@ -1339,6 +1355,48 @@ interval '30' minute",
             DateTime dt = (DateTime)c;
             Assert.IsTrue(now <= dt.AddSeconds(1));
             Assert.IsTrue(dt <= now.AddSeconds(command.CommandTimeout + 1));
+        }
+
+        /// <summary>
+        /// Helper function converting string to DateTime.
+        /// </summary>
+        /// <remarks>
+        /// MySQL connector .NET 5.2.5 isn't as typed as it should be (or perhaps
+        /// it's MySQL itself) - some queries that should return dates actually
+        /// leave the result in a string. This method performs the conversion when
+        /// necessary.
+        /// </remarks>
+        static DateTime ResultToDate(object scalar)
+        {
+            byte[] edt = scalar as byte[];
+            string tdt;
+            if (edt != null)
+            {
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < edt.Length; ++i)
+                {
+                    sb.Append((char)edt[i]);
+                }
+
+                tdt = sb.ToString();
+            }
+            else
+            {
+                tdt = scalar as string;
+            }
+
+            DateTime dt;
+            if (tdt != null)
+            {
+                dt = DateTime.ParseExact(tdt, "yyyy-MM-dd HH:mm:ss", null);
+            }
+            else
+            {
+
+                dt = (DateTime)scalar;
+            }
+
+            return dt;
         }
 
         static void RunAll(ConnectedTest test)

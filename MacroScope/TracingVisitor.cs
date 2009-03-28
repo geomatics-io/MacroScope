@@ -122,6 +122,40 @@ namespace MacroScope
         }
 
         /// <summary>
+        /// Finds a non-trivial (i.e. having an operator) expression.
+        /// </summary>
+        /// <param name="child">
+        /// If not null, the found expression is the first
+        /// ancestor of <paramref name="child"/>, otherwise
+        /// it's the newest expression on the ancestor stack.
+        /// </param>
+        /// <returns>
+        /// An ancestor <see cref="Expression"/>, or (when there isn't any)
+        /// null.
+        /// </returns>
+        public Expression GetExpressionParent(Expression child)
+        {
+            Expression expr = GetParent(child) as Expression;
+            while ((expr != null) && (expr.Operator == null))
+            {
+                expr = GetParent(expr) as Expression;
+            }
+
+            return expr;
+        }
+
+        public Expression GetExpressionAncestor(Expression child, INode parent)
+        {
+            Expression expr = GetAncestor<Expression>(child, parent);
+            while ((expr != null) && (expr.Operator == null))
+            {
+                expr = GetAncestor<Expression>(expr, parent);
+            }
+
+            return expr;
+        }
+
+        /// <summary>
         /// Replaces <paramref name="oldChild"/> by <paramref name="newChild"/>
         /// in an expression which is <paramref name="oldChild"/>'s parent.
         /// </summary>

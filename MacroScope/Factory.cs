@@ -19,6 +19,8 @@ namespace MacroScope
 
         public static readonly string OracleProvider = "Oracle.DataAccess.Client";
 
+        public static readonly string MySqlProvider = "MySql.Data.MySqlClient";
+
         #endregion
 
         #region Class map
@@ -35,6 +37,7 @@ namespace MacroScope
             m_tailors.Add(MSQLProvider, typeof(MSqlServerTailor));
             m_tailors.Add(OleDbProvider, typeof(MAccessTailor));
             m_tailors.Add(OracleProvider, typeof(OracleTailor));
+            m_tailors.Add(MySqlProvider, typeof(MySqlTailor));
         }
 
         #endregion

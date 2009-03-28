@@ -1,4 +1,4 @@
-// $ANTLR 3.1.2 MacroScope\\MacroScope.g 2009-03-24 12:55:00
+// $ANTLR 3.1.2 MacroScope\\MacroScope.g 2009-03-25 09:39:27
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 168, 219
@@ -1421,7 +1421,7 @@ public partial class MacroScopeParser : Parser
             	        	Integer1=(IToken)Match(input,Integer,FOLLOW_Integer_in_selectClause716); if (state.failed) return value;
             	        	if ( (state.backtracking==0) )
             	        	{
-            	        	   value.Top = int.Parse(((Integer1 != null) ? Integer1.Text : null)); 
+            	        	   value.SetLimit('T', int.Parse(((Integer1 != null) ? Integer1.Text : null))); 
             	        	}
 
             	        }

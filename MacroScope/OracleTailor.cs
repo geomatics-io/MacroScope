@@ -70,8 +70,7 @@ namespace MacroScope
 
             base.Perform(node);
 
-            if ((node == ExpressionOperator.Mod) ||
-                (node == ExpressionOperator.MAccessMod))
+            if (node == ExpressionOperator.Mod)
             {
                 throw new InvalidOperationException("Modulo operator not in expression.");
             }
@@ -200,7 +199,7 @@ namespace MacroScope
 
             base.PerformBefore(node);
 
-            if (node.Top != null)
+            if (node.LimitFormat != ' ')
             {
                 ReplaceTop(node);
             }
@@ -293,8 +292,7 @@ namespace MacroScope
                 throw new ArgumentNullException("node");
             }
 
-            if ((node.Operator == ExpressionOperator.Mod) ||
-                (node.Operator == ExpressionOperator.MAccessMod))
+            if (node.Operator == ExpressionOperator.Mod)
             {
                 if ((node.Left == null) || (node.Right == null))
                 {
@@ -320,7 +318,7 @@ namespace MacroScope
             Expression filter = new Expression(
                 new Identifier(TailorUtil.ROWNUM),
                 ExpressionOperator.LessOrEqual,
-                new IntegerValue((int)(node.Top)));
+                new IntegerValue(node.RowLimit));
 
             if (node.Where == null)
             {
@@ -333,7 +331,7 @@ namespace MacroScope
                     node.Where);
             }
 
-            node.Top = null;
+            node.LimitFormat = 'R';
         }
 
         #endregion

@@ -26,10 +26,10 @@ not known at compile time and passed to the application as simple
 strings.
 
 MacroScope supports a practically useful subset of SQL commands
-INSERT, SELECT, UPDATE and DELETE, for 3 database backends: MS SQL
-Server, Oracle and MS Access. It is used in production, but new users
-will probably find the list of supported backends incomplete, some
-constructions they'd like to use unsupported and many
+INSERT, SELECT, UPDATE and DELETE, for 4 database backends: MySQL,
+MS SQL Server, Oracle and MS Access. It is used in production, but new
+users will probably find the list of supported backends incomplete,
+some constructions they'd like to use unsupported and many
 incompatibilities remaining (especially for MS Access - there's a lot
 things it just doesn't do, and no amount of SQL rewriting is going to
 make the backend more capable). These limitations are an important

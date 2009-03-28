@@ -18,10 +18,20 @@ namespace MacroScope
         public static readonly string COALESCE = "coalesce";
 
         /// <summary>
+        /// String concatenation function used by MySQL.
+        /// </summary>
+        public static readonly string CONCAT = "concat";
+
+        /// <summary>
         /// A function with different semantics in MS SQL Server and Oracle,
         /// not known by MS Access.
         /// </summary>
         public static readonly string CONVERT = "convert";
+
+        /// <summary>
+        /// The standard way to get the current time.
+        /// </summary>
+        public static readonly string CURRENT_TIMESTAMP = "CURRENT_TIMESTAMP";
 
         /// <summary>
         /// A pseudo-table used by Oracle, not known by MS engines.
@@ -104,6 +114,61 @@ namespace MacroScope
 
         #region Utility functions
 
+        /// <summary>
+        /// Gets the limit on query rows from a comparison of <see cref="ROWNUM"/>
+        /// with a constant number.
+        /// </summary>
+        /// <param name="expr">The condition limiting rows returned by a query.</param>
+        /// <returns>The limit on query rows, or (if <paramref name="expr"/> isn't
+        /// a comparison of <see cref="ROWNUM"/> with a constant number) -1.</returns>
+        public static int GetRownumExpressionLimit(Expression expr)
+        {
+            if (expr == null)
+            {
+                throw new ArgumentNullException("expr");
+            }
+
+            decimal limit = -1;
+            if (expr.Operator == ExpressionOperator.LessOrEqual)
+            {
+                if (IsRownumTerm(expr.Left))
+                {
+                    limit = GetTermLimit(expr.Right);
+                }
+            }
+            else if (expr.Operator == ExpressionOperator.Less)
+            {
+                if (IsRownumTerm(expr.Left))
+                {
+                    limit = GetSharpTermLimit(expr.Right);
+                }
+            }
+            else if (expr.Operator == ExpressionOperator.GreaterOrEqual)
+            {
+                if (IsRownumTerm(expr.Right))
+                {
+                    limit = GetTermLimit(expr.Left);
+                }
+            }
+            else if (expr.Operator == ExpressionOperator.Greater)
+            {
+                if (IsRownumTerm(expr.Right))
+                {
+                    limit = GetSharpTermLimit(expr.Left);
+                }
+            }
+
+            int ilimit = (int)limit;
+            if (limit != ilimit)
+            {
+                string message = string.Format("TOP argument {0} too large.",
+                    limit);
+                throw new Exception(message);
+            }
+
+            return ilimit;
+        }
+
         public static bool HasNullArgument(FunctionCall functionCall)
         {
             if (functionCall == null)
@@ -127,6 +192,24 @@ namespace MacroScope
         }
 
         /// <summary>
+        /// Test for unquoted <see cref="ROWNUM"/>.
+        /// </summary>
+        /// <remarks>
+        /// Not canonicalizing - we're accepting quoted "rownum"
+        /// as a regular identifier.
+        /// </remarks>
+        public static bool IsRownum(Identifier identifier)
+        {
+            if (identifier == null)
+            {
+                throw new ArgumentNullException("identifier");
+            }
+
+            return ROWNUM.Equals(
+                identifier.ID.ToLowerInvariant());
+        }
+
+        /// <summary>
         /// Test for unquoted <see cref="SYSDATE"/>.
         /// </summary>
         /// <remarks>
@@ -144,6 +227,18 @@ namespace MacroScope
                 identifier.ID.ToLowerInvariant());
         }
 
+        public static Interval GetInterval(INode arg)
+        {
+            Expression expr = arg as Expression;
+            while ((expr != null) && (expr.Operator == null))
+            {
+                arg = (expr.Left != null) ? expr.Left : expr.Right;
+                expr = arg as Expression;
+            }
+
+            return arg as Interval;
+        }
+
         public static FunctionCall CondGetFunctionCall(INode arg)
         {
             if (arg == null)
@@ -151,8 +246,56 @@ namespace MacroScope
                 return null;
             }
 
-            arg = TailorUtil.GetTerm(arg);
+            arg = GetTerm(arg);
             return arg as FunctionCall;
+        }
+
+        static bool IsRownumTerm(INode arg)
+        {
+            arg = GetComparedTerm(arg);
+
+            DbObject dbObject = arg as DbObject;
+            if ((dbObject == null) || dbObject.HasNext)
+            {
+                return false;
+            }
+
+            return IsRownum(dbObject.Identifier);
+        }
+
+        static decimal GetSharpTermLimit(INode arg)
+        {
+            decimal limit = GetTermLimit(arg);
+            if (limit > 0)
+            {
+                --limit;
+            }
+
+            return limit;
+        }
+
+        static decimal GetTermLimit(INode arg)
+        {
+            arg = GetComparedTerm(arg);
+
+            IntegerValue iv = arg as IntegerValue;
+            if (iv == null)
+            {
+                return -1;
+            }
+
+            return iv.Value;
+        }
+
+        static INode GetComparedTerm(INode arg)
+        {
+            if (arg == null)
+            {
+                throw new InvalidOperationException(
+                    "Comparison operator missing argument.");
+            }
+
+            return GetTerm(arg);
         }
 
         public static INode GetTerm(INode arg)

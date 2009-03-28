@@ -42,19 +42,7 @@ namespace MacroScope
 
             base.Perform(node);
 
-            if (node == ExpressionOperator.MAccessMod)
-            {
-                Expression parent = Parent as Expression;
-                if (parent != null)
-                {
-                    parent.Operator = ExpressionOperator.Mod;
-                }
-                else
-                {
-                    throw new InvalidOperationException("Modulo operator not in expression.");
-                }
-            }
-            else if (node == ExpressionOperator.StrConcat)
+            if (node == ExpressionOperator.StrConcat)
             {
                 Expression parent = Parent as Expression;
                 if (parent != null)

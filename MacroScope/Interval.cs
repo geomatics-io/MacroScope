@@ -178,6 +178,23 @@ namespace MacroScope
             }
         }
 
+        public decimal GetIntegerValue()
+        {
+            IntegerValue integerValue = m_value as IntegerValue;
+            if (integerValue == null)
+            {
+                throw new InvalidOperationException("Computed interval doesn't have integer value.");
+            }
+
+            decimal v = integerValue.Value;
+            if (!m_positive)
+            {
+                v = -1 * v;
+            }
+
+            return v;
+        }
+
         #endregion
 
         #region INode Members

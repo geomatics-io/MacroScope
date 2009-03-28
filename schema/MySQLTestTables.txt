@@ -1,0 +1,14 @@
+CREATE TABLE table1(key1 int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	string1 varchar(50),
+	date1 datetime NULL,
+	number1 int default 4,
+	number1a int default 2);
+
+CREATE TABLE table2(
+	key2 int NOT NULL PRIMARY KEY,
+	number2 int NULL);
+
+CREATE TABLE table3(
+	key3 int NOT NULL PRIMARY KEY,
+	string3 varchar(50) NULL,
+	number3 int NULL);

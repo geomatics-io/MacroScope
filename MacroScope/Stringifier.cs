@@ -945,6 +945,12 @@ namespace MacroScope
                 throw new ArgumentNullException("node");
             }
 
+            if (node.Limit != null)
+            {
+                m_sql.Append(NewLine);
+                m_sql.AppendFormat("LIMIT {0}", (int)(node.Limit));
+            }
+
             if (node.HasNext)
             {
                 m_sql.Append(NewLine);

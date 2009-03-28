@@ -23,7 +23,9 @@ namespace MacroScope
 
         private bool m_all = false;
 
-        private int? m_top;
+        private char m_limitFormat = ' ';
+
+        private int m_limit = 0;
 
         private AliasedItem m_selectItems;
 
@@ -41,16 +43,79 @@ namespace MacroScope
 
         #region Accessors
 
-        public int? Top
+        /// <summary>
+        /// Valid values are ' ' when the query doesn't limit the number of returned rows,
+        /// 't' or 'T' for MS TOP clause, 'r' or 'R' for Oracle ROWNUM condition,
+        /// 'l' or 'L' for MySQL LIMIT clause.
+        /// </summary>
+        public char LimitFormat
         {
             get
             {
-                return m_top;
+                return m_limitFormat;
             }
 
             set
             {
-                m_top = value;
+                char v = char.ToUpperInvariant(value);
+                if ((v != ' ') && (v != 'T') && (v != 'R') && (v != 'L'))
+                {
+                    string message = string.Format("Invalid query expression limit format {0}.",
+                        value);
+                    throw new ArgumentException(message, "value");
+                }
+
+                m_limitFormat = v;
+            }
+        }
+
+        /// <summary>
+        /// The limit on returned rows, or 0 if it isn't set.
+        /// </summary>
+        /// <remarks>
+        /// Use <see cref="LimitFormat"/> to establish whether the limit is set.
+        /// </remarks>
+        public int RowLimit
+        {
+            get
+            {
+                return (m_limitFormat == ' ') ? 0 : m_limit;
+            }
+        }
+
+        /// <summary>
+        /// When the limit format is set to 'T', returns the limit or returned rows, otherwise null.
+        /// </summary>
+        public int? Top
+        {
+            get
+            {
+                if (m_limitFormat == 'T')
+                {
+                    return m_limit;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        /// <summary>
+        /// When the limit format is set to 'L', returns the limit or returned rows, otherwise null.
+        /// </summary>
+        public int? Limit
+        {
+            get
+            {
+                if (m_limitFormat == 'L')
+                {
+                    return m_limit;
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 
@@ -150,6 +215,12 @@ namespace MacroScope
             }
         }
 
+        public void SetLimit(char limitFormat, int limit)
+        {
+            LimitFormat = limitFormat;
+            m_limit = limit;
+        }
+
         internal void SetOrderBy(OrderExpression orderBy)
         {
             if (m_next == null)
@@ -200,7 +271,7 @@ namespace MacroScope
 
             queryExpression.Distinct = m_distinct;
             queryExpression.All = m_all;
-            queryExpression.Top = m_top;
+            queryExpression.SetLimit(m_limitFormat, m_limit);
 
             if (m_selectItems != null)
             {
