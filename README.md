@@ -1,5 +1,7 @@
 # MacroScope - portable SQL ADO.NET provider
 
+This is a fork of [Vaclav Bartas](http://www.mangrove.cz) [MacroScope](https://sourceforge.net/projects/macroscope/).
+
 MacroScope is a .NET library (2 libraries, actually) automagically
 transforming SQL commands to a form expected by different database
 engines, so that (for example) the MS SQL Server-specific construction
